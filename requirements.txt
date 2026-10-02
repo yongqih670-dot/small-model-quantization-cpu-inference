@@ -1,0 +1,4 @@
+# Stage 1 冒烟测试依赖（Python 3.12）
+# HTTP 使用标准库 urllib，无额外网络依赖。
+# 安装: python -m pip install -r requirements.txt
+psutil==7.2.2

@@ -1,0 +1,14 @@
+{
+  "comment": "Stage 1 冒烟测试配置：CPU-only、单进程、小上下文。只用于验证环境可用，性能数字不作为正式实验结果。",
+  "model_path": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "threads": 16,
+  "context_length": 512,
+  "max_tokens": 64,
+  "temperature": 0.0,
+  "seed": 42,
+  "gpu_offload_layers": 0,
+  "prompt": "请只回答一个数字：2 + 3 = ?",
+  "expected_hint": "5",
+  "load_timeout_s": 300,
+  "health_poll_interval_s": 0.25
+}

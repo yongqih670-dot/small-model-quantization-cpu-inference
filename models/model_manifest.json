@@ -1,0 +1,21 @@
+{
+  "base_model": "Qwen2.5-0.5B-Instruct",
+  "quantization": "Q4_K_M",
+  "filename": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "size_bytes": 491400032,
+  "size_mib": 468.64,
+  "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "source": "Qwen 官方 Hugging Face 仓库 Qwen/Qwen2.5-0.5B-Instruct-GGUF（因直连 huggingface.co 超时，经公开镜像 hf-mirror.com 下载同一文件）",
+  "source_official_url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "source_download_url": "https://hf-mirror.com/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "license": "apache-2.0（随官方仓库 LICENSE 文件分发）",
+  "download_date": "2026-10-02",
+  "verification": {
+    "gguf_magic": "GGUF",
+    "local_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "remote_lfs_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "remote_size_bytes": 491400032,
+    "match": true,
+    "method": "本地 SHA256 与官方仓库 LFS 元数据（hf-mirror.com/api/models/Qwen/Qwen2.5-0.5B-Instruct-GGUF/tree/main）逐字节比对一致"
+  }
+}

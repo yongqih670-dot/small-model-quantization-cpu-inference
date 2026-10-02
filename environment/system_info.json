@@ -1,0 +1,53 @@
+{
+  "os": "Microsoft Windows 11 家庭版 中文版 (Build 26100, 64 位)",
+  "cpu_model": "AMD Ryzen 9 9955HX 16-Core Processor           ",
+  "physical_cores": 16,
+  "logical_cores": 32,
+  "cpu_max_clock_mhz": 2500,
+  "total_ram_gb": 31.18,
+  "total_ram_bytes": 33483378688,
+  "python_version": "3.12.7",
+  "python_executable": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\.venv\\Scripts\\python.exe",
+  "git_version": "git version 2.55.0.windows.2",
+  "project_path": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance",
+  "inference_backend": "llama.cpp (official prebuilt CPU binaries, llama-server)",
+  "backend_version": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64",
+  "backend_source": "backend: llama.cpp\nversion/build: b11347 (official GitHub Actions prebuilt, Windows CPU x64)\ndownloaded_at: 2026-10-02\nurl: https://github.com/ggml-org/llama.cpp/releases/download/b11347/llama-b11347-bin-win-cpu-x64.zip\nmethod: 直接下载官方 release 资产并解压到 tools/llama.cpp/（未编译，未修改）",
+  "backend_binaries": [
+    "llama.cpp\\ggml-rpc-server.exe",
+    "llama.cpp\\llama-batched-bench.exe",
+    "llama.cpp\\llama-bench.exe",
+    "llama.cpp\\llama-cli.exe",
+    "llama.cpp\\llama-completion.exe",
+    "llama.cpp\\llama-fit-params.exe",
+    "llama.cpp\\llama-gemma3-cli.exe",
+    "llama.cpp\\llama-gguf-split.exe",
+    "llama.cpp\\llama-imatrix.exe",
+    "llama.cpp\\llama-llava-cli.exe",
+    "llama.cpp\\llama-minicpmv-cli.exe",
+    "llama.cpp\\llama-mtmd-cli.exe",
+    "llama.cpp\\llama-mtmd-debug.exe",
+    "llama.cpp\\llama-perplexity.exe",
+    "llama.cpp\\llama-quantize.exe",
+    "llama.cpp\\llama-qwen2vl-cli.exe",
+    "llama.cpp\\llama-results.exe",
+    "llama.cpp\\llama-server.exe",
+    "llama.cpp\\llama-tokenize.exe",
+    "llama.cpp\\llama-tts.exe",
+    "llama.cpp\\llama.exe"
+  ],
+  "llama_cpp_python_pip": null,
+  "compilers": {
+    "gcc": null,
+    "g++": null,
+    "cmake": null,
+    "cl": null,
+    "make": null,
+    "ninja": null
+  },
+  "compiler_available": false,
+  "python_key_dependencies": {
+    "psutil": "7.2.2"
+  },
+  "collected_at": "2026-10-02T22:58:46"
+}
