@@ -1,0 +1,15 @@
+00:15:30 | INFO    | 数据集 dev_tasks.json 共 10 条 (config_id=dev_cpu_t4_c1024_v1)
+00:15:30 | INFO    | 启动 llama-server: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\llama.cpp\llama-server.exe -m F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\models\qwen2.5-0.5b-instruct-q4_k_m.gguf --parallel 1 -c 1024 -t 4 -tb 4 -fa off -ngl 0 --cache-reuse 0 --host 127.0.0.1 --port 8460
+00:15:30 | INFO    | 预热请求: ok=True
+00:15:30 | INFO    | [1/10] dev-001 -> '未提供。' | 格式=False 内容=False 联合=False
+00:15:31 | INFO    | [2/10] dev-002 -> '未提供' | 格式=True 内容=True 联合=True
+00:15:31 | INFO    | [3/10] dev-003 -> '未提供' | 格式=False 内容=False 联合=False
+00:15:32 | INFO    | [4/10] dev-004 -> '```json\n{\n  "课程名称": "《机器学习导论》",\n  "调整后的上' | 格式=False 内容=True 联合=False
+00:15:32 | INFO    | [5/10] dev-005 -> '```json\n{\n  "快递公司": "中通快递",\n  "取件码": "8-' | 格式=False 内容=True 联合=False
+00:15:33 | INFO    | [6/10] dev-006 -> '```json\n{\n  "会议主题": "产品评审会",\n  "日期": "11' | 格式=False 内容=True 联合=False
+00:15:33 | INFO    | [7/10] dev-007 -> '停课' | 格式=True 内容=False 联合=False
+00:15:33 | INFO    | [8/10] dev-008 -> '二手出售' | 格式=True 内容=True 联合=True
+00:15:33 | INFO    | [9/10] dev-009 -> '3, 5, 8' | 格式=False 内容=False 联合=False
+00:15:34 | INFO    | [10/10] dev-010 -> '0.6' | 格式=True 内容=True 联合=True
+00:15:34 | INFO    | llama-server 退出: exit=1 (已确认)
+00:15:34 | INFO    | 结果: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\results\raw\run_20261003_001530_dev10fix_a4b77c\result.json (success=True)

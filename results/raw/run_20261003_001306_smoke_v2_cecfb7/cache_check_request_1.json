@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "http_status": 200,
+  "body": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "5"
+        }
+      }
+    ],
+    "created": 1790957587,
+    "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2,
+      "prompt_tokens": 42,
+      "total_tokens": 44,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-5rm9i6FbmJX4UwtwYjJNJtBCrXFC8TwK",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 42,
+      "prompt_ms": 66.105,
+      "prompt_per_token_ms": 1.5739285714285716,
+      "prompt_per_second": 635.3528477422283,
+      "predicted_n": 2,
+      "predicted_ms": 9.941,
+      "predicted_per_token_ms": 9.941,
+      "predicted_per_second": 100.59350165979276
+    }
+  },
+  "client_e2e_s": 0.09740789991337806,
+  "error": null
+}

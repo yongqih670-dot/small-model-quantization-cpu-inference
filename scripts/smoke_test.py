@@ -1,321 +1,298 @@
 # -*- coding: utf-8 -*-
-"""Stage 1 最小 CPU 推理冒烟测试（smoke test）。
+"""冒烟测试 v2（Stage 2 修正版）。
 
-目的：验证「Q4 GGUF 模型 -> llama.cpp llama-server -> CPU 推理」链路可用，
-确认模型加载、CPU 执行、文本输出、正常退出、基础计时五个环节，不追求性能。
+Stage 1 版本的问题与修正见 docs/stage2_corrections.md。本版要点：
+- 三个独立判定，总体 success 由预先注册的验收条件组合得出：
+    link_success      链路成功（启动就绪 + 请求 HTTP 200 + 输出非空）
+    answer_correct    答案正确（output.strip() == "5"，预注册）
+    cleanup_success   进程清理成功（主动终止后确认退出且无残留）
+- server_startup_to_ready_s：Popen → /health 200 的耗时（含后端内置 warmup）；
+  model_load_time_s 仅取后端日志差值统计，取不到则 null + 原因；
+- 速度只使用后端 timings 自报值；timings 缺失 → null + 原因 +
+  performance_record_valid=false，不编造兜底值；原始值不取整，展示才取整；
+- 显式固定：--parallel 1、-t、-tb、-fa off、-ngl 0、--cache-reuse 0，
+  并从服务端日志提取实际生效配置（n_slots、n_threads）；
+- 预热请求与正式计时请求分开标记；另做"同一提示两次"缓存复用校验；
+- 清理在 finally 路径：Windows terminate 如实记录为主动强制终止；
+- 配置/清单缺失或损坏时仍写结构化失败记录（异常处理中不重读清单）。
 
-流程：
-  1. 读取 configs/smoke_test.json 配置与 models/model_manifest.json 模型信息；
-  2. 启动 llama-server（单实例、CPU-only、-ngl 0、小上下文）；
-  3. 轮询 /health 直到就绪，计时首次加载时间（含服务启动与内置 warmup）；
-  4. POST /v1/chat/completions 发送一条简单数学题（temperature=0，贪心解码）；
-  5. 记录输出文本、token 数、服务端 timings、客户端端到端耗时、进程峰值内存；
-  6. 结果写入 results/raw/smoke_test.json，全部过程写入 logs/smoke_test.log。
-
-用法：
-    python scripts/smoke_test.py            # 用 .venv 或任意已装 psutil 的 Python
+结果写入 results/raw/<run_id>/，日志写入 logs/<run_id>/。
+用法: python scripts/smoke_test.py
 """
 
 import json
 import logging
-import math
-import socket
-import subprocess
 import sys
 import time
-import urllib.error
-import urllib.request
 from pathlib import Path
 
-import psutil
-
-ROOT = Path(__file__).resolve().parent.parent
-CONFIG_PATH = ROOT / "configs" / "smoke_test.json"
-MANIFEST_PATH = ROOT / "models" / "model_manifest.json"
-RESULT_PATH = ROOT / "results" / "raw" / "smoke_test.json"
-LOG_PATH = ROOT / "logs" / "smoke_test.log"
-TOOLS_DIR = ROOT / "tools" / "llama.cpp"
-
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
+import llama_server_ctl as ctl
+from llama_server_ctl import (LlamaServer, capture_backend_version,
+                              count_orphan_servers, find_server_exe, new_run_id,
+                              parse_load_time_from_log)
 
-def find_server_exe():
-    """在 tools/llama.cpp 下查找 llama-server.exe。"""
-    if not TOOLS_DIR.is_dir():
-        raise FileNotFoundError(
-            f"未找到 {TOOLS_DIR}。请先按 README 安装 llama.cpp 预编译版。")
-    hits = sorted(TOOLS_DIR.rglob("llama-server.exe"))
-    if not hits:
-        raise FileNotFoundError(
-            f"{TOOLS_DIR} 下没有 llama-server.exe，请检查解压结果。")
-    return hits[0]
+ROOT = Path(__file__).resolve().parent.parent
+CONFIG_PATH = ROOT / "configs" / "smoke_test_v2.json"
+MANIFEST_PATH = ROOT / "models" / "model_manifest.json"
 
 
-def free_port():
-    """向系统申请一个空闲 TCP 端口，避免写死端口造成冲突。"""
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(("127.0.0.1", 0))
-        return s.getsockname()[1]
-
-
-def http_get(url, timeout=5):
-    req = urllib.request.Request(url, headers={"User-Agent": "smoke-test/1.0"})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.status, json.loads(resp.read().decode("utf-8"))
-
-
-def http_post_json(url, payload, timeout=300):
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(
-        url, data=data, method="POST",
-        headers={"Content-Type": "application/json",
-                 "User-Agent": "smoke-test/1.0"})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.status, json.loads(resp.read().decode("utf-8"))
-
-
-def main():
-    # ---------------- 日志：文件 + 终端双写 ----------------
-    LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
-    log_fh = open(LOG_PATH, "w", encoding="utf-8", buffering=1)
-    log = logging.getLogger("smoke_test")
-    log.setLevel(logging.INFO)
-    for handler in (logging.StreamHandler(log_fh),
-                    logging.StreamHandler(sys.stdout)):
-        handler.setFormatter(logging.Formatter(
-            "%(asctime)s | %(levelname)-7s | %(message)s", "%H:%M:%S"))
-        log.addHandler(handler)
-
-    result = {"success": False, "error": None}
-    server = None
-
-    def finish(code):
-        for h in log.handlers:
-            h.flush()
-        log_fh.flush()
-        sys.exit(code)
-
+def load_json(path: Path):
+    """返回 (data, error)。损坏/缺失时 error 说明原因，绝不二次读取。"""
     try:
-        # ---------------- 读配置与模型清单 ----------------
-        cfg = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
-        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+        return json.loads(path.read_text(encoding="utf-8")), None
+    except FileNotFoundError:
+        return None, f"文件不存在: {path}"
+    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+        return None, f"文件损坏无法解析: {path} ({type(e).__name__}: {e})"
+
+
+def main() -> int:
+    run_id = new_run_id("smoke_v2")
+    run_dir = ROOT / "results" / "raw" / run_id
+    log_dir = ROOT / "logs" / run_id
+    run_dir.mkdir(parents=True, exist_ok=True)
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    log_fh = (log_dir / "smoke_test.log").open("w", encoding="utf-8", buffering=1)
+    log = logging.getLogger("smoke_v2")
+    log.setLevel(logging.INFO)
+    for h in (logging.StreamHandler(log_fh), logging.StreamHandler(sys.stdout)):
+        h.setFormatter(logging.Formatter("%(asctime)s | %(levelname)-7s | %(message)s",
+                                         "%H:%M:%S"))
+        log.addHandler(h)
+
+    result = {"run_id": run_id, "script": "scripts/smoke_test.py",
+              "stage": "2-corrected-smoke", "is_real_inference": True,
+              "synthetic": False, "started_at_utc": ctl.utc_now_iso()}
+
+    server = None
+    exit_code = 1
+    try:
+        # ---- 配置与清单（失败即结构化记录，不重读） ----
+        cfg, cfg_err = load_json(CONFIG_PATH)
+        manifest, man_err = load_json(MANIFEST_PATH)
+        if cfg_err:
+            result.update({"success": False, "link_success": False,
+                           "answer_correct": None, "cleanup_success": None,
+                           "failure_stage": "load_config", "error": cfg_err})
+            raise RuntimeError(cfg_err)
+        result["config_snapshot"] = cfg
+        result["config_path"] = str(CONFIG_PATH.relative_to(ROOT))
+        if man_err:
+            # 清单损坏不阻断链路验证，但记录缺证事实
+            result["manifest_error"] = man_err
+            log.warning("清单问题: %s", man_err)
+        else:
+            result["model_manifest"] = {
+                k: manifest.get(k) for k in
+                ("filename", "quantization", "sha256", "size_bytes", "source")}
+
         model_path = ROOT / cfg["model_path"]
         if not model_path.is_file():
-            raise FileNotFoundError(f"模型文件不存在: {model_path}")
-
-        threads = int(cfg["threads"])
-        ctx = int(cfg["context_length"])
-        max_tokens = int(cfg["max_tokens"])
-        temperature = float(cfg["temperature"])
-        seed = int(cfg["seed"])
-        ngl = int(cfg["gpu_offload_layers"])
-        prompt = cfg["prompt"]
-        expected_hint = cfg.get("expected_hint")
-
-        log.info("=== Stage 1 smoke test 开始 ===")
-        log.info("模型: %s (量化 %s)", model_path.name, manifest["quantization"])
-        log.info("模型 SHA256: %s", manifest["sha256"])
-        log.info("参数: threads=%d ctx=%d max_tokens=%d temperature=%s "
-                 "seed=%d ngl=%d (CPU only)", threads, ctx, max_tokens,
-                 temperature, seed, ngl)
+            raise RuntimeError(f"模型文件不存在: {model_path}")
 
         server_exe = find_server_exe()
-        ver_status = subprocess.run([str(server_exe), "--version"],
-                                    capture_output=True, text=True,
-                                    encoding="utf-8", errors="replace")
-        backend_version = (ver_status.stdout or ver_status.stderr).strip()
-        log.info("后端: %s", backend_version.splitlines()[0] if backend_version
-                 else server_exe.name)
-        result["backend"] = "llama.cpp llama-server (official prebuilt CPU binaries)"
-        result["backend_version"] = backend_version
-        result["backend_executable"] = str(server_exe)
+        result["backend_version"] = capture_backend_version(server_exe)
+        log.info("后端版本 exit=%s stderr首行=%s",
+                 result["backend_version"]["exit_code"],
+                 (result["backend_version"]["stderr"].splitlines() or [""])[0])
 
-        # ---------------- 启动 llama-server（单实例） ----------------
-        port = free_port()
-        cmd = [str(server_exe),
-               "-m", str(model_path),
-               "--host", "127.0.0.1",
-               "--port", str(port),
-               "-c", str(ctx),
-               "-t", str(threads),
-               "-ngl", str(ngl)]
-        log.info("启动命令: %s", " ".join(cmd))
-        result["server_command"] = " ".join(cmd)
-        result["server_port"] = port
+        argv = ["-m", str(model_path),
+                "--parallel", str(cfg["parallel"]),
+                "-c", str(cfg["context_length"]),
+                "-t", str(cfg["threads"]),
+                "-tb", str(cfg["threads_batch"]),
+                "-fa", cfg["flash_attn"],
+                "-ngl", str(cfg["gpu_offload_layers"]),
+                "--cache-reuse", str(cfg["cache_reuse"])]
+        result["server_argv"] = argv
+        result["effective_intent"] = {
+            "single_inference_process": True, "parallel_slots": cfg["parallel"],
+            "threads_generation": cfg["threads"],
+            "threads_prompt_batch": cfg["threads_batch"],
+            "flash_attn": cfg["flash_attn"], "gpu_offload_layers":
+                cfg["gpu_offload_layers"], "cache_reuse": cfg["cache_reuse"],
+            "cache_prompt_request_body": False,
+            "backend": "llama.cpp llama-server (官方预编译 CPU 构建)"}
 
-        t0 = time.perf_counter()
-        server = subprocess.Popen(cmd, stdout=log_fh, stderr=subprocess.STDOUT)
-        result["server_pid"] = server.pid
-        proc = psutil.Process(server.pid)
-
-        # ---------------- 轮询 /health，计时模型加载 ----------------
-        base = f"http://127.0.0.1:{port}"
-        health_ok, last_err = False, None
-        while time.perf_counter() - t0 < float(cfg["load_timeout_s"]):
-            if server.poll() is not None:
-                raise RuntimeError(
-                    f"llama-server 提前退出 (exit={server.returncode})，"
-                    f"请查看日志 {LOG_PATH}")
-            try:
-                status, body = http_get(f"{base}/health", timeout=3)
-                if status == 200 and body.get("status") == "ok":
-                    health_ok = True
-                    break
-            except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
-                last_err = repr(e)
-            time.sleep(float(cfg["health_poll_interval_s"]))
-        if not health_ok:
-            raise RuntimeError(f"等待 /health 就绪超时（{cfg['load_timeout_s']}s）"
-                               f"，最后错误: {last_err}")
-        model_load_time_s = time.perf_counter() - t0
-        log.info("模型加载完成（含服务启动与内置 warmup）: %.3f s",
-                 model_load_time_s)
-        result["model_load_time_s"] = round(model_load_time_s, 3)
-
-        # ---------------- 发送推理请求 ----------------
-        payload = {
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": temperature,
-            "max_tokens": max_tokens,
-            "stream": False,
-            "seed": seed,
-        }
-        log.info("发送 Prompt: %r", prompt)
-        t_req = time.perf_counter()
-        status, resp = http_post_json(f"{base}/v1/chat/completions", payload)
-        e2e_s = time.perf_counter() - t_req
-        if status != 200:
-            raise RuntimeError(f"推理请求返回 HTTP {status}: {str(resp)[:500]}")
-
-        output = resp["choices"][0]["message"]["content"]
-        usage = resp.get("usage", {})
-        prompt_tokens = int(usage.get("prompt_tokens", 0))
-        generated_tokens = int(usage.get("completion_tokens", 0))
-        log.info("模型输出: %r", output)
-        log.info("端到端请求耗时: %.3f s | prompt_tokens=%d "
-                 "generated_tokens=%d", e2e_s, prompt_tokens, generated_tokens)
-
-        # 服务端 timings（llama.cpp 非标准扩展字段；缺失时退化为客户端估算）
-        timings = resp.get("timings", {})
-        tps_source = "none"
-        gen_tps = None
-        prompt_tps = None
-        prompt_eval_s = None
-        gen_time_s = None
-        if timings:
-            log.info("服务端 timings: %s", json.dumps(timings, ensure_ascii=False))
-            tps_source = "server_timings"
-            prompt_ms = float(timings.get("prompt_ms", 0) or 0)
-            predicted_ms = float(timings.get("predicted_ms", 0) or 0)
-            prompt_eval_s = round(prompt_ms / 1000, 4) if prompt_ms else None
-            gen_time_s = round(predicted_ms / 1000, 4) if predicted_ms else None
-            prompt_tps = (float(timings["prompt_per_second"])
-                          if timings.get("prompt_per_second") else None)
-            gen_tps = (float(timings["predicted_per_second"])
-                       if timings.get("predicted_per_second") else None)
-        if gen_tps is None and gen_time_s and gen_time_s > 0:
-            gen_tps = generated_tokens / gen_time_s
-            tps_source = "derived_from_predicted_ms"
-        if gen_tps is None and e2e_s > 0 and timings:
-            # 最后的兜底：把整段请求耗时都算进生成（会低估速度）
-            gen_tps = generated_tokens / e2e_s
-            tps_source = "client_fallback_e2e"
-        log.info("生成速度: %s tok/s（来源: %s）",
-                 f"{gen_tps:.2f}" if gen_tps else "不可用", tps_source)
-
-        # ---------------- 进程峰值内存（Windows: peak_wset） ----------------
-        peak_mem_mib = None
+        log_fh_server = (log_dir / "server.log").open("w", encoding="utf-8",
+                                                      buffering=1)
         try:
-            if proc.is_running():
-                mem = proc.memory_info()
-                peak_mem_mib = round(mem.peak_wset / 1048576, 2)
-                log.info("llama-server 进程峰值内存: %.2f MiB", peak_mem_mib)
-        except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
-            log.warning("读取进程内存失败: %r", e)
+            server = LlamaServer(server_exe, argv, log_fh_server, log,
+                                 memory_sample_interval_s=cfg.get(
+                                     "memory_sample_interval_s"))
+            server.start()
+            ready = server.wait_ready(
+                timeout_s=cfg["load_timeout_s"],
+                poll_interval_s=cfg["health_poll_interval_s"])
+            result["server_startup"] = {
+                "ok": ready["ok"], "error": ready["error"],
+                "server_startup_to_ready_s": server.startup_to_ready_s,
+                "health_poll_interval_s": cfg["health_poll_interval_s"],
+                "warmup": "backend default enabled (未传 --no-warmup)",
+                "includes": "进程拉起+服务初始化+模型加载+内置warmup; 不含清理/写文件/退出"}
+            if not ready["ok"]:
+                raise RuntimeError(f"服务未就绪: {ready['error']}")
+            log.info("server_startup_to_ready_s = %.6f (未取整展示 %.3f)",
+                     server.startup_to_ready_s,
+                     round(server.startup_to_ready_s, 3))
 
-        # ---------------- 组装结果 ----------------
-        ok_text = bool(output and output.strip())
-        hint_hit = bool(expected_hint and expected_hint in output)
-        log.info("输出非空: %s | 包含期望答案 %r: %s",
-                 ok_text, expected_hint, hint_hit)
+            # ---- 预热请求（标记 warmup，不计入计时结论） ----
+            payload = {"messages": [
+                {"role": "system", "content": cfg["system_prompt"]},
+                {"role": "user", "content": cfg["prompt"]}],
+                "temperature": cfg["temperature"], "max_tokens":
+                cfg["max_tokens"], "seed": cfg["seed"], "cache_prompt": False,
+                "stream": False}
+            warm = server.request("/v1/chat/completions", payload,
+                                  cfg["request_timeout_s"])
+            result["warmup_request"] = {"marked_as": "warmup",
+                                        "ok": warm["ok"],
+                                        "excluded_from_stats": True}
+            if not warm["ok"]:
+                raise RuntimeError(f"预热请求失败: {warm['error']}")
 
-        result.update({
-            "model": model_path.name,
-            "quantization": manifest["quantization"],
-            "model_sha256": manifest["sha256"],
-            "threads": threads,
-            "context_length": ctx,
-            "max_tokens": max_tokens,
-            "temperature": temperature,
-            "seed": seed,
-            "gpu_offload_layers": ngl,
-            "prompt": prompt,
-            "output": output,
-            "end_to_end_time_s": round(e2e_s, 3),
-            "total_elapsed_time_s": round(time.perf_counter() - t0, 3),
-            "prompt_tokens": prompt_tokens,
-            "generated_tokens": generated_tokens,
-            "generation_tokens_per_second": round(gen_tps, 2) if gen_tps else None,
-            "generation_time_s": gen_time_s,
-            "generation_tps_source": tps_source,
-            "prompt_eval_time_s": prompt_eval_s,
-            "prompt_processing_tokens_per_second":
-                round(prompt_tps, 2) if prompt_tps else None,
-            "peak_process_memory_mib": peak_mem_mib,
-            "server_timings_raw": timings,
-            "output_nonempty": ok_text,
-            "output_contains_expected": hint_hit,
-            "success": bool(health_ok and ok_text and server.poll() is None),
-            "error": None,
-        })
+            # ---- 正式计时请求（唯一一次） ----
+            t0 = time.perf_counter()
+            resp = server.request("/v1/chat/completions", payload,
+                                  cfg["request_timeout_s"])
+            req_e2e = time.perf_counter() - t0
+            (run_dir / "measured_request.json").write_text(
+                json.dumps(resp, ensure_ascii=False, indent=2),
+                encoding="utf-8")
+            if not resp["ok"]:
+                result["link_success"] = False
+                raise RuntimeError(f"推理请求失败: {resp['error']}")
+            body = resp["body"]
+            choice = (body.get("choices") or [{}])[0]
+            output = (choice.get("message") or {}).get("content") or ""
+            usage = body.get("usage") or {}
+            timings = body.get("timings") or {}
+            log.info("输出=%r finish_reason=%s", output,
+                     choice.get("finish_reason"))
 
-        # ---------------- 收尾：优雅关闭服务 ----------------
-        log.info("关闭 llama-server ...")
-        server.terminate()
-        try:
-            server.wait(timeout=15)
-        except subprocess.TimeoutExpired:
-            log.warning("terminate 未退出，改用 kill")
-            server.kill()
-            server.wait(timeout=10)
-        log.info("llama-server 已退出 (exit=%s)", server.returncode)
-        result["server_exit_code"] = server.returncode
+            # ---- 缓存复用校验：同一提示再连发两次 ----
+            cache_reqs = []
+            for i in (1, 2):
+                r = server.request("/v1/chat/completions", payload,
+                                   cfg["request_timeout_s"])
+                (run_dir / f"cache_check_request_{i}.json").write_text(
+                    json.dumps(r, ensure_ascii=False, indent=2),
+                    encoding="utf-8")
+                b = r.get("body") or {}
+                cache_reqs.append({
+                    "index": i, "ok": r["ok"], "error": r["error"],
+                    "cache_n": (b.get("timings") or {}).get("cache_n"),
+                    "prompt_n": (b.get("timings") or {}).get("prompt_n"),
+                    "cached_tokens": ((b.get("usage") or {})
+                                      .get("prompt_tokens_details", {})
+                                      .get("cached_tokens"))})
+            c1, c2 = cache_reqs
+            cache_passed = bool(
+                c1["ok"] and c2["ok"]
+                and c1["cache_n"] == 0 and c2["cache_n"] == 0
+                and c1["prompt_n"] == c2["prompt_n"] and (c1["prompt_n"] or 0) > 1)
+            log.info("缓存校验: %s", "通过(两次均完整重算)" if cache_passed
+                     else "未通过!")
 
-        RESULT_PATH.parent.mkdir(parents=True, exist_ok=True)
-        RESULT_PATH.write_text(
-            json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
-        log.info("结果已写入 %s", RESULT_PATH.relative_to(ROOT))
-        log.info("=== smoke test 成功 ===")
-        finish(0)
+            # ---- 指标（原始值不取整；速度仅用后端统计，缺失不伪造） ----
+            perf = ctl.extract_perf(timings, usage)
+            if not perf["performance_record_valid"]:
+                result["performance_missing_reason"] = perf["missing_reason"]
+            # model_load_time_s：仅接受后端日志差值统计
+            log_text = (log_dir / "server.log").read_text(
+                encoding="utf-8", errors="replace")
+            load_stat = parse_load_time_from_log(log_text)
+            # 生效配置证据（从服务端日志提取）
+            eff = {}
+            for line in log_text.splitlines():
+                if "n_slots = " in line and "n_ctx_slot" in line:
+                    eff["n_slots_line"] = line.strip()[:160]
+                if "system_info: n_threads" in line:
+                    eff["threads_line"] = line.strip()[:160]
+                if "warming up the model" in line:
+                    eff["warmup_line"] = line.strip()[:160]
+            result["effective_config_evidence"] = eff
 
-    except Exception as exc:  # noqa: BLE001 —— 失败也要完整落盘，不隐藏错误
-        log.exception("smoke test 失败: %r", exc)
+            link_success = bool(ready["ok"] and resp["ok"] and output.strip())
+            answer_correct = output.strip() == cfg["expected_answer"]
+
+            result.update({
+                "model": model_path.name,
+                "prompt": cfg["prompt"],
+                "output": output,
+                "raw_output_unmodified": True,
+                "finish_reason": choice.get("finish_reason"),
+                "usage_raw": usage,
+                "timings_raw": timings,
+                "end_to_end_request_s": req_e2e,
+                "end_to_end_includes": "单次HTTP请求(含模板组装/推理/JSON序列化); "
+                                       "不含服务启动、清理与写结果文件",
+                "performance": perf,
+                "server_startup_to_ready_s": server.startup_to_ready_s,
+                "model_load_time_s": load_stat["model_load_time_s"],
+                "model_load_time_source": load_stat["source"],
+                "model_load_time_parse_reason": load_stat["reason"],
+                "cache_reuse_check": {"requests": cache_reqs,
+                                      "passed": cache_passed,
+                                      "rule": "两次 cache_n=0 且 prompt_n 相同"
+                                              "且>1(完整重算)"},
+                "memory": server.memory_stats(),
+                "link_success": link_success,
+                "answer_correct": answer_correct,
+                "answer_rule": "output.strip() == '%s'" % cfg["expected_answer"],
+            })
+        finally:
+            # ---- 清理（finally 覆盖正常/异常/中断路径） ----
+            if server is not None:
+                result["cleanup"] = server.stop()
+            log_fh_server.close()
+            result["orphan_servers_after"] = count_orphan_servers()
+            result["cleanup_success"] = bool(
+                result.get("cleanup", {}).get("confirmed_exit")
+                and result["orphan_servers_after"] == 0)
+
+        # ---- 预注册的总体验收条件 ----
+        result["success"] = bool(
+            result["link_success"] and result["answer_correct"]
+            and result["cleanup_success"] and cache_passed)
+        result["acceptance_rule"] = ("link_success AND answer_correct "
+                                     "AND cleanup_success AND cache_reuse_check.passed")
+        if not result["performance"]["performance_record_valid"]:
+            result["success"] = False  # 性能记录无效时总体不判成功
+            result["acceptance_rule"] += "; 且 performance.performance_record_valid"
+        exit_code = 0 if result["success"] else 1
+
+    except KeyboardInterrupt:
+        result["success"] = False
+        result["error"] = "用户中断 (KeyboardInterrupt); 清理已在 finally 执行"
+        exit_code = 130
+    except Exception as exc:  # noqa: BLE001 —— 结构化失败记录，不隐藏
+        log.exception("smoke v2 失败")
         result["success"] = False
         result["error"] = f"{type(exc).__name__}: {exc}"
-        result.setdefault("model", json.loads(
-            MANIFEST_PATH.read_text(encoding="utf-8"))["filename"])
-        result.setdefault("quantization", json.loads(
-            MANIFEST_PATH.read_text(encoding="utf-8"))["quantization"])
-        for key, default in (("threads", None), ("context_length", None),
-                             ("max_tokens", None), ("prompt", None),
-                             ("output", None), ("model_load_time_s", None),
-                             ("end_to_end_time_s", None),
-                             ("prompt_tokens", None), ("generated_tokens", None),
-                             ("generation_tokens_per_second", None)):
-            result.setdefault(key, default)
-        try:
-            RESULT_PATH.parent.mkdir(parents=True, exist_ok=True)
-            RESULT_PATH.write_text(
-                json.dumps(result, ensure_ascii=False, indent=2),
-                encoding="utf-8")
-            log.info("失败结果已如实写入 %s", RESULT_PATH.relative_to(ROOT))
-        except OSError:
-            pass
-        if server is not None and server.poll() is None:
-            server.kill()
-        finish(1)
+        result.setdefault("failure_stage", "runtime")
+        result.setdefault("link_success", False)
+        result.setdefault("answer_correct", None)
+        result.setdefault("cleanup_success", None)
+        for k in ("model", "prompt", "output", "server_startup_to_ready_s",
+                  "model_load_time_s", "end_to_end_request_s",
+                  "generation_tokens_per_second", "usage_raw", "timings_raw"):
+            result.setdefault(k, None)
+    finally:
+        result["finished_at_utc"] = ctl.utc_now_iso()
+        (run_dir / "result.json").write_text(
+            json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+        log.info("结果: %s (success=%s)", run_dir / "result.json",
+                 result.get("success"))
+        log_fh.flush()
+        log_fh.close()
+    return exit_code
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

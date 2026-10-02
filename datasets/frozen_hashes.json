@@ -1,0 +1,14 @@
+{
+  "frozen_at": "2026-10-03T00:15:20",
+  "algorithm": "sha256",
+  "rule": "冻结后如需改动，必须说明理由并重新冻结、在协议文档记录变更",
+  "files": {
+    "datasets/dev/dev_tasks.json": "0ac8658407a5410bfc60cafd17f766135de7ebf9d9465487830ca26acb981d10",
+    "datasets/test/test_tasks.json": "7e6217a5eee4f8a6172944d73f19a15bedf5e809810cdb5afc975681b6a5a556",
+    "datasets/prompt_template.json": "66cdce777bdbe68f7b7b2e612296c761ef7fe6974a15ca67443c497b11077027",
+    "scripts/score_answer.py": "7f6e5a28ed2b66a2b48bc3342703a3481dc638d3efdc4ea7c704200b551270b4",
+    "configs/dev_config.json": "008107ab1fea7be8dc7e95f76161fea2273fe8f51163d1ffa975415216b49451",
+    "configs/smoke_test_v2.json": "c22fe2329812cc463f590b15164a87c8acfd79fea8ebf65260ec3cb571bbfb98",
+    "configs/bench_dev.json": "004717e7b421529661911481714bc5b8f93e5b72090690376571360c77057f57"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "config_id": "dev_cpu_t4_c1024_v1",
+  "comment": "Stage 2 固定开发配置：threads=threads_batch=4、context=1024、parallel=1、cache_prompt=false(请求体)、cache_reuse=0。明确这不是最终最佳配置，性能实验将在后续阶段按协议另行扫描。",
+  "model_path": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "parallel": 1,
+  "threads": 4,
+  "threads_batch": 4,
+  "context_length": 1024,
+  "flash_attn": "off",
+  "gpu_offload_layers": 0,
+  "cache_reuse": 0,
+  "request_timeout_s": 120,
+  "load_timeout_s": 300,
+  "health_poll_interval_s": 0.25,
+  "memory_sample_interval_s": 0.05,
+  "generation": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 42,
+    "max_tokens": 96
+  }
+}

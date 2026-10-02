@@ -1,0 +1,21 @@
+{
+  "comment": "Stage 2 修正版冒烟测试配置。threads/threads_batch=4 为固定开发配置，明确不是最终最佳配置；正式性能实验的参数另行扫描。",
+  "model_path": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "parallel": 1,
+  "threads": 4,
+  "threads_batch": 4,
+  "context_length": 1024,
+  "flash_attn": "off",
+  "gpu_offload_layers": 0,
+  "cache_reuse": 0,
+  "temperature": 0.0,
+  "seed": 42,
+  "max_tokens": 64,
+  "system_prompt": "你是严格的评测作答器。只按题目要求输出答案，不要解释。",
+  "prompt": "请只回答一个数字：2 + 3 = ?",
+  "expected_answer": "5",
+  "request_timeout_s": 120,
+  "load_timeout_s": 300,
+  "health_poll_interval_s": 0.25,
+  "memory_sample_interval_s": 0.05
+}

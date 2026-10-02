@@ -1,0 +1,7 @@
+00:13:06 | INFO    | 后端版本 exit=0 stderr首行=version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)
+00:13:06 | INFO    | 启动 llama-server: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\llama.cpp\llama-server.exe -m F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\models\qwen2.5-0.5b-instruct-q4_k_m.gguf --parallel 1 -c 1024 -t 4 -tb 4 -fa off -ngl 0 --cache-reuse 0 --host 127.0.0.1 --port 9095
+00:13:07 | INFO    | server_startup_to_ready_s = 0.597119 (未取整展示 0.597)
+00:13:07 | INFO    | 输出='5' finish_reason=stop
+00:13:07 | INFO    | 缓存校验: 通过(两次均完整重算)
+00:13:07 | INFO    | llama-server 退出: exit=1 (已确认)
+00:13:07 | INFO    | 结果: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\results\raw\run_20261003_001306_smoke_v2_cecfb7\result.json (success=True)

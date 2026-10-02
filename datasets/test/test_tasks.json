@@ -1,0 +1,444 @@
+{
+  "dataset_id": "test_tasks_v1",
+  "purpose": "独立正式测试集（50题）。本阶段(Stage 2)禁止调用模型回答；仅允许静态校验。组成：单字段抽取15、多字段JSON抽取15、限定标签分类10、日期数字规范化转换10。",
+  "task_count": 50,
+  "composition": {
+    "single_field_extraction": 15,
+    "json_extraction": 15,
+    "classification": 10,
+    "normalization": 10
+  },
+  "tasks": [
+    {
+      "id": "test-001",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "主讲人姓名",
+      "input": "讲座预告：主题《大模型与搜索引擎的未来》，主讲人为计算机学院赵启明教授，时间11月20日晚7点，地点图书馆报告厅。",
+      "gold": "赵启明"
+    },
+    {
+      "id": "test-002",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "恢复开放的日期",
+      "input": "公告：因设备检修，游泳馆10月15日至10月17日闭馆三天，10月18日恢复开放，年卡用户有效期顺延三天。",
+      "gold": "10月18日",
+      "note": "干扰项：10月15日至10月17日"
+    },
+    {
+      "id": "test-003",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "联系人电话",
+      "input": "通知：请获得奖学金的同学于本周五前将银行卡号后六位发送到辅导员邮箱。联系人：刘老师，电话 8794-2210。",
+      "gold": "8794-2210",
+      "note": "干扰项：银行卡号后六位"
+    },
+    {
+      "id": "test-004",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "书包颜色",
+      "input": "失物招领：操场看台捡到蓝色帆布书包一个，内有高等数学课本两本，请失主到体育部办公室认领。",
+      "gold": "蓝色"
+    },
+    {
+      "id": "test-005",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "补课的具体教室",
+      "input": "放假通知：国庆节10月1日至10月7日放假调休，10月11日（周六）补上班课。",
+      "gold": "未提供",
+      "note": "缺失字段边界"
+    },
+    {
+      "id": "test-006",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "剩余名额数量",
+      "input": "选课通知：《影视鉴赏》课程容量80人，已有73人选课，剩余名额将于周五17:00释放。",
+      "gold": "7",
+      "note": "需简单计算80-73；干扰项：80、73"
+    },
+    {
+      "id": "test-007",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "答辩组组长姓名",
+      "input": "答辩安排：张同同学的毕业设计答辩安排在5月12日上午第3时段，答辩组组长为何海教授。",
+      "gold": "何海",
+      "note": "干扰项：张同"
+    },
+    {
+      "id": "test-008",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "快递公司名称",
+      "input": "快递通知：您的顺丰速运包裹已存放于近邻宝3号柜，取件码 5521，请及时领取。",
+      "gold": "顺丰速运"
+    },
+    {
+      "id": "test-009",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "兼职岗位的学历要求",
+      "input": "招聘启事：咖啡店招兼职店员，时薪22元，每周至少排班3次，要求能坚持3个月以上。",
+      "gold": "未提供",
+      "note": "缺失字段边界；干扰项：时薪、排班要求"
+    },
+    {
+      "id": "test-010",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "最高分",
+      "input": "成绩公示：《线性代数》期末考试平均分78.5，最高分97，及格率88%，公示期至1月15日。",
+      "gold": "97",
+      "note": "数字抽取；干扰项：78.5、88%"
+    },
+    {
+      "id": "test-011",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "会议地点",
+      "input": "会议通知：学生会定于下周二中午12点半在活动中心201召开例会，请假需提前报备秘书长孙悦。",
+      "gold": "活动中心201",
+      "note": "干扰项：时间、孙悦"
+    },
+    {
+      "id": "test-012",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "本笔消费金额",
+      "input": "校园卡通知：您的校园卡于9月3日消费38.5元（第一食堂午餐），当前余额126.8元。",
+      "gold": "38.5元",
+      "note": "干扰项：余额126.8元"
+    },
+    {
+      "id": "test-013",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "工作地点",
+      "input": "实习招聘：XX科技公司招前端开发实习生，工作地点为滨江园区B座，简历投递邮箱 hr@xxtech.example。",
+      "gold": "滨江园区B座",
+      "note": "干扰项：邮箱"
+    },
+    {
+      "id": "test-014",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "调整后的考试日期",
+      "input": "通知：原定于6月6日的《中国近代史》期末考试因与四六级考试冲突，推迟至6月13日下午2点进行，考场不变。",
+      "gold": "6月13日",
+      "note": "干扰项：6月6日（原日期）"
+    },
+    {
+      "id": "test-015",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "运动会的具体举办日期",
+      "input": "广播稿：春季运动会将于4月下旬举行，具体日程请关注后续通知，欢迎各学院报名。",
+      "gold": "未提供",
+      "note": "缺失字段边界；干扰项：4月下旬（月份范围非具体日期）"
+    },
+    {
+      "id": "test-016",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["活动名称", "举办时间", "举办地点"],
+      "input": "社团文化节将于11月8日14:00在大学生活动中心广场举行，下雨则改到体育馆内，主办方为校学生会。",
+      "gold": {"活动名称": "社团文化节", "举办时间": "11月8日14:00", "举办地点": "大学生活动中心广场"},
+      "note": "干扰项：雨备地点体育馆、主办方"
+    },
+    {
+      "id": "test-017",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["课程名称", "任课教师", "上课地点"],
+      "input": "《Python程序设计》由林小峰老师主讲，每周二、四晚6:30-8:00在实验楼405机房上课，共16周。",
+      "gold": {"课程名称": "Python程序设计", "任课教师": "林小峰", "上课地点": "实验楼405机房"},
+      "note": "干扰项：上课时间、周数"
+    },
+    {
+      "id": "test-018",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["商品名称", "价格", "保修期"],
+      "input": "商品信息：便携小风扇，售价39.9元，自购买日起保修6个月，颜色有白色和粉色两种。",
+      "gold": {"商品名称": "便携小风扇", "价格": "39.9元", "保修期": "6个月"},
+      "note": "干扰项：颜色"
+    },
+    {
+      "id": "test-019",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["会议名称", "时间", "外部报告人"],
+      "input": "数据库课题组组会定于周四上午9:30在理科楼514召开，本次无外部报告，请各位携带进度说明。",
+      "gold": {"会议名称": "数据库课题组组会", "时间": "周四上午9:30", "外部报告人": null},
+      "note": "缺失字段用 null；干扰项：理科楼514"
+    },
+    {
+      "id": "test-020",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["航班号", "出发城市", "到达城市", "起飞时间"],
+      "input": "旅客王强乘坐CZ3524次航班，计划于3月2日8:15从广州起飞，前往杭州，值机柜台为C18。",
+      "gold": {"航班号": "CZ3524", "出发城市": "广州", "到达城市": "杭州", "起飞时间": "3月2日8:15"},
+      "note": "四字段；干扰项：王强、值机柜台"
+    },
+    {
+      "id": "test-021",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["书名", "作者", "出版社"],
+      "input": "《时间简史（普及版）》由斯蒂芬·霍金撰写，湖南科学技术出版社出版，全书共240页。",
+      "gold": {"书名": "时间简史（普及版）", "作者": "斯蒂芬·霍金", "出版社": "湖南科学技术出版社"},
+      "note": "干扰项：页数"
+    },
+    {
+      "id": "test-022",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["比赛名称", "报名截止时间", "比赛地点"],
+      "input": "校运会电动平衡车趣味赛报名截止到4月9日17:00，比赛地点待定，请关注后续公告。",
+      "gold": {"比赛名称": "电动平衡车趣味赛", "报名截止时间": "4月9日17:00", "比赛地点": null},
+      "note": "缺失字段用 null"
+    },
+    {
+      "id": "test-023",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["医生姓名", "科室", "出诊时间"],
+      "input": "市一医院骨科门诊：李国栋医生每周一、三上午出诊，地点在门诊楼3层5号诊室，节假日除外。",
+      "gold": {"医生姓名": "李国栋", "科室": "骨科", "出诊时间": "每周一、三上午"},
+      "note": "干扰项：诊室位置；科室需从“骨科门诊”归位"
+    },
+    {
+      "id": "test-024",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["车次", "出发站", "到达站", "座位"],
+      "input": "G102次列车8:12从北京南站发出，14:36到达上海虹桥站，王女士购买的是二等座。",
+      "gold": {"车次": "G102", "出发站": "北京南站", "到达站": "上海虹桥站", "座位": "二等座"},
+      "note": "四字段；干扰项：王女士、两个时刻"
+    },
+    {
+      "id": "test-025",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["软件名称", "版本", "发布日期"],
+      "input": "轻笔记App v3.2.1 于8月30日正式发布，本次更新主要修复了同步失败的问题，安装包大小62MB。",
+      "gold": {"软件名称": "轻笔记App", "版本": "v3.2.1", "发布日期": "8月30日"},
+      "note": "干扰项：安装包大小"
+    },
+    {
+      "id": "test-026",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["培训主题", "主讲人", "时长"],
+      "input": "消防知识培训将于本周四下午3点在报告厅举行，主讲人为消保科郑安琪，预计时长1小时30分钟。",
+      "gold": {"培训主题": "消防知识培训", "主讲人": "郑安琪", "时长": "1小时30分钟"},
+      "note": "干扰项：举办时间、报告厅"
+    },
+    {
+      "id": "test-027",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["宿舍楼", "楼层", "故障类型", "预计恢复时间"],
+      "input": "维修公告：竹园3号楼5层热水供应故障，维修队已到场处理，预计恢复时间尚未确定。",
+      "gold": {"宿舍楼": "竹园3号楼", "楼层": "5层", "故障类型": "热水供应故障", "预计恢复时间": null},
+      "note": "缺失字段用 null"
+    },
+    {
+      "id": "test-028",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["电影名", "场次", "学生票价"],
+      "input": "本周五晚7点露天电影场放映《流浪地球2》，学生凭证件购票每张15元，普通票30元。",
+      "gold": {"电影名": "流浪地球2", "场次": "本周五晚7点", "学生票价": "15元"},
+      "note": "干扰项：普通票30元"
+    },
+    {
+      "id": "test-029",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["银行", "业务类型", "办理地点"],
+      "input": "中国银行府前支行本周日不营业。办理银行卡挂失请到任意网点柜台，也可先拨打客服电话95266口头挂失。",
+      "gold": {"银行": "中国银行", "业务类型": "银行卡挂失", "办理地点": "任意网点柜台"},
+      "note": "干扰项：客服电话、府前支行、周日"
+    },
+    {
+      "id": "test-030",
+      "task_type": "json_extraction",
+      "scoring": "json",
+      "fields": ["姓名", "班级", "获奖等级"],
+      "input": "在第38届全国中学生数学竞赛中，来自高二（3）班的陈一诺获得省级一等奖，指导教师为马成功。",
+      "gold": {"姓名": "陈一诺", "班级": "高二（3）班", "获奖等级": "省级一等奖"},
+      "note": "干扰项：届数、指导教师"
+    },
+    {
+      "id": "test-031",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["垃圾信息", "正常信息"],
+      "input": "分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：同学你好，我是你的辅导员，请今晚8点前把学费8200元转到这个私人账户，逾期影响注册。",
+      "gold": "垃圾信息"
+    },
+    {
+      "id": "test-032",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["垃圾信息", "正常信息"],
+      "input": "分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：图书馆通知：您借阅的《数据结构》将于3天后到期，可通过校园网续借一次。",
+      "gold": "正常信息"
+    },
+    {
+      "id": "test-033",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["校内", "校外"],
+      "input": "分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：市民开放日：市科技馆本周六免费向所有公众开放，无需预约。",
+      "gold": "校外"
+    },
+    {
+      "id": "test-034",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["校内", "校外"],
+      "input": "分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：英语角活动仅限本院学生参加，入场需出示学生证。",
+      "gold": "校内"
+    },
+    {
+      "id": "test-035",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["紧急", "非紧急"],
+      "input": "分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：您的包裹被扣留在海关，请立即拨打400-810-0166办理清关并支付费用。",
+      "gold": "紧急"
+    },
+    {
+      "id": "test-036",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["紧急", "非紧急"],
+      "input": "分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：通知：请各班班长于本周五前把体检表收齐交到校医院前台。",
+      "gold": "非紧急"
+    },
+    {
+      "id": "test-037",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["正面", "负面"],
+      "input": "分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：食堂三楼的麻辣香锅分量足味道好，比一楼强多了。",
+      "gold": "正面"
+    },
+    {
+      "id": "test-038",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["正面", "负面"],
+      "input": "分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：新宿舍的热水器总是忽冷忽热，报修两次也没人来修。",
+      "gold": "负面"
+    },
+    {
+      "id": "test-039",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["可回收", "不可回收"],
+      "input": "分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：一箱喝完的塑料瓶装矿泉水空瓶。",
+      "gold": "可回收"
+    },
+    {
+      "id": "test-040",
+      "task_type": "classification",
+      "scoring": "label",
+      "labels": ["可回收", "不可回收"],
+      "input": "分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：擦过油污的脏纸巾一团。",
+      "gold": "不可回收"
+    },
+    {
+      "id": "test-041",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将日期转换为 YYYY-MM-DD 格式（月、日不足两位补零）",
+      "input": "2024年12月31日",
+      "gold": "2024-12-31"
+    },
+    {
+      "id": "test-042",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将日期转换为 YYYY-MM-DD 格式（月、日不足两位补零）",
+      "input": "1999年1月9日",
+      "gold": "1999-01-09",
+      "note": "边界：月日单位数补零"
+    },
+    {
+      "id": "test-043",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将时间转换为24小时制 HH:MM 格式（小时不足两位补零）",
+      "input": "上午9时5分",
+      "gold": "09:05",
+      "note": "边界：小时单位数补零"
+    },
+    {
+      "id": "test-044",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将时间转换为24小时制 HH:MM 格式（小时不足两位补零）",
+      "input": "晚上11点30分",
+      "gold": "23:30"
+    },
+    {
+      "id": "test-045",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将中文数字转换为阿拉伯数字",
+      "input": "两千零二十四",
+      "gold": "2024"
+    },
+    {
+      "id": "test-046",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将中文数字转换为阿拉伯数字",
+      "input": "一百万零一",
+      "gold": "1000001",
+      "note": "边界：中间含零"
+    },
+    {
+      "id": "test-047",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将百分比转换为数字加百分号的形式，例如 12.5%",
+      "input": "百分之三点五",
+      "gold": "3.5%"
+    },
+    {
+      "id": "test-048",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将存储容量转换为MB（1GB=1024MB），输出数字加MB",
+      "input": "2GB",
+      "gold": "2048MB"
+    },
+    {
+      "id": "test-049",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将摄氏温度转换为华氏温度（华氏度 = 摄氏度 × 9 ÷ 5 + 32），结果保留一位小数",
+      "input": "25摄氏度",
+      "gold": "77.0",
+      "note": "边界：保留一位小数"
+    },
+    {
+      "id": "test-050",
+      "task_type": "normalization",
+      "scoring": "exact",
+      "rule": "将分数转换为小数",
+      "input": "四分之三",
+      "gold": "0.75"
+    }
+  ]
+}

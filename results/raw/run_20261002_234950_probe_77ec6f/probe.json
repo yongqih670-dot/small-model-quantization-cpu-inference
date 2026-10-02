@@ -1,0 +1,178 @@
+{
+  "run_id": "run_20261002_234950_probe_77ec6f",
+  "purpose": "environment_behavior_probe",
+  "is_real_inference": true,
+  "not_a_performance_result": true,
+  "backend_version": {
+    "command": "llama-server.exe --version",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64\n"
+  },
+  "server_argv": [
+    "-m",
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "--parallel",
+    "1",
+    "-c",
+    "1024",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-fa",
+    "off",
+    "-ngl",
+    "0",
+    "--cache-reuse",
+    "0",
+    "-lv",
+    "5"
+  ],
+  "config_snapshot": {
+    "parallel": 1,
+    "ctx": 1024,
+    "threads": 4,
+    "threads_batch": 4,
+    "fa": "off",
+    "ngl": 0,
+    "cache_reuse": 0,
+    "verbosity": 5
+  },
+  "startup": {
+    "ok": true,
+    "error": null,
+    "server_startup_to_ready_s": 0.848167,
+    "health_poll_interval_s": 0.25,
+    "warmup": "backend default (enabled), 未显式传 --no-warmup"
+  },
+  "props": {
+    "keys": [
+      "bos_token",
+      "build_info",
+      "chat_template",
+      "chat_template_caps",
+      "cors_proxy_enabled",
+      "default_generation_settings",
+      "endpoint_metrics",
+      "endpoint_props",
+      "endpoint_slots",
+      "eos_token",
+      "is_sleeping",
+      "media_marker",
+      "modalities",
+      "model_alias",
+      "model_ftype",
+      "model_path",
+      "total_slots",
+      "ui",
+      "ui_settings"
+    ],
+    "chat_template_present": true,
+    "chat_template_first120": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0][",
+    "model_path_field": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "default_generation_settings_keys": [
+      "n_ctx",
+      "params"
+    ]
+  },
+  "cache_reuse_check": {
+    "requests": [
+      {
+        "request_index": 1,
+        "ok": true,
+        "error": null,
+        "raw_response_saved": true,
+        "usage": {
+          "completion_tokens": 2,
+          "prompt_tokens": 41,
+          "total_tokens": 43,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 41,
+          "prompt_ms": 68.824,
+          "prompt_per_token_ms": 1.6786341463414634,
+          "prompt_per_second": 595.722422410787,
+          "predicted_n": 2,
+          "predicted_ms": 11.026,
+          "predicted_per_token_ms": 11.026,
+          "predicted_per_second": 90.6947215672048
+        },
+        "cache_n": 0,
+        "prompt_n": 41,
+        "output": "5",
+        "finish_reason": "stop"
+      },
+      {
+        "request_index": 2,
+        "ok": true,
+        "error": null,
+        "raw_response_saved": true,
+        "usage": {
+          "completion_tokens": 2,
+          "prompt_tokens": 41,
+          "total_tokens": 43,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 41,
+          "prompt_ms": 75.467,
+          "prompt_per_token_ms": 1.8406585365853658,
+          "prompt_per_second": 543.2838194177588,
+          "predicted_n": 2,
+          "predicted_ms": 10.475,
+          "predicted_per_token_ms": 10.475,
+          "predicted_per_second": 95.4653937947494
+        },
+        "cache_n": 0,
+        "prompt_n": 41,
+        "output": "5",
+        "finish_reason": "stop"
+      }
+    ],
+    "passed": true,
+    "rule": "两次 cache_n 均为 0 且第二次 prompt_n 与第一次相同(完整重算)"
+  },
+  "memory": {
+    "peak_wset_mib": 494.758,
+    "sampled_peak_rss_mib": null,
+    "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+    "sample_interval_s": 0.05
+  },
+  "cleanup": {
+    "attempted": true,
+    "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+    "confirmed_exit": true,
+    "exit_code": 1
+  },
+  "load_time_parse": {
+    "model_load_time_s": null,
+    "source": "server_log",
+    "reason": "日志时间戳非单调: {'loading': 0.040237, 'loaded': 0.576178, 'listening': 0.5761799999999999}"
+  },
+  "log_evidence_lines": [
+    "0.00.024.080 I cmn  common_param: system_info: n_threads = 4 (n_threads_batch = 4) / 32 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | ",
+    "0.00.040.237 I srv    load_model: loading model 'F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf'",
+    "0.00.224.442 I load_tensors: loading model tensors, this can take a while... (load_mode = none)",
+    "0.00.231.331 D llama_context: enumerating backends",
+    "0.00.231.333 D llama_context: backend_ptrs.size() = 1",
+    "0.00.443.702 I load_tensors: loading model tensors, this can take a while... (load_mode = mmap)",
+    "0.00.502.050 D llama_context: enumerating backends",
+    "0.00.502.052 D llama_context: backend_ptrs.size() = 1",
+    "0.00.505.452 I cmn          init: llama threadpool init, n_threads = 4",
+    "0.00.505.466 I cmn  common_init_: warming up the model with an empty run - please wait ... (--no-warmup to disable)",
+    "0.00.569.445 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 1024, kv_unified = 'false'",
+    "0.00.576.178 I srv  llama_server: model loaded",
+    "0.00.576.180 I srv  llama_server: listening on http://127.0.0.1:14347",
+    "0.00.978.390 D slot launch_slot_: id  0 | task -1 | launching slot : {\"id\":0,\"n_ctx\":1024,\"speculative\":false,\"is_processing\":false,\"id_task\":0,\"n_prompt_tokens\":42,\"n_prompt_tokens_processed\":0,\"n_prompt_tokens_cache\":0,\"params\":{\"seed\":42,\"temperature\":0.0,\"dynatemp_range\":0.0,\"dynatemp_exponent\":1.0,\"top_k\":40,\"top_p\":0.949999988079071,\"min_p\":0.05000000074505806,\"top_n_sigma\":-1.0,\"xtc_probability\":0.0,\"xtc_threshold\":0.10000000149011612,\"typical_p\":1.0,\"repeat_last_n\":64,\"repeat_penalty\":1.0,\"presence_penalty\":0.0,\"frequency_penalty\":0.0,\"dry_multiplier\":0.0,\"dry_base\":1.75,\"dry_allowed_length\":2,\"dry_penalty_last_n\":64,\"dry_sequence_breakers\":[\"\\n\",\":\",\"\\\"\",\"*\"],\"mirostat\":0,\"mirostat_tau\":5.0,\"mirostat_eta\":0.10000000149011612,\"adaptive_target\":-1.0,\"adaptive_decay\":0.8999999761581421,\"stop\":[],\"max_tokens\":16,\"n_predict\":16,\"n_keep\":0,\"n_discard\":0,\"ignore_eos\":false,\"stream\":false,\"logit_bias\":[],\"n_probs\":0,\"min_keep\":0,\"grammar\":\"\",\"grammar_lazy\":false,\"grammar_triggers\":[],\"preserved_tokens\":[151657,151658],\"chat_format\":\"peg-native\",\"reasoning_format\":\"deepseek\",\"reasoning_in_content\":false,\"generation_prompt\":\"<|im_start|>assistant\\n\",\"samplers\":[\"penalties\",\"dry\",\"top_n_sigma\",\"top_k\",\"typ_p\",\"top_p\",\"min_p\",\"xtc\",\"temperature\"],\"speculative.types\":\"none\",\"timings_per_token\":false,\"post_sampling_probs\":false,\"backend_sampling\":false,\"lora\":[]},\"next_token\":[{\"has_next_token\":false,\"has_new_line\":false,\"n_remain\":-1,\"n_decoded\":0}],\"prompt\":\"<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n<|im_start|>user\\n请只回答一个数字：2 + 3 = ?<|im_end|>\\n<|im_start|>assistant\\n\",\"generated\":\"\"}"
+  ],
+  "orphan_servers_after": 0,
+  "success": true
+}

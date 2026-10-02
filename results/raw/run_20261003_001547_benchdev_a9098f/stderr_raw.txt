@@ -1,0 +1,3 @@
+load_backend: loaded RPC backend from F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\llama.cpp\ggml-rpc.dll
+load_backend: loaded CPU backend from F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\llama.cpp\ggml-cpu-zen4.dll
+error: invalid parameter for argument: -tpp

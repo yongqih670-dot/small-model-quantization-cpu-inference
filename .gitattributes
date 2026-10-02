@@ -1,0 +1,7 @@
+# 证据类文件按字节原样存取，禁止行尾转换，保证哈希校验跨机器稳定
+results/** -text
+logs/** -text
+datasets/** -text
+environment/** -text
+docs/** -text
+tests/fixtures/** -text

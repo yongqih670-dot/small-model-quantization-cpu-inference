@@ -1,0 +1,15 @@
+{
+  "config_id": "bench_dev_r3_t4_c1024_v1",
+  "comment": "Stage 2 llama-bench 采集链路验证配置。工作负载较小(p=256/n=64/pg=256,64/depth=0)，重复3次，仅验证逐重复值采集与保存链路，不做性能优劣结论。",
+  "model_path": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "threads": 4,
+  "threads_batch": 4,
+  "context_length": 1024,
+  "pp_tokens": 256,
+  "tg_tokens": 64,
+  "pg_pp": 256,
+  "pg_tg": 64,
+  "depth": 0,
+  "repetitions": 3,
+  "timeout_s": 1800
+}

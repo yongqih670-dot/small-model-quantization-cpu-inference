@@ -1,0 +1,177 @@
+{
+  "run_id": "run_20261003_001306_smoke_v2_cecfb7",
+  "script": "scripts/smoke_test.py",
+  "stage": "2-corrected-smoke",
+  "is_real_inference": true,
+  "synthetic": false,
+  "started_at_utc": "2026-10-02T16:13:06.745+00:00",
+  "config_snapshot": {
+    "comment": "Stage 2 修正版冒烟测试配置。threads/threads_batch=4 为固定开发配置，明确不是最终最佳配置；正式性能实验的参数另行扫描。",
+    "model_path": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "parallel": 1,
+    "threads": 4,
+    "threads_batch": 4,
+    "context_length": 1024,
+    "flash_attn": "off",
+    "gpu_offload_layers": 0,
+    "cache_reuse": 0,
+    "temperature": 0.0,
+    "seed": 42,
+    "max_tokens": 64,
+    "system_prompt": "你是严格的评测作答器。只按题目要求输出答案，不要解释。",
+    "prompt": "请只回答一个数字：2 + 3 = ?",
+    "expected_answer": "5",
+    "request_timeout_s": 120,
+    "load_timeout_s": 300,
+    "health_poll_interval_s": 0.25,
+    "memory_sample_interval_s": 0.05
+  },
+  "config_path": "configs\\smoke_test_v2.json",
+  "model_manifest": {
+    "filename": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "quantization": "Q4_K_M",
+    "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "size_bytes": 491400032,
+    "source": "Qwen 官方 Hugging Face 仓库 Qwen/Qwen2.5-0.5B-Instruct-GGUF（因直连 huggingface.co 超时，经公开镜像 hf-mirror.com 下载同一文件）"
+  },
+  "backend_version": {
+    "command": "llama-server.exe --version",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64\n"
+  },
+  "server_argv": [
+    "-m",
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "--parallel",
+    "1",
+    "-c",
+    "1024",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-fa",
+    "off",
+    "-ngl",
+    "0",
+    "--cache-reuse",
+    "0"
+  ],
+  "effective_intent": {
+    "single_inference_process": true,
+    "parallel_slots": 1,
+    "threads_generation": 4,
+    "threads_prompt_batch": 4,
+    "flash_attn": "off",
+    "gpu_offload_layers": 0,
+    "cache_reuse": 0,
+    "cache_prompt_request_body": false,
+    "backend": "llama.cpp llama-server (官方预编译 CPU 构建)"
+  },
+  "server_startup": {
+    "ok": true,
+    "error": null,
+    "server_startup_to_ready_s": 0.597119,
+    "health_poll_interval_s": 0.25,
+    "warmup": "backend default enabled (未传 --no-warmup)",
+    "includes": "进程拉起+服务初始化+模型加载+内置warmup; 不含清理/写文件/退出"
+  },
+  "warmup_request": {
+    "marked_as": "warmup",
+    "ok": true,
+    "excluded_from_stats": true
+  },
+  "effective_config_evidence": {
+    "n_slots_line": "0.00.550.193 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 1024, kv_unified = 'false'"
+  },
+  "model": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "prompt": "请只回答一个数字：2 + 3 = ?",
+  "output": "5",
+  "raw_output_unmodified": true,
+  "finish_reason": "stop",
+  "usage_raw": {
+    "completion_tokens": 2,
+    "prompt_tokens": 42,
+    "total_tokens": 44,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "timings_raw": {
+    "cache_n": 0,
+    "prompt_n": 42,
+    "prompt_ms": 77.446,
+    "prompt_per_token_ms": 1.843952380952381,
+    "prompt_per_second": 542.3133538207268,
+    "predicted_n": 2,
+    "predicted_ms": 9.629,
+    "predicted_per_token_ms": 9.629,
+    "predicted_per_second": 103.85294423096896
+  },
+  "end_to_end_request_s": 0.11106269992887974,
+  "end_to_end_includes": "单次HTTP请求(含模板组装/推理/JSON序列化); 不含服务启动、清理与写结果文件",
+  "performance": {
+    "performance_record_valid": true,
+    "missing_reason": null,
+    "generation_tokens_per_second": 103.85294423096896,
+    "prompt_processing_tokens_per_second": 542.3133538207268,
+    "generation_time_s": 0.009629,
+    "prompt_eval_time_s": 0.077446,
+    "generation_speed_source": "server_timings.predicted_per_second",
+    "predicted_n": 2,
+    "completion_tokens": 2,
+    "denominator_crosscheck": {
+      "predicted_n": 2,
+      "completion_tokens": 2,
+      "match": true,
+      "note": "分母语义以 predicted_n 为准(后端计时对象); 与 OAI completion_tokens 交叉核对, 不一致时须在报告中说明"
+    }
+  },
+  "server_startup_to_ready_s": 0.597119,
+  "model_load_time_s": 0.518015,
+  "model_load_time_source": "server_log_delta(loading_model->model_loaded)",
+  "model_load_time_parse_reason": null,
+  "cache_reuse_check": {
+    "requests": [
+      {
+        "index": 1,
+        "ok": true,
+        "error": null,
+        "cache_n": 0,
+        "prompt_n": 42,
+        "cached_tokens": 0
+      },
+      {
+        "index": 2,
+        "ok": true,
+        "error": null,
+        "cache_n": 0,
+        "prompt_n": 42,
+        "cached_tokens": 0
+      }
+    ],
+    "passed": true,
+    "rule": "两次 cache_n=0 且 prompt_n 相同且>1(完整重算)"
+  },
+  "memory": {
+    "peak_wset_mib": 494.516,
+    "sampled_peak_rss_mib": 494.516,
+    "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+    "sample_interval_s": 0.05
+  },
+  "link_success": true,
+  "answer_correct": true,
+  "answer_rule": "output.strip() == '5'",
+  "cleanup": {
+    "attempted": true,
+    "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+    "confirmed_exit": true,
+    "exit_code": 1
+  },
+  "orphan_servers_after": 0,
+  "cleanup_success": true,
+  "success": true,
+  "acceptance_rule": "link_success AND answer_correct AND cleanup_success AND cache_reuse_check.passed",
+  "finished_at_utc": "2026-10-02T16:13:07.854+00:00"
+}

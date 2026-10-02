@@ -1,0 +1,37 @@
+0.00.021.236 I srv  llama_server: initializing ...
+0.00.021.243 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.021.501 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.036.524 I srv    load_model: loading model 'F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\models\qwen2.5-0.5b-instruct-q4_k_m.gguf'
+0.00.371.251 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.476.821 I cmn          init: llama threadpool init, n_threads = 4
+0.00.550.193 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 1024, kv_unified = 'false'
+0.00.554.539 I srv  llama_server: model loaded
+0.00.554.542 I srv  llama_server: listening on http://127.0.0.1:9095
+0.00.601.758 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.00.601.852 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.00.685.287 I slot print_timing: id  0 | task 0 | prompt eval time =      73.33 ms /    42 tokens (    1.75 ms per token,   572.73 tokens per second)
+0.00.685.292 I slot print_timing: id  0 | task 0 |        eval time =      10.06 ms /     2 tokens (   10.06 ms per token,    99.43 tokens per second)
+0.00.685.293 I slot print_timing: id  0 | task 0 |       total time =      83.39 ms /    44 tokens
+0.00.685.294 I slot print_timing: id  0 | task 0 |    graphs reused =          1
+0.00.685.319 I slot      release: id  0 | task 0 | stop processing: n_tokens = 43, truncated = 0
+0.00.709.228 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 0.977
+0.00.709.436 I slot launch_slot_: id  0 | task 3 | processing task, is_child = 0
+0.00.796.543 I slot print_timing: id  0 | task 3 | prompt eval time =      77.45 ms /    42 tokens (    1.84 ms per token,   542.31 tokens per second)
+0.00.796.559 I slot print_timing: id  0 | task 3 |        eval time =       9.63 ms /     2 tokens (    9.63 ms per token,   103.85 tokens per second)
+0.00.796.561 I slot print_timing: id  0 | task 3 |       total time =      87.08 ms /    44 tokens
+0.00.796.563 I slot print_timing: id  0 | task 3 |    graphs reused =          1
+0.00.796.596 I slot      release: id  0 | task 3 | stop processing: n_tokens = 43, truncated = 0
+0.00.819.422 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 0.977
+0.00.819.619 I slot launch_slot_: id  0 | task 6 | processing task, is_child = 0
+0.00.895.692 I slot print_timing: id  0 | task 6 | prompt eval time =      66.11 ms /    42 tokens (    1.57 ms per token,   635.35 tokens per second)
+0.00.895.704 I slot print_timing: id  0 | task 6 |        eval time =       9.94 ms /     2 tokens (    9.94 ms per token,   100.59 tokens per second)
+0.00.895.706 I slot print_timing: id  0 | task 6 |       total time =      76.05 ms /    44 tokens
+0.00.895.708 I slot print_timing: id  0 | task 6 |    graphs reused =          1
+0.00.895.738 I slot      release: id  0 | task 6 | stop processing: n_tokens = 43, truncated = 0
+0.00.914.740 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 0.977
+0.00.915.032 I slot launch_slot_: id  0 | task 9 | processing task, is_child = 0
+0.00.999.141 I slot print_timing: id  0 | task 9 | prompt eval time =      73.92 ms /    42 tokens (    1.76 ms per token,   568.20 tokens per second)
+0.00.999.154 I slot print_timing: id  0 | task 9 |        eval time =      10.15 ms /     2 tokens (   10.15 ms per token,    98.49 tokens per second)
+0.00.999.156 I slot print_timing: id  0 | task 9 |       total time =      84.07 ms /    44 tokens
+0.00.999.158 I slot print_timing: id  0 | task 9 |    graphs reused =          1
+0.00.999.195 I slot      release: id  0 | task 9 | stop processing: n_tokens = 43, truncated = 0

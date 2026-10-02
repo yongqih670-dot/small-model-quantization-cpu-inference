@@ -1,0 +1,14 @@
+{
+  "collected_at": "2026-10-03T00:08:01+08:00",
+  "note_vs_stage1": "Stage 1 文件 system_info.json 为历史记录保持原样；本文件为 Stage 2 修正记录：单位命名改为 total_ram_gib，并补充时钟字段语义标注",
+  "os": "Microsoft Windows 11 家庭版 中文版 (Build 26100, 64 位)",
+  "cpu_model": "AMD Ryzen 9 9955HX 16-Core Processor",
+  "physical_cores": 16,
+  "logical_cores": 32,
+  "cpu_max_clock_mhz_cim": 2500,
+  "cpu_max_clock_note": "CIM MaxClockSpeed 是标称基础时钟，不是实测运行频率，也不是已验证的最高睿频",
+  "total_ram_gib": 31.184,
+  "total_ram_bytes": 33483378688,
+  "free_ram_gib_at_collection": 13.765,
+  "unit_note": "gib = GiB (2^30 字节)"
+}
