@@ -156,18 +156,22 @@ cleanup_success ∧ cache_reuse_check.passed ∧ performance.performance_record_
   正式对照三矩阵执行与汇总（`results/summary/stage3_summary.json`、`plots/`）
 - ✅ Stage 4：分析修订（`docs/stage3_analysis_revision.md`、`stage3rev_*`）+
   线程实验（T∈{1,2,4,8,16,32}×5轮：90 个 bench 测量 + 150 条计时请求）
-- ✅ Stage 5：离线审计（40 项核验全通过）、最终报告、演示材料、交付打包
-  （`delivery/`，排除大文件，SHA256 清单见 `delivery/SHA256SUMS.txt`）
+- ✅ Stage 5：离线审计（v1 40 项 / v2 31 项核验全通过）、最终报告、
+  演示材料、交付打包（`delivery/` rev1–rev4，逐文件全量哈希核验；
+  Stage 4 冻结材料表述勘误见 `docs/STAGE5_ERRATUM.md`）
 
 ## 命令一览（⚠ = 会实际启动模型推理）
 
 | 命令 | 用途 | 启动推理 |
 | --- | --- | --- |
 | `.venv/Scripts/python.exe scripts/stage4_preflight.py` | Stage 4 深度核验（指纹/实时版本/硬件） | 否 |
-| `.venv/Scripts/python.exe scripts/audit_stage_results.py` | 离线审计：重算全部报告数字 | 否 |
+| `.venv/Scripts/python.exe scripts/audit_stage_results.py` | 离线审计 v1（重算报告数字） | 否 |
+| `.venv/Scripts/python.exe scripts/audit_stage_results_v2.py` | 离线审计 v2（完整组合集合+哈希门控+报告数值表） | 否 |
+| `.venv/Scripts/python.exe scripts/verify_snapshot_regression.py` | 真实运行快照回归检查（只读） | 否 |
 | `.venv/Scripts/python.exe scripts/validate_datasets.py` | 数据集与渲染一致性校验 | 否 |
 | `.venv/Scripts/python.exe scripts/rebuild_summary.py --run-id <id> --matrix bench\|http` | 纯汇总重建（快照绑定，拒绝不匹配） | 否 |
-| `.venv/Scripts/python.exe tests/run_tests.py` | 离线验收套件 | 否 |
+| `.venv/Scripts/python.exe tests/run_offline.py` | **离线验收套件（默认入口，不含真实模型调用）** | 否 |
+| `.venv/Scripts/python.exe tests/run_tests.py --integration` | 集成测试（E/E2/F/F2：会启动后端并写 results/raw，E2 含真实模型请求） | **是** |
 | `.venv/Scripts/python.exe scripts/freeze_hashes_stage4.py` | 重建 Stage 4 冻结清单 | 否 |
 | `.venv/Scripts/python.exe scripts/smoke_test.py` | 冒烟测试 | **是** |
 | `.venv/Scripts/python.exe scripts/run_tasks.py --dataset datasets/dev/dev_tasks.json --run-label dev` | 开发集任务路径 | **是** |

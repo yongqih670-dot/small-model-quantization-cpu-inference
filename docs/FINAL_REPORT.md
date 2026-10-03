@@ -5,7 +5,8 @@
 > 本报告所有数字均来自原始运行记录的**重算值**（离线审计
 > `results/summary/audit_stage5_v2/`：31/31 项核验通过、含完整组合
 > 集合比对与评分器哈希门控；v1 审计 40/40 项保留作历史），
-> 自动核对范围以 `audit_stage5_v2/report_tables.json` 为界，
+> 自动核对范围以 `audit_stage5_v2/report_tables.json` 为界；
+> Stage 4 冻结材料的表述勘误见 `docs/STAGE5_ERRATUM.md`，
 > 分析脚本显式绑定 run_id（见 §11 与 `docs/EVIDENCE_INDEX.md`），
 > 不自动选取"最新目录"，不用 0 填充缺失测量。
 
@@ -44,7 +45,9 @@ Q8_0 675,710,816 B（644.42 MiB）。
 
 - **单推理进程、单 slot（`--parallel 1` 显式覆盖默认 auto）、串行请求**；
 - CPU-only；server 显式 `-lm mmap`；llama-bench **本次命令未显式传入
-  `-lm`**，加载模式为其内部默认——两条路径分别如实记录，不宣称统一；
+  `-lm`**，加载模式为其内部默认——两条路径分别如实记录，不宣称统一
+  （Stage 4 计划为历史冻结文本，相关表述以 `docs/STAGE5_ERRATUM.md`
+  为准）；
 - 缓存：`--cache-reuse 0` + 请求体 `cache_prompt:false`，每次服务启动后
   以"同一提示连续两次"核实 `cache_n=0` 且第二次完整重算；
 - 生成：temperature=0（贪心）、top_p=1、seed=42、max_tokens=96（Stage 3/4

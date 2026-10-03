@@ -26,7 +26,7 @@ tg64 观测速度最快——作为系统参数实验对象；
 请求体 `cache_prompt=false`（每次启动后缓存检查核实）；
 temperature=0、top_p=1、seed=42、max_tokens=96、冻结提示模板。
 bench 无 `-c` 参数（不虚构）；**加载模式**：server 显式 `-lm mmap`；
-llama-bench 本次命令未显式传入 `-lm`，为其内部默认（auto/mmap 类）——两条路径分别如实记录，
+llama-bench 无 `-lm`，为其内部默认（auto/mmap 类）——两条路径分别如实记录，
 不宣称统一。T=4 为本阶段同期重测基准；Stage 3 的 T=4 仅作旁证，不合并。
 
 ## 矩阵 A：固定工作量微基准

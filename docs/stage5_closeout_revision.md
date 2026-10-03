@@ -108,3 +108,23 @@ llama-bench / 任何真实推理请求；未运行含真实集成测试的
   冻结清单未动（评分器/数据集哈希门控不受影响）。
 - 两个 S4 run 的 `result_rebuilt.json` 再次归档为 `result_rebuilt_v2.json`
   后用严格化工具重生成：`completeness_status=complete`、findings=0。
+
+## 七、rev4 修补追加（恢复历史冻结材料 + 快照回归检查）
+
+- **按原始字节恢复三个文件**（来源=已核验的 `delivery/stage5_delivery_rev2.zip`，
+  与提交 5efafdd 的 blob 换行归一后内容一致）：
+  `configs/stage4_plan.json`（3414 B, sha256 前缀 3827993201ef9ffd）、
+  `docs/STAGE4_PLAN.md`（5181 B, 5fa5b739f0696f3b）、
+  `datasets/frozen_hashes_stage4.json`（9532 B, a889c98701bfee5a）。
+  仅此三个文件，其余 rev3 修复保留；run 目录中的历史 snapshot 文件未动。
+- `-lm`/ctx 等文字纠正保留在最终报告、README 与独立勘误
+  `docs/STAGE5_ERRATUM.md`；原 Stage 4 计划是历史冻结材料，相关表述
+  以勘误为准；不再通过全文替换修改历史冻结材料，亦未再次重新冻结。
+- **真实运行快照回归检查**（新脚本 `scripts/verify_snapshot_regression.py`，
+  只读、不调用模型）：两个绑定 run 的 `check_snapshot_binding` 均通过
+  （恢复前 rev3 状态下为 FAIL，恢复后 PASS——该不一致由 rev3 重新冻结
+  造成，本轮回滚消除）；冻结清单 vs 实际文件一致；两个 run 的必要输入
+  复制到临时目录（排除 result_rebuilt*）执行纯重建，均 complete、
+  无 findings、与已保存重建结果一致（除运行元数据），正式目录历史
+  重建产物逐字节未动。
+- 交付包 rev4 生成并逐文件全量哈希核验；rev1–rev3 保留。
