@@ -1,0 +1,15 @@
+16:27:49 | INFO    | 数据集 broken_second_task.json 共 2 条 (config_id=dev_cpu_t4_c1024_v1, formal=False)
+16:27:49 | INFO    | 启动 llama-server: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\llama.cpp\llama-server.exe -m F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\models\qwen2.5-0.5b-instruct-q4_k_m.gguf --parallel 1 -c 1024 -b 2048 -ub 512 -ctk f16 -ctv f16 -t 4 -tb 4 -fa off -lm mmap -ngl 0 --cache-reuse 0 --host 127.0.0.1 --port 9899
+16:27:50 | INFO    | 预热=True 缓存校验=True
+16:27:50 | INFO    | [1/2] fix-001 -> '未提供。' | 格式=False 内容=False 联合=False
+16:27:50 | INFO    | llama-server 退出: exit=1 (本程序主动终止, 已确认)
+16:27:51 | ERROR   | run_tasks 失败
+Traceback (most recent call last):
+  File "F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\scripts\run_tasks.py", line 324, in main
+    user_msg = build_user_message(task, tpl)  # 可能因题目缺陷抛错
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\scripts\run_tasks.py", line 61, in build_user_message
+    "input": task["input"],
+             ~~~~^^^^^^^^^
+KeyError: 'input'
+16:27:51 | INFO    | 结果: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\results\raw\run_20261003_162749_testbroken_2d8f72\result.json (success=False)

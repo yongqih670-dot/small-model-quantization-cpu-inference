@@ -1,0 +1,162 @@
+{
+  "test-001": {
+    "Q4_K_M": {
+      "out": "赵启明教授",
+      "joint": false,
+      "finish": "stop",
+      "tok": 5
+    },
+    "Q5_K_M": {
+      "out": "赵启明教授",
+      "joint": false,
+      "finish": "stop",
+      "tok": 5
+    },
+    "Q8_0": {
+      "out": "赵启明教授",
+      "joint": false,
+      "finish": "stop",
+      "tok": 5
+    }
+  },
+  "test-003": {
+    "Q4_K_M": {
+      "out": "未提供",
+      "joint": false,
+      "finish": "stop",
+      "tok": 3
+    },
+    "Q5_K_M": {
+      "out": "未提供",
+      "joint": false,
+      "finish": "stop",
+      "tok": 3
+    },
+    "Q8_0": {
+      "out": "未提供",
+      "joint": false,
+      "finish": "stop",
+      "tok": 3
+    }
+  },
+  "test-006": {
+    "Q4_K_M": {
+      "out": "80",
+      "joint": false,
+      "finish": "stop",
+      "tok": 3
+    },
+    "Q5_K_M": {
+      "out": "80",
+      "joint": false,
+      "finish": "stop",
+      "tok": 3
+    },
+    "Q8_0": {
+      "out": "80",
+      "joint": false,
+      "finish": "stop",
+      "tok": 3
+    }
+  },
+  "test-043": {
+    "Q4_K_M": {
+      "out": "09:50",
+      "joint": false,
+      "finish": "stop",
+      "tok": 6
+    },
+    "Q5_K_M": {
+      "out": "09:05",
+      "joint": true,
+      "finish": "stop",
+      "tok": 6
+    },
+    "Q8_0": {
+      "out": "09:05",
+      "joint": true,
+      "finish": "stop",
+      "tok": 6
+    }
+  },
+  "test-046": {
+    "Q4_K_M": {
+      "out": "100001",
+      "joint": false,
+      "finish": "stop",
+      "tok": 7
+    },
+    "Q5_K_M": {
+      "out": "1000001",
+      "joint": true,
+      "finish": "stop",
+      "tok": 8
+    },
+    "Q8_0": {
+      "out": "1000010",
+      "joint": false,
+      "finish": "stop",
+      "tok": 8
+    }
+  },
+  "test-048": {
+    "Q4_K_M": {
+      "out": "2048MB",
+      "joint": true,
+      "finish": "stop",
+      "tok": 6
+    },
+    "Q5_K_M": {
+      "out": "2048",
+      "joint": false,
+      "finish": "stop",
+      "tok": 5
+    },
+    "Q8_0": {
+      "out": "2048",
+      "joint": false,
+      "finish": "stop",
+      "tok": 5
+    }
+  },
+  "test-049": {
+    "Q4_K_M": {
+      "out": "77.0华氏温度",
+      "joint": false,
+      "finish": "stop",
+      "tok": 8
+    },
+    "Q5_K_M": {
+      "out": "77.0",
+      "joint": true,
+      "finish": "stop",
+      "tok": 5
+    },
+    "Q8_0": {
+      "out": "77.0华氏度",
+      "joint": false,
+      "finish": "stop",
+      "tok": 8
+    }
+  },
+  "test-050": {
+    "Q4_K_M": {
+      "out": "0.6",
+      "joint": false,
+      "finish": "stop",
+      "tok": 4
+    },
+    "Q5_K_M": {
+      "out": "0.6666666666",
+      "joint": false,
+      "finish": "stop",
+      "tok": 13
+    },
+    "Q8_0": {
+      "out": "0.6",
+      "joint": false,
+      "finish": "stop",
+      "tok": 4
+    }
+  }
+}

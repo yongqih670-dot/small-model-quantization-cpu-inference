@@ -1,0 +1,5 @@
+24fed229c104be39b43cc143c5e847fd9ff34d0be7141a7377e7fdc293fbfcb5  stage5_delivery.zip (1,537,305 bytes, 492 files)
+生成时间: 2026-10-03T16:37:32
+注: 压缩包不含 venv/.git/模型与后端二进制；获取与核验步骤见 README.md
+  模型: models/model_manifest_v3.json（官方 API LFS SHA256）
+  后端: environment/backend_manifest.json + stage4 冻结清单全量指纹

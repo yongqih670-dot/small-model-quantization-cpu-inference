@@ -2,8 +2,10 @@
 
 《计算机技术与应用》大模型期末大作业课题14：研究同一个约 0.5B 参数规模的小语言模型（Qwen2.5-0.5B-Instruct）在不同 GGUF 量化版本与 CPU 运行参数下的**文件大小、内存占用、提示处理速度、逐 Token 生成速度、端到端延迟与简单任务质量**。
 
-**当前阶段：Stage 4 已完成 —— Stage 3 分析修订 + Q4_K_M 线程数实验。**
+**当前阶段：Stage 5 已完成 —— 审查修正、最终报告与可复现交付。**
 历史证据保持原样；结论限定本机、Q4_K_M、b11347、固定负载。
+
+**最终报告：[docs/FINAL_REPORT.md](docs/FINAL_REPORT.md)**｜证据索引：[docs/EVIDENCE_INDEX.md](docs/EVIDENCE_INDEX.md)｜答辩讲稿：[docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md)
 
 - 指标定义与测量边界：[docs/EXPERIMENT_PROTOCOL.md](docs/EXPERIMENT_PROTOCOL.md)
 - Stage 1 问题与修正对照：[docs/stage2_corrections.md](docs/stage2_corrections.md)
@@ -152,7 +154,26 @@ cleanup_success ∧ cache_reuse_check.passed ∧ performance.performance_record_
   正式对照三矩阵执行与汇总（`results/summary/stage3_summary.json`、`plots/`）
 - ✅ Stage 4：分析修订（`docs/stage3_analysis_revision.md`、`stage3rev_*`）+
   线程实验（T∈{1,2,4,8,16,32}×5轮：90 个 bench 测量 + 150 条计时请求）
-- ⬜ Stage 5 候选：最终报告与交付材料整理；上下文扫描为可选扩展，不自动启动
+- ✅ Stage 5：离线审计（40 项核验全通过）、最终报告、演示材料、交付打包
+  （`delivery/`，排除大文件，SHA256 清单见 `delivery/SHA256SUMS.txt`）
+
+## 命令一览（⚠ = 会实际启动模型推理）
+
+| 命令 | 用途 | 启动推理 |
+| --- | --- | --- |
+| `.venv/Scripts/python.exe scripts/stage4_preflight.py` | Stage 4 深度核验（指纹/实时版本/硬件） | 否 |
+| `.venv/Scripts/python.exe scripts/audit_stage_results.py` | 离线审计：重算全部报告数字 | 否 |
+| `.venv/Scripts/python.exe scripts/validate_datasets.py` | 数据集与渲染一致性校验 | 否 |
+| `.venv/Scripts/python.exe scripts/rebuild_summary.py --run-id <id> --matrix bench\|http` | 纯汇总重建（快照绑定，拒绝不匹配） | 否 |
+| `.venv/Scripts/python.exe tests/run_tests.py` | 离线验收套件 | 否 |
+| `.venv/Scripts/python.exe scripts/freeze_hashes_stage4.py` | 重建 Stage 4 冻结清单 | 否 |
+| `.venv/Scripts/python.exe scripts/smoke_test.py` | 冒烟测试 | **是** |
+| `.venv/Scripts/python.exe scripts/run_tasks.py --dataset datasets/dev/dev_tasks.json --run-label dev` | 开发集任务路径 | **是** |
+| `.venv/Scripts/python.exe scripts/run_tasks.py --dataset datasets/test/test_tasks.json --config configs/formal_config.json --formal --model-key Q4_K_M` | 正式 50 题 | **是** |
+| `.venv/Scripts/python.exe scripts/run_stage3_bench.py` / `run_stage3_requestperf.py` | Stage 3 两矩阵 | **是** |
+| `.venv/Scripts/python.exe scripts/stage4_exec.py --matrix bench\|http` | Stage 4 线程矩阵 | **是** |
+| `.venv/Scripts/python.exe scripts/analyze_stage3_revision.py` | Stage 3 修订分析（显式 run_id） | 否 |
+| `.venv/Scripts/python.exe scripts/analyze_stage4.py --run-bench <id> --run-http <id>` | Stage 4 分析（显式 run_id） | 否 |
 
 ## Stage 4 线程实验速览（Q4_K_M, 统一线程预算）
 

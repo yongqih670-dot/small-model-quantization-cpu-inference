@@ -486,6 +486,92 @@ def main() -> int:
     fp = verify_fingerprints()
     check("当前模型/代码/后端指纹全部通过", fp["ok"], str(fp["problems"][:3]))
 
+    # ---------------- S5-1. 布尔严格 /slots ----------------
+    section("S5-1. is_processing 非布尔值不得判空闲")
+    from rebuild_summary import slots_idle_boolean_strict
+    for bad_body, why in [([], "空列表"), ([{"is_processing": None}], "null"),
+                          ([{"is_processing": 0}], "0"),
+                          ([{"is_processing": ""}], "空字符串"),
+                          ([{"other": 1}], "缺字段"),
+                          ({"slots": []}, "非列表")]:
+        r = slots_idle_boolean_strict(bad_body, ok=True)
+        check(f"{why} 不判空闲", not r["freed"], str(r))
+    r = slots_idle_boolean_strict([{"is_processing": False}], ok=True)
+    check("布尔 False 判空闲", r["freed"])
+    r = slots_idle_boolean_strict([{"is_processing": True}], ok=True)
+    check("布尔 True 不判空闲", not r["freed"])
+    r = slots_idle_boolean_strict([], ok=False)
+    check("请求失败不判空闲", not r["freed"])
+
+    # ---------------- S5-2. 汇总重建：快照绑定/不覆盖/不去重 ----------------
+    section("S5-2. 纯汇总重建工具（全部使用临时目录，不触碰 results/）")
+    import tempfile
+    import shutil as _shutil
+    real_manifest = (ROOT / "datasets/frozen_hashes_stage4.json").read_text(
+        encoding="utf-8")
+    with tempfile.TemporaryDirectory() as td:
+        tdp = Path(td)
+        # (a) 快照与当前清单不一致 -> 拒绝
+        bad_snap = json.loads(real_manifest)
+        bad_snap["files"]["configs/stage4_config.json"] = "0" * 64
+        (tdp / "snapshot_frozen_hashes_stage4.json").write_text(
+            json.dumps(bad_snap), encoding="utf-8")
+        (tdp / "result.json").write_text(
+            json.dumps({"started_at_utc": "2026-10-03T12:15:47Z"}),
+            encoding="utf-8")
+        from rebuild_summary import check_snapshot_binding
+        r = check_snapshot_binding(tdp)
+        check("原始快照与当前清单不一致时拒绝重建",
+              not r["ok"] and "不一致" in r["reason"], str(r))
+        # (b) 快照缺失 -> 拒绝
+        empty = tdp / "empty_run"
+        empty.mkdir()
+        r = check_snapshot_binding(empty)
+        check("缺少可信快照时拒绝", not r["ok"] and "缺少" in r["reason"], str(r))
+        # (c) 匹配快照 -> 通过，且产出新文件、旧文件不覆盖、重复键如实列出
+        ok_run = tdp / "ok_run"
+        ok_run.mkdir()
+        (ok_run / "snapshot_frozen_hashes_stage4.json").write_text(
+            real_manifest, encoding="utf-8")
+        orig_result = {"started_at_utc": "2026-10-03T12:15:47Z",
+                       "finished_at_utc": "2026-10-03T12:17:47Z"}
+        (ok_run / "result.json").write_text(json.dumps(orig_result),
+                                            encoding="utf-8")
+        orig_hash = sha256(ok_run / "result.json")
+        # 两条正常 + 一对重复键的合成请求记录（jsonlines）
+        recs = [{"unit_key": "r1_t1", "task_id": "dev-001"},
+                {"unit_key": "r1_t2", "task_id": "dev-003"},
+                {"unit_key": "r1_t1", "task_id": "dev-001"}]
+        (ok_run / "requests_threads.jsonl").write_text(
+            "".join(json.dumps(r) + chr(10) for r in recs),
+            encoding="utf-8")
+        (ok_run / "unit_01_r1_t1.json").write_text(json.dumps(
+            {"unit_key": "r1_t1", "execution_complete": True,
+             "metrics_valid": True, "cleanup_success": True,
+             "timed_requests_sent": 5}), encoding="utf-8")
+        # 通过 subprocess 调 main（--run-dir 测试钩子）
+        proc = run_script(["scripts/rebuild_summary.py", "--matrix", "http",
+                           "--run-id", "synthetic", "--run-dir", str(ok_run)])
+        check("匹配快照时重建成功", proc.returncode == 0,
+              (proc.stdout or "")[-200:])
+        rb = json.loads((ok_run / "result_rebuilt.json").read_text(
+            encoding="utf-8"))
+        check("保留原始开始时间",
+              rb["original_started_at_utc"] == "2026-10-03T12:15:47Z")
+        check("重复请求键如实列出（不去重不重跑）",
+              rb["duplicate_request_keys"] == [["r1_t1", "dev-001"]],
+              str(rb["duplicate_request_keys"]))
+        check("计时请求数如实为 3（含重复，不填充）",
+              rb["timed_requests_total"] == 3)
+        check("原始 result.json 未被改动", sha256(ok_run / "result.json")
+              == orig_hash)
+        # (d) 再跑一次：result_rebuilt 已存在 -> 拒绝覆盖
+        proc2 = run_script(["scripts/rebuild_summary.py", "--matrix", "http",
+                            "--run-id", "synthetic", "--run-dir", str(ok_run)])
+        check("重建产物存在时拒绝覆盖", proc2.returncode == 1, proc2.returncode)
+        check("旧 result.json 依然未变", sha256(ok_run / "result.json")
+              == orig_hash)
+
     # ---------------- 收尾 ----------------
     orphans_after = ctl.count_orphan_servers()
     check("全部测试结束后无残留 llama-server 进程", orphans_after == 0,
