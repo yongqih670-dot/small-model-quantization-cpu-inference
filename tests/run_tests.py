@@ -599,16 +599,18 @@ def main(suite: str = "offline") -> int:
             real_manifest, encoding="utf-8")
         (run / "result.json").write_text(json.dumps(
             {"run_id": "synthetic2", "matrix": "bench"}), encoding="utf-8")
-        # 一个三态全真 + 一个缺 metrics_valid 的非 partial 单元
+        # 一个三态全真 + 一个缺 metrics_valid 的非 partial 单元（含网格字段）
         (run / "unit_01_a.json").write_text(json.dumps(
-            {"unit_key": "a", "execution_complete": True,
+            {"unit_key": "r1_t1", "tier": 1, "round": 1,
+             "execution_complete": True,
              "metrics_valid": True, "cleanup_success": True,
              "tests": [{"workload": "pp256", "valid": True, "tok_s": 1.0},
                        {"workload": "tg64", "valid": True, "tok_s": 2.0},
                        {"workload": "pg256+64", "valid": True, "tok_s": 3.0}],
              "tests_valid_count": 3}), encoding="utf-8")
         (run / "unit_02_b.json").write_text(json.dumps(
-            {"unit_key": "b", "execution_complete": True,
+            {"unit_key": "r2_t2", "tier": 2, "round": 2,
+             "execution_complete": True,
              "metrics_valid": False, "cleanup_success": True,
              "tests": [], "tests_valid_count": 0}), encoding="utf-8")
         proc = run_script(["scripts/rebuild_summary.py", "--matrix", "bench",
@@ -618,11 +620,14 @@ def main(suite: str = "offline") -> int:
             encoding="utf-8"))
         check("三态不全的单元不计入完整（flagged 列出）",
               rb["units_complete"] == 1 and
-              rb["units_flagged_incomplete"][0]["unit_key"] == "b",
+              rb["units_flagged_incomplete"][0]["unit_key"] == "r2_t2",
               str(rb["units_flagged_incomplete"]))
         check("完整性状态为 incomplete 而非笼统通过",
               rb["completeness_status"] == "incomplete",
               str(rb["completeness_reason"]))
+        check("网格缺失 28 个组合被检出",
+              len(rb["unit_grid"]["missing"]) == 28,
+              str(len(rb["unit_grid"]["missing"])))
         check("测量值按实际条目=3，不补 0", rb["measurements_total"] == 3)
 
     # (b) 审计组合集合反例：缺失/多余/重复
@@ -637,6 +642,53 @@ def main(suite: str = "offline") -> int:
     check("完整集合判定 complete", not res["complete"])
     ok_res = compare_counter(exp.copy(), exp, "正例", [])
     check("完全一致时 complete=True", ok_res["complete"])
+
+    # (c) S7 反例：同一单元复制成 30 个不同文件名（临时目录）
+    with tempfile.TemporaryDirectory() as td:
+        tdp = Path(td)
+        run = tdp / "dup_run"
+        run.mkdir()
+        (run / "snapshot_frozen_hashes_stage4.json").write_text(
+            real_manifest, encoding="utf-8")
+        (run / "result.json").write_text(json.dumps(
+            {"run_id": "synthetic3", "matrix": "bench"}), encoding="utf-8")
+        unit_body = {"unit_key": "r1_t1", "tier": 1, "round": 1,
+                     "execution_complete": True, "metrics_valid": True,
+                     "cleanup_success": True,
+                     "tests": [{"workload": "pp256", "valid": True,
+                                "tok_s": 1.0},
+                               {"workload": "tg64", "valid": True,
+                                "tok_s": 2.0},
+                               {"workload": "pg256+64", "valid": True,
+                                "tok_s": 3.0}],
+                     "tests_valid_count": 3}
+        for i in range(1, 31):
+            (run / f"unit_{i:02d}_copy.json").write_text(
+                json.dumps(unit_body), encoding="utf-8")
+        proc = run_script(["scripts/rebuild_summary.py", "--matrix", "bench",
+                           "--run-id", "synthetic3", "--run-dir", str(run)])
+        check("重建执行成功（判定失败也属成功执行）",
+              proc.returncode == 0, (proc.stdout or "")[-200:])
+        rb = json.loads((run / "result_rebuilt.json").read_text(
+            encoding="utf-8"))
+        check("不得返回 complete", rb["completeness_status"] != "complete",
+              str(rb["completeness_status"]))
+        check("单元网格重复被检出（(轮1,档1)×30）",
+              any(list(k) == [1, 1] for k in rb["unit_grid"]["duplicates"]),
+              str(rb["unit_grid"]["duplicates"]))
+        check("单元网格缺失 29 个组合被检出",
+              len(rb["unit_grid"]["missing"]) == 29,
+              str(len(rb["unit_grid"]["missing"])))
+        check("bench 测量集合重复被检出（3 负载×30 份）",
+              any("bench 测量集合重复" in f
+                  for f in rb.get("consistency_findings", [])),
+              str([f for f in rb.get("consistency_findings", [])
+                   if "重复" in f][:2]))
+        check("bench 测量集合缺失 87 键被检出（30×3-3）",
+              any("bench 测量集合缺失 87" in f
+                  for f in rb.get("consistency_findings", [])),
+              str([f for f in rb.get("consistency_findings", [])
+                   if "缺失" in f][:1]))
 
     # ---------------- 收尾 ----------------
     orphans_after = ctl.count_orphan_servers()

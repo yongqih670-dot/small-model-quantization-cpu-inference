@@ -1,10 +1,10 @@
 {
-  "frozen_at": "2026-10-03T12:15:31",
+  "frozen_at": "2026-10-03T19:05:15",
   "algorithm": "sha256",
   "stage3_baseline_commit": "0b014a6",
   "rule": "Stage 4 正式结果产生后不再调整计划/配置/评分；冻结后再改动任何被列文件将导致 stage4 preflight 失败",
   "files": {
-    "configs/stage4_plan.json": "3827993201ef9ffde4663f881701b90f0e01f04271c04b4d63e6e1d164db7542",
+    "configs/stage4_plan.json": "b0b45712fe7c925d678358a67e987fd32de96793a2a76da6edae11e971e7f345",
     "configs/stage4_config.json": "2182bd7133e42789bfaa2d746638f81898abb226dada2825add22407f9575e70",
     "configs/formal_config.json": "a1380d1aaec893c507373f42d41182b300c8fe71d91012626023ca9b38ce8177",
     "scripts/stage4_preflight.py": "4eb659367cbc3f45f9e01cb821d23941115238e72b8c1c503ec560a5e61c2618",
@@ -18,7 +18,7 @@
     "datasets/frozen_hashes_stage3.json": "1d4cdfaf8dc82dbd4825886350e555bb666c123c54a10b7e224ac6af0957c36a",
     "models/model_manifest_v3.json": "c3e85413dde702ac50f82f37cbddb753415aa903383b9892d3a1b46da20cf638",
     "environment/backend_manifest.json": "b8e34a66e7f0f07aeb75fa973685e28c0dc2ce50b559c2f12b085f80eb8f56e6",
-    "docs/STAGE4_PLAN.md": "5fa5b739f0696f3b9e8c6f13715b6981d507446b6d9e19cf8c442ba9cff10ac5",
+    "docs/STAGE4_PLAN.md": "5321c6fd7c1a1ffa05ac8b582c3ca55cd65b2e7424713c1113c6d6506351bd50",
     "docs/stage3_analysis_revision.md": "6696e52e59c9217618e7d4584d37e0d6098df3099ce0a9d91d3de7dc79628ec4"
   },
   "tools_inventory": {

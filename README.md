@@ -54,7 +54,7 @@ python -m venv .venv
 .venv/Scripts/python.exe -m pip install -r requirements.txt
 ```
 
-依赖只有 `psutil`；HTTP 使用标准库 `urllib`。锁定版本见
+运行依赖 `psutil`（进程监控）与 `matplotlib`（分析图表）；HTTP 使用标准库 `urllib`。锁定版本见
 `environment/requirements-lock.txt`。
 
 ### 2. llama.cpp 推理后端（官方预编译版，免编译）
@@ -89,7 +89,8 @@ python -m venv .venv
   见 `models/model_manifest_v2.json`）
 - **来源**：<https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF>（下载经
   hf-mirror.com，URL 与核验 URL 在 manifest 中分开记录）；许可 Apache-2.0
-- `models/*.gguf` 不入 Git；本阶段仍未下载 Q5/Q8。
+- 三个模型（Q4_K_M/Q5_K_M/Q8_0）均已下载并通过官方独立核验，
+  明细见 `models/model_manifest_v3.json`；`models/*.gguf` 不入 Git。
 
 ## Smoke Test（修正版 v2）
 
@@ -126,7 +127,8 @@ cleanup_success ∧ cache_reuse_check.passed ∧ performance.performance_record_
   规范化 2），**仅用于提示与评分口径调试**；
 - `datasets/test/test_tasks.json`：50 条独立正式题（单字段 15 / JSON 15 /
   分类 10 / 规范化 10），含干扰项、缺失字段与边界情况；**Stage 2 未运行**，
-  `run_tasks.py` 对 `datasets/test/` 路径硬拒绝（退出码 2）；
+  `run_tasks.py` 对 `datasets/test/` 路径硬拒绝（退出码 2）：未加
+  `--formal` 一律拒绝；加 `--formal` 后还需 preflight 全部通过才解锁；
 - 评分三档：格式 / 内容 / 联合正确，分母=全部请求；JSON 解析规则、引号类
   标点对称剥离、多余字段、围栏与额外说明的处理均预注册于
   `scripts/score_answer.py` 文档头与协议 §4；

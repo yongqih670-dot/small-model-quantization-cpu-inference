@@ -1,7 +1,7 @@
 {
   "rebuilt_from": "run_20261003_121218_stage4bench_a2dc0f",
   "rebuild_tool": "scripts/rebuild_summary.py",
-  "rebuild_time_utc": "2026-10-03T10:36:13+00:00",
+  "rebuild_time_utc": "2026-10-03T11:03:55+00:00",
   "rebuild_note": "纯汇总重建：未发起任何测量/推理；原始 result.json/快照/失败记录/请求记录未改动",
   "snapshot_binding": {
     "ok": true,
@@ -13,10 +13,18 @@
   "units_complete": 30,
   "units_flagged_incomplete": [],
   "units_partial": [],
+  "unit_grid": {
+    "missing": [],
+    "extra": [],
+    "duplicates": [],
+    "complete": true
+  },
   "measurements_total": 90,
+  "measurements_total_note": "仅累计 tests_valid_count 字段齐全的完整单元；字段缺失单元已记入 findings",
   "measurements_expected": 90,
   "measurements_actual_valid_entries": 90,
-  "measurements_note": "字段合计与实际条目已交叉核验；缺失不补 0",
+  "measurement_set_complete": true,
+  "measurement_grid_note": "期望集合=30 单元×3 负载",
   "completeness_status": "complete",
-  "completeness_reason": "30 个单元三态全真且组合完整"
+  "completeness_reason": "30 单元三态全真，网格/测量或请求集合完整"
 }

@@ -1,0 +1,3 @@
+5a146abb4c68188555125c91dbf04d19b665b188694510081b0ca8a20631fb61  stage5_delivery_rev3.zip (1,574,838 bytes, 510 files)
+生成时间: 2026-10-03T19:05:37
+rev3 变更见 docs/stage5_closeout_revision.md §六；rev1/rev2 保留。

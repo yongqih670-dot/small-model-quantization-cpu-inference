@@ -85,3 +85,26 @@ llama-bench / 任何真实推理请求；未运行含真实集成测试的
 ```
 
 未运行：`tests/run_tests.py`（含集成段）、任何推理入口。
+
+## 六、rev3 修补追加（最小修补轮）
+
+- **rebuild_summary 完整性判定严格化**：单元集合必须恰为 6 档×5 轮
+  （缺失/多余/重复逐一记入 findings，不得返回 complete）；bench 测量
+  集合恰为 30 单元×3 负载；HTTP 请求恰为 30 单元×计划指定 5 题；核对
+  请求-单元对应关系（unit_key 必须属于网格）；`tests_valid_count` 等
+  计数字段缺失不用 0 掩盖（记 [unverifiable] 并降级状态）。
+- **S7 反例测试**：同一单元复制 30 个不同文件名 → 网格重复 (1,1)×30、
+  缺失 29 组合、测量集合缺失 87 键全部检出，状态≠complete
+  （合成文件仅存临时目录）。离线套件现为 118 项断言。
+- **文档残留修正**：删除 FINAL_REPORT 中"（该工具不提供该参数）"括号
+  说明（改为"本次命令未显式传入 -lm"）；`ctx=1024` 限定为正式 HTTP
+  矩阵（bench 上下文隐式 d+p+n=320）；README 补 matplotlib 依赖、
+  三模型已下载并官方核验、`--formal` 守卫语义（未加必拒、加后还需
+  preflight）；configs/stage4_plan.json 与 docs/STAGE4_PLAN.md 的
+  "无 -lm 参数"同步改为"本次命令未显式传入"。逐项 grep 确认无残留。
+- **重新冻结说明**：上述两处措辞修正触及 Stage 4 冻结清单所列文件，
+  按规程重新执行 `freeze_hashes_stage4.py`（理由=本轮 ordered 文字
+  修正；历史清单内容可经 git 提交 789c50f/17e6905 查证）；Stage 3
+  冻结清单未动（评分器/数据集哈希门控不受影响）。
+- 两个 S4 run 的 `result_rebuilt.json` 再次归档为 `result_rebuilt_v2.json`
+  后用严格化工具重生成：`completeness_status=complete`、findings=0。

@@ -1,7 +1,7 @@
 {
   "rebuilt_from": "run_20261003_121547_stage4http_f03b1a",
   "rebuild_tool": "scripts/rebuild_summary.py",
-  "rebuild_time_utc": "2026-10-03T10:36:13+00:00",
+  "rebuild_time_utc": "2026-10-03T11:03:55+00:00",
   "rebuild_note": "纯汇总重建：未发起任何测量/推理；原始 result.json/快照/失败记录/请求记录未改动",
   "snapshot_binding": {
     "ok": true,
@@ -13,13 +13,21 @@
   "units_complete": 30,
   "units_flagged_incomplete": [],
   "units_partial": [],
+  "unit_grid": {
+    "missing": [],
+    "extra": [],
+    "duplicates": [],
+    "complete": true
+  },
   "timed_requests_total": 150,
   "timed_requests_expected": 150,
   "timed_requests_note": "逐条实测记录计数，缺失不补 0",
   "aux_requests_total_derived": 90,
   "aux_requests_note": "推算值(3×完整单元数)：预热/缓存检查未逐条落盘，不标为实测",
   "duplicate_request_keys": [],
+  "request_set_complete": true,
+  "request_set_note": "期望集合=30 单元×5 题（使用 run 目录快照计划）；请求-单元对应关系已核验",
   "requests_are_preserved_verbatim": true,
   "completeness_status": "complete",
-  "completeness_reason": "30 个单元三态全真且组合完整"
+  "completeness_reason": "30 单元三态全真，网格/测量或请求集合完整"
 }

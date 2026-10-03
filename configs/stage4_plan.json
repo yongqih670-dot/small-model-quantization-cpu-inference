@@ -17,7 +17,7 @@
     "per_unit": "每(轮,线程档)一个独立 bench 进程, -r 1, 同时产出 pp256/tg64/pg256+64 三个条目",
     "argv_flags": {"-ngl": 0, "-fa": "off", "-d": 0, "-r": 1, "-o": "json", "-oe": "json", "--progress": true},
     "no_fake_ctx": "bench 无 -c 参数，不虚构；上下文由 d+p+n 隐式决定",
-    "load_mode_note": "llama-bench 无 -lm 参数，加载模式为其内部默认(auto/mmap 类)，与 server 的显式 mmap 分别如实记录",
+    "load_mode_note": "llama-bench 本次命令未显式传入 -lm，加载模式为其内部默认(auto/mmap 类)，与 server 的显式 mmap 分别如实记录",
     "warmup": "保留 bench 默认 warmup，不计入测量"
   },
   "matrix_B_http": {
