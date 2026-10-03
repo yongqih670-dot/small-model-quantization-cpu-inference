@@ -196,5 +196,5 @@ cleanup_success ∧ cache_reuse_check.passed ∧ performance.performance_record_
 - 矩阵 B（75 条真实计时请求）：端到端 Q4 0.359s ≈ Q8 0.385s < Q5 0.503s
 - 矩阵 C（正式质量 3×50 题，唯一正式质量组）：
   联合正确 Q4 16/50、Q5 17/50、Q8 15/50——Wilson 95% CI 重叠，无稳定优势；
-  三模型同错 31 题（0.5B 基座能力上限），分歧仅 6 题
+  三模型同错 31 题（当前任务/提示/评分下共同失败较多，各因素贡献无法隔离），分歧仅 6 题
 - 详见 `docs/stage3_corrections.md`、`results/summary/stage3_summary.json`

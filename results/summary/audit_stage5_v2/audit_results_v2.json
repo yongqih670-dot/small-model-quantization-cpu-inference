@@ -1,0 +1,835 @@
+{
+  "bound_run_ids": {
+    "S3_A": "run_20261003_112023_stage3benchA_a9c6c1",
+    "S3_B": "run_20261003_112135_stage3perfB_0ffb9d",
+    "S3_C_Q4": "run_20261003_112320_formal_Q4_K_M_7eda40",
+    "S3_C_Q5": "run_20261003_112342_formal_Q5_K_M_8b86de",
+    "S3_C_Q8": "run_20261003_112411_formal_Q8_0_37181d",
+    "S4_A": "run_20261003_121218_stage4bench_a2dc0f",
+    "S4_B": "run_20261003_121547_stage4http_f03b1a"
+  },
+  "checks": [
+    {
+      "name": "评分器/数据集与 Stage 3 冻结清单哈希一致",
+      "ok": true,
+      "detail": "{}"
+    },
+    {
+      "name": "S3_A 完整组合 45 键",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_B 完整组合 75 键",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_B config 非空且等于预期",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_B 无 HTTP 失败",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_B 无截断",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_B 指标有效性全真",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q4_K_M] 恰为数据集 50 题（无缺失/多余/重复）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q4_K_M] config 非空且等于预期",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q4_K_M] 生成参数等于预期(temp/seed/max_tokens)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q4_K_M] 无截断无失败",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q5_K_M] 恰为数据集 50 题（无缺失/多余/重复）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q5_K_M] config 非空且等于预期",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q5_K_M] 生成参数等于预期(temp/seed/max_tokens)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q5_K_M] 无截断无失败",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q8_0] 恰为数据集 50 题（无缺失/多余/重复）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q8_0] config 非空且等于预期",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q8_0] 生成参数等于预期(temp/seed/max_tokens)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S3_C[Q8_0] 无截断无失败",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "重打分与记录一致（三类口径）",
+      "ok": true,
+      "detail": "{'Q4_K_M': 0, 'Q5_K_M': 0, 'Q8_0': 0}"
+    },
+    {
+      "name": "S4_A 完整组合 90 键",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S4_A config 非空且等于预期",
+      "ok": true,
+      "detail": "stage4_thread_tiers_v1"
+    },
+    {
+      "name": "S4_A argv 线程参数与档位一致（-t/-fa/-ngl）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S4_A 单元三态全真",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S4_A 实际有效测试条目 == 字段合计 == 90",
+      "ok": true,
+      "detail": "90/90"
+    },
+    {
+      "name": "S4_B 完整组合 150 键",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S4_B config 非空且等于预期",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S4_B run_id 与绑定一致",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S4_B 无 HTTP 失败/截断",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S4_B 指标有效性全真",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "S4_B 30 单元三态全真",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "findings": [],
+  "scope_note": "自动核对范围 = 本文件 checks 与 report_tables；最终报告其余文字数字由人工依据本审计撰写，不声称全文逐项自动核对",
+  "rescore_claim_gate": {
+    "verdict": "冻结评分器重打分（哈希已核验）",
+    "files": {
+      "scripts/score_answer.py": true,
+      "datasets/dev/dev_tasks.json": true,
+      "datasets/test/test_tasks.json": true,
+      "datasets/prompt_template.json": true
+    }
+  },
+  "S3_A_combos": {
+    "label": "S3_A(模型,轮,负载)",
+    "expected_keys": 45,
+    "observed_keys": 45,
+    "missing": [],
+    "extra": [],
+    "duplicates": [],
+    "complete": true
+  },
+  "S3_B_combos": {
+    "label": "S3_B(模型,轮,题)",
+    "expected_keys": 75,
+    "observed_keys": 75,
+    "missing": [],
+    "extra": [],
+    "duplicates": [],
+    "complete": true
+  },
+  "S3_C_combos_Q4_K_M": {
+    "label": "S3_C[Q4_K_M] task_id 集合",
+    "expected_keys": 50,
+    "observed_keys": 50,
+    "missing": [],
+    "extra": [],
+    "duplicates": [],
+    "complete": true
+  },
+  "S3_C_combos_Q5_K_M": {
+    "label": "S3_C[Q5_K_M] task_id 集合",
+    "expected_keys": 50,
+    "observed_keys": 50,
+    "missing": [],
+    "extra": [],
+    "duplicates": [],
+    "complete": true
+  },
+  "S3_C_combos_Q8_0": {
+    "label": "S3_C[Q8_0] task_id 集合",
+    "expected_keys": 50,
+    "observed_keys": 50,
+    "missing": [],
+    "extra": [],
+    "duplicates": [],
+    "complete": true
+  },
+  "S3_C_rescore": {
+    "label": "冻结评分器重打分（哈希已核验）",
+    "mismatch": {
+      "Q4_K_M": 0,
+      "Q5_K_M": 0,
+      "Q8_0": 0
+    }
+  },
+  "S3_C_mcnemar": {
+    "Q4_K_M_vs_Q5_K_M": {
+      "a_only": 2,
+      "b_only": 3,
+      "discordant": 5,
+      "p": 1.0
+    },
+    "Q4_K_M_vs_Q8_0": {
+      "a_only": 2,
+      "b_only": 1,
+      "discordant": 3,
+      "p": 1.0
+    },
+    "Q5_K_M_vs_Q8_0": {
+      "a_only": 3,
+      "b_only": 1,
+      "discordant": 4,
+      "p": 0.625
+    }
+  },
+  "S4_A_combos": {
+    "label": "S4_A(档,轮,负载)",
+    "expected_keys": 90,
+    "observed_keys": 90,
+    "missing": [],
+    "extra": [],
+    "duplicates": [],
+    "complete": true
+  },
+  "S4_A_stats": {
+    "T1|pg256+64": {
+      "n": 5,
+      "mean": 141.013,
+      "std": 1.411,
+      "cv_percent": 1.0
+    },
+    "T1|pp256": {
+      "n": 5,
+      "mean": 204.777,
+      "std": 2.02,
+      "cv_percent": 0.99
+    },
+    "T1|tg64": {
+      "n": 5,
+      "mean": 64.936,
+      "std": 1.346,
+      "cv_percent": 2.07
+    },
+    "T2|pg256+64": {
+      "n": 5,
+      "mean": 230.234,
+      "std": 2.027,
+      "cv_percent": 0.88
+    },
+    "T2|pp256": {
+      "n": 5,
+      "mean": 404.682,
+      "std": 3.925,
+      "cv_percent": 0.97
+    },
+    "T2|tg64": {
+      "n": 5,
+      "mean": 86.821,
+      "std": 0.329,
+      "cv_percent": 0.38
+    },
+    "T4|pg256+64": {
+      "n": 5,
+      "mean": 341.123,
+      "std": 1.733,
+      "cv_percent": 0.51
+    },
+    "T4|pp256": {
+      "n": 5,
+      "mean": 759.791,
+      "std": 11.506,
+      "cv_percent": 1.51
+    },
+    "T4|tg64": {
+      "n": 5,
+      "mean": 110.713,
+      "std": 1.288,
+      "cv_percent": 1.16
+    },
+    "T8|pg256+64": {
+      "n": 5,
+      "mean": 430.491,
+      "std": 7.36,
+      "cv_percent": 1.71
+    },
+    "T8|pp256": {
+      "n": 5,
+      "mean": 1250.598,
+      "std": 58.644,
+      "cv_percent": 4.69
+    },
+    "T8|tg64": {
+      "n": 5,
+      "mean": 121.076,
+      "std": 1.141,
+      "cv_percent": 0.94
+    },
+    "T16|pg256+64": {
+      "n": 5,
+      "mean": 438.316,
+      "std": 4.997,
+      "cv_percent": 1.14
+    },
+    "T16|pp256": {
+      "n": 5,
+      "mean": 1326.688,
+      "std": 15.746,
+      "cv_percent": 1.19
+    },
+    "T16|tg64": {
+      "n": 5,
+      "mean": 119.468,
+      "std": 1.833,
+      "cv_percent": 1.53
+    },
+    "T32|pg256+64": {
+      "n": 5,
+      "mean": 366.925,
+      "std": 15.191,
+      "cv_percent": 4.14
+    },
+    "T32|pp256": {
+      "n": 5,
+      "mean": 1550.616,
+      "std": 123.602,
+      "cv_percent": 7.97
+    },
+    "T32|tg64": {
+      "n": 5,
+      "mean": 86.405,
+      "std": 6.768,
+      "cv_percent": 7.83
+    }
+  },
+  "S4_A_speedup_vs_T1": {
+    "pp256": {
+      "T1": 1.0,
+      "T2": 1.976,
+      "T4": 3.71,
+      "T8": 6.107,
+      "T16": 6.479,
+      "T32": 7.572
+    },
+    "tg64": {
+      "T1": 1.0,
+      "T2": 1.337,
+      "T4": 1.705,
+      "T8": 1.865,
+      "T16": 1.84,
+      "T32": 1.331
+    },
+    "pg256+64": {
+      "T1": 1.0,
+      "T2": 1.633,
+      "T4": 2.419,
+      "T8": 3.053,
+      "T16": 3.108,
+      "T32": 2.602
+    }
+  },
+  "S4_B_combos": {
+    "label": "S4_B(档,轮,题)",
+    "expected_keys": 150,
+    "observed_keys": 150,
+    "missing": [],
+    "extra": [],
+    "duplicates": [],
+    "complete": true
+  },
+  "S4_B_stats": {
+    "fixed_combo_latency": {
+      "T1": {
+        "rounds": 5,
+        "mean_s": 1.038,
+        "sample_std_s": 0.0341
+      },
+      "T2": {
+        "rounds": 5,
+        "mean_s": 0.5666,
+        "sample_std_s": 0.0047
+      },
+      "T4": {
+        "rounds": 5,
+        "mean_s": 0.345,
+        "sample_std_s": 0.0025
+      },
+      "T8": {
+        "rounds": 5,
+        "mean_s": 0.264,
+        "sample_std_s": 0.0087
+      },
+      "T16": {
+        "rounds": 5,
+        "mean_s": 0.2492,
+        "sample_std_s": 0.003
+      },
+      "T32": {
+        "rounds": 5,
+        "mean_s": 0.2643,
+        "sample_std_s": 0.0075
+      }
+    },
+    "memory_per_tier_5processes": {
+      "T1": {
+        "n": 5,
+        "mean_mib": 518.01,
+        "sample_std_mib": 0.49
+      },
+      "T2": {
+        "n": 5,
+        "mean_mib": 517.81,
+        "sample_std_mib": 0.27
+      },
+      "T4": {
+        "n": 5,
+        "mean_mib": 518.85,
+        "sample_std_mib": 0.16
+      },
+      "T8": {
+        "n": 5,
+        "mean_mib": 521.26,
+        "sample_std_mib": 0.26
+      },
+      "T16": {
+        "n": 5,
+        "mean_mib": 525.71,
+        "sample_std_mib": 0.12
+      },
+      "T32": {
+        "n": 5,
+        "mean_mib": 534.86,
+        "sample_std_mib": 0.17
+      }
+    },
+    "startup_to_ready_per_tier": {
+      "T1": {
+        "n": 5,
+        "mean_s": 0.775
+      },
+      "T2": {
+        "n": 5,
+        "mean_s": 0.782
+      },
+      "T4": {
+        "n": 5,
+        "mean_s": 0.78
+      },
+      "T8": {
+        "n": 5,
+        "mean_s": 0.776
+      },
+      "T16": {
+        "n": 5,
+        "mean_s": 0.738
+      },
+      "T32": {
+        "n": 5,
+        "mean_s": 0.769
+      }
+    }
+  },
+  "report_tables": {
+    "s3_quality": {
+      "Q4_K_M": {
+        "format": "21/50",
+        "content": "21/50",
+        "joint": "16/50",
+        "wilson95": [
+          0.2076,
+          0.4581
+        ]
+      },
+      "Q5_K_M": {
+        "format": "22/50",
+        "content": "24/50",
+        "joint": "17/50",
+        "wilson95": [
+          0.2244,
+          0.4785
+        ]
+      },
+      "Q8_0": {
+        "format": "20/50",
+        "content": "22/50",
+        "joint": "15/50",
+        "wilson95": [
+          0.191,
+          0.4375
+        ]
+      }
+    },
+    "s3_mcnemar": {
+      "Q4_K_M_vs_Q5_K_M": {
+        "a_only": 2,
+        "b_only": 3,
+        "discordant": 5,
+        "p": 1.0
+      },
+      "Q4_K_M_vs_Q8_0": {
+        "a_only": 2,
+        "b_only": 1,
+        "discordant": 3,
+        "p": 1.0
+      },
+      "Q5_K_M_vs_Q8_0": {
+        "a_only": 3,
+        "b_only": 1,
+        "discordant": 4,
+        "p": 0.625
+      }
+    },
+    "s3_latency_fixed_combo": {
+      "Q4_K_M": {
+        "rounds": 5,
+        "mean_s": 0.3591,
+        "sample_std_s": 0.0042
+      },
+      "Q5_K_M": {
+        "rounds": 5,
+        "mean_s": 0.5034,
+        "sample_std_s": 0.0034
+      },
+      "Q8_0": {
+        "rounds": 5,
+        "mean_s": 0.3846,
+        "sample_std_s": 0.0039
+      }
+    },
+    "s3_memory_5proc": {
+      "Q5_K_M": {
+        "n": 5,
+        "mean_mib": 511.96,
+        "sample_std_mib": 0.15
+      },
+      "Q8_0": {
+        "n": 5,
+        "mean_mib": 616.47,
+        "sample_std_mib": 0.22
+      },
+      "Q4_K_M": {
+        "n": 5,
+        "mean_mib": 518.93,
+        "sample_std_mib": 0.1
+      }
+    },
+    "s3_bench": {
+      "Q4_K_M|pg256+64": {
+        "n": 5,
+        "mean": 324.617,
+        "std": 5.435
+      },
+      "Q4_K_M|pp256": {
+        "n": 5,
+        "mean": 733.567,
+        "std": 23.329
+      },
+      "Q4_K_M|tg64": {
+        "n": 5,
+        "mean": 105.36,
+        "std": 0.708
+      },
+      "Q5_K_M|pg256+64": {
+        "n": 5,
+        "mean": 257.091,
+        "std": 1.508
+      },
+      "Q5_K_M|pp256": {
+        "n": 5,
+        "mean": 439.915,
+        "std": 9.433
+      },
+      "Q5_K_M|tg64": {
+        "n": 5,
+        "mean": 99.711,
+        "std": 0.889
+      },
+      "Q8_0|pg256+64": {
+        "n": 5,
+        "mean": 284.482,
+        "std": 3.231
+      },
+      "Q8_0|pp256": {
+        "n": 5,
+        "mean": 774.159,
+        "std": 27.052
+      },
+      "Q8_0|tg64": {
+        "n": 5,
+        "mean": 82.328,
+        "std": 0.876
+      }
+    },
+    "s4_bench": {
+      "T1|pg256+64": {
+        "n": 5,
+        "mean": 141.013,
+        "std": 1.411,
+        "cv_percent": 1.0
+      },
+      "T1|pp256": {
+        "n": 5,
+        "mean": 204.777,
+        "std": 2.02,
+        "cv_percent": 0.99
+      },
+      "T1|tg64": {
+        "n": 5,
+        "mean": 64.936,
+        "std": 1.346,
+        "cv_percent": 2.07
+      },
+      "T2|pg256+64": {
+        "n": 5,
+        "mean": 230.234,
+        "std": 2.027,
+        "cv_percent": 0.88
+      },
+      "T2|pp256": {
+        "n": 5,
+        "mean": 404.682,
+        "std": 3.925,
+        "cv_percent": 0.97
+      },
+      "T2|tg64": {
+        "n": 5,
+        "mean": 86.821,
+        "std": 0.329,
+        "cv_percent": 0.38
+      },
+      "T4|pg256+64": {
+        "n": 5,
+        "mean": 341.123,
+        "std": 1.733,
+        "cv_percent": 0.51
+      },
+      "T4|pp256": {
+        "n": 5,
+        "mean": 759.791,
+        "std": 11.506,
+        "cv_percent": 1.51
+      },
+      "T4|tg64": {
+        "n": 5,
+        "mean": 110.713,
+        "std": 1.288,
+        "cv_percent": 1.16
+      },
+      "T8|pg256+64": {
+        "n": 5,
+        "mean": 430.491,
+        "std": 7.36,
+        "cv_percent": 1.71
+      },
+      "T8|pp256": {
+        "n": 5,
+        "mean": 1250.598,
+        "std": 58.644,
+        "cv_percent": 4.69
+      },
+      "T8|tg64": {
+        "n": 5,
+        "mean": 121.076,
+        "std": 1.141,
+        "cv_percent": 0.94
+      },
+      "T16|pg256+64": {
+        "n": 5,
+        "mean": 438.316,
+        "std": 4.997,
+        "cv_percent": 1.14
+      },
+      "T16|pp256": {
+        "n": 5,
+        "mean": 1326.688,
+        "std": 15.746,
+        "cv_percent": 1.19
+      },
+      "T16|tg64": {
+        "n": 5,
+        "mean": 119.468,
+        "std": 1.833,
+        "cv_percent": 1.53
+      },
+      "T32|pg256+64": {
+        "n": 5,
+        "mean": 366.925,
+        "std": 15.191,
+        "cv_percent": 4.14
+      },
+      "T32|pp256": {
+        "n": 5,
+        "mean": 1550.616,
+        "std": 123.602,
+        "cv_percent": 7.97
+      },
+      "T32|tg64": {
+        "n": 5,
+        "mean": 86.405,
+        "std": 6.768,
+        "cv_percent": 7.83
+      }
+    },
+    "s4_speedup": {
+      "pp256": {
+        "T1": 1.0,
+        "T2": 1.976,
+        "T4": 3.71,
+        "T8": 6.107,
+        "T16": 6.479,
+        "T32": 7.572
+      },
+      "tg64": {
+        "T1": 1.0,
+        "T2": 1.337,
+        "T4": 1.705,
+        "T8": 1.865,
+        "T16": 1.84,
+        "T32": 1.331
+      },
+      "pg256+64": {
+        "T1": 1.0,
+        "T2": 1.633,
+        "T4": 2.419,
+        "T8": 3.053,
+        "T16": 3.108,
+        "T32": 2.602
+      }
+    },
+    "s4_latency_fixed_combo": {
+      "T1": {
+        "rounds": 5,
+        "mean_s": 1.038,
+        "sample_std_s": 0.0341
+      },
+      "T2": {
+        "rounds": 5,
+        "mean_s": 0.5666,
+        "sample_std_s": 0.0047
+      },
+      "T4": {
+        "rounds": 5,
+        "mean_s": 0.345,
+        "sample_std_s": 0.0025
+      },
+      "T8": {
+        "rounds": 5,
+        "mean_s": 0.264,
+        "sample_std_s": 0.0087
+      },
+      "T16": {
+        "rounds": 5,
+        "mean_s": 0.2492,
+        "sample_std_s": 0.003
+      },
+      "T32": {
+        "rounds": 5,
+        "mean_s": 0.2643,
+        "sample_std_s": 0.0075
+      }
+    },
+    "s4_memory_per_tier": {
+      "T1": {
+        "n": 5,
+        "mean_mib": 518.01,
+        "sample_std_mib": 0.49
+      },
+      "T2": {
+        "n": 5,
+        "mean_mib": 517.81,
+        "sample_std_mib": 0.27
+      },
+      "T4": {
+        "n": 5,
+        "mean_mib": 518.85,
+        "sample_std_mib": 0.16
+      },
+      "T8": {
+        "n": 5,
+        "mean_mib": 521.26,
+        "sample_std_mib": 0.26
+      },
+      "T16": {
+        "n": 5,
+        "mean_mib": 525.71,
+        "sample_std_mib": 0.12
+      },
+      "T32": {
+        "n": 5,
+        "mean_mib": 534.86,
+        "sample_std_mib": 0.17
+      }
+    },
+    "file_sizes_mib": {
+      "Q4_K_M": 468.64,
+      "Q5_K_M": 498.0,
+      "Q8_0": 644.42
+    }
+  }
+}

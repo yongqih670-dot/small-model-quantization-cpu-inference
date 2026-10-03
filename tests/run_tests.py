@@ -20,6 +20,7 @@ import logging
 import subprocess
 import sys
 import time
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -66,7 +67,120 @@ def section(title: str):
     print(f"\n== {title} ==")
 
 
-def main() -> int:
+def run_integration_suite(section, check):
+    """集成测试：会启动 llama-server / 写 results/raw 记录。
+
+    仅在显式 --integration 时运行；E2 包含一条真实模型请求（开发集
+    fixture），F2 会启动真实服务并发送 404 请求。默认入口不得运行本段。
+    """
+    # ---------------- E. 损坏数据集 ----------------
+    section("E. 损坏 JSON 数据集留结构化失败记录")
+    p = run_script(["scripts/run_tasks.py", "--dataset",
+                    "tests/fixtures/corrupt_tasks.json", "--run-label",
+                    "testcorrupt"])
+    check("损坏数据集退出码=1", p.returncode == 1, f"rc={p.returncode}")
+    dirs = sorted((ROOT / "results/raw").glob("run_*_testcorrupt_*"))
+    check("失败运行有独立 run 目录", len(dirs) >= 1)
+    rec = json.loads((dirs[-1] / "result.json").read_text(encoding="utf-8"))
+    check("失败记录: success=false 且 failure_stage=load_inputs",
+          rec["success"] is False and rec.get("failure_stage") == "load_inputs",
+          str(rec.get("failure_stage")))
+    check("失败记录含错误信息", bool(rec.get("error")))
+    check("损坏数据集未启动服务(无 cleanup 字段或未启动)",
+          rec.get("server_startup_to_ready_s") is None)
+    check("未启动模型前失败不标为真实推理", rec.get("is_real_inference") is False,
+          str(rec.get("is_real_inference")))
+
+    # ---------------- E2. 运行中断: 保留已完成 + 标记未执行 ----------------
+    section("E2. 中断路径保留已完成请求并标记 not_attempted")
+    p = run_script(["scripts/run_tasks.py", "--dataset",
+                    "tests/fixtures/broken_second_task.json",
+                    "--run-label", "testbroken"])
+    check("中途异常退出码=1", p.returncode == 1, f"rc={p.returncode}")
+    dirs = sorted((ROOT / "results/raw").glob("run_*_testbroken_*"))
+    check("失败运行有独立 run 目录", len(dirs) >= 1)
+    rec = json.loads((dirs[-1] / "result.json").read_text(encoding="utf-8"))
+    check("not_attempted 正确标记剩余任务",
+          rec.get("not_attempted") == ["fix-002"], str(rec.get("not_attempted")))
+    check("已完成请求保留在 requests.jsonl",
+          (dirs[-1] / "requests.jsonl").is_file()
+          and len((dirs[-1] / "requests.jsonl")
+                  .read_text(encoding="utf-8").strip().splitlines()) == 1)
+    check("execution_complete=False", rec.get("execution_complete") is False)
+    check("不宣布成功", rec.get("success") is False)
+
+    # ---------------- F. 非法模型 → 服务提前退出 ----------------
+    section("F. 服务提前退出的失败记录与清理")
+    p = run_script(["scripts/run_tasks.py", "--dataset",
+                    "datasets/dev/dev_tasks.json", "--config",
+                    "tests/fixtures/badmodel_config.json",
+                    "--run-label", "testbadmodel"], timeout_s=300)
+    check("非法模型运行退出码=1", p.returncode == 1, f"rc={p.returncode}")
+    dirs = sorted((ROOT / "results/raw").glob("run_*_testbadmodel_*"))
+    check("失败运行有独立 run 目录", len(dirs) >= 1)
+    rec = json.loads((dirs[-1] / "result.json").read_text(encoding="utf-8"))
+    check("失败记录 success=false 且错误含'提前退出'",
+          rec["success"] is False and "提前退出" in (rec.get("error") or ""),
+          str(rec.get("error")))
+    check("清理已确认退出", rec.get("cleanup", {}).get("confirmed_exit") is True)
+    check("清理方式如实区分(服务自行退出 vs 主动强制终止)",
+          ("主动强制终止" in rec.get("cleanup", {}).get("method", "")
+           or rec.get("cleanup", {}).get("server_self_exited") is True
+           and "already_exited" in rec.get("cleanup", {}).get("method", "")),
+          str(rec.get("cleanup", {}).get("method")))
+    check("无残留服务进程(全局计数)", rec.get("orphan_servers_global_after") == 0)
+    check("没有产出任何请求记录(未发生推理)",
+          not (dirs[-1] / "requests.jsonl").exists())
+    check("服务启动但零请求: 不标为真实推理",
+          rec.get("is_real_inference") is False, str(rec.get("is_real_inference")))
+
+    # ---------------- F2. 真实服务: HTTPError/槽位确认/内存/清理 ----------------
+    section("F2. 真实服务行为: HTTPError 捕获、slots 确认、退出前内存")
+    model_path = ROOT / "models/qwen2.5-0.5b-instruct-q4_k_m.gguf"
+    if model_path.is_file():
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            tdp = Path(td)
+            srv_log = (tdp / "server.log").open("w", encoding="utf-8", buffering=1)
+            server = None
+            try:
+                server = LlamaServer(find_server_exe(),
+                                     ["-m", str(model_path), "--parallel", "1",
+                                      "-c", "512", "-t", "2", "-ngl", "0"],
+                                     srv_log, logging.getLogger("t_f2"),
+                                     memory_sample_interval_s=0.05)
+                server.start()
+                ready = server.wait_ready(timeout_s=120, poll_interval_s=0.25)
+                check("F2: 服务就绪", ready["ok"], str(ready))
+                bad = server.request("/definitely_not_here", None, timeout_s=10)
+                check("F2: HTTPError 保存状态码",
+                      not bad["ok"] and bad["error_type"] == "HTTPError"
+                      and bad["http_status"] is not None, str(bad["http_status"]))
+                check("F2: HTTPError 保存错误体", bool(bad.get("error_body")))
+                st = slots_idle(server, timeout_s=20)
+                check("F2: 空闲时 slots 确认返回 freed",
+                      st["freed"], str(st))
+                mem = server.memory_stats()
+                check("F2: 服务运行中即可取得生命周期峰值内存",
+                      mem["peak_wset_mib"] is not None and mem["peak_wset_mib"] > 0,
+                      str(mem))
+                check("F2: 采样峰值已写回(间隔0.05s)",
+                      mem.get("sampled_peak_rss_mib") is not None
+                      and mem.get("sample_interval_s") == 0.05, str(mem))
+            finally:
+                if server is not None:
+                    stopinfo = server.stop()
+                srv_log.close()
+            check("F2: 主动终止并确认退出",
+                  stopinfo["confirmed_exit"]
+                  and "主动强制终止" in stopinfo["method"], str(stopinfo))
+    else:
+        print("  [SKIP] F2: 模型文件不存在")
+
+
+
+def main(suite: str = "offline") -> int:
+    integration = suite == "integration"
     orphan_baseline = ctl.count_orphan_servers()
     baseline_hashes = {rel: sha256(ROOT / rel) for rel in STAGE1_EVIDENCE}
     print("Stage 1 证据基线哈希已记录; 残留服务进程基线:", orphan_baseline)
@@ -288,109 +402,11 @@ def main() -> int:
     run_dirs_after = set(p_.name for p_ in (ROOT / "results/raw").iterdir())
     check("守卫路径未创建任何 run 目录", run_dirs_before == run_dirs_after)
 
-    # ---------------- E. 损坏数据集 ----------------
-    section("E. 损坏 JSON 数据集留结构化失败记录")
-    p = run_script(["scripts/run_tasks.py", "--dataset",
-                    "tests/fixtures/corrupt_tasks.json", "--run-label",
-                    "testcorrupt"])
-    check("损坏数据集退出码=1", p.returncode == 1, f"rc={p.returncode}")
-    dirs = sorted((ROOT / "results/raw").glob("run_*_testcorrupt_*"))
-    check("失败运行有独立 run 目录", len(dirs) >= 1)
-    rec = json.loads((dirs[-1] / "result.json").read_text(encoding="utf-8"))
-    check("失败记录: success=false 且 failure_stage=load_inputs",
-          rec["success"] is False and rec.get("failure_stage") == "load_inputs",
-          str(rec.get("failure_stage")))
-    check("失败记录含错误信息", bool(rec.get("error")))
-    check("损坏数据集未启动服务(无 cleanup 字段或未启动)",
-          rec.get("server_startup_to_ready_s") is None)
-    check("未启动模型前失败不标为真实推理", rec.get("is_real_inference") is False,
-          str(rec.get("is_real_inference")))
-
-    # ---------------- E2. 运行中断: 保留已完成 + 标记未执行 ----------------
-    section("E2. 中断路径保留已完成请求并标记 not_attempted")
-    p = run_script(["scripts/run_tasks.py", "--dataset",
-                    "tests/fixtures/broken_second_task.json",
-                    "--run-label", "testbroken"])
-    check("中途异常退出码=1", p.returncode == 1, f"rc={p.returncode}")
-    dirs = sorted((ROOT / "results/raw").glob("run_*_testbroken_*"))
-    check("失败运行有独立 run 目录", len(dirs) >= 1)
-    rec = json.loads((dirs[-1] / "result.json").read_text(encoding="utf-8"))
-    check("not_attempted 正确标记剩余任务",
-          rec.get("not_attempted") == ["fix-002"], str(rec.get("not_attempted")))
-    check("已完成请求保留在 requests.jsonl",
-          (dirs[-1] / "requests.jsonl").is_file()
-          and len((dirs[-1] / "requests.jsonl")
-                  .read_text(encoding="utf-8").strip().splitlines()) == 1)
-    check("execution_complete=False", rec.get("execution_complete") is False)
-    check("不宣布成功", rec.get("success") is False)
-
-    # ---------------- F. 非法模型 → 服务提前退出 ----------------
-    section("F. 服务提前退出的失败记录与清理")
-    p = run_script(["scripts/run_tasks.py", "--dataset",
-                    "datasets/dev/dev_tasks.json", "--config",
-                    "tests/fixtures/badmodel_config.json",
-                    "--run-label", "testbadmodel"], timeout_s=300)
-    check("非法模型运行退出码=1", p.returncode == 1, f"rc={p.returncode}")
-    dirs = sorted((ROOT / "results/raw").glob("run_*_testbadmodel_*"))
-    check("失败运行有独立 run 目录", len(dirs) >= 1)
-    rec = json.loads((dirs[-1] / "result.json").read_text(encoding="utf-8"))
-    check("失败记录 success=false 且错误含'提前退出'",
-          rec["success"] is False and "提前退出" in (rec.get("error") or ""),
-          str(rec.get("error")))
-    check("清理已确认退出", rec.get("cleanup", {}).get("confirmed_exit") is True)
-    check("清理方式如实区分(服务自行退出 vs 主动强制终止)",
-          ("主动强制终止" in rec.get("cleanup", {}).get("method", "")
-           or rec.get("cleanup", {}).get("server_self_exited") is True
-           and "already_exited" in rec.get("cleanup", {}).get("method", "")),
-          str(rec.get("cleanup", {}).get("method")))
-    check("无残留服务进程(全局计数)", rec.get("orphan_servers_global_after") == 0)
-    check("没有产出任何请求记录(未发生推理)",
-          not (dirs[-1] / "requests.jsonl").exists())
-    check("服务启动但零请求: 不标为真实推理",
-          rec.get("is_real_inference") is False, str(rec.get("is_real_inference")))
-
-    # ---------------- F2. 真实服务: HTTPError/槽位确认/内存/清理 ----------------
-    section("F2. 真实服务行为: HTTPError 捕获、slots 确认、退出前内存")
-    model_path = ROOT / "models/qwen2.5-0.5b-instruct-q4_k_m.gguf"
-    if model_path.is_file():
-        import tempfile
-        with tempfile.TemporaryDirectory() as td:
-            tdp = Path(td)
-            srv_log = (tdp / "server.log").open("w", encoding="utf-8", buffering=1)
-            server = None
-            try:
-                server = LlamaServer(find_server_exe(),
-                                     ["-m", str(model_path), "--parallel", "1",
-                                      "-c", "512", "-t", "2", "-ngl", "0"],
-                                     srv_log, logging.getLogger("t_f2"),
-                                     memory_sample_interval_s=0.05)
-                server.start()
-                ready = server.wait_ready(timeout_s=120, poll_interval_s=0.25)
-                check("F2: 服务就绪", ready["ok"], str(ready))
-                bad = server.request("/definitely_not_here", None, timeout_s=10)
-                check("F2: HTTPError 保存状态码",
-                      not bad["ok"] and bad["error_type"] == "HTTPError"
-                      and bad["http_status"] is not None, str(bad["http_status"]))
-                check("F2: HTTPError 保存错误体", bool(bad.get("error_body")))
-                st = slots_idle(server, timeout_s=20)
-                check("F2: 空闲时 slots 确认返回 freed",
-                      st["freed"], str(st))
-                mem = server.memory_stats()
-                check("F2: 服务运行中即可取得生命周期峰值内存",
-                      mem["peak_wset_mib"] is not None and mem["peak_wset_mib"] > 0,
-                      str(mem))
-                check("F2: 采样峰值已写回(间隔0.05s)",
-                      mem.get("sampled_peak_rss_mib") is not None
-                      and mem.get("sample_interval_s") == 0.05, str(mem))
-            finally:
-                if server is not None:
-                    stopinfo = server.stop()
-                srv_log.close()
-            check("F2: 主动终止并确认退出",
-                  stopinfo["confirmed_exit"]
-                  and "主动强制终止" in stopinfo["method"], str(stopinfo))
+    if suite == "integration":
+        run_integration_suite(section, check)
     else:
-        print("  [SKIP] F2: 模型文件不存在")
+        print("  [SKIP] E/E2/F/F2 为集成测试（会启动后端 / 写 results/raw）。"
+              "默认离线套件不包含；显式运行: python tests/run_tests.py --integration")
 
     # ---------------- G. 历史证据不变 ----------------
     section("G. 重复运行不覆盖历史证据")
@@ -559,7 +575,7 @@ def main() -> int:
         check("保留原始开始时间",
               rb["original_started_at_utc"] == "2026-10-03T12:15:47Z")
         check("重复请求键如实列出（不去重不重跑）",
-              rb["duplicate_request_keys"] == [["r1_t1", "dev-001"]],
+              rb["duplicate_request_keys"] == [["r1_t1", "dev-001", None]],
               str(rb["duplicate_request_keys"]))
         check("计时请求数如实为 3（含重复，不填充）",
               rb["timed_requests_total"] == 3)
@@ -571,6 +587,56 @@ def main() -> int:
         check("重建产物存在时拒绝覆盖", proc2.returncode == 1, proc2.returncode)
         check("旧 result.json 依然未变", sha256(ok_run / "result.json")
               == orig_hash)
+
+    # ---------------- S6. 收尾修订：rebuild 旗标判定 / 审计反例 ----------------
+    section("S6. rebuild 按三态旗标判完整 + 审计组合反例")
+    # (a) 重建：三态不全的单元不得计入完整
+    with tempfile.TemporaryDirectory() as td:
+        tdp = Path(td)
+        run = tdp / "flag_run"
+        run.mkdir()
+        (run / "snapshot_frozen_hashes_stage4.json").write_text(
+            real_manifest, encoding="utf-8")
+        (run / "result.json").write_text(json.dumps(
+            {"run_id": "synthetic2", "matrix": "bench"}), encoding="utf-8")
+        # 一个三态全真 + 一个缺 metrics_valid 的非 partial 单元
+        (run / "unit_01_a.json").write_text(json.dumps(
+            {"unit_key": "a", "execution_complete": True,
+             "metrics_valid": True, "cleanup_success": True,
+             "tests": [{"workload": "pp256", "valid": True, "tok_s": 1.0},
+                       {"workload": "tg64", "valid": True, "tok_s": 2.0},
+                       {"workload": "pg256+64", "valid": True, "tok_s": 3.0}],
+             "tests_valid_count": 3}), encoding="utf-8")
+        (run / "unit_02_b.json").write_text(json.dumps(
+            {"unit_key": "b", "execution_complete": True,
+             "metrics_valid": False, "cleanup_success": True,
+             "tests": [], "tests_valid_count": 0}), encoding="utf-8")
+        proc = run_script(["scripts/rebuild_summary.py", "--matrix", "bench",
+                           "--run-id", "synthetic2", "--run-dir", str(run)])
+        check("重建执行成功", proc.returncode == 0, (proc.stdout or "")[-200:])
+        rb = json.loads((run / "result_rebuilt.json").read_text(
+            encoding="utf-8"))
+        check("三态不全的单元不计入完整（flagged 列出）",
+              rb["units_complete"] == 1 and
+              rb["units_flagged_incomplete"][0]["unit_key"] == "b",
+              str(rb["units_flagged_incomplete"]))
+        check("完整性状态为 incomplete 而非笼统通过",
+              rb["completeness_status"] == "incomplete",
+              str(rb["completeness_reason"]))
+        check("测量值按实际条目=3，不补 0", rb["measurements_total"] == 3)
+
+    # (b) 审计组合集合反例：缺失/多余/重复
+    from audit_stage_results_v2 import compare_counter, full_grid
+    exp = full_grid(["M1", "M2"], [1, 2], ["wl1"])
+    obs = Counter({("M1", 1, "wl1"): 1, ("M1", 2, "wl1"): 2,
+                   ("M2", 1, "wl1"): 1, ("M2", 2, "wlX"): 1})
+    res = compare_counter(obs, exp, "反例", [])
+    check("缺失键被检出", ("M2", 2, "wl1") in res["missing"])
+    check("多余键被检出", ("M2", 2, "wlX") in res["extra"])
+    check("重复键被检出", ("M1", 2, "wl1") in res["duplicates"])
+    check("完整集合判定 complete", not res["complete"])
+    ok_res = compare_counter(exp.copy(), exp, "正例", [])
+    check("完全一致时 complete=True", ok_res["complete"])
 
     # ---------------- 收尾 ----------------
     orphans_after = ctl.count_orphan_servers()
@@ -587,5 +653,21 @@ def main() -> int:
     return 0
 
 
+def _parse_suite(argv):
+    import argparse
+    ap = argparse.ArgumentParser(
+        description="离线套件（默认）不启动后端、不写 results/raw；"
+                    "集成测试显式 opt-in。")
+    ap.add_argument("--integration", action="store_true",
+                    help="运行 E/E2/F/F2 集成段：会启动 llama-server 并写"
+                         " results/raw 记录（E2 含一条真实模型请求）")
+    a = ap.parse_args(argv)
+    return "integration" if a.integration else "offline"
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    _suite = _parse_suite(sys.argv[1:])
+    print(f"测试套件: {_suite}"
+          + ("（含真实集成测试）" if _suite == "integration"
+             else "（纯离线：不启动后端、不访问推理服务、不写 results/raw）"))
+    sys.exit(main(_suite))

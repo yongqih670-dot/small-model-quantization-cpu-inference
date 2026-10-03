@@ -1,0 +1,4 @@
+c8c6b0d57b902140daa7813e84efa707fada7f79a7b78143b7703d82914d64b1  stage5_delivery_rev2.zip (1,569,751 bytes, 508 files)
+生成时间: 2026-10-03T18:37:56
+rev2 变更: 离线/集成测试入口拆分、审计 v2（完整组合集合+哈希门控+报告数值表）、
+rebuild_summary 完整性判定修正、交付文字统一、报告嵌入图表。rev1 包保留。

@@ -1,20 +1,25 @@
 {
   "rebuilt_from": "run_20261003_121547_stage4http_f03b1a",
   "rebuild_tool": "scripts/rebuild_summary.py",
-  "rebuild_time_utc": "2026-10-03T08:31:25+00:00",
+  "rebuild_time_utc": "2026-10-03T10:36:13+00:00",
   "rebuild_note": "纯汇总重建：未发起任何测量/推理；原始 result.json/快照/失败记录/请求记录未改动",
   "snapshot_binding": {
     "ok": true,
-    "bound_files": 16
+    "bound_files": 16,
+    "note": "仅证明现存快照与当前清单一致；Stage 4 bench 运行的快照是恢复时覆盖后的版本，不代表原始启动时刻"
   },
   "original_started_at_utc": "2026-10-03T04:15:47.490+00:00",
-  "original_finished_at_utc": "2026-10-03T04:17:47.247+00:00",
+  "original_started_at_note": "取自现存 result.json；Stage 4 bench 的该字段为恢复时重写的开始时间，原始启动时刻仅留存于 run_id 与文件时间戳",
   "units_complete": 30,
+  "units_flagged_incomplete": [],
   "units_partial": [],
-  "units_failed_or_incomplete": 0,
   "timed_requests_total": 150,
   "timed_requests_expected": 150,
-  "aux_requests_total": 90,
+  "timed_requests_note": "逐条实测记录计数，缺失不补 0",
+  "aux_requests_total_derived": 90,
+  "aux_requests_note": "推算值(3×完整单元数)：预热/缓存检查未逐条落盘，不标为实测",
   "duplicate_request_keys": [],
-  "requests_are_preserved_verbatim": true
+  "requests_are_preserved_verbatim": true,
+  "completeness_status": "complete",
+  "completeness_reason": "30 个单元三态全真且组合完整"
 }

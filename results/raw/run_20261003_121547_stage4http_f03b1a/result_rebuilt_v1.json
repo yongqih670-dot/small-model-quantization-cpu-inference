@@ -1,0 +1,20 @@
+{
+  "rebuilt_from": "run_20261003_121547_stage4http_f03b1a",
+  "rebuild_tool": "scripts/rebuild_summary.py",
+  "rebuild_time_utc": "2026-10-03T08:31:25+00:00",
+  "rebuild_note": "纯汇总重建：未发起任何测量/推理；原始 result.json/快照/失败记录/请求记录未改动",
+  "snapshot_binding": {
+    "ok": true,
+    "bound_files": 16
+  },
+  "original_started_at_utc": "2026-10-03T04:15:47.490+00:00",
+  "original_finished_at_utc": "2026-10-03T04:17:47.247+00:00",
+  "units_complete": 30,
+  "units_partial": [],
+  "units_failed_or_incomplete": 0,
+  "timed_requests_total": 150,
+  "timed_requests_expected": 150,
+  "aux_requests_total": 90,
+  "duplicate_request_keys": [],
+  "requests_are_preserved_verbatim": true
+}
