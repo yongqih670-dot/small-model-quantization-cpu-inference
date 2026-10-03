@@ -1,0 +1,36 @@
+{
+  "config_id": "stage4_thread_tiers_v1",
+  "comment": "Stage 4 线程实验公共配置：唯一变化因素为统一线程预算 T（server: -t T -tb T；bench: -t T）。其余全部显式固定。T=4 为本阶段同期重测基准；Stage 3 的 T=4 仅作旁证，不与 Stage 4 样本合并。",
+  "model_path": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "thread_tiers": [1, 2, 4, 8, 16, 32],
+  "context_length": 1024,
+  "batch_size": 2048,
+  "ubatch_size": 512,
+  "cache_type_k": "f16",
+  "cache_type_v": "f16",
+  "flash_attn": "off",
+  "load_mode": "mmap",
+  "gpu_offload_layers": 0,
+  "cache_reuse": 0,
+  "cache_prompt_request_body": false,
+  "parallel": 1,
+  "generation": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 42,
+    "max_tokens": 96
+  },
+  "request_timeout_s": 120,
+  "load_timeout_s": 300,
+  "health_poll_interval_s": 0.25,
+  "memory_sample_interval_s": 0.05,
+  "bench_flags": {
+    "ngl": 0,
+    "fa": "off",
+    "p": 256,
+    "n": 64,
+    "pg": [256, 64],
+    "d": 0,
+    "r": 1
+  }
+}

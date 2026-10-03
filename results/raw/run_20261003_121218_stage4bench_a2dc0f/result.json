@@ -1,0 +1,178 @@
+{
+  "run_id": "run_20261003_121218_stage4bench_a2dc0f",
+  "matrix": "bench",
+  "plan_id": "stage4_plan_v1",
+  "config_id": "stage4_thread_tiers_v1",
+  "is_real_inference": true,
+  "synthetic": false,
+  "resumed": true,
+  "fingerprint_check": {
+    "ok": true,
+    "problems": []
+  },
+  "snapshots": {
+    "configs/stage4_plan.json": {
+      "snapshot": "snapshot_stage4_plan.json",
+      "sha256": "3827993201ef9ffde4663f881701b90f0e01f04271c04b4d63e6e1d164db7542"
+    },
+    "configs/stage4_config.json": {
+      "snapshot": "snapshot_stage4_config.json",
+      "sha256": "2182bd7133e42789bfaa2d746638f81898abb226dada2825add22407f9575e70"
+    },
+    "datasets/frozen_hashes_stage4.json": {
+      "snapshot": "snapshot_frozen_hashes_stage4.json",
+      "sha256": "a889c98701bfee5a62d11b67a6efd0f17b164f4b79769c40177d86e6444dca16"
+    },
+    "models/model_manifest_v3.json": {
+      "snapshot": "snapshot_model_manifest_v3.json",
+      "sha256": "c3e85413dde702ac50f82f37cbddb753415aa903383b9892d3a1b46da20cf638"
+    }
+  },
+  "units": [
+    {
+      "unit_key": "r1_t16",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r1_t8",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r1_t32",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r1_t4",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r1_t1",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r1_t2",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r2_t4",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r2_t1",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r2_t8",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r2_t32",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r2_t2",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r2_t16",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r3_t2",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r3_t32",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r3_t1",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r3_t4",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r3_t16",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r3_t8",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r4_t32",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r4_t4",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r4_t8",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r4_t16",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r4_t2",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r4_t1",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r5_t8",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r5_t1",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r5_t32",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r5_t16",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r5_t2",
+      "skipped_resumed": true
+    },
+    {
+      "unit_key": "r5_t4",
+      "skipped_resumed": true
+    }
+  ],
+  "started_at_utc": "2026-10-03T04:15:33.836+00:00",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "tool_versions": {
+    "llama-server": {
+      "command": "llama-server.exe --version",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64\n"
+    },
+    "llama-bench": {
+      "command": "llama-bench.exe --version",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "load_backend: loaded RPC backend from F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\llama.cpp\\ggml-rpc.dll\nload_backend: loaded CPU backend from F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\llama.cpp\\ggml-cpu-zen4.dll\nversion: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64\n"
+    }
+  },
+  "units_completed": 30,
+  "units_expected": 30,
+  "timed_requests_total": 0,
+  "aux_requests_total": 0,
+  "measurements_total": 90,
+  "measurements_expected": 90,
+  "execution_complete": true,
+  "success": true,
+  "finished_at_utc": "2026-10-03T04:15:34.194+00:00"
+}

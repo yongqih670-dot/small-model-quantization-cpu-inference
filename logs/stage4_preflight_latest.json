@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "冻结清单文件校验（16 个）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "后端实现文件全量指纹（50 个 exe/DLL）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "llama-server.exe 实时 --version 为 b11347/5fc4f3c8c",
+      "ok": true,
+      "detail": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)"
+    },
+    {
+      "name": "llama-bench.exe 实时 --version 为 b11347/5fc4f3c8c",
+      "ok": true,
+      "detail": "load_backend: loaded RPC backend from F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\llama.cpp\\ggml-rpc.dll"
+    },
+    {
+      "name": "Q4_K_M 存在且 SHA256 与 manifest v3 一致",
+      "ok": true,
+      "detail": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "name": "硬件与预注册一致（16C/32T）",
+      "ok": true,
+      "detail": "{'Name': 'AMD Ryzen 9 9955HX 16-Core Processor           ', 'NumberOfCores': 16, 'NumberOfLogicalProcessors': 32}"
+    }
+  ],
+  "resource_snapshot": {
+    "time": "2026-10-03T04:15:47.153+00:00",
+    "cpu_percent_sample": 2.3,
+    "free_ram_gib": 13.91,
+    "llama_server_process_count_global": 0,
+    "note": "仅记录本机负载；不据此筛选数据"
+  }
+}

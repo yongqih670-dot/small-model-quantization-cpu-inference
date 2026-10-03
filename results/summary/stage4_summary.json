@@ -1,0 +1,729 @@
+{
+  "bound_run_ids": {
+    "bench": "run_20261003_121218_stage4bench_a2dc0f",
+    "http": "run_20261003_121547_stage4http_f03b1a"
+  },
+  "note": "全部数字来自显式绑定的 run；缺失测量不填 0",
+  "matrix_A": {
+    "run_id": "run_20261003_121218_stage4bench_a2dc0f",
+    "units_completed": 30,
+    "units_expected": 30,
+    "measurements": 90,
+    "integrity_problems": [],
+    "per_tier": {
+      "T1|pp256": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          201.611,
+          205.355,
+          207.164,
+          204.53,
+          205.225
+        ],
+        "mean_tok_s": 204.777,
+        "sample_std_tok_s": 2.0197,
+        "cv_percent": 0.99
+      },
+      "T1|tg64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          65.7972,
+          62.5712,
+          65.1248,
+          65.5319,
+          65.6563
+        ],
+        "mean_tok_s": 64.936,
+        "sample_std_tok_s": 1.3457,
+        "cv_percent": 2.07
+      },
+      "T1|pg256+64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          140.579,
+          142.7,
+          142.308,
+          139.755,
+          139.721
+        ],
+        "mean_tok_s": 141.013,
+        "sample_std_tok_s": 1.411,
+        "cv_percent": 1.0
+      },
+      "T2|pp256": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          407.155,
+          400.129,
+          401.346,
+          409.508,
+          405.274
+        ],
+        "mean_tok_s": 404.682,
+        "sample_std_tok_s": 3.9248,
+        "cv_percent": 0.97
+      },
+      "T2|tg64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          87.2526,
+          86.7793,
+          86.3404,
+          86.7912,
+          86.9409
+        ],
+        "mean_tok_s": 86.821,
+        "sample_std_tok_s": 0.3295,
+        "cv_percent": 0.38
+      },
+      "T2|pg256+64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          233.411,
+          228.939,
+          228.145,
+          229.968,
+          230.709
+        ],
+        "mean_tok_s": 230.234,
+        "sample_std_tok_s": 2.0267,
+        "cv_percent": 0.88
+      },
+      "T4|pp256": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          763.606,
+          758.048,
+          744.546,
+          776.196,
+          756.56
+        ],
+        "mean_tok_s": 759.791,
+        "sample_std_tok_s": 11.5061,
+        "cv_percent": 1.51
+      },
+      "T4|tg64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          111.506,
+          111.981,
+          111.43,
+          109.445,
+          109.205
+        ],
+        "mean_tok_s": 110.713,
+        "sample_std_tok_s": 1.2877,
+        "cv_percent": 1.16
+      },
+      "T4|pg256+64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          342.167,
+          343.335,
+          341.268,
+          339.092,
+          339.751
+        ],
+        "mean_tok_s": 341.123,
+        "sample_std_tok_s": 1.7329,
+        "cv_percent": 0.51
+      },
+      "T8|pp256": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          1302.57,
+          1308.96,
+          1258.82,
+          1207.96,
+          1174.68
+        ],
+        "mean_tok_s": 1250.598,
+        "sample_std_tok_s": 58.6437,
+        "cv_percent": 4.69
+      },
+      "T8|tg64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          119.521,
+          121.594,
+          122.181,
+          120.236,
+          121.847
+        ],
+        "mean_tok_s": 121.076,
+        "sample_std_tok_s": 1.141,
+        "cv_percent": 0.94
+      },
+      "T8|pg256+64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          437.68,
+          419.45,
+          426.958,
+          432.898,
+          435.471
+        ],
+        "mean_tok_s": 430.491,
+        "sample_std_tok_s": 7.3597,
+        "cv_percent": 1.71
+      },
+      "T16|pp256": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          1335.26,
+          1320.83,
+          1312.72,
+          1314.63,
+          1350
+        ],
+        "mean_tok_s": 1326.688,
+        "sample_std_tok_s": 15.746,
+        "cv_percent": 1.19
+      },
+      "T16|tg64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          118.315,
+          120.428,
+          121.539,
+          116.926,
+          120.13
+        ],
+        "mean_tok_s": 119.468,
+        "sample_std_tok_s": 1.833,
+        "cv_percent": 1.53
+      },
+      "T16|pg256+64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          436.682,
+          430.455,
+          443.097,
+          441.525,
+          439.82
+        ],
+        "mean_tok_s": 438.316,
+        "sample_std_tok_s": 4.9971,
+        "cv_percent": 1.14
+      },
+      "T32|pp256": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          1430.84,
+          1642.11,
+          1643.62,
+          1400.68,
+          1635.83
+        ],
+        "mean_tok_s": 1550.616,
+        "sample_std_tok_s": 123.6016,
+        "cv_percent": 7.97
+      },
+      "T32|tg64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          75.297,
+          90.5072,
+          91.9557,
+          89.4926,
+          84.7703
+        ],
+        "mean_tok_s": 86.405,
+        "sample_std_tok_s": 6.7682,
+        "cv_percent": 7.83
+      },
+      "T32|pg256+64": {
+        "n": 5,
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          386.006,
+          380.626,
+          357.729,
+          353.062,
+          357.202
+        ],
+        "mean_tok_s": 366.925,
+        "sample_std_tok_s": 15.1912,
+        "cv_percent": 4.14
+      }
+    },
+    "recommendations": {
+      "pp256": {
+        "workload": "pp256",
+        "best_observed_tier": 32,
+        "best_mean_tok_s": 1550.62,
+        "recommended_tier": 32,
+        "recommended_mean_tok_s": 1550.62,
+        "note": "3% 为实用选择阈值，不是统计等价证明"
+      },
+      "tg64": {
+        "workload": "tg64",
+        "best_observed_tier": 8,
+        "best_mean_tok_s": 121.08,
+        "recommended_tier": 8,
+        "recommended_mean_tok_s": 121.08,
+        "note": "3% 为实用选择阈值，不是统计等价证明"
+      },
+      "pg256+64": {
+        "workload": "pg256+64",
+        "best_observed_tier": 16,
+        "best_mean_tok_s": 438.32,
+        "recommended_tier": 8,
+        "recommended_mean_tok_s": 430.49,
+        "note": "3% 为实用选择阈值，不是统计等价证明"
+      }
+    },
+    "speedup_vs_T1": {
+      "baseline": "本阶段 T=1",
+      "values": {
+        "pp256": {
+          "1": 1.0,
+          "2": 1.976,
+          "4": 3.71,
+          "8": 6.107,
+          "16": 6.479,
+          "32": 7.572
+        },
+        "tg64": {
+          "1": 1.0,
+          "2": 1.337,
+          "4": 1.705,
+          "8": 1.865,
+          "16": 1.84,
+          "32": 1.331
+        },
+        "pg256+64": {
+          "1": 1.0,
+          "2": 1.633,
+          "4": 2.419,
+          "8": 3.053,
+          "16": 3.108,
+          "32": 2.602
+        }
+      },
+      "note": "按线程数归一化的效率不是 CPU 利用率；SMT 逻辑线程≠物理核"
+    }
+  },
+  "matrix_B": {
+    "run_id": "run_20261003_121547_stage4http_f03b1a",
+    "units_completed": 30,
+    "timed_requests": 150,
+    "aux_requests": 90,
+    "per_task": {
+      "T1|dev-007": {
+        "n": 5,
+        "mean_s": 0.6056,
+        "sample_std_s": 0.0312
+      },
+      "T1|dev-004": {
+        "n": 5,
+        "mean_s": 1.7374,
+        "sample_std_s": 0.0807
+      },
+      "T1|dev-001": {
+        "n": 5,
+        "mean_s": 1.1568,
+        "sample_std_s": 0.0443
+      },
+      "T1|dev-003": {
+        "n": 5,
+        "mean_s": 1.1081,
+        "sample_std_s": 0.0491
+      },
+      "T1|dev-009": {
+        "n": 5,
+        "mean_s": 0.5819,
+        "sample_std_s": 0.0297
+      },
+      "T2|dev-007": {
+        "n": 5,
+        "mean_s": 0.3316,
+        "sample_std_s": 0.0066
+      },
+      "T2|dev-004": {
+        "n": 5,
+        "mean_s": 1.0241,
+        "sample_std_s": 0.0075
+      },
+      "T2|dev-001": {
+        "n": 5,
+        "mean_s": 0.5914,
+        "sample_std_s": 0.0136
+      },
+      "T2|dev-003": {
+        "n": 5,
+        "mean_s": 0.5638,
+        "sample_std_s": 0.0075
+      },
+      "T2|dev-009": {
+        "n": 5,
+        "mean_s": 0.322,
+        "sample_std_s": 0.0059
+      },
+      "T4|dev-007": {
+        "n": 5,
+        "mean_s": 0.1897,
+        "sample_std_s": 0.0041
+      },
+      "T4|dev-004": {
+        "n": 5,
+        "mean_s": 0.6951,
+        "sample_std_s": 0.0099
+      },
+      "T4|dev-001": {
+        "n": 5,
+        "mean_s": 0.3248,
+        "sample_std_s": 0.0155
+      },
+      "T4|dev-003": {
+        "n": 5,
+        "mean_s": 0.3167,
+        "sample_std_s": 0.0089
+      },
+      "T4|dev-009": {
+        "n": 5,
+        "mean_s": 0.1989,
+        "sample_std_s": 0.0035
+      },
+      "T8|dev-007": {
+        "n": 5,
+        "mean_s": 0.1446,
+        "sample_std_s": 0.0145
+      },
+      "T8|dev-004": {
+        "n": 5,
+        "mean_s": 0.5844,
+        "sample_std_s": 0.0128
+      },
+      "T8|dev-001": {
+        "n": 5,
+        "mean_s": 0.2192,
+        "sample_std_s": 0.022
+      },
+      "T8|dev-003": {
+        "n": 5,
+        "mean_s": 0.2095,
+        "sample_std_s": 0.0156
+      },
+      "T8|dev-009": {
+        "n": 5,
+        "mean_s": 0.1623,
+        "sample_std_s": 0.0127
+      },
+      "T16|dev-007": {
+        "n": 5,
+        "mean_s": 0.1293,
+        "sample_std_s": 0.0052
+      },
+      "T16|dev-004": {
+        "n": 5,
+        "mean_s": 0.5591,
+        "sample_std_s": 0.0122
+      },
+      "T16|dev-001": {
+        "n": 5,
+        "mean_s": 0.2092,
+        "sample_std_s": 0.0155
+      },
+      "T16|dev-003": {
+        "n": 5,
+        "mean_s": 0.1955,
+        "sample_std_s": 0.0102
+      },
+      "T16|dev-009": {
+        "n": 5,
+        "mean_s": 0.153,
+        "sample_std_s": 0.0074
+      },
+      "T32|dev-007": {
+        "n": 5,
+        "mean_s": 0.1421,
+        "sample_std_s": 0.0096
+      },
+      "T32|dev-004": {
+        "n": 5,
+        "mean_s": 0.6601,
+        "sample_std_s": 0.0435
+      },
+      "T32|dev-001": {
+        "n": 5,
+        "mean_s": 0.1888,
+        "sample_std_s": 0.0127
+      },
+      "T32|dev-003": {
+        "n": 5,
+        "mean_s": 0.1695,
+        "sample_std_s": 0.011
+      },
+      "T32|dev-009": {
+        "n": 5,
+        "mean_s": 0.1609,
+        "sample_std_s": 0.007
+      }
+    },
+    "per_round_5task_avg": {
+      "1": {
+        "rounds": 5,
+        "mean_s": 1.038,
+        "sample_std_s": 0.0341
+      },
+      "2": {
+        "rounds": 5,
+        "mean_s": 0.5666,
+        "sample_std_s": 0.0047
+      },
+      "4": {
+        "rounds": 5,
+        "mean_s": 0.345,
+        "sample_std_s": 0.0025
+      },
+      "8": {
+        "rounds": 5,
+        "mean_s": 0.264,
+        "sample_std_s": 0.0087
+      },
+      "16": {
+        "rounds": 5,
+        "mean_s": 0.2492,
+        "sample_std_s": 0.003
+      },
+      "32": {
+        "rounds": 5,
+        "mean_s": 0.2643,
+        "sample_std_s": 0.0075
+      }
+    },
+    "memory_per_tier_5processes": {
+      "1": {
+        "n": 5,
+        "mean_mib": 518.01,
+        "sample_std_mib": 0.49,
+        "peaks_mib": [
+          517.453,
+          518.305,
+          518.125,
+          517.578,
+          518.602
+        ]
+      },
+      "2": {
+        "n": 5,
+        "mean_mib": 517.81,
+        "sample_std_mib": 0.27,
+        "peaks_mib": [
+          517.707,
+          517.969,
+          517.516,
+          518.195,
+          517.676
+        ]
+      },
+      "4": {
+        "n": 5,
+        "mean_mib": 518.85,
+        "sample_std_mib": 0.16,
+        "peaks_mib": [
+          518.938,
+          518.793,
+          518.711,
+          518.73,
+          519.078
+        ]
+      },
+      "8": {
+        "n": 5,
+        "mean_mib": 521.26,
+        "sample_std_mib": 0.26,
+        "peaks_mib": [
+          520.961,
+          521.645,
+          521.211,
+          521.359,
+          521.137
+        ]
+      },
+      "16": {
+        "n": 5,
+        "mean_mib": 525.71,
+        "sample_std_mib": 0.12,
+        "peaks_mib": [
+          525.812,
+          525.512,
+          525.762,
+          525.77,
+          525.68
+        ]
+      },
+      "32": {
+        "n": 5,
+        "mean_mib": 534.86,
+        "sample_std_mib": 0.17,
+        "peaks_mib": [
+          534.867,
+          534.75,
+          534.672,
+          535.121,
+          534.887
+        ]
+      }
+    },
+    "startup_to_ready_per_tier": {
+      "1": {
+        "n": 5,
+        "mean_s": 0.775,
+        "sample_std_s": 0.005
+      },
+      "2": {
+        "n": 5,
+        "mean_s": 0.782,
+        "sample_std_s": 0.005
+      },
+      "4": {
+        "n": 5,
+        "mean_s": 0.78,
+        "sample_std_s": 0.006
+      },
+      "8": {
+        "n": 5,
+        "mean_s": 0.776,
+        "sample_std_s": 0.003
+      },
+      "16": {
+        "n": 5,
+        "mean_s": 0.738,
+        "sample_std_s": 0.093
+      },
+      "32": {
+        "n": 5,
+        "mean_s": 0.769,
+        "sample_std_s": 0.01
+      }
+    },
+    "note": "输出长度随档位可能不同（贪心解码下同题输出应一致，如不同将如实呈现）"
+  }
+}

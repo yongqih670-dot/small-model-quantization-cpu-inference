@@ -1,0 +1,70 @@
+{
+  "unit": 6,
+  "unit_key": "r1_t2",
+  "round": 1,
+  "tier": 2,
+  "resource_before": {
+    "time": "2026-10-03T04:12:37.752+00:00",
+    "cpu_percent_sample": 2.4,
+    "free_ram_gib": 13.68,
+    "llama_server_process_count_global": 0,
+    "note": "仅记录本机负载；不据此筛选数据"
+  },
+  "argv": [
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\llama.cpp\\llama-bench.exe",
+    "-m",
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "-ngl",
+    "0",
+    "-t",
+    "2",
+    "-fa",
+    "off",
+    "-p",
+    "256",
+    "-n",
+    "64",
+    "-pg",
+    "256,64",
+    "-d",
+    "0",
+    "-r",
+    "1",
+    "-o",
+    "json",
+    "-oe",
+    "json",
+    "--progress"
+  ],
+  "exit_code": 0,
+  "stdout_file": "bench_06_r1_t2_stdout.txt",
+  "stderr_file": "bench_06_r1_t2_stderr.txt",
+  "tests": [
+    {
+      "workload": "pp256",
+      "tok_s": 407.155,
+      "valid": true,
+      "n_prompt": 256,
+      "n_gen": 0
+    },
+    {
+      "workload": "tg64",
+      "tok_s": 87.2526,
+      "valid": true,
+      "n_prompt": 0,
+      "n_gen": 64
+    },
+    {
+      "workload": "pg256+64",
+      "tok_s": 233.411,
+      "valid": true,
+      "n_prompt": 256,
+      "n_gen": 64
+    }
+  ],
+  "tests_valid_count": 3,
+  "execution_complete": true,
+  "metrics_valid": true,
+  "cleanup_success": true,
+  "ok": true
+}

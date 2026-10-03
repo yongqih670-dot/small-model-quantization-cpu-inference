@@ -1,0 +1,227 @@
+{
+  "frozen_at": "2026-10-03T12:15:31",
+  "algorithm": "sha256",
+  "stage3_baseline_commit": "0b014a6",
+  "rule": "Stage 4 正式结果产生后不再调整计划/配置/评分；冻结后再改动任何被列文件将导致 stage4 preflight 失败",
+  "files": {
+    "configs/stage4_plan.json": "3827993201ef9ffde4663f881701b90f0e01f04271c04b4d63e6e1d164db7542",
+    "configs/stage4_config.json": "2182bd7133e42789bfaa2d746638f81898abb226dada2825add22407f9575e70",
+    "configs/formal_config.json": "a1380d1aaec893c507373f42d41182b300c8fe71d91012626023ca9b38ce8177",
+    "scripts/stage4_preflight.py": "4eb659367cbc3f45f9e01cb821d23941115238e72b8c1c503ec560a5e61c2618",
+    "scripts/stage4_exec.py": "e9b6d2e6547ec19aa09099dd5d437f2e31e16f2b1a1dbce5184a6a5de08ebd44",
+    "scripts/analyze_stage3_revision.py": "60b1d4bd961ccddf6fab420518b4c49aaa3d4bb4a9af85f8c0be4c6506470da4",
+    "scripts/analyze_stage4.py": "0f4cfb1eee48aca246ad3e9b943405120bba591ed139f4d9109a87b7cd789940",
+    "scripts/score_answer.py": "7f6e5a28ed2b66a2b48bc3342703a3481dc638d3efdc4ea7c704200b551270b4",
+    "scripts/llama_server_ctl.py": "e2c83d47403e8330d3d1cd6f89f23deb739422c886bf9bf5405d6f8d8594a69c",
+    "datasets/dev/dev_tasks.json": "0ac8658407a5410bfc60cafd17f766135de7ebf9d9465487830ca26acb981d10",
+    "datasets/prompt_template.json": "4fca5ca148166615f9db44d930363ae688842e8b6aeb2f2da9e1804eec555647",
+    "datasets/frozen_hashes_stage3.json": "1d4cdfaf8dc82dbd4825886350e555bb666c123c54a10b7e224ac6af0957c36a",
+    "models/model_manifest_v3.json": "c3e85413dde702ac50f82f37cbddb753415aa903383b9892d3a1b46da20cf638",
+    "environment/backend_manifest.json": "b8e34a66e7f0f07aeb75fa973685e28c0dc2ce50b559c2f12b085f80eb8f56e6",
+    "docs/STAGE4_PLAN.md": "5fa5b739f0696f3b9e8c6f13715b6981d507446b6d9e19cf8c442ba9cff10ac5",
+    "docs/stage3_analysis_revision.md": "6696e52e59c9217618e7d4584d37e0d6098df3099ce0a9d91d3de7dc79628ec4"
+  },
+  "tools_inventory": {
+    "ggml-base.dll": {
+      "sha256": "a118ea558401ad0fe27efed965b3f87c1c3903416dc4b0e296262828de2b0bfa",
+      "size_bytes": 801280
+    },
+    "ggml-cpu-alderlake.dll": {
+      "sha256": "44fa777c696b77af0926caea10b5bd232bcc48aee360768ebdd4585bc028137f",
+      "size_bytes": 1431552
+    },
+    "ggml-cpu-cannonlake.dll": {
+      "sha256": "4aea3c9782de9b5b697a0904d55d626262290ceaf8220b6714cde4808120fc69",
+      "size_bytes": 1657856
+    },
+    "ggml-cpu-cascadelake.dll": {
+      "sha256": "e81238a5f6632bcc8122670e31dc4cc0838a53fa747a6e86a63d99057c6124ef",
+      "size_bytes": 1642496
+    },
+    "ggml-cpu-cooperlake.dll": {
+      "sha256": "a5875996b16ac200f03590600fbef7abc74ccdbf0a61e9d8933fe7c94f3853e4",
+      "size_bytes": 1643520
+    },
+    "ggml-cpu-haswell.dll": {
+      "sha256": "9c88188d5fa7e59f31418564d2d96dd1b044fbaa1e169f1d221e7aec7524a38a",
+      "size_bytes": 1436160
+    },
+    "ggml-cpu-icelake.dll": {
+      "sha256": "fe3baac247442078c3212dda3076c8950e2447ba0f6e6d7dd52fc98b56b56f03",
+      "size_bytes": 1649152
+    },
+    "ggml-cpu-ivybridge.dll": {
+      "sha256": "a07f1812b9b95a5282c6990f1e2f2d8a3694d60edf447ac089d3a568e7bb7c45",
+      "size_bytes": 1307136
+    },
+    "ggml-cpu-piledriver.dll": {
+      "sha256": "0c0f8378fe4aec014eea58433dfa44113d2addc092ffba48248f7549fae3939a",
+      "size_bytes": 1310208
+    },
+    "ggml-cpu-sandybridge.dll": {
+      "sha256": "24c365e41815e8ea39928fbefe105d8c92397bb897ba4e709d8a4bd8cac71bba",
+      "size_bytes": 1286656
+    },
+    "ggml-cpu-sapphirerapids.dll": {
+      "sha256": "d91b7b13c85570febf188a07e0221f80cd0bf45472b0e06abb848af4da9a366d",
+      "size_bytes": 1920000
+    },
+    "ggml-cpu-skylakex.dll": {
+      "sha256": "d778867dfcb342b8ce48a6007f0e8edc0711e62718f8d934bf341b0dd569fbd0",
+      "size_bytes": 1651712
+    },
+    "ggml-cpu-sse42.dll": {
+      "sha256": "2dc767874038c6d3e6e0af877a41b1984a22834f72bfc35eda128d6506f02020",
+      "size_bytes": 916480
+    },
+    "ggml-cpu-x64.dll": {
+      "sha256": "b38d8bbdde327d62342c5962b164647dacd53e1283b1288a5513fea896a4b709",
+      "size_bytes": 908800
+    },
+    "ggml-cpu-zen4.dll": {
+      "sha256": "6b243c06314b4685d2d7e418cd07588ec2c025437fea71a58f24de701ecf5eb4",
+      "size_bytes": 1649664
+    },
+    "ggml-rpc-server.exe": {
+      "sha256": "2e41baef2552eb5e2656a33900a6fcaf0c50882f79130f75e81148f82b208461",
+      "size_bytes": 117248
+    },
+    "ggml-rpc.dll": {
+      "sha256": "3aaa96ec5a0dcd7ba1a537ed2049a0ae774df36bd03756aab4acf2dbee71c162",
+      "size_bytes": 168448
+    },
+    "ggml.dll": {
+      "sha256": "c1c66d6e49e41a6723010db3981cdb09165faf52940fe786261ca2f9377b2ff2",
+      "size_bytes": 79872
+    },
+    "libomp.dll": {
+      "sha256": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c",
+      "size_bytes": 768000
+    },
+    "llama-batched-bench-impl.dll": {
+      "sha256": "d11f660d431e5cb59a11ea7b657954aaee72f02e9855630549567a9dc5994a0d",
+      "size_bytes": 61952
+    },
+    "llama-batched-bench.exe": {
+      "sha256": "2d8856bf34fae50e51140e45cd9b240eb4cd9f6b141428a7dc90b916b28be94f",
+      "size_bytes": 9216
+    },
+    "llama-bench-impl.dll": {
+      "sha256": "e2a51550f47a7c7fb02d1f67bfcf05897c4604f70e35b974f9975961ed21816d",
+      "size_bytes": 403968
+    },
+    "llama-bench.exe": {
+      "sha256": "b084322fe3671d1f8d7fcb0f1f03f012767cfbed0d01a3202e9fbb4d24327dc8",
+      "size_bytes": 9216
+    },
+    "llama-cli-impl.dll": {
+      "sha256": "029f341790b0c812307c3fb90b66d9a57ae0328ff70bb6dfd5e4e7eebd99c851",
+      "size_bytes": 3302912
+    },
+    "llama-cli.exe": {
+      "sha256": "cecdd35c83a3ef5de2fd150a5f0c40d12244c15eac1051126c39e6162947881e",
+      "size_bytes": 9216
+    },
+    "llama-common.dll": {
+      "sha256": "d297b1fd31a64bdea265465e502883d308f27dd90e7ccbbded85db9508870dce",
+      "size_bytes": 7892480
+    },
+    "llama-completion-impl.dll": {
+      "sha256": "75199dceb421a283bd84fffeb70e7463c2c04a6a83f98c0bf8e0656fecc63068",
+      "size_bytes": 136192
+    },
+    "llama-completion.exe": {
+      "sha256": "b3eb69f4271264a13f5ba582fead897a3fd4d7e19a4d3640c698e43a625ab35b",
+      "size_bytes": 9216
+    },
+    "llama-fit-params-impl.dll": {
+      "sha256": "a04ae4a482032c837fcc44487fe175c70b3fa906a4541c7a4edbd35dbabddd0b",
+      "size_bytes": 43008
+    },
+    "llama-fit-params.exe": {
+      "sha256": "ca69b3399aead90f6de1971190f67c2dbf0db262fa0f701393ef70dce958d104",
+      "size_bytes": 9216
+    },
+    "llama-gemma3-cli.exe": {
+      "sha256": "61af1f48000dbcd6d6e2906d8210e322f74b42abc59200ca9420279469e4d55e",
+      "size_bytes": 27136
+    },
+    "llama-gguf-split.exe": {
+      "sha256": "4307880900d22bd468a0fa439cf957556a035d91ce2731fe3ad9b81f48d64488",
+      "size_bytes": 60416
+    },
+    "llama-imatrix.exe": {
+      "sha256": "ff7698f50d70755797b1b063b6bde12ee313cdec5a0825484fa776395c3d666d",
+      "size_bytes": 256000
+    },
+    "llama-llava-cli.exe": {
+      "sha256": "61af1f48000dbcd6d6e2906d8210e322f74b42abc59200ca9420279469e4d55e",
+      "size_bytes": 27136
+    },
+    "llama-minicpmv-cli.exe": {
+      "sha256": "61af1f48000dbcd6d6e2906d8210e322f74b42abc59200ca9420279469e4d55e",
+      "size_bytes": 27136
+    },
+    "llama-mtmd-cli.exe": {
+      "sha256": "33d3566672b4a998e2e9292896c280f957433a7959723a50cb0bd8e07b672abc",
+      "size_bytes": 92672
+    },
+    "llama-mtmd-debug.exe": {
+      "sha256": "83c662e3bedecec7c3dd6074017fcfbbe0b1003e3b6dd45d0dff49aa992e6e8a",
+      "size_bytes": 55808
+    },
+    "llama-perplexity-impl.dll": {
+      "sha256": "616c86f2f1e4b5b78e08dec2733a15a7699d776c7b8c5de238e8da97fa22b3c8",
+      "size_bytes": 197632
+    },
+    "llama-perplexity.exe": {
+      "sha256": "e935b4a8902e17ceffd048fb6efc85d3dd73ad5b1b7b09c9111584b84d8afbd3",
+      "size_bytes": 9216
+    },
+    "llama-quantize-impl.dll": {
+      "sha256": "0cd5d27cf561f959ce41a034a8c28b583e2a5c76aab58b38fd536912537184f9",
+      "size_bytes": 137216
+    },
+    "llama-quantize.exe": {
+      "sha256": "ebac88546fcf9fc70983badde7d228ec6e8698b2b12d22b8f45613846c8f48c4",
+      "size_bytes": 9216
+    },
+    "llama-qwen2vl-cli.exe": {
+      "sha256": "61af1f48000dbcd6d6e2906d8210e322f74b42abc59200ca9420279469e4d55e",
+      "size_bytes": 27136
+    },
+    "llama-results.exe": {
+      "sha256": "0de2a7ffd0eedaeff39231b17eaa1fff5f800aec622e7127f8644fbce47a957a",
+      "size_bytes": 46592
+    },
+    "llama-server-impl.dll": {
+      "sha256": "1af44e60581b6341b40e87d0edf4a8828185dd4121ce0d9c9c3f8d6e92b73587",
+      "size_bytes": 8947200
+    },
+    "llama-server.exe": {
+      "sha256": "c9d003c9f9fa3ae5968cb50fd750af22331d4d9fdccffccfc988ca840deb3589",
+      "size_bytes": 9216
+    },
+    "llama-tokenize.exe": {
+      "sha256": "43946525fbb5cf8191e7280acd22945e7270c0685bcff35b213230647bd1611e",
+      "size_bytes": 58880
+    },
+    "llama-tts.exe": {
+      "sha256": "56496c08589db9373cf617ec78a477443d8dcb970de03ad370ffe4819cec4db2",
+      "size_bytes": 41984
+    },
+    "llama.dll": {
+      "sha256": "88604a70f6d04d3bfbe009084ae5a464649c19e66590fc1a3003c9afd10ab5de",
+      "size_bytes": 3273216
+    },
+    "llama.exe": {
+      "sha256": "6d3b13b2dadea6c3ea9face835e3fc9b31d98b2fa08a0c0571615a42324eb670",
+      "size_bytes": 104448
+    },
+    "mtmd.dll": {
+      "sha256": "043ace0af9036564a9993f2017b500a4a5c1358e1cb72785311b1489522562c4",
+      "size_bytes": 1795072
+    }
+  },
+  "tools_inventory_count": 50
+}

@@ -425,6 +425,67 @@ def main() -> int:
     check("带模型输出的记录均显式标记真实推理",
           not real_output_missing_flag, str(real_output_missing_flag))
 
+    # ---------------- S4-1. 严格 /slots 语义（合成响应，软件测试） ----------------
+    section("S4-1. 严格 /slots 语义：空列表/结构异常不算确认空闲")
+    from stage4_exec import strict_slots_idle
+
+    class FakeServer:
+        def __init__(self, body):
+            self._body = body
+        def request(self, path, payload, timeout_s):
+            return {"ok": True, "http_status": 200, "body": self._body,
+                    "client_e2e_s": 0.001, "error": None}
+
+    r = strict_slots_idle(FakeServer([]), timeout_s=0.2, poll_s=0.05)
+    check("空列表不算确认空闲", not r["freed"] and r["state"]["shape"] == "empty_list", str(r))
+    r = strict_slots_idle(FakeServer({"slots": []}), timeout_s=0.2, poll_s=0.05)
+    check("dict 结构不算确认空闲", not r["freed"], str(r))
+    r = strict_slots_idle(FakeServer([{"foo": 1}]), timeout_s=0.2, poll_s=0.05)
+    check("缺 is_processing 键不算确认空闲", not r["freed"], str(r))
+    r = strict_slots_idle(FakeServer([{"is_processing": True}]),
+                          timeout_s=0.2, poll_s=0.05)
+    check("忙 slot 不算空闲", not r["freed"], str(r))
+    r = strict_slots_idle(FakeServer([{"is_processing": False}]),
+                          timeout_s=2, poll_s=0.05)
+    check("完整结构的空闲 slot 才确认", r["freed"], str(r))
+
+    class DeadServer:
+        def request(self, path, payload, timeout_s):
+            return {"ok": False, "http_status": None, "body": None,
+                    "error": "connection refused"}
+    r = strict_slots_idle(DeadServer(), timeout_s=0.2, poll_s=0.05)
+    check("请求失败不算确认空闲(须终止服务)", not r["freed"], str(r))
+
+    # ---------------- S4-2. 精确 McNemar 已知值 ----------------
+    section("S4-2. 双侧精确 McNemar 已知值")
+    from analyze_stage3_revision import mcnemar_exact
+    check("b=1,c=9 -> p≈0.021484", abs(mcnemar_exact(1, 9)["p_value"] - 0.021484) < 1e-5,
+          str(mcnemar_exact(1, 9)))
+    check("b=0,c=0 -> p=1.0", mcnemar_exact(0, 0)["p_value"] == 1.0)
+    check("b=c=3 -> p=1.0(封顶)", mcnemar_exact(3, 3)["p_value"] == 1.0)
+    check("b=0,c=4 -> p=0.125", abs(mcnemar_exact(0, 4)["p_value"] - 0.125) < 1e-9,
+          str(mcnemar_exact(0, 4)))
+
+    # ---------------- S4-3. 缺失测量不填 0 ----------------
+    section("S4-3. 聚合缺失档位如实报告")
+    from analyze_stage4 import aggregate_bench_units
+    fake_units = [{"ok": True, "tier": 1, "round": 1,
+                   "tests": [{"workload": "pp256", "tok_s": 100.0, "valid": True,
+                              "n_prompt": 256, "n_gen": 0}]}]
+    agg = aggregate_bench_units(fake_units)
+    check("只有1个样本时如实报告 n=1", agg["stats"]["T1|pp256"]["n"] == 1)
+    check("未覆盖的档位/工作负载进入 missing 且 n=0",
+          any(m["tier"] == 32 and m["workload"] == "tg64" for m in agg["missing"])
+          and agg["stats"]["T32|tg64"].get("missing") is True,
+          str(agg["missing"][:3]))
+    check("缺失不产生伪造均值", agg["stats"]["T32|tg64"].get("mean_tok_s") is None)
+
+    # ---------------- S4-4. 指纹正检 ----------------
+    section("S4-4. Stage 4 指纹核对（当前真实树）")
+    from stage4_exec import verify_fingerprints
+    fp = verify_fingerprints()
+    check("当前模型/代码/后端指纹全部通过", fp["ok"], str(fp["problems"][:3]))
+
     # ---------------- 收尾 ----------------
     orphans_after = ctl.count_orphan_servers()
     check("全部测试结束后无残留 llama-server 进程", orphans_after == 0,

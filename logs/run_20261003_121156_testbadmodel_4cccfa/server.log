@@ -1,0 +1,15 @@
+0.00.018.134 I srv  llama_server: initializing ...
+0.00.018.141 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.018.391 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.028.825 I srv    load_model: loading model 'F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tests\fixtures\not_a_gguf.gguf'
+0.00.029.151 E gguf_init_from_reader: invalid magic characters: 'this', expected 'GGUF'
+0.00.029.238 E llama_model_load: error loading model: llama_model_loader: failed to load model from F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tests\fixtures\not_a_gguf.gguf
+0.00.029.242 E llama_model_load_from_file_impl: failed to load model
+0.00.029.254 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.029.303 E gguf_init_from_reader: invalid magic characters: 'this', expected 'GGUF'
+0.00.029.317 E llama_model_load: error loading model: llama_model_loader: failed to load model from F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tests\fixtures\not_a_gguf.gguf
+0.00.029.317 E llama_model_load_from_file_impl: failed to load model
+0.00.029.318 E cmn  common_init_: failed to load model 'F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tests\fixtures\not_a_gguf.gguf'
+0.00.029.319 E srv    load_model: failed to load model, 'F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tests\fixtures\not_a_gguf.gguf'
+0.00.029.323 I srv    operator(): operator(): cleaning up before exit...
+0.00.030.187 E srv  llama_server: exiting due to model loading error

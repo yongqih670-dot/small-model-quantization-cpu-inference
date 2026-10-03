@@ -1,0 +1,89 @@
+{
+  "unit": 10,
+  "unit_key": "r2_t32",
+  "round": 2,
+  "tier": 32,
+  "resource_before": {
+    "time": "2026-10-03T04:16:25.574+00:00",
+    "cpu_percent_sample": 4.9,
+    "free_ram_gib": 13.57,
+    "llama_server_process_count_global": 0,
+    "note": "仅记录本机负载；不据此筛选数据"
+  },
+  "argv": [
+    "-m",
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "--parallel",
+    "1",
+    "-c",
+    "1024",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-t",
+    "32",
+    "-tb",
+    "32",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "-ngl",
+    "0",
+    "--cache-reuse",
+    "0"
+  ],
+  "server_startup": {
+    "ok": true,
+    "error": null,
+    "server_startup_to_ready_s": 0.782493,
+    "backend_model_init_interval_s": 0.548434,
+    "model_load_time_s": null
+  },
+  "warmup_and_cache": {
+    "warmup_ok": true,
+    "cache_check": [
+      {
+        "cache_n": 0,
+        "prompt_n": 30
+      },
+      {
+        "cache_n": 0,
+        "prompt_n": 30
+      }
+    ],
+    "cache_ok": true,
+    "excluded_from_timed_total": true
+  },
+  "timed_requests_sent": 5,
+  "not_attempted_within_unit": [],
+  "memory": {
+    "peak_wset_mib": 534.75,
+    "sampled_peak_rss_mib": 534.75,
+    "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+    "sample_interval_s": 0.05
+  },
+  "execution_complete": true,
+  "metrics_valid": true,
+  "cleanup": {
+    "attempted": true,
+    "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+    "server_self_exited": false,
+    "confirmed_exit": true,
+    "exit_code": 1
+  },
+  "cleanup_success": true,
+  "resource_after": {
+    "time": "2026-10-03T04:16:28.149+00:00",
+    "cpu_percent_sample": 3.4,
+    "free_ram_gib": 13.57,
+    "llama_server_process_count_global": 0,
+    "note": "仅记录本机负载；不据此筛选数据"
+  },
+  "ok": true
+}

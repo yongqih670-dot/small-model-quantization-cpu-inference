@@ -2,8 +2,8 @@
 
 《计算机技术与应用》大模型期末大作业课题14：研究同一个约 0.5B 参数规模的小语言模型（Qwen2.5-0.5B-Instruct）在不同 GGUF 量化版本与 CPU 运行参数下的**文件大小、内存占用、提示处理速度、逐 Token 生成速度、端到端延迟与简单任务质量**。
 
-**当前阶段：Stage 3 已完成 —— Q4/Q5/Q8 三量化版本正式对照（性能 + 质量）。**
-Stage 1/2 证据保持原样；本阶段结论限定本机、本模型、本配置、本测试集。
+**当前阶段：Stage 4 已完成 —— Stage 3 分析修订 + Q4_K_M 线程数实验。**
+历史证据保持原样；结论限定本机、Q4_K_M、b11347、固定负载。
 
 - 指标定义与测量边界：[docs/EXPERIMENT_PROTOCOL.md](docs/EXPERIMENT_PROTOCOL.md)
 - Stage 1 问题与修正对照：[docs/stage2_corrections.md](docs/stage2_corrections.md)
@@ -150,7 +150,19 @@ cleanup_success ∧ cache_reuse_check.passed ∧ performance.performance_record_
 - ✅ Stage 2：测量程序修正、协议与数据集冻结、Q4 开发验证（`c5d2c02`）
 - ✅ Stage 3：Q5/Q8 下载与官方独立核验、预注册矩阵（`configs/stage3_plan.json`）、
   正式对照三矩阵执行与汇总（`results/summary/stage3_summary.json`、`plots/`）
-- ⬜ Stage 4 候选：固定一个量化版本的线程数实验（依 Stage 3 结果预注册）
+- ✅ Stage 4：分析修订（`docs/stage3_analysis_revision.md`、`stage3rev_*`）+
+  线程实验（T∈{1,2,4,8,16,32}×5轮：90 个 bench 测量 + 150 条计时请求）
+- ⬜ Stage 5 候选：最终报告与交付材料整理；上下文扫描为可选扩展，不自动启动
+
+## Stage 4 线程实验速览（Q4_K_M, 统一线程预算）
+
+- pp256：T=32 最佳（1550.6 tok/s，T=1 的 7.57 倍）；tg64：T=8 最佳
+  （121.1 tok/s，1.87 倍），T=16/32 反而下降（1.84/1.33）；组合 pg256+64
+  依 3% 实用规则推荐 T=8；固定任务组合延迟最佳 T=16（0.249s，T=8 为 0.264s）
+- 进程峰值内存随线程档缓增：518→535 MiB；各档输出逐字一致（贪心解码）
+- 本机实用建议：**单档推荐 T=8**（生成最优、组合 3% 内、延迟仅差 15ms、
+  内存更低）；追求最低端到端延迟选 T=16；纯提示处理场景可更高
+- 详见 `results/summary/stage4_summary.json`、`plots/stage4_*.png`
 
 ## Stage 3 正式对照速览
 

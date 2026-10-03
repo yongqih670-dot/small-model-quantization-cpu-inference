@@ -1,0 +1,4 @@
+﻿pair,both_right,both_wrong,a_only,b_only,p_exact_two_sided
+Q4_K_M_vs_Q5_K_M,14,31,2,3,1.0
+Q4_K_M_vs_Q8_0,14,33,2,1,1.0
+Q5_K_M_vs_Q8_0,14,32,3,1,0.625

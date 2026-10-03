@@ -1,0 +1,45 @@
+{
+  "plan_id": "stage4_plan_v1",
+  "preregistered_seed": 20261004,
+  "model": "Q4_K_M",
+  "model_selection_rationale": "Stage 3 中该版本文件最小(491,400,032B)、tg64 观测速度最快，作为系统参数(线程)实验对象；不把任何质量等价性作为选择理由",
+  "thread_tiers": [1, 2, 4, 8, 16, 32],
+  "thread_tier_note": "32 为使用 SMT 逻辑线程的实验点，不称 32 物理核；实验前已复核硬件为 16C/32T",
+  "round_orders": [
+    {"round": 1, "tier_order": [16, 8, 32, 4, 1, 2]},
+    {"round": 2, "tier_order": [4, 1, 8, 32, 2, 16]},
+    {"round": 3, "tier_order": [2, 32, 1, 4, 16, 8]},
+    {"round": 4, "tier_order": [32, 4, 8, 16, 2, 1]},
+    {"round": 5, "tier_order": [8, 1, 32, 16, 2, 4]}
+  ],
+  "matrix_A_bench": {
+    "units": 30, "measurements_expected": 90,
+    "per_unit": "每(轮,线程档)一个独立 bench 进程, -r 1, 同时产出 pp256/tg64/pg256+64 三个条目",
+    "argv_flags": {"-ngl": 0, "-fa": "off", "-d": 0, "-r": 1, "-o": "json", "-oe": "json", "--progress": true},
+    "no_fake_ctx": "bench 无 -c 参数，不虚构；上下文由 d+p+n 隐式决定",
+    "load_mode_note": "llama-bench 无 -lm 参数，加载模式为其内部默认(auto/mmap 类)，与 server 的显式 mmap 分别如实记录",
+    "warmup": "保留 bench 默认 warmup，不计入测量"
+  },
+  "matrix_B_http": {
+    "task_order_fixed": ["dev-001", "dev-003", "dev-004", "dev-007", "dev-009"],
+    "units": 30, "timed_requests_expected": 150,
+    "per_unit": "每(轮,线程档)独立启动服务：预热1条+缓存检查2条(单独记录,不混入150条)→5条计时请求",
+    "aux_requests_expected": 90,
+    "not_quality_samples": true,
+    "timeout_rule": "请求超时后用严格 /slots 检查(空列表/结构异常/解析失败一律不算确认空闲)；无法确认则终止本程序启动的服务，单元记 failed，单元内剩余题记 not_attempted，继续下一单元(新服务)",
+    "resume_rule": "--resume <run_id>：恢复前核对模型/配置/计划/冻结清单/依赖指纹；仅跳过 marker 存在且 execution_complete=true 的单元；不完整单元保留 *_partial.json 证据后整单元重跑；汇总从落盘记录重建，不用 0 填充缺失"
+  },
+  "fixed_config_ref": "configs/stage4_config.json",
+  "failure_handling_preregistered": {
+    "missing": "单元失败保留原始证据与失败记录，不计入汇总统计，汇总报告失败数",
+    "contamination": "单元启动前/后资源快照异常(如全局 llama-server 进程>1)如实记录；不据速度好坏删数据",
+    "retest": "不静默重跑；确需补测用新 run_id 并记录原因与关联",
+    "no_zero_fill": "缺失测量不得用 0 或插值填充"
+  },
+  "recommendation_rule_preregistered": {
+    "threshold": "对目标指标，若较少线程档的均值距最佳观测均值不超过 3%，优先推荐较少线程",
+    "caveat": "3% 为实用选择阈值，不是统计等价证明；同时展示波动与配对轮次差异",
+    "report_best_per_metric": "pp/tg/pg/实际任务延迟分别报告最佳观测档位，不强求同档"
+  },
+  "scope_statement": "结论限定本机、Q4_K_M、llama.cpp b11347、固定负载(pp256/tg64/pg256+64/5条固定开发题)；不外推到长上下文、大模型或多请求并发；瓶颈机制只能按证据强度提出假设(未测带宽/频率/温度不得写成已证实事实)"
+}
