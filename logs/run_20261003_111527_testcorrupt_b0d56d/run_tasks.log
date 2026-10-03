@@ -1,0 +1,6 @@
+11:15:27 | ERROR   | run_tasks 失败
+Traceback (most recent call last):
+  File "F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\scripts\run_tasks.py", line 173, in main
+    raise RuntimeError(result["error"])
+RuntimeError: 文件损坏: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tests\fixtures\corrupt_tasks.json (JSONDecodeError: Expecting ',' delimiter: line 1 column 86 (char 85))
+11:15:27 | INFO    | 结果: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\results\raw\run_20261003_111527_testcorrupt_b0d56d\result.json (success=False)

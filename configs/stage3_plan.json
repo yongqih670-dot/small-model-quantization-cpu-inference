@@ -1,0 +1,48 @@
+{
+  "plan_id": "stage3_plan_v1",
+  "frozen_note": "本计划在首次正式结果产生前冻结（哈希纳入 frozen_hashes_stage3.json）。实施细节如因工具限制调整，须在正式结果产生前记录于 docs/stage3_corrections.md，不扩大到线程/上下文扫描。",
+  "preregistered_seed": 20261003,
+  "round_orders": [
+    {"round": 1, "order": ["Q5_K_M", "Q8_0", "Q4_K_M"]},
+    {"round": 2, "order": ["Q8_0", "Q4_K_M", "Q5_K_M"]},
+    {"round": 3, "order": ["Q4_K_M", "Q8_0", "Q5_K_M"]},
+    {"round": 4, "order": ["Q5_K_M", "Q4_K_M", "Q8_0"]},
+    {"round": 5, "order": ["Q4_K_M", "Q5_K_M", "Q8_0"]}
+  ],
+  "matrix_A_fixed_workload_bench": {
+    "models": ["Q4_K_M", "Q5_K_M", "Q8_0"],
+    "workloads": {"pp": {"n_prompt": 256}, "tg": {"n_gen": 64}, "pg": {"pp": 256, "tg": 64}},
+    "depth": 0,
+    "llama_bench_repetitions": 1,
+    "rounds": 5,
+    "total_bench_invocations": 15,
+    "total_workload_measurements": 45,
+    "argv_flags": {"-ngl": 0, "-t": 4, "-fa": "off", "-d": 0, "-r": 1, "-o": "json", "-oe": "json", "--progress": true},
+    "notes": ["pg 是组合工作负载指标，不称生成速度", "保留 bench 默认 warmup、全部原始输出与 samples", "单次调用同时产出 pp/tg/pg 三个测试条目（b11347 已核实）"]
+  },
+  "matrix_B_fixed_request_perf": {
+    "models": ["Q4_K_M", "Q5_K_M", "Q8_0"],
+    "task_order_fixed": ["dev-001", "dev-003", "dev-004", "dev-007", "dev-009"],
+    "rounds": 5,
+    "timed_requests_total": 75,
+    "per_startup": "每模型每轮独立启动服务；预热1条+缓存检查2条另计，不混入75条计时请求",
+    "recorded": ["server_startup_to_ready_s", "backend_model_init_interval_s", "peak_wset_mib", "sampled_peak_rss_mib", "逐请求端到端", "后端 timings"],
+    "notes": ["各模型输出长度可能不同：这是实际任务响应比较；等计算量吞吐结论以矩阵 A 为依据", "本矩阵输出不作为质量样本"]
+  },
+  "matrix_C_formal_quality": {
+    "models": ["Q4_K_M", "Q5_K_M", "Q8_0"],
+    "dataset": "datasets/test/test_tasks.json (test_tasks_v2, 50题冻结顺序)",
+    "requests_total": 150,
+    "rules": ["每模型恰好50个task_id各一次", "不重试；失败/超时/截断计入对应题型分母", "评分器/模板/金标为 test_tasks_v2 冻结版，正式结果产生后不再调整", "中断续跑用 --resume，已完成题不重复执行", "未完成整套(50/50)不得宣布完整正式正确率"]
+  },
+  "failure_handling": {
+    "timeout": "GET /slots 等待空闲(≤60s)；未空闲则终止服务，剩余任务标记 not_attempted",
+    "no_silent_rerun": "失败样本不静默重跑；确需补测用新 run_id 并记录原因与关联",
+    "resource": "每轮记录资源快照；异常处理规则预先确定，不看完速度挑数据"
+  },
+  "aggregation": {
+    "perf": "5轮报告均值、样本标准差(ddof=1)与原始散点",
+    "quality": "格式/内容/联合的 答对数/50 + Wilson 95% CI + 逐题三模型对照",
+    "file_size": "用 manifest 实际字节数，不用 bench 的 model_size/tensor 值"
+  }
+}

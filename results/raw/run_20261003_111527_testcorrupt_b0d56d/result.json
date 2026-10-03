@@ -1,0 +1,16 @@
+{
+  "run_id": "run_20261003_111527_testcorrupt_b0d56d",
+  "script": "scripts/run_tasks.py",
+  "dataset": "tests\\fixtures\\corrupt_tasks.json",
+  "synthetic": false,
+  "formal_mode": false,
+  "resumed_from_record": false,
+  "started_at_utc": "2026-10-03T03:15:27.025+00:00",
+  "success": false,
+  "failure_stage": "load_inputs",
+  "is_real_inference": false,
+  "requests_sent": 0,
+  "error": "文件损坏: F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tests\\fixtures\\corrupt_tasks.json (JSONDecodeError: Expecting ',' delimiter: line 1 column 86 (char 85))",
+  "not_attempted": [],
+  "finished_at_utc": "2026-10-03T03:15:27.027+00:00"
+}

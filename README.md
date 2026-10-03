@@ -2,8 +2,8 @@
 
 《计算机技术与应用》大模型期末大作业课题14：研究同一个约 0.5B 参数规模的小语言模型（Qwen2.5-0.5B-Instruct）在不同 GGUF 量化版本与 CPU 运行参数下的**文件大小、内存占用、提示处理速度、逐 Token 生成速度、端到端延迟与简单任务质量**。
 
-**当前阶段：Stage 2 已完成 —— 测量程序修正、评测协议与数据集建立、Q4 开发验证。**
-Stage 1（环境建立 + 首次冒烟）证据保持原样；正式 Q4/Q5/Q8 对照实验尚未开始。
+**当前阶段：Stage 3 已完成 —— Q4/Q5/Q8 三量化版本正式对照（性能 + 质量）。**
+Stage 1/2 证据保持原样；本阶段结论限定本机、本模型、本配置、本测试集。
 
 - 指标定义与测量边界：[docs/EXPERIMENT_PROTOCOL.md](docs/EXPERIMENT_PROTOCOL.md)
 - Stage 1 问题与修正对照：[docs/stage2_corrections.md](docs/stage2_corrections.md)
@@ -147,6 +147,21 @@ cleanup_success ∧ cache_reuse_check.passed ∧ performance.performance_record_
 ## 当前状态与下一步
 
 - ✅ Stage 1：环境 + 冒烟（提交 `6484457`）
-- ✅ Stage 2：测量程序修正、协议与数据集冻结、Q4 开发验证（本轮提交）
-- ⬜ Stage 3 候选：Q5/Q8 下载与同机对照、线程数扫描、上下文长度扫描、
-  50 条正式测试集运行（须按协议先解禁 `run_tasks.py` 守卫并确认）。
+- ✅ Stage 2：测量程序修正、协议与数据集冻结、Q4 开发验证（`c5d2c02`）
+- ✅ Stage 3：Q5/Q8 下载与官方独立核验、预注册矩阵（`configs/stage3_plan.json`）、
+  正式对照三矩阵执行与汇总（`results/summary/stage3_summary.json`、`plots/`）
+- ⬜ Stage 4 候选：固定一个量化版本的线程数实验（依 Stage 3 结果预注册）
+
+## Stage 3 正式对照速览
+
+- 模型：Q4_K_M / Q5_K_M / Q8_0（同 revision `9217f5db`，SHA256 官方独立核验通过）
+- 配置：`formal_stage3_t4_c1024_v1`（t=4/tb=4, ctx=1024, b=2048/ub=512, KV f16,
+  fa=off, lm=mmap, parallel=1, cache_prompt=false, temp=0, seed=42, max_tokens=96）
+- 矩阵 A（llama-bench，5轮×3模型，pp256/tg64/pg256+64）：
+  tg 生成速度 Q4 105.4±0.7 > Q5 99.7±0.9 > Q8 82.3±0.9 tok/s；
+  pp 提示处理 Q8 774±27 ≈ Q4 734±23 > Q5 440±9 tok/s
+- 矩阵 B（75 条真实计时请求）：端到端 Q4 0.359s ≈ Q8 0.385s < Q5 0.503s
+- 矩阵 C（正式质量 3×50 题，唯一正式质量组）：
+  联合正确 Q4 16/50、Q5 17/50、Q8 15/50——Wilson 95% CI 重叠，无稳定优势；
+  三模型同错 31 题（0.5B 基座能力上限），分歧仅 6 题
+- 详见 `docs/stage3_corrections.md`、`results/summary/stage3_summary.json`

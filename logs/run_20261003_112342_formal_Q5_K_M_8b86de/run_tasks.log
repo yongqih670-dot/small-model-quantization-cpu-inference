@@ -1,0 +1,56 @@
+11:23:42 | INFO    | 数据集 test_tasks.json 共 50 条 (config_id=formal_stage3_t4_c1024_v1, formal=True)
+11:23:43 | INFO    | preflight 通过，进入正式模式
+11:23:43 | INFO    | 启动 llama-server: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\llama.cpp\llama-server.exe -m F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\models\qwen2.5-0.5b-instruct-q5_k_m.gguf --parallel 1 -c 1024 -b 2048 -ub 512 -ctk f16 -ctv f16 -t 4 -tb 4 -fa off -lm mmap -ngl 0 --cache-reuse 0 --host 127.0.0.1 --port 2975
+11:23:44 | INFO    | 预热=True 缓存校验=True
+11:23:45 | INFO    | [1/50] test-001 -> '赵启明教授' | 格式=False 内容=False 联合=False
+11:23:46 | INFO    | [2/50] test-002 -> '未提供' | 格式=False 内容=False 联合=False
+11:23:46 | INFO    | [3/50] test-003 -> '未提供' | 格式=False 内容=False 联合=False
+11:23:47 | INFO    | [4/50] test-004 -> '未提供' | 格式=False 内容=False 联合=False
+11:23:47 | INFO    | [5/50] test-005 -> '未提供' | 格式=True 内容=True 联合=True
+11:23:48 | INFO    | [6/50] test-006 -> '80' | 格式=False 内容=False 联合=False
+11:23:48 | INFO    | [7/50] test-007 -> '张同同学的毕业设计答辩安排在5月12日上午第3时段，答辩组组长为何海教授。' | 格式=False 内容=False 联合=False
+11:23:49 | INFO    | [8/50] test-008 -> '5521' | 格式=False 内容=False 联合=False
+11:23:50 | INFO    | [9/50] test-009 -> '未提供' | 格式=True 内容=True 联合=True
+11:23:50 | INFO    | [10/50] test-010 -> '78.5' | 格式=False 内容=False 联合=False
+11:23:51 | INFO    | [11/50] test-011 -> '201' | 格式=False 内容=False 联合=False
+11:23:51 | INFO    | [12/50] test-012 -> '38.5' | 格式=True 内容=True 联合=True
+11:23:52 | INFO    | [13/50] test-013 -> '滨江园区B座' | 格式=True 内容=True 联合=True
+11:23:52 | INFO    | [14/50] test-014 -> '6月13' | 格式=False 内容=False 联合=False
+11:23:53 | INFO    | [15/50] test-015 -> '未提供' | 格式=True 内容=True 联合=True
+11:23:54 | INFO    | [16/50] test-016 -> '```json\n{\n  "活动名称": "社团文化节",\n  "举办时间": "' | 格式=False 内容=True 联合=False
+11:23:54 | INFO    | [17/50] test-017 -> '```json\n{\n  "课程名称": "《Python程序设计》",\n  "任' | 格式=False 内容=True 联合=False
+11:23:55 | INFO    | [18/50] test-018 -> '```json\n{\n  "商品名称": "便携小风扇",\n  "价格": 39.' | 格式=False 内容=False 联合=False
+11:23:56 | INFO    | [19/50] test-019 -> '```json\n{\n  "会议名称": "数据库课题组组会",\n  "时间": ' | 格式=False 内容=True 联合=False
+11:23:57 | INFO    | [20/50] test-020 -> '```json\n{\n  "航班号": "CZ3524",\n  "出发城市": "' | 格式=False 内容=False 联合=False
+11:23:58 | INFO    | [21/50] test-021 -> '```json\n{\n  "书名": "《时间简史（普及版）》",\n  "作者":' | 格式=False 内容=True 联合=False
+11:23:59 | INFO    | [22/50] test-022 -> '```json\n{\n  "比赛名称": "校运会电动平衡车趣味赛",\n  "报名' | 格式=False 内容=False 联合=False
+11:23:59 | INFO    | [23/50] test-023 -> '```json\n{\n  "医生姓名": "李国栋",\n  "科室": "骨科",' | 格式=False 内容=True 联合=False
+11:24:00 | INFO    | [24/50] test-024 -> '```json\n{\n  "车次": "G102次",\n  "出发站": "北京南' | 格式=False 内容=False 联合=False
+11:24:01 | INFO    | [25/50] test-025 -> '```json\n{\n  "软件名称": "轻笔记App",\n  "版本": "v' | 格式=False 内容=True 联合=False
+11:24:02 | INFO    | [26/50] test-026 -> '```json\n{\n  "培训主题": "消防知识培训",\n  "主讲人": "' | 格式=False 内容=False 联合=False
+11:24:03 | INFO    | [27/50] test-027 -> '```json\n{\n  "宿舍楼": "竹园3号楼",\n  "楼层": "5层"' | 格式=False 内容=False 联合=False
+11:24:03 | INFO    | [28/50] test-028 -> '```json\n{\n  "电影名": "流浪地球2",\n  "场次": "本周五' | 格式=False 内容=False 联合=False
+11:24:04 | INFO    | [29/50] test-029 -> '```json\n{\n  "银行名称": "中国银行",\n  "业务类型": "银' | 格式=False 内容=False 联合=False
+11:24:05 | INFO    | [30/50] test-030 -> '```json\n{\n  "姓名": "陈一诺",\n  "班级": "高二（3）班' | 格式=False 内容=True 联合=False
+11:24:05 | INFO    | [31/50] test-031 -> '垃圾信息' | 格式=True 内容=True 联合=True
+11:24:06 | INFO    | [32/50] test-032 -> '垃圾信息' | 格式=True 内容=False 联合=False
+11:24:06 | INFO    | [33/50] test-033 -> '校内' | 格式=True 内容=False 联合=False
+11:24:06 | INFO    | [34/50] test-034 -> '校内' | 格式=True 内容=True 联合=True
+11:24:06 | INFO    | [35/50] test-035 -> '紧急' | 格式=True 内容=True 联合=True
+11:24:07 | INFO    | [36/50] test-036 -> '紧急' | 格式=True 内容=False 联合=False
+11:24:07 | INFO    | [37/50] test-037 -> '正面' | 格式=True 内容=True 联合=True
+11:24:07 | INFO    | [38/50] test-038 -> '正面' | 格式=True 内容=False 联合=False
+11:24:08 | INFO    | [39/50] test-039 -> '可回收' | 格式=True 内容=True 联合=True
+11:24:08 | INFO    | [40/50] test-040 -> '可回收' | 格式=True 内容=False 联合=False
+11:24:08 | INFO    | [41/50] test-041 -> '2024-12-31' | 格式=True 内容=True 联合=True
+11:24:08 | INFO    | [42/50] test-042 -> '1999-01-09' | 格式=True 内容=True 联合=True
+11:24:09 | INFO    | [43/50] test-043 -> '09:05' | 格式=True 内容=True 联合=True
+11:24:09 | INFO    | [44/50] test-044 -> '23:30' | 格式=True 内容=True 联合=True
+11:24:09 | INFO    | [45/50] test-045 -> '2242' | 格式=False 内容=False 联合=False
+11:24:09 | INFO    | [46/50] test-046 -> '1000001' | 格式=True 内容=True 联合=True
+11:24:10 | INFO    | [47/50] test-047 -> '3.5%' | 格式=True 内容=True 联合=True
+11:24:10 | INFO    | [48/50] test-048 -> '2048' | 格式=False 内容=False 联合=False
+11:24:10 | INFO    | [49/50] test-049 -> '77.0' | 格式=True 内容=True 联合=True
+11:24:11 | INFO    | [50/50] test-050 -> '0.6666666666' | 格式=False 内容=False 联合=False
+11:24:11 | INFO    | llama-server 退出: exit=1 (本程序主动终止, 已确认)
+11:24:11 | INFO    | 结果: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\results\raw\run_20261003_112342_formal_Q5_K_M_8b86de\result.json (success=True)

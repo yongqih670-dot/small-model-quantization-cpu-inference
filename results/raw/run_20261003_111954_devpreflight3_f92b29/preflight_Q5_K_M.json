@@ -1,0 +1,50 @@
+{
+  "model": "Q5_K_M",
+  "entry": {
+    "model": "Q5_K_M",
+    "argv": [
+      "-m",
+      "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "--parallel",
+      "1",
+      "-c",
+      "1024",
+      "-b",
+      "2048",
+      "-ub",
+      "512",
+      "-ctk",
+      "f16",
+      "-ctv",
+      "f16",
+      "-t",
+      "4",
+      "-tb",
+      "4",
+      "-fa",
+      "off",
+      "-lm",
+      "mmap",
+      "-ngl",
+      "0",
+      "--cache-reuse",
+      "0"
+    ],
+    "server_startup_to_ready_s": 0.781712,
+    "cache_check_passed": true,
+    "preflight_task": {
+      "task_id": "dev-001",
+      "ok": true,
+      "output": "未提供",
+      "finish_reason": "stop",
+      "e2e_s": 0.5329618999967352
+    },
+    "loadable_and_infers": true,
+    "memory": {
+      "peak_wset_mib": 502.355,
+      "sampled_peak_rss_mib": 500.609,
+      "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+      "sample_interval_s": 0.05
+    }
+  }
+}

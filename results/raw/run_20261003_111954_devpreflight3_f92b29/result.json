@@ -1,0 +1,183 @@
+{
+  "run_id": "run_20261003_111954_devpreflight3_f92b29",
+  "purpose": "三模型开发预检(非正式结果)",
+  "is_real_inference": true,
+  "synthetic": false,
+  "config_id": "formal_stage3_t4_c1024_v1",
+  "models": [
+    {
+      "model": "Q4_K_M",
+      "argv": [
+        "-m",
+        "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+        "--parallel",
+        "1",
+        "-c",
+        "1024",
+        "-b",
+        "2048",
+        "-ub",
+        "512",
+        "-ctk",
+        "f16",
+        "-ctv",
+        "f16",
+        "-t",
+        "4",
+        "-tb",
+        "4",
+        "-fa",
+        "off",
+        "-lm",
+        "mmap",
+        "-ngl",
+        "0",
+        "--cache-reuse",
+        "0"
+      ],
+      "server_startup_to_ready_s": 0.59602,
+      "cache_check_passed": true,
+      "preflight_task": {
+        "task_id": "dev-001",
+        "ok": true,
+        "output": "未提供",
+        "finish_reason": "stop",
+        "e2e_s": 0.3312700999667868
+      },
+      "loadable_and_infers": true,
+      "memory": {
+        "peak_wset_mib": 509.246,
+        "sampled_peak_rss_mib": 509.246,
+        "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+        "sample_interval_s": 0.05
+      },
+      "cleanup": {
+        "attempted": true,
+        "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+        "server_self_exited": false,
+        "confirmed_exit": true,
+        "exit_code": 1
+      }
+    },
+    {
+      "model": "Q5_K_M",
+      "argv": [
+        "-m",
+        "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+        "--parallel",
+        "1",
+        "-c",
+        "1024",
+        "-b",
+        "2048",
+        "-ub",
+        "512",
+        "-ctk",
+        "f16",
+        "-ctv",
+        "f16",
+        "-t",
+        "4",
+        "-tb",
+        "4",
+        "-fa",
+        "off",
+        "-lm",
+        "mmap",
+        "-ngl",
+        "0",
+        "--cache-reuse",
+        "0"
+      ],
+      "server_startup_to_ready_s": 0.781712,
+      "cache_check_passed": true,
+      "preflight_task": {
+        "task_id": "dev-001",
+        "ok": true,
+        "output": "未提供",
+        "finish_reason": "stop",
+        "e2e_s": 0.5329618999967352
+      },
+      "loadable_and_infers": true,
+      "memory": {
+        "peak_wset_mib": 502.355,
+        "sampled_peak_rss_mib": 500.609,
+        "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+        "sample_interval_s": 0.05
+      },
+      "cleanup": {
+        "attempted": true,
+        "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+        "server_self_exited": false,
+        "confirmed_exit": true,
+        "exit_code": 1
+      }
+    },
+    {
+      "model": "Q8_0",
+      "argv": [
+        "-m",
+        "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+        "--parallel",
+        "1",
+        "-c",
+        "1024",
+        "-b",
+        "2048",
+        "-ub",
+        "512",
+        "-ctk",
+        "f16",
+        "-ctv",
+        "f16",
+        "-t",
+        "4",
+        "-tb",
+        "4",
+        "-fa",
+        "off",
+        "-lm",
+        "mmap",
+        "-ngl",
+        "0",
+        "--cache-reuse",
+        "0"
+      ],
+      "server_startup_to_ready_s": 0.773413,
+      "cache_check_passed": true,
+      "preflight_task": {
+        "task_id": "dev-001",
+        "ok": true,
+        "output": "未提供",
+        "finish_reason": "stop",
+        "e2e_s": 0.3423643000423908
+      },
+      "loadable_and_infers": true,
+      "memory": {
+        "peak_wset_mib": 606.613,
+        "sampled_peak_rss_mib": 606.613,
+        "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+        "sample_interval_s": 0.05
+      },
+      "cleanup": {
+        "attempted": true,
+        "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+        "server_self_exited": false,
+        "confirmed_exit": true,
+        "exit_code": 1
+      }
+    }
+  ],
+  "started_at_utc": "2026-10-03T03:19:54.764+00:00",
+  "backend_version": {
+    "command": "llama-server.exe --version",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64\n"
+  },
+  "chat_template_identical": true,
+  "chat_template_sha256": "4e9918361c284a93880606d182d64da6a9fe97cdc1f5c5a78c1c8840444246fc",
+  "all_models_ready": true,
+  "success": true,
+  "finished_at_utc": "2026-10-03T03:19:59.017+00:00"
+}

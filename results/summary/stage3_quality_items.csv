@@ -1,0 +1,424 @@
+﻿task_id,task_type,model,format,content,joint,truncated,raw_output
+test-001,single_field_extraction,Q4_K_M,0,0,0,0,赵启明教授
+test-002,single_field_extraction,Q4_K_M,0,0,0,0,未提供
+test-003,single_field_extraction,Q4_K_M,0,0,0,0,未提供
+test-004,single_field_extraction,Q4_K_M,0,0,0,0,未提供
+test-005,single_field_extraction,Q4_K_M,1,1,1,0,未提供
+test-006,single_field_extraction,Q4_K_M,0,0,0,0,80
+test-007,single_field_extraction,Q4_K_M,0,0,0,0,张同同学的毕业设计答辩安排在5月12日上午第3时段，答辩组组长为何海教授。
+test-008,single_field_extraction,Q4_K_M,0,0,0,0,5521
+test-009,single_field_extraction,Q4_K_M,1,1,1,0,未提供
+test-010,single_field_extraction,Q4_K_M,0,0,0,0,78.5
+test-011,single_field_extraction,Q4_K_M,0,0,0,0,12点半
+test-012,single_field_extraction,Q4_K_M,1,1,1,0,38.5
+test-013,single_field_extraction,Q4_K_M,1,1,1,0,滨江园区B座
+test-014,single_field_extraction,Q4_K_M,0,0,0,0,6月13
+test-015,single_field_extraction,Q4_K_M,1,1,1,0,未提供
+test-016,json_extraction,Q4_K_M,0,1,0,0,"```json
+{
+  ""活动名称"": ""社团文化节"",
+  ""举办时间"": ""11月8日14:00"",
+  ""举办地点"": ""大学生活动中心广场""
+}
+```"
+test-017,json_extraction,Q4_K_M,0,1,0,0,"```json
+{
+  ""课程名称"": ""《Python程序设计》"",
+  ""任课教师"": ""林小峰"",
+  ""上课地点"": ""实验楼405机房""
+}
+```"
+test-018,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""商品名称"": ""便携小风扇"",
+  ""价格"": 39.9,
+  ""保修期"": ""6个月""
+}
+```"
+test-019,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""会议名称"": ""周四上午9:30"",
+  ""时间"": ""周四上午9:30"",
+  ""外部报告人"": null
+}
+```"
+test-020,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""航班号"": ""CZ3524"",
+  ""出发城市"": ""广州"",
+  ""到达城市"": ""杭州"",
+  ""起飞时间"": ""2022-03-"
+test-021,json_extraction,Q4_K_M,0,1,0,0,"```json
+{
+  ""书名"": ""《时间简史（普及版）》"",
+  ""作者"": ""斯蒂芬·霍金"",
+  ""出版社"": ""湖南科学技术出版社""
+}
+```"
+test-022,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""比赛名称"": ""校运会电动平衡车趣味赛"",
+  ""报名截止时间"": ""4月9日17:00"",
+  ""比赛地点"": ""待定""
+}
+```"
+test-023,json_extraction,Q4_K_M,0,1,0,0,"```json
+{
+  ""医生姓名"": ""李国栋"",
+  ""科室"": ""骨科"",
+  ""出诊时间"": ""每周一、三上午""
+}
+```"
+test-024,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""车次"": ""G102次"",
+  ""出发站"": ""北京南站"",
+  ""到达站"": ""上海虹桥站"",
+  ""座位"": ""二等座""
+}
+``"
+test-025,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""软件名称"": ""轻笔记App v3.2.1"",
+  ""版本"": ""v3.2.1"",
+  ""发布日期"": ""8月30日""
+}
+```"
+test-026,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""培训主题"": ""消防知识培训"",
+  ""主讲人"": ""消保科郑安琪"",
+  ""时长"": ""1小时30分钟""
+}
+```"
+test-027,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""宿舍楼"": ""竹园3号楼"",
+  ""楼层"": ""5层"",
+  ""故障类型"": ""热水供应"",
+  ""预计恢复时间"": null
+}
+`"
+test-028,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""电影名"": ""《流浪地球2》"",
+  ""场次"": null,
+  ""学生票价"": ""30元""
+}
+```"
+test-029,json_extraction,Q4_K_M,0,0,0,0,"```json
+{
+  ""银行名称"": ""中国银行"",
+  ""业务类型"": ""银行卡"",
+  ""办理地点"": ""府前支行""
+}
+```"
+test-030,json_extraction,Q4_K_M,0,1,0,0,"```json
+{
+  ""姓名"": ""陈一诺"",
+  ""班级"": ""高二（3）班"",
+  ""获奖等级"": ""省级一等奖""
+}
+```"
+test-031,classification,Q4_K_M,1,1,1,0,垃圾信息
+test-032,classification,Q4_K_M,1,0,0,0,垃圾信息
+test-033,classification,Q4_K_M,1,0,0,0,校内
+test-034,classification,Q4_K_M,1,1,1,0,校内
+test-035,classification,Q4_K_M,1,1,1,0,紧急
+test-036,classification,Q4_K_M,1,0,0,0,紧急
+test-037,classification,Q4_K_M,1,1,1,0,正面
+test-038,classification,Q4_K_M,1,0,0,0,正面
+test-039,classification,Q4_K_M,1,1,1,0,可回收
+test-040,classification,Q4_K_M,1,0,0,0,可回收
+test-041,normalization,Q4_K_M,1,1,1,0,2024-12-31
+test-042,normalization,Q4_K_M,1,1,1,0,1999-01-09
+test-043,normalization,Q4_K_M,0,0,0,0,09:50
+test-044,normalization,Q4_K_M,1,1,1,0,23:30
+test-045,normalization,Q4_K_M,1,1,1,0,2024
+test-046,normalization,Q4_K_M,0,0,0,0,100001
+test-047,normalization,Q4_K_M,1,1,1,0,3.5%
+test-048,normalization,Q4_K_M,1,1,1,0,2048MB
+test-049,normalization,Q4_K_M,0,0,0,0,77.0华氏温度
+test-050,normalization,Q4_K_M,0,0,0,0,0.6
+test-001,single_field_extraction,Q5_K_M,0,0,0,0,赵启明教授
+test-002,single_field_extraction,Q5_K_M,0,0,0,0,未提供
+test-003,single_field_extraction,Q5_K_M,0,0,0,0,未提供
+test-004,single_field_extraction,Q5_K_M,0,0,0,0,未提供
+test-005,single_field_extraction,Q5_K_M,1,1,1,0,未提供
+test-006,single_field_extraction,Q5_K_M,0,0,0,0,80
+test-007,single_field_extraction,Q5_K_M,0,0,0,0,张同同学的毕业设计答辩安排在5月12日上午第3时段，答辩组组长为何海教授。
+test-008,single_field_extraction,Q5_K_M,0,0,0,0,5521
+test-009,single_field_extraction,Q5_K_M,1,1,1,0,未提供
+test-010,single_field_extraction,Q5_K_M,0,0,0,0,78.5
+test-011,single_field_extraction,Q5_K_M,0,0,0,0,201
+test-012,single_field_extraction,Q5_K_M,1,1,1,0,38.5
+test-013,single_field_extraction,Q5_K_M,1,1,1,0,滨江园区B座
+test-014,single_field_extraction,Q5_K_M,0,0,0,0,6月13
+test-015,single_field_extraction,Q5_K_M,1,1,1,0,未提供
+test-016,json_extraction,Q5_K_M,0,1,0,0,"```json
+{
+  ""活动名称"": ""社团文化节"",
+  ""举办时间"": ""11月8日14:00"",
+  ""举办地点"": ""大学生活动中心广场""
+}
+```"
+test-017,json_extraction,Q5_K_M,0,1,0,0,"```json
+{
+  ""课程名称"": ""《Python程序设计》"",
+  ""任课教师"": ""林小峰"",
+  ""上课地点"": ""实验楼405机房""
+}
+```"
+test-018,json_extraction,Q5_K_M,0,0,0,0,"```json
+{
+  ""商品名称"": ""便携小风扇"",
+  ""价格"": 39.9,
+  ""保修期"": ""6个月""
+}
+```"
+test-019,json_extraction,Q5_K_M,0,1,0,0,"```json
+{
+  ""会议名称"": ""数据库课题组组会"",
+  ""时间"": ""周四上午9:30"",
+  ""外部报告人"": null
+}
+```"
+test-020,json_extraction,Q5_K_M,0,0,0,0,"```json
+{
+  ""航班号"": ""CZ3524"",
+  ""出发城市"": ""广州"",
+  ""到达城市"": ""杭州"",
+  ""起飞时间"": ""2023-03-"
+test-021,json_extraction,Q5_K_M,0,1,0,0,"```json
+{
+  ""书名"": ""《时间简史（普及版）》"",
+  ""作者"": ""斯蒂芬·霍金"",
+  ""出版社"": ""湖南科学技术出版社""
+}
+```"
+test-022,json_extraction,Q5_K_M,0,0,0,0,"```json
+{
+  ""比赛名称"": ""校运会电动平衡车趣味赛"",
+  ""报名截止时间"": ""4月9日17:00"",
+  ""比赛地点"": ""待定""
+}
+```"
+test-023,json_extraction,Q5_K_M,0,1,0,0,"```json
+{
+  ""医生姓名"": ""李国栋"",
+  ""科室"": ""骨科"",
+  ""出诊时间"": ""每周一、三上午""
+}
+```"
+test-024,json_extraction,Q5_K_M,0,0,0,0,"```json
+{
+  ""车次"": ""G102次"",
+  ""出发站"": ""北京南站"",
+  ""到达站"": ""上海虹桥站"",
+  ""座位"": ""二等座""
+}
+``"
+test-025,json_extraction,Q5_K_M,0,1,0,0,"```json
+{
+  ""软件名称"": ""轻笔记App"",
+  ""版本"": ""v3.2.1"",
+  ""发布日期"": ""8月30日""
+}
+```"
+test-026,json_extraction,Q5_K_M,0,0,0,0,"```json
+{
+  ""培训主题"": ""消防知识培训"",
+  ""主讲人"": ""消保科郑安琪"",
+  ""时长"": ""1小时30分钟""
+}
+```"
+test-027,json_extraction,Q5_K_M,0,0,0,0,"```json
+{
+  ""宿舍楼"": ""竹园3号楼"",
+  ""楼层"": ""5层"",
+  ""故障类型"": ""热水供应"",
+  ""预计恢复时间"": ""尚未确定""
+}"
+test-028,json_extraction,Q5_K_M,0,0,0,0,"```json
+{
+  ""电影名"": ""流浪地球2"",
+  ""场次"": ""本周五晚7点"",
+  ""学生票价"": ""普通票30元，学生凭证件购票每张15元""
+}
+"
+test-029,json_extraction,Q5_K_M,0,0,0,0,"```json
+{
+  ""银行名称"": ""中国银行"",
+  ""业务类型"": ""银行"",
+  ""办理地点"": ""府前支行""
+}
+```"
+test-030,json_extraction,Q5_K_M,0,1,0,0,"```json
+{
+  ""姓名"": ""陈一诺"",
+  ""班级"": ""高二（3）班"",
+  ""获奖等级"": ""省级一等奖"",
+  ""指导教师"": ""马成功""
+}
+"
+test-031,classification,Q5_K_M,1,1,1,0,垃圾信息
+test-032,classification,Q5_K_M,1,0,0,0,垃圾信息
+test-033,classification,Q5_K_M,1,0,0,0,校内
+test-034,classification,Q5_K_M,1,1,1,0,校内
+test-035,classification,Q5_K_M,1,1,1,0,紧急
+test-036,classification,Q5_K_M,1,0,0,0,紧急
+test-037,classification,Q5_K_M,1,1,1,0,正面
+test-038,classification,Q5_K_M,1,0,0,0,正面
+test-039,classification,Q5_K_M,1,1,1,0,可回收
+test-040,classification,Q5_K_M,1,0,0,0,可回收
+test-041,normalization,Q5_K_M,1,1,1,0,2024-12-31
+test-042,normalization,Q5_K_M,1,1,1,0,1999-01-09
+test-043,normalization,Q5_K_M,1,1,1,0,09:05
+test-044,normalization,Q5_K_M,1,1,1,0,23:30
+test-045,normalization,Q5_K_M,0,0,0,0,2242
+test-046,normalization,Q5_K_M,1,1,1,0,1000001
+test-047,normalization,Q5_K_M,1,1,1,0,3.5%
+test-048,normalization,Q5_K_M,0,0,0,0,2048
+test-049,normalization,Q5_K_M,1,1,1,0,77.0
+test-050,normalization,Q5_K_M,0,0,0,0,0.6666666666
+test-001,single_field_extraction,Q8_0,0,0,0,0,赵启明教授
+test-002,single_field_extraction,Q8_0,0,0,0,0,未提供
+test-003,single_field_extraction,Q8_0,0,0,0,0,未提供
+test-004,single_field_extraction,Q8_0,0,0,0,0,未提供
+test-005,single_field_extraction,Q8_0,1,1,1,0,未提供
+test-006,single_field_extraction,Q8_0,0,0,0,0,80
+test-007,single_field_extraction,Q8_0,0,0,0,0,张同同学的毕业设计答辩安排在5月12日上午第3时段，答辩组组长为何海教授。
+test-008,single_field_extraction,Q8_0,0,0,0,0,5521
+test-009,single_field_extraction,Q8_0,1,1,1,0,未提供
+test-010,single_field_extraction,Q8_0,0,0,0,0,78.5
+test-011,single_field_extraction,Q8_0,0,0,0,0,12点半
+test-012,single_field_extraction,Q8_0,1,1,1,0,38.5
+test-013,single_field_extraction,Q8_0,1,1,1,0,滨江园区B座
+test-014,single_field_extraction,Q8_0,0,0,0,0,6月13日2点
+test-015,single_field_extraction,Q8_0,1,1,1,0,未提供
+test-016,json_extraction,Q8_0,0,1,0,0,"```json
+{
+  ""活动名称"": ""社团文化节"",
+  ""举办时间"": ""11月8日14:00"",
+  ""举办地点"": ""大学生活动中心广场""
+}
+```"
+test-017,json_extraction,Q8_0,0,1,0,0,"```json
+{
+  ""课程名称"": ""《Python程序设计》"",
+  ""任课教师"": ""林小峰"",
+  ""上课地点"": ""实验楼405机房""
+}
+```"
+test-018,json_extraction,Q8_0,0,0,0,0,"```json
+{
+  ""商品名称"": ""便携小风扇"",
+  ""价格"": 39.9,
+  ""保修期"": ""自购买日起保修6个月""
+}
+```"
+test-019,json_extraction,Q8_0,0,1,0,0,"```json
+{
+  ""会议名称"": ""数据库课题组组会"",
+  ""时间"": ""周四上午9:30"",
+  ""外部报告人"": null
+}
+```"
+test-020,json_extraction,Q8_0,0,0,0,0,"```json
+{
+  ""航班号"": ""CZ3524"",
+  ""出发城市"": ""广州"",
+  ""到达城市"": ""杭州"",
+  ""起飞时间"": ""3月2日8:15"
+test-021,json_extraction,Q8_0,0,1,0,0,"```json
+{
+  ""书名"": ""《时间简史（普及版）》"",
+  ""作者"": ""斯蒂芬·霍金"",
+  ""出版社"": ""湖南科学技术出版社""
+}
+```"
+test-022,json_extraction,Q8_0,0,0,0,0,"```json
+{
+  ""比赛名称"": ""校运会电动平衡车趣味赛"",
+  ""报名截止时间"": ""4月9日17:00"",
+  ""比赛地点"": ""待定""
+}
+```"
+test-023,json_extraction,Q8_0,0,1,0,0,"```json
+{
+  ""医生姓名"": ""李国栋"",
+  ""科室"": ""骨科"",
+  ""出诊时间"": ""每周一、三上午""
+}
+```"
+test-024,json_extraction,Q8_0,0,0,0,0,"```json
+{
+  ""车次"": ""G102次"",
+  ""出发站"": ""北京南站"",
+  ""到达站"": ""上海虹桥站"",
+  ""座位"": ""二等座""
+}
+``"
+test-025,json_extraction,Q8_0,0,1,0,0,"```json
+{
+  ""软件名称"": ""轻笔记App"",
+  ""版本"": ""v3.2.1"",
+  ""发布日期"": ""8月30日""
+}
+```"
+test-026,json_extraction,Q8_0,0,0,0,0,"```json
+{
+  ""培训主题"": ""消防知识培训"",
+  ""主讲人"": ""消保科郑安琪"",
+  ""时长"": ""1小时30分钟""
+}
+```"
+test-027,json_extraction,Q8_0,0,0,0,0,"```json
+{
+  ""宿舍楼"": ""竹园3号楼"",
+  ""楼层"": ""5层"",
+  ""故障类型"": ""热水供应"",
+  ""预计恢复时间"": null
+}
+`"
+test-028,json_extraction,Q8_0,0,0,0,0,"```json
+{
+  ""电影名"": ""流浪地球2"",
+  ""场次"": ""本周五晚7点"",
+  ""学生票价"": ""普通票30元，学生凭证件购票每张15元""
+}
+"
+test-029,json_extraction,Q8_0,0,0,0,0,"```json
+{
+  ""银行名称"": ""中国银行"",
+  ""业务类型"": ""银行"",
+  ""办理地点"": ""府前支行""
+}
+```"
+test-030,json_extraction,Q8_0,0,1,0,0,"```json
+{
+  ""姓名"": ""陈一诺"",
+  ""班级"": ""高二（3）班"",
+  ""获奖等级"": ""省级一等奖""
+}
+```"
+test-031,classification,Q8_0,1,1,1,0,垃圾信息
+test-032,classification,Q8_0,1,0,0,0,垃圾信息
+test-033,classification,Q8_0,1,0,0,0,校内
+test-034,classification,Q8_0,1,1,1,0,校内
+test-035,classification,Q8_0,1,1,1,0,紧急
+test-036,classification,Q8_0,1,0,0,0,紧急
+test-037,classification,Q8_0,1,1,1,0,正面
+test-038,classification,Q8_0,1,0,0,0,正面
+test-039,classification,Q8_0,1,1,1,0,可回收
+test-040,classification,Q8_0,1,0,0,0,可回收
+test-041,normalization,Q8_0,1,1,1,0,2024-12-31
+test-042,normalization,Q8_0,1,1,1,0,1999-01-09
+test-043,normalization,Q8_0,1,1,1,0,09:05
+test-044,normalization,Q8_0,0,0,0,0,01:30
+test-045,normalization,Q8_0,1,1,1,0,2024
+test-046,normalization,Q8_0,0,0,0,0,1000010
+test-047,normalization,Q8_0,1,1,1,0,3.5%
+test-048,normalization,Q8_0,0,0,0,0,2048
+test-049,normalization,Q8_0,0,0,0,0,77.0华氏度
+test-050,normalization,Q8_0,0,0,0,0,0.6

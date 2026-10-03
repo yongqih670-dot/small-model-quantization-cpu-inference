@@ -1,0 +1,11 @@
+11:14:53 | INFO    | 数据集 broken_second_task.json 共 2 条 (config_id=dev_cpu_t4_c1024_v1, formal=False)
+11:14:53 | ERROR   | run_tasks 失败
+Traceback (most recent call last):
+  File "F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\scripts\run_tasks.py", line 251, in main
+    argv = server_argv_from_config(cfg, model_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\scripts\run_tasks.py", line 75, in server_argv_from_config
+    "-b", str(cfg["batch_size"]),
+              ~~~^^^^^^^^^^^^^^
+KeyError: 'batch_size'
+11:14:53 | INFO    | 结果: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\results\raw\run_20261003_111453_testbroken_e399b0\result.json (success=False)

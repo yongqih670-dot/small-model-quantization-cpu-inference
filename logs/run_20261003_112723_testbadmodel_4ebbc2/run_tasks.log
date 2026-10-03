@@ -1,0 +1,9 @@
+11:27:23 | INFO    | 数据集 dev_tasks.json 共 10 条 (config_id=test_badmodel_fixture, formal=False)
+11:27:23 | INFO    | 启动 llama-server: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\llama.cpp\llama-server.exe -m F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tests\fixtures\not_a_gguf.gguf --parallel 1 -c 1024 -b 2048 -ub 512 -ctk f16 -ctv f16 -t 4 -tb 4 -fa off -lm mmap -ngl 0 --cache-reuse 0 --host 127.0.0.1 --port 1279
+11:27:23 | INFO    | llama-server 退出: exit=1 (服务自行退出, 已确认)
+11:27:23 | ERROR   | run_tasks 失败
+Traceback (most recent call last):
+  File "F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\scripts\run_tasks.py", line 287, in main
+    raise RuntimeError(f"服务未就绪: {ready['error']}")
+RuntimeError: 服务未就绪: llama-server 提前退出 (exit=1)
+11:27:23 | INFO    | 结果: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\results\raw\run_20261003_112723_testbadmodel_4ebbc2\result.json (success=False)

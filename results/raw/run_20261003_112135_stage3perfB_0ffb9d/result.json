@@ -1,0 +1,194 @@
+{
+  "run_id": "run_20261003_112135_stage3perfB_0ffb9d",
+  "matrix": "B",
+  "plan_id": "stage3_plan_v1",
+  "is_real_inference": true,
+  "synthetic": false,
+  "config_id": "formal_stage3_t4_c1024_v1",
+  "quality_sample": false,
+  "task_order_fixed": [
+    "dev-001",
+    "dev-003",
+    "dev-004",
+    "dev-007",
+    "dev-009"
+  ],
+  "round_orders": [
+    {
+      "round": 1,
+      "order": [
+        "Q5_K_M",
+        "Q8_0",
+        "Q4_K_M"
+      ]
+    },
+    {
+      "round": 2,
+      "order": [
+        "Q8_0",
+        "Q4_K_M",
+        "Q5_K_M"
+      ]
+    },
+    {
+      "round": 3,
+      "order": [
+        "Q4_K_M",
+        "Q8_0",
+        "Q5_K_M"
+      ]
+    },
+    {
+      "round": 4,
+      "order": [
+        "Q5_K_M",
+        "Q4_K_M",
+        "Q8_0"
+      ]
+    },
+    {
+      "round": 5,
+      "order": [
+        "Q4_K_M",
+        "Q5_K_M",
+        "Q8_0"
+      ]
+    }
+  ],
+  "startups": [
+    {
+      "unit": 1,
+      "model": "Q5_K_M",
+      "round": 1,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_01_Q5_K_M_r1.json"
+    },
+    {
+      "unit": 2,
+      "model": "Q8_0",
+      "round": 1,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_02_Q8_0_r1.json"
+    },
+    {
+      "unit": 3,
+      "model": "Q4_K_M",
+      "round": 1,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_03_Q4_K_M_r1.json"
+    },
+    {
+      "unit": 4,
+      "model": "Q8_0",
+      "round": 2,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_04_Q8_0_r2.json"
+    },
+    {
+      "unit": 5,
+      "model": "Q4_K_M",
+      "round": 2,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_05_Q4_K_M_r2.json"
+    },
+    {
+      "unit": 6,
+      "model": "Q5_K_M",
+      "round": 2,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_06_Q5_K_M_r2.json"
+    },
+    {
+      "unit": 7,
+      "model": "Q4_K_M",
+      "round": 3,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_07_Q4_K_M_r3.json"
+    },
+    {
+      "unit": 8,
+      "model": "Q8_0",
+      "round": 3,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_08_Q8_0_r3.json"
+    },
+    {
+      "unit": 9,
+      "model": "Q5_K_M",
+      "round": 3,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_09_Q5_K_M_r3.json"
+    },
+    {
+      "unit": 10,
+      "model": "Q5_K_M",
+      "round": 4,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_10_Q5_K_M_r4.json"
+    },
+    {
+      "unit": 11,
+      "model": "Q4_K_M",
+      "round": 4,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_11_Q4_K_M_r4.json"
+    },
+    {
+      "unit": 12,
+      "model": "Q8_0",
+      "round": 4,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_12_Q8_0_r4.json"
+    },
+    {
+      "unit": 13,
+      "model": "Q4_K_M",
+      "round": 5,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_13_Q4_K_M_r5.json"
+    },
+    {
+      "unit": 14,
+      "model": "Q5_K_M",
+      "round": 5,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_14_Q5_K_M_r5.json"
+    },
+    {
+      "unit": 15,
+      "model": "Q8_0",
+      "round": 5,
+      "ok": true,
+      "timed_requests": 5,
+      "marker": "startup_15_Q8_0_r5.json"
+    }
+  ],
+  "started_at_utc": "2026-10-03T03:21:35.727+00:00",
+  "backend_version": {
+    "command": "llama-server.exe --version",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64\n"
+  },
+  "timed_requests_total": 75,
+  "expected_timed_requests": 75,
+  "startup_units_expected": 15,
+  "startup_units_completed": 15,
+  "execution_complete": true,
+  "success": true,
+  "finished_at_utc": "2026-10-03T03:22:32.264+00:00"
+}

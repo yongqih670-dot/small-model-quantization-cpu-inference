@@ -203,10 +203,10 @@ def main() -> int:
             perf = ctl.extract_perf(timings, usage)
             if not perf["performance_record_valid"]:
                 result["performance_missing_reason"] = perf["missing_reason"]
-            # model_load_time_s：仅接受后端日志差值统计
+            # model_load_time_s：无独立可靠统计则留空；区间值另记
             log_text = (log_dir / "server.log").read_text(
                 encoding="utf-8", errors="replace")
-            load_stat = parse_load_time_from_log(log_text)
+            init_stat = parse_load_time_from_log(log_text)
             # 生效配置证据（从服务端日志提取）
             eff = {}
             for line in log_text.splitlines():
@@ -234,9 +234,10 @@ def main() -> int:
                                        "不含服务启动、清理与写结果文件",
                 "performance": perf,
                 "server_startup_to_ready_s": server.startup_to_ready_s,
-                "model_load_time_s": load_stat["model_load_time_s"],
-                "model_load_time_source": load_stat["source"],
-                "model_load_time_parse_reason": load_stat["reason"],
+                "backend_model_init_interval_s":
+                    init_stat["backend_model_init_interval_s"],
+                "model_load_time_s": init_stat["model_load_time_s"],
+                "model_load_time_reason": init_stat["reason"],
                 "cache_reuse_check": {"requests": cache_reqs,
                                       "passed": cache_passed,
                                       "rule": "两次 cache_n=0 且 prompt_n 相同"

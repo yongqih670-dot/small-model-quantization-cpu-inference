@@ -1,0 +1,22 @@
+{
+  "frozen_at": "2026-10-03T11:22:58",
+  "algorithm": "sha256",
+  "supersedes": "datasets/frozen_hashes.json (Stage 2 清单保留作历史)",
+  "rule": "正式结果产生后不再调整评分规则/数据集/计划；冻结后再改动任何被列文件将导致 preflight 失败，须说明理由并重新冻结",
+  "files": {
+    "datasets/dev/dev_tasks.json": "0ac8658407a5410bfc60cafd17f766135de7ebf9d9465487830ca26acb981d10",
+    "datasets/test/test_tasks.json": "5e903f20eaefa13fbf4c7c8886bd2156bd92455118e0bce95a45736e51672fca",
+    "datasets/prompt_template.json": "4fca5ca148166615f9db44d930363ae688842e8b6aeb2f2da9e1804eec555647",
+    "scripts/score_answer.py": "7f6e5a28ed2b66a2b48bc3342703a3481dc638d3efdc4ea7c704200b551270b4",
+    "scripts/llama_server_ctl.py": "e2c83d47403e8330d3d1cd6f89f23deb739422c886bf9bf5405d6f8d8594a69c",
+    "scripts/run_tasks.py": "de1592d42271a7a70a527892da1af8b91bc6a580eb02e653da169ef7745a3573",
+    "scripts/run_stage3_bench.py": "daa213acb01a3fdedb797a7dc74ecb36317efa3fd14c2107601b5eb96ccbcded",
+    "scripts/run_stage3_requestperf.py": "a187b80aaade94da16443d03265a60b4877ffeffda8e9b28d3052690fdee89bc",
+    "scripts/preflight.py": "09a2e1d325d4afddc81f26fe8ff937c115a61e715d7a685ca0efd58fe09626d6",
+    "configs/formal_config.json": "a1380d1aaec893c507373f42d41182b300c8fe71d91012626023ca9b38ce8177",
+    "configs/stage3_plan.json": "3143da375de5cceae7bae132e613a49200ad6ef94e17dbc191f6e1b0593c4da0",
+    "docs/EXPERIMENT_PROTOCOL.md": "185b8b55c8750febe1b28be4654381ebf70c66283184bd38a2ffb6ec8c913ca8",
+    "docs/STAGE3_PLAN.md": "f5f9eaaf6419362ba6392730b0af0c40a196de1380e21d7b0e9660aee6b933a6",
+    "docs/stage3_dataset_changes.md": "59a19082f49a1b409e575284cc29f026cf155a1bf5f857d5e72c110bd07f767f"
+  }
+}

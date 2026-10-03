@@ -16,6 +16,7 @@
 
 import hashlib
 import json
+import logging
 import subprocess
 import sys
 import time
@@ -26,9 +27,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.stdout.reconfigure(encoding="utf-8")
 
 import llama_server_ctl as ctl  # noqa: E402
+import preflight  # noqa: E402
 from score_answer import (normalize_text, parse_json_output, score_exact,  # noqa: E402
                           score_item, score_json, score_label)
-from llama_server_ctl import extract_perf, parse_load_time_from_log  # noqa: E402
+from llama_server_ctl import (LlamaServer, capture_backend_version,  # noqa: E402
+                              extract_perf, find_server_exe, parse_load_time_from_log,
+                              slots_idle)
 
 PYTHON = sys.executable
 STAGE1_EVIDENCE = ["results/raw/smoke_test.json", "logs/smoke_test.log",
@@ -147,37 +151,132 @@ def main() -> int:
     perf = extract_perf({"predicted_per_second": 116.171,
                          "prompt_per_second": 1119.790,
                          "predicted_n": 2, "predicted_ms": 8.608,
-                         "prompt_ms": 36.614},
-                        {"completion_tokens": 2})
+                         "prompt_ms": 36.614, "prompt_n": 41},
+                        {"completion_tokens": 2}, client_e2e_s=0.064)
     check("完整 timings: valid 且速度取后端值",
           perf["performance_record_valid"]
           and perf["generation_tokens_per_second"] == 116.171
           and perf["generation_speed_source"] == "server_timings.predicted_per_second")
     check("分母交叉核对 predicted_n==completion_tokens",
           perf["denominator_crosscheck"]["match"] is True)
-    perf = extract_perf(None, None)
-    check("timings 缺失: valid=False, 速度为 None, 有原因",
+    perf = extract_perf(None, None, client_e2e_s=None)
+    check("timings 缺失: 无效+速度为 None+有原因",
           not perf["performance_record_valid"]
           and perf["generation_tokens_per_second"] is None
-          and perf["missing_reason"])
-    perf = extract_perf({"prompt_ms": 1.0}, {})
-    check("timings 缺 predicted_per_second: 不猜算", not perf["performance_record_valid"]
+          and perf["generation_invalid_reason"], str(perf))
+    perf = extract_perf({"prompt_ms": 1.0, "prompt_n": 1}, {}, client_e2e_s=0.1)
+    check("timings 缺 predicted_per_second: 不猜算",
+          not perf["generation_valid"]
           and perf["generation_tokens_per_second"] is None)
 
-    # ---------------- C. 日志加载时间解析 ----------------
-    section("C. 服务日志加载时间解析")
+    # ---------------- C. 日志加载时间解析（Stage 3 改名语义） ----------------
+    section("C. 服务日志初始化区间解析")
     sample_log = ("\n".join([
         "0.00.040.237 I srv    load_model: loading model 'models/x.gguf'",
         "0.00.224.442 I load_tensors: loading model tensors...",
         "0.00.576.178 I srv  llama_server: model loaded",
         "0.00.576.180 I srv  llama_server: listening on http://127.0.0.1:1"]))
     parsed = parse_load_time_from_log(sample_log)
-    check("时间戳格式 M.SS.mmm.uuu 解析出后端加载耗时",
-          parsed["model_load_time_s"] == round(0.576178 - 0.040237, 6)
-          and parsed["reason"] is None, str(parsed))
+    check("解析出 backend_model_init_interval_s",
+          parsed["backend_model_init_interval_s"]
+          == round(0.576178 - 0.040237, 6), str(parsed))
+    check("model_load_time_s 留空并说明原因(边界未核实)",
+          parsed["model_load_time_s"] is None and parsed["reason"], str(parsed))
     parsed = parse_load_time_from_log("garbage log without timestamps")
-    check("无关日志: null + 原因, 不编造", parsed["model_load_time_s"] is None
-          and parsed["reason"], str(parsed))
+    check("无关日志: 区间 null + 原因, 不编造",
+          parsed["backend_model_init_interval_s"] is None
+          and parsed["model_load_time_s"] is None and parsed["reason"], str(parsed))
+
+    # ---------------- C2. extract_perf 有限性与分类有效性 ----------------
+    section("C2. 性能字段有限性与分类有效性")
+    perf = extract_perf({"predicted_per_second": float("nan"),
+                         "prompt_per_second": 1119.0,
+                         "predicted_n": 5, "predicted_ms": 8.0,
+                         "prompt_ms": 1.0, "prompt_n": 41},
+                        {"completion_tokens": 5}, client_e2e_s=0.5)
+    check("NaN 生成速度: generation_valid=False", not perf["generation_valid"])
+    check("NaN 情形下提示处理仍有效", perf["prompt_processing_valid"])
+    check("客户端端到端有效分开表示", perf["client_e2e_valid"])
+    check("整体 performance_record_valid=False", not perf["performance_record_valid"])
+    perf = extract_perf({"predicted_per_second": float("inf"),
+                         "prompt_per_second": 1.0, "predicted_n": 5,
+                         "prompt_n": 1},
+                        {}, client_e2e_s=0.5)
+    check("Infinity 速度无效", not perf["generation_valid"])
+    perf = extract_perf({"predicted_per_second": -5.0, "prompt_per_second": 1.0,
+                         "predicted_n": 5, "prompt_n": 1}, {}, client_e2e_s=0.5)
+    check("负速度无效", not perf["generation_valid"])
+    perf = extract_perf({"predicted_per_second": 100.0, "prompt_per_second": 1.0,
+                         "predicted_n": 1, "prompt_n": 41,
+                         "predicted_ms": 8.0, "prompt_ms": 1.0},
+                        {"completion_tokens": 1}, client_e2e_s=0.5)
+    check("单 token 解码: 生成速度标注不可靠且不输出",
+          not perf["generation_valid"]
+          and perf["generation_tokens_per_second"] is None
+          and "无可测解码步" in perf["generation_invalid_reason"])
+    perf = extract_perf(None, None, client_e2e_s=None)
+    check("全缺失: 三类有效性均 False", not perf["generation_valid"]
+          and not perf["prompt_processing_valid"]
+          and not perf["client_e2e_valid"])
+    perf = extract_perf({"predicted_per_second": 116.171,
+                         "prompt_per_second": 1119.79, "predicted_n": 2,
+                         "predicted_ms": 8.608, "prompt_ms": 36.614,
+                         "prompt_n": 41},
+                        {"completion_tokens": 2}, client_e2e_s=0.064)
+    check("完整有效情形: 三类有效 + 后端速度保留",
+          perf["generation_valid"] and perf["prompt_processing_valid"]
+          and perf["client_e2e_valid"]
+          and perf["generation_tokens_per_second"] == 116.171)
+
+    # ---------------- C3. 总体成功组合 ----------------
+    section("C3. success 组合规则")
+    from run_tasks import compose_run_success
+    check("执行完整+清理失败 => 不成功",
+          not compose_run_success(True, False))
+    check("执行不完整+清理成功 => 不成功",
+          not compose_run_success(False, True))
+    check("两者齐备 => 成功", compose_run_success(True, True))
+    check("正式模式 preflight 未过 => 不成功",
+          not compose_run_success(True, True, formal=True, preflight_passed=False))
+
+    # ---------------- C4. 冻结哈希校验函数 ----------------
+    section("C4. 哈希不匹配检测")
+    import tempfile
+    import os as _os
+    with tempfile.TemporaryDirectory() as td:
+        fake_manifest = Path(td) / "m.json"
+        fake_manifest.write_text(json.dumps({"files": {
+            "README.md": "0" * 64}}), encoding="utf-8")
+        probs = preflight.check_frozen_hashes(fake_manifest, base=ROOT)
+        check("篡改哈希被检出", any("README.md" in p and "不匹配" in p
+                                    for p in probs), str(probs))
+        fake_manifest.write_text(json.dumps({"files": {
+            "no_such_file.txt": "0" * 64}}), encoding="utf-8")
+        probs = preflight.check_frozen_hashes(fake_manifest, base=ROOT)
+        check("缺失文件被检出", any("缺失" in p for p in probs), str(probs))
+
+    # ---------------- C5. test-012 渲染与金标一致 ----------------
+    section("C5. test-012 渲染要求与金标一致")
+    ds = json.loads((ROOT / "datasets/test/test_tasks.json")
+                    .read_text(encoding="utf-8"))
+    tpl = json.loads((ROOT / "datasets/prompt_template.json")
+                     .read_text(encoding="utf-8"))
+    t12 = next(t for t in ds["tasks"] if t["id"] == "test-012")
+    f = {"input": t12["input"], "field": t12["field"], "fields": "", "labels": "",
+         "rule": ""}
+    rendered = tpl["per_type"][t12["task_type"]].format(**f)
+    check("test-012 金标为 '38.5'", t12["gold"] == "38.5")
+    check("渲染提示含无单位规则", "只输出数字本身" in rendered)
+    check("渲染提示保留答案内部字符的说明", "小数点" in rendered)
+    check("字段名含单位标注", "（元）" in t12["field"])
+
+    # ---------------- C6. JSON 重复键与 NaN 口径 ----------------
+    section("C6. JSON 重复键/非标准数值预注册口径")
+    parsed = parse_json_output('{"a": 1, "a": 2}')
+    check("重复键按 Python 语义后者覆盖", parsed["obj"] == {"a": 2})
+    parsed = parse_json_output('{"a": NaN}')
+    check("NaN 可解析为 float(预注册口径)",
+          parsed["obj"] is not None and parsed["obj"]["a"] != parsed["obj"]["a"])
 
     # ---------------- D. 守卫 ----------------
     section("D. 正式测试集硬拒绝")
@@ -204,6 +303,26 @@ def main() -> int:
     check("失败记录含错误信息", bool(rec.get("error")))
     check("损坏数据集未启动服务(无 cleanup 字段或未启动)",
           rec.get("server_startup_to_ready_s") is None)
+    check("未启动模型前失败不标为真实推理", rec.get("is_real_inference") is False,
+          str(rec.get("is_real_inference")))
+
+    # ---------------- E2. 运行中断: 保留已完成 + 标记未执行 ----------------
+    section("E2. 中断路径保留已完成请求并标记 not_attempted")
+    p = run_script(["scripts/run_tasks.py", "--dataset",
+                    "tests/fixtures/broken_second_task.json",
+                    "--run-label", "testbroken"])
+    check("中途异常退出码=1", p.returncode == 1, f"rc={p.returncode}")
+    dirs = sorted((ROOT / "results/raw").glob("run_*_testbroken_*"))
+    check("失败运行有独立 run 目录", len(dirs) >= 1)
+    rec = json.loads((dirs[-1] / "result.json").read_text(encoding="utf-8"))
+    check("not_attempted 正确标记剩余任务",
+          rec.get("not_attempted") == ["fix-002"], str(rec.get("not_attempted")))
+    check("已完成请求保留在 requests.jsonl",
+          (dirs[-1] / "requests.jsonl").is_file()
+          and len((dirs[-1] / "requests.jsonl")
+                  .read_text(encoding="utf-8").strip().splitlines()) == 1)
+    check("execution_complete=False", rec.get("execution_complete") is False)
+    check("不宣布成功", rec.get("success") is False)
 
     # ---------------- F. 非法模型 → 服务提前退出 ----------------
     section("F. 服务提前退出的失败记录与清理")
@@ -219,11 +338,59 @@ def main() -> int:
           rec["success"] is False and "提前退出" in (rec.get("error") or ""),
           str(rec.get("error")))
     check("清理已确认退出", rec.get("cleanup", {}).get("confirmed_exit") is True)
-    check("清理方式如实记录为主动强制终止",
-          "主动强制终止" in rec.get("cleanup", {}).get("method", ""))
-    check("无残留服务进程", rec.get("orphan_servers_after") == 0)
+    check("清理方式如实区分(服务自行退出 vs 主动强制终止)",
+          ("主动强制终止" in rec.get("cleanup", {}).get("method", "")
+           or rec.get("cleanup", {}).get("server_self_exited") is True
+           and "already_exited" in rec.get("cleanup", {}).get("method", "")),
+          str(rec.get("cleanup", {}).get("method")))
+    check("无残留服务进程(全局计数)", rec.get("orphan_servers_global_after") == 0)
     check("没有产出任何请求记录(未发生推理)",
           not (dirs[-1] / "requests.jsonl").exists())
+    check("服务启动但零请求: 不标为真实推理",
+          rec.get("is_real_inference") is False, str(rec.get("is_real_inference")))
+
+    # ---------------- F2. 真实服务: HTTPError/槽位确认/内存/清理 ----------------
+    section("F2. 真实服务行为: HTTPError 捕获、slots 确认、退出前内存")
+    model_path = ROOT / "models/qwen2.5-0.5b-instruct-q4_k_m.gguf"
+    if model_path.is_file():
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            tdp = Path(td)
+            srv_log = (tdp / "server.log").open("w", encoding="utf-8", buffering=1)
+            server = None
+            try:
+                server = LlamaServer(find_server_exe(),
+                                     ["-m", str(model_path), "--parallel", "1",
+                                      "-c", "512", "-t", "2", "-ngl", "0"],
+                                     srv_log, logging.getLogger("t_f2"),
+                                     memory_sample_interval_s=0.05)
+                server.start()
+                ready = server.wait_ready(timeout_s=120, poll_interval_s=0.25)
+                check("F2: 服务就绪", ready["ok"], str(ready))
+                bad = server.request("/definitely_not_here", None, timeout_s=10)
+                check("F2: HTTPError 保存状态码",
+                      not bad["ok"] and bad["error_type"] == "HTTPError"
+                      and bad["http_status"] is not None, str(bad["http_status"]))
+                check("F2: HTTPError 保存错误体", bool(bad.get("error_body")))
+                st = slots_idle(server, timeout_s=20)
+                check("F2: 空闲时 slots 确认返回 freed",
+                      st["freed"], str(st))
+                mem = server.memory_stats()
+                check("F2: 服务运行中即可取得生命周期峰值内存",
+                      mem["peak_wset_mib"] is not None and mem["peak_wset_mib"] > 0,
+                      str(mem))
+                check("F2: 采样峰值已写回(间隔0.05s)",
+                      mem.get("sampled_peak_rss_mib") is not None
+                      and mem.get("sample_interval_s") == 0.05, str(mem))
+            finally:
+                if server is not None:
+                    stopinfo = server.stop()
+                srv_log.close()
+            check("F2: 主动终止并确认退出",
+                  stopinfo["confirmed_exit"]
+                  and "主动强制终止" in stopinfo["method"], str(stopinfo))
+    else:
+        print("  [SKIP] F2: 模型文件不存在")
 
     # ---------------- G. 历史证据不变 ----------------
     section("G. 重复运行不覆盖历史证据")
@@ -235,6 +402,7 @@ def main() -> int:
     # ---------------- H. 真实/合成分离不变量 ----------------
     section("H. 合成记录分离不变量")
     synthetic_hits = []
+    real_output_missing_flag = []
     for f in (ROOT / "results/raw").rglob("*"):
         if f.is_file() and f.suffix in (".json", ".jsonl"):
             try:
@@ -245,6 +413,17 @@ def main() -> int:
                 synthetic_hits.append(str(f.relative_to(ROOT)))
     check("results/ 中不存在 synthetic=true 的记录", not synthetic_hits,
           str(synthetic_hits))
+    # 真实性不能只靠"没有 synthetic 标签"：凡带非空模型输出的记录必须显式
+    # 标记 is_real_inference=true（单行 JSONL 逐行检查）
+    for jf in (ROOT / "results/raw").rglob("requests*.jsonl"):
+        for line in jf.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            if r.get("raw_output") and not r.get("is_real_inference"):
+                real_output_missing_flag.append(str(jf.relative_to(ROOT)))
+    check("带模型输出的记录均显式标记真实推理",
+          not real_output_missing_flag, str(real_output_missing_flag))
 
     # ---------------- 收尾 ----------------
     orphans_after = ctl.count_orphan_servers()

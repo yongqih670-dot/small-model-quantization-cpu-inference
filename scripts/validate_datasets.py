@@ -87,6 +87,54 @@ def check_dataset(path: Path, expect: dict | None = None) -> list:
     return errs
 
 
+def render_check(data: dict, template: dict, label: str) -> list:
+    """逐题校验'最终渲染提示—输入—金标—评分规则'一致性（不调用模型）。"""
+    errs = []
+    sys_p = template["system_prompt"]
+    for t in data["tasks"]:
+        tid = t["id"]
+        tpl = template["per_type"][t["task_type"]]
+        fields = {
+            "input": t.get("input", ""),
+            "field": t.get("field", ""),
+            "fields": ", ".join(t.get("fields", [])),
+            "labels": "、".join(t.get("labels", [])),
+            "rule": t.get("rule", ""),
+        }
+        try:
+            rendered = tpl.format(**fields)
+        except (KeyError, IndexError) as e:
+            errs.append(f"{label} {tid}: 模板渲染失败 {e!r}")
+            continue
+        full = sys_p + rendered
+        if norm(t.get("input", ""))[:20] not in norm(rendered):
+            errs.append(f"{label} {tid}: 渲染提示缺少输入文本")
+        if t["task_type"] == "single_field_extraction":
+            if t.get("field", "") not in rendered:
+                errs.append(f"{label} {tid}: 字段名未出现在渲染提示中")
+        if t["task_type"] == "json_extraction":
+            for f in t.get("fields", []):
+                if f not in rendered:
+                    errs.append(f"{label} {tid}: 字段 {f} 未出现在渲染提示中")
+        if t["task_type"] == "classification":
+            for lab in t.get("labels", []):
+                if lab not in rendered:
+                    errs.append(f"{label} {tid}: 标签 {lab} 未出现在渲染提示中")
+        if t["task_type"] == "normalization" and t.get("rule", "") not in rendered:
+            errs.append(f"{label} {tid}: 转换规则未出现在渲染提示中")
+        # 金标与口径抽查
+        if tid == "test-012":
+            if t.get("gold") != "38.5":
+                errs.append(f"{label} test-012: 金标必须为 '38.5'（Stage 3 修正）")
+            if "只输出数字本身" not in rendered:
+                errs.append(f"{label} test-012: 渲染提示应含无单位规则")
+        if t["task_type"] == "json_extraction":
+            for k, v in (t.get("gold") or {}).items():
+                if isinstance(v, str) and not v.strip():
+                    errs.append(f"{label} {tid}: 字段 {k} 金标为空白字符串")
+    return errs
+
+
 def main() -> int:
     dev = ROOT / "datasets/dev/dev_tasks.json"
     test = ROOT / "datasets/test/test_tasks.json"
@@ -100,8 +148,10 @@ def main() -> int:
     all_errs += [f"[test]   {e}" for e in errs_test]
 
     # 跨集合重叠与近重复
-    dev_data = json.loads(dev.read_text(encoding="utf-8"))["tasks"]
-    test_data = json.loads(test.read_text(encoding="utf-8"))["tasks"]
+    dev_full = json.loads(dev.read_text(encoding="utf-8"))
+    test_full = json.loads(test.read_text(encoding="utf-8"))
+    dev_data = dev_full["tasks"]
+    test_data = test_full["tasks"]
     test_keys = {norm(t["input"]): t["id"] for t in test_data}
     for t in dev_data:
         k = norm(t["input"])
@@ -113,6 +163,14 @@ def main() -> int:
                     and str(d["gold"]) == str(t["gold"])
                     and norm(d["input"])[:12] == norm(t["input"])[:12]):
                 all_errs.append(f"[cross]  疑似近重复: {d['id']} vs {t['id']}")
+
+    # 渲染一致性（不调用模型）
+    tpl = json.loads((ROOT / "datasets/prompt_template.json").read_text(
+        encoding="utf-8"))
+    all_errs += [f"[render] {e}" for e in
+                 render_check(dev_full, tpl, "dev")]
+    all_errs += [f"[render] {e}" for e in
+                 render_check(test_full, tpl, "test")]
 
     if all_errs:
         print("数据集校验未通过:")

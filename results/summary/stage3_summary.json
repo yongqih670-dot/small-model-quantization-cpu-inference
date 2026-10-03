@@ -1,0 +1,429 @@
+{
+  "analysis_note": "全部数字来自 results/raw 原始记录；文件大小用 manifest 实际字节数，不用 bench 的 model_size",
+  "matrix_A": {
+    "run_id": "run_20261003_112023_stage3benchA_a9c6c1",
+    "measurement_count": 45,
+    "per_model_workload": {
+      "Q4_K_M|pg256+64": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          330.682,
+          325.706,
+          324.504,
+          326.358,
+          315.833
+        ],
+        "mean_tok_s": 324.617,
+        "sample_std_tok_s": 5.435,
+        "n": 5
+      },
+      "Q4_K_M|pp256": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          739.206,
+          713.217,
+          771.708,
+          722.795,
+          720.907
+        ],
+        "mean_tok_s": 733.567,
+        "sample_std_tok_s": 23.329,
+        "n": 5
+      },
+      "Q4_K_M|tg64": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          106.314,
+          105.673,
+          105.398,
+          104.978,
+          104.438
+        ],
+        "mean_tok_s": 105.36,
+        "sample_std_tok_s": 0.708,
+        "n": 5
+      },
+      "Q5_K_M|pg256+64": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          255.916,
+          257.727,
+          255.53,
+          259.295,
+          256.985
+        ],
+        "mean_tok_s": 257.091,
+        "sample_std_tok_s": 1.508,
+        "n": 5
+      },
+      "Q5_K_M|pp256": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          444.149,
+          442.558,
+          445.866,
+          423.173,
+          443.829
+        ],
+        "mean_tok_s": 439.915,
+        "sample_std_tok_s": 9.433,
+        "n": 5
+      },
+      "Q5_K_M|tg64": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          100.524,
+          100.264,
+          99.7512,
+          99.7859,
+          98.2318
+        ],
+        "mean_tok_s": 99.711,
+        "sample_std_tok_s": 0.889,
+        "n": 5
+      },
+      "Q8_0|pg256+64": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          283.956,
+          279.839,
+          283.504,
+          287.733,
+          287.378
+        ],
+        "mean_tok_s": 284.482,
+        "sample_std_tok_s": 3.231,
+        "n": 5
+      },
+      "Q8_0|pp256": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          787.803,
+          795.708,
+          758.812,
+          733.869,
+          794.603
+        ],
+        "mean_tok_s": 774.159,
+        "sample_std_tok_s": 27.052,
+        "n": 5
+      },
+      "Q8_0|tg64": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "samples_tok_s": [
+          81.9927,
+          83.6356,
+          81.2196,
+          82.4698,
+          82.3225
+        ],
+        "mean_tok_s": 82.328,
+        "sample_std_tok_s": 0.876,
+        "n": 5
+      }
+    }
+  },
+  "matrix_B": {
+    "run_id": "run_20261003_112135_stage3perfB_0ffb9d",
+    "per_model": {
+      "Q4_K_M": {
+        "timed_requests": 25,
+        "http_ok": 25,
+        "e2e_mean_s": 0.3591,
+        "e2e_sample_std_s": 0.1927,
+        "e2e_all_samples_s": [
+          0.3412,
+          0.3283,
+          0.7243,
+          0.2042,
+          0.1922,
+          0.3309,
+          0.3049,
+          0.705,
+          0.196,
+          0.2277,
+          0.3426,
+          0.3253,
+          0.7226,
+          0.1911,
+          0.2121,
+          0.3507,
+          0.3367,
+          0.7166,
+          0.1859,
+          0.218,
+          0.3516,
+          0.3365,
+          0.718,
+          0.2009,
+          0.2136
+        ]
+      },
+      "Q5_K_M": {
+        "timed_requests": 25,
+        "http_ok": 25,
+        "e2e_mean_s": 0.5034,
+        "e2e_sample_std_s": 0.2294,
+        "e2e_all_samples_s": [
+          0.5562,
+          0.512,
+          0.8734,
+          0.3077,
+          0.2769,
+          0.5194,
+          0.5241,
+          0.9035,
+          0.2966,
+          0.281,
+          0.5166,
+          0.5171,
+          0.9096,
+          0.3033,
+          0.2565,
+          0.5454,
+          0.5105,
+          0.9084,
+          0.2924,
+          0.2794,
+          0.5202,
+          0.5204,
+          0.8949,
+          0.2778,
+          0.2827
+        ]
+      },
+      "Q8_0": {
+        "timed_requests": 25,
+        "http_ok": 25,
+        "e2e_mean_s": 0.3846,
+        "e2e_sample_std_s": 0.2366,
+        "e2e_all_samples_s": [
+          0.3406,
+          0.3252,
+          0.8277,
+          0.1916,
+          0.218,
+          0.3394,
+          0.3127,
+          0.8713,
+          0.2042,
+          0.2274,
+          0.3324,
+          0.3207,
+          0.8266,
+          0.2063,
+          0.23,
+          0.341,
+          0.3193,
+          0.8228,
+          0.2052,
+          0.2304,
+          0.3402,
+          0.332,
+          0.8294,
+          0.2,
+          0.2212
+        ]
+      }
+    }
+  },
+  "matrix_C": {
+    "Q4_K_M": {
+      "run_id": "run_20261003_112320_formal_Q4_K_M_7eda40",
+      "n_tasks": 50,
+      "execution_complete": true,
+      "quality_evaluation_valid": true,
+      "format_correct": 21,
+      "content_correct": 21,
+      "joint_correct": 16,
+      "joint_wilson95": [
+        0.2076,
+        0.4581
+      ],
+      "truncated": 0,
+      "request_failed": 0,
+      "peak_process_memory_mib": 586.555,
+      "sampled_peak_rss_mib": 585.414,
+      "per_type": {
+        "single_field_extraction": {
+          "total": 15,
+          "format": 5,
+          "content": 5,
+          "joint": 5
+        },
+        "json_extraction": {
+          "total": 15,
+          "format": 0,
+          "content": 5,
+          "joint": 0
+        },
+        "classification": {
+          "total": 10,
+          "format": 10,
+          "content": 5,
+          "joint": 5
+        },
+        "normalization": {
+          "total": 10,
+          "format": 6,
+          "content": 6,
+          "joint": 6
+        }
+      }
+    },
+    "Q5_K_M": {
+      "run_id": "run_20261003_112342_formal_Q5_K_M_8b86de",
+      "n_tasks": 50,
+      "execution_complete": true,
+      "quality_evaluation_valid": true,
+      "format_correct": 22,
+      "content_correct": 24,
+      "joint_correct": 17,
+      "joint_wilson95": [
+        0.2244,
+        0.4785
+      ],
+      "truncated": 0,
+      "request_failed": 0,
+      "peak_process_memory_mib": 582.215,
+      "sampled_peak_rss_mib": 582.215,
+      "per_type": {
+        "single_field_extraction": {
+          "total": 15,
+          "format": 5,
+          "content": 5,
+          "joint": 5
+        },
+        "json_extraction": {
+          "total": 15,
+          "format": 0,
+          "content": 7,
+          "joint": 0
+        },
+        "classification": {
+          "total": 10,
+          "format": 10,
+          "content": 5,
+          "joint": 5
+        },
+        "normalization": {
+          "total": 10,
+          "format": 7,
+          "content": 7,
+          "joint": 7
+        }
+      }
+    },
+    "Q8_0": {
+      "run_id": "run_20261003_112411_formal_Q8_0_37181d",
+      "n_tasks": 50,
+      "execution_complete": true,
+      "quality_evaluation_valid": true,
+      "format_correct": 20,
+      "content_correct": 22,
+      "joint_correct": 15,
+      "joint_wilson95": [
+        0.191,
+        0.4375
+      ],
+      "truncated": 0,
+      "request_failed": 0,
+      "peak_process_memory_mib": 686.375,
+      "sampled_peak_rss_mib": 685.23,
+      "per_type": {
+        "single_field_extraction": {
+          "total": 15,
+          "format": 5,
+          "content": 5,
+          "joint": 5
+        },
+        "json_extraction": {
+          "total": 15,
+          "format": 0,
+          "content": 7,
+          "joint": 0
+        },
+        "classification": {
+          "total": 10,
+          "format": 10,
+          "content": 5,
+          "joint": 5
+        },
+        "normalization": {
+          "total": 10,
+          "format": 5,
+          "content": 5,
+          "joint": 5
+        }
+      }
+    }
+  },
+  "file_sizes_actual_bytes": {
+    "Q4_K_M": {
+      "size_bytes": 491400032,
+      "size_mib": 468.64
+    },
+    "Q5_K_M": {
+      "size_bytes": 522186592,
+      "size_mib": 498.0
+    },
+    "Q8_0": {
+      "size_bytes": 675710816,
+      "size_mib": 644.41
+    }
+  }
+}

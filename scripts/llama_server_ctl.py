@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import logging
+import math
 import re
 import socket
 import subprocess
@@ -80,10 +81,15 @@ def ts_to_seconds(match) -> float:
 
 
 def parse_load_time_from_log(log_text: str) -> dict:
-    """从服务端日志解析模型加载耗时（后端自己的时间统计）。
+    """从服务端日志解析后端模型初始化区间（Stage 3 改名并限定语义）。
 
-    返回 {"model_load_time_s": float|None, "source": str, "reason": str|None}。
-    时间戳格式若与预期不符则返回 null 并说明原因，不做猜测性换算。
+    返回：
+      backend_model_init_interval_s —— 日志时间戳差值
+        (`load_model: loading model` → `llama_server: model loaded`)。
+        该区间包含后端加载过程中的全部初始化开销，其准确边界未核实，
+        **不称"纯权重加载耗时"**；
+      model_load_time_s —— 恒为 None + 原因（没有独立可靠的
+        "纯模型加载"统计前留空，不得用启动就绪时间替代）。
     """
     events = {}
     for line in log_text.splitlines():
@@ -97,16 +103,21 @@ def parse_load_time_from_log(log_text: str) -> dict:
             events.setdefault("loaded", t)
         elif "llama_server: listening on" in line:
             events.setdefault("listening", t)
-    # 一致性检查：加载起止时间先后顺序必须合理
-    if "loading" in events and "loaded" in events:
-        if events["loaded"] < events["loading"]:
-            return {"model_load_time_s": None, "source": "server_log",
-                    "reason": f"日志时间戳顺序异常: {events}"}
-        return {"model_load_time_s": round(events["loaded"] - events["loading"], 6),
-                "source": "server_log_delta(loading_model->model_loaded)",
-                "reason": None}
-    return {"model_load_time_s": None, "source": "server_log",
-            "reason": f"日志缺少加载起止行, 仅找到: {sorted(events)}"}
+    reason = None
+    if "loading" not in events or "loaded" not in events:
+        return {"backend_model_init_interval_s": None,
+                "model_load_time_s": None,
+                "reason": f"日志缺少加载起止行, 仅找到: {sorted(events)}"}
+    if events["loaded"] < events["loading"]:
+        return {"backend_model_init_interval_s": None,
+                "model_load_time_s": None,
+                "reason": f"日志时间戳顺序异常: {events}"}
+    return {"backend_model_init_interval_s":
+            round(events["loaded"] - events["loading"], 6),
+            "model_load_time_s": None,
+            "reason": ("model_load_time_s 留空: loading→loaded 区间的准确边界"
+                       "未核实(含后端初始化开销)，不称纯权重加载耗时；"
+                       "区间值记入 backend_model_init_interval_s")}
 
 
 class LlamaServer:
@@ -193,17 +204,30 @@ class LlamaServer:
         req = urllib.request.Request(
             url, data=data, method="POST" if payload is not None else "GET",
             headers={"Content-Type": "application/json",
-                     "User-Agent": "quant-lab/2.0"})
+                     "User-Agent": "quant-lab/3.0"})
         t0 = time.perf_counter()
         try:
             with urllib.request.urlopen(req, timeout=timeout_s) as resp:
                 body = json.loads(resp.read().decode("utf-8"))
                 return {"ok": True, "http_status": resp.status, "body": body,
-                        "client_e2e_s": time.perf_counter() - t0, "error": None}
+                        "client_e2e_s": time.perf_counter() - t0, "error": None,
+                        "error_type": None}
+        except urllib.error.HTTPError as e:
+            # 尽可能保存状态码与错误响应体，不再一律 status=null
+            try:
+                err_body = e.read().decode("utf-8", errors="replace")
+            except OSError:
+                err_body = ""
+            return {"ok": False, "http_status": e.code, "body": None,
+                    "error_body": err_body[:2000],
+                    "client_e2e_s": time.perf_counter() - t0,
+                    "error": f"HTTPError {e.code}: {err_body[:200]}",
+                    "error_type": "HTTPError"}
         except Exception as e:  # noqa: BLE001 —— 失败信息完整返回，由调用方记录
             return {"ok": False, "http_status": None, "body": None,
                     "client_e2e_s": time.perf_counter() - t0,
-                    "error": f"{type(e).__name__}: {e}"}
+                    "error": f"{type(e).__name__}: {e}",
+                    "error_type": type(e).__name__}
 
     def memory_stats(self) -> dict:
         """进程级内存：lifetime peak（peak_wset）+ 采样峰值（若开启）。"""
@@ -221,16 +245,26 @@ class LlamaServer:
         return stats
 
     def stop(self) -> dict:
-        """主动终止本对象启动的进程（Windows: TerminateProcess，非优雅退出）。"""
-        info = {"attempted": True, "method": "terminate()=Windows TerminateProcess(主动强制终止)",
-                "confirmed_exit": False, "exit_code": None}
+        """主动终止本对象启动的进程（Windows: TerminateProcess，非优雅退出）。
+
+        只处理本对象 Popen 启动的 PID；不检查也不影响其他项目的同名进程
+        （全局同名进程数仅作环境记录，不参与本运行清理判定）。
+        """
+        already_gone = self.proc is not None and self.proc.poll() is not None
+        info = {"attempted": True,
+                "method": ("no_action_process_already_exited" if already_gone
+                           else "terminate()=Windows TerminateProcess(主动强制终止)"),
+                "server_self_exited": bool(already_gone),
+                "confirmed_exit": False,
+                "exit_code": None}
         if self._sampler_thread:
             self._sampler_stop.set()
             self._sampler_thread.join(timeout=3)
         if self.proc is None:
             info["method"] = "no_process_started"
+            info["attempted"] = False
             return info
-        if self.proc.poll() is None:
+        if not already_gone:
             try:
                 self.proc.terminate()
             except OSError as e:
@@ -250,7 +284,8 @@ class LlamaServer:
                 self.log.error("kill 后仍未退出, 进程可能残留")
         info["exit_code"] = self.proc.returncode
         info["confirmed_exit"] = self.proc.poll() is not None
-        self.log.info("llama-server 退出: exit=%s (%s)", info["exit_code"],
+        self.log.info("llama-server 退出: exit=%s (%s, %s)", info["exit_code"],
+                      "服务自行退出" if info["server_self_exited"] else "本程序主动终止",
                       "已确认" if info["confirmed_exit"] else "未确认!")
         return info
 
@@ -297,6 +332,129 @@ def extract_perf(timings: dict | None, usage: dict | None) -> dict:
             "note": "分母语义以 predicted_n 为准(后端计时对象); 与 OAI "
                     "completion_tokens 交叉核对, 不一致时须在报告中说明"},
     }
+
+
+def _finite_number(value) -> bool:
+    """类型为数字、有限（非 NaN/Inf）且不为负，才能通过有效性检查。"""
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return False
+    return math.isfinite(float(value)) and float(value) >= 0
+
+
+def extract_perf(timings: dict | None, usage: dict | None,
+                 client_e2e_s: float | None = None) -> dict:
+    """统一性能解析与校验（Stage 3 预注册口径）。
+
+    - 速度只取后端自报值（predicted_per_second / prompt_per_second）；
+      绝不用 output_tokens/e2e 或猜测公式替代；
+    - 字段须为有限非负数字：null/NaN/Infinity/负耗时无效；
+    - 提示处理、生成、客户端端到端三者的有效性分开表示；
+    - predicted_n<=1 时没有可测解码步，生成速度单独标注不可靠，不猜算；
+    - predicted_n 与 completion_tokens 相等不代表分母语义已证实，
+      仅作为交叉核对记录保留。
+    """
+    timings = timings if isinstance(timings, dict) else {}
+    usage = usage if isinstance(usage, dict) else {}
+
+    gen_tps = timings.get("predicted_per_second")
+    prompt_tps = timings.get("prompt_per_second")
+
+    gen_reason = None
+    if not timings:
+        gen_reason = "服务端响应缺少 timings 对象"
+    elif not _finite_number(gen_tps):
+        gen_reason = ("timings 缺少 predicted_per_second" if gen_tps is None
+                      else f"predicted_per_second 非有限非负值: {gen_tps!r}")
+    elif float(timings.get("predicted_n") or 0) <= 1:
+        gen_reason = ("predicted_n<=1: 无可测解码步，后端吞吐不可靠，"
+                      "单独标注且不用于速度结论")
+    prompt_reason = None
+    if not timings:
+        prompt_reason = "服务端响应缺少 timings 对象"
+    elif not _finite_number(prompt_tps):
+        prompt_reason = ("timings 缺少 prompt_per_second" if prompt_tps is None
+                         else f"prompt_per_second 非有限非负值: {prompt_tps!r}")
+    elif float(timings.get("prompt_n") or 0) <= 0:
+        prompt_reason = "prompt_n<=0: 无提示处理量"
+    e2e_reason = None
+    if not _finite_number(client_e2e_s) or float(client_e2e_s or 0) <= 0:
+        e2e_reason = "客户端端到端时间缺失或非正"
+
+    pred_n = timings.get("predicted_n")
+    comp_n = usage.get("completion_tokens")
+    return {
+        "generation_valid": gen_reason is None,
+        "generation_invalid_reason": gen_reason,
+        "prompt_processing_valid": prompt_reason is None,
+        "prompt_processing_invalid_reason": prompt_reason,
+        "client_e2e_valid": e2e_reason is None,
+        "client_e2e_invalid_reason": e2e_reason,
+        "performance_record_valid": (gen_reason is None and prompt_reason is None
+                                     and e2e_reason is None),
+        "generation_tokens_per_second": gen_tps if gen_reason is None else None,
+        "prompt_processing_tokens_per_second": (prompt_tps
+                                                if prompt_reason is None else None),
+        "generation_time_s": (timings["predicted_ms"] / 1000.0
+                              if _finite_number(timings.get("predicted_ms")) else None),
+        "prompt_eval_time_s": (timings["prompt_ms"] / 1000.0
+                               if _finite_number(timings.get("prompt_ms")) else None),
+        "generation_speed_source": "server_timings.predicted_per_second",
+        "prompt_processing_source": "server_timings.prompt_per_second",
+        "predicted_n": pred_n,
+        "completion_tokens": comp_n,
+        "denominator_crosscheck": {
+            "predicted_n": pred_n,
+            "completion_tokens": comp_n,
+            "match": (pred_n == comp_n if pred_n is not None
+                      and comp_n is not None else None),
+            "note": ("两者相等仅作交叉核对记录；分母语义以 predicted_n 为准的"
+                     "判断需另行核实，不据相等直接声明")},
+    }
+
+
+def slots_idle(server: "LlamaServer", timeout_s: float = 60.0,
+               poll_s: float = 0.5) -> dict:
+    """超时后确认服务端确已停止生成（请求超时≠服务端已停止）。
+
+    通过 GET /slots 检查所有 slot 的 is_processing；在超时预算内未空闲
+    则返回 freed=False，由调用方决定是否终止服务。
+    """
+    deadline = time.perf_counter() + timeout_s
+    last = None
+    while time.perf_counter() < deadline:
+        r = server.request("/slots", None, timeout_s=5)
+        if r["ok"]:
+            body = r.get("body")
+            if isinstance(body, dict):
+                slots = body.get("slots") or []
+            elif isinstance(body, list):
+                slots = body
+            else:
+                slots = []
+            busy = any(s.get("is_processing") for s in slots)
+            last = {"slots": len(slots), "busy": busy}
+            if not busy:
+                return {"freed": True, "state": last, "action": "confirmed_idle"}
+        time.sleep(poll_s)
+    return {"freed": False, "state": last, "action": "not_confirmed"}
+
+
+def resource_snapshot() -> dict:
+    """简要只读资源状态（CPU 总占用低≠完全没有干扰，仅作记录）。"""
+    return {
+        "time": utc_now_iso(),
+        "cpu_percent_sample": psutil.cpu_percent(interval=0.3),
+        "free_ram_gib": round(psutil.virtual_memory().available / 1024 ** 3, 2),
+        "llama_server_process_count_global": count_orphan_servers(),
+        "note": "仅记录本机负载；不据此筛选数据",
+    }
+
+
+def ensure_run_dir(base: Path, run_id: str) -> Path:
+    """创建 run 目录；已存在则拒绝（防覆盖历史证据）。"""
+    path = base / run_id
+    path.mkdir(parents=True, exist_ok=False)
+    return path
 
 
 def count_orphan_servers() -> int:

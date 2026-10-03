@@ -1,0 +1,20 @@
+{
+  "dataset_id": "fixture_broken_second",
+  "tasks": [
+    {
+      "id": "fix-001",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "测试字段",
+      "input": "测试输入一。",
+      "gold": "甲"
+    },
+    {
+      "id": "fix-002",
+      "task_type": "single_field_extraction",
+      "scoring": "exact",
+      "field": "测试字段",
+      "gold": "乙"
+    }
+  ]
+}

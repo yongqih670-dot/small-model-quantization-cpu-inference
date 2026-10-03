@@ -1,0 +1,242 @@
+{
+  "run_id": "run_20261003_112320_formal_Q4_K_M_7eda40",
+  "script": "scripts/run_tasks.py",
+  "dataset": "datasets\\test\\test_tasks.json",
+  "synthetic": false,
+  "formal_mode": true,
+  "resumed_from_record": false,
+  "started_at_utc": "2026-10-03T03:23:20.712+00:00",
+  "config_id": "formal_stage3_t4_c1024_v1",
+  "config_snapshot": {
+    "config_id": "formal_stage3_t4_c1024_v1",
+    "comment": "Stage 3 正式公共配置（三量化版本共用）。显式固定 batch/micro-batch/KV 类型/Flash Attention/加载模式；单推理进程、单 slot、串行请求；禁用跨请求提示缓存。threads=threads_batch=4 不是最优配置声明，仅为受控固定值。llama-bench 与 server 两条路径的 Flash Attention 统一为 off。",
+    "model_paths": {
+      "Q4_K_M": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "Q5_K_M": "models/qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "Q8_0": "models/qwen2.5-0.5b-instruct-q8_0.gguf"
+    },
+    "parallel": 1,
+    "threads": 4,
+    "threads_batch": 4,
+    "context_length": 1024,
+    "batch_size": 2048,
+    "ubatch_size": 512,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16",
+    "flash_attn": "off",
+    "load_mode": "mmap",
+    "gpu_offload_layers": 0,
+    "cache_reuse": 0,
+    "cache_prompt_request_body": false,
+    "generation": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "seed": 42,
+      "max_tokens": 96
+    },
+    "request_timeout_s": 120,
+    "load_timeout_s": 300,
+    "health_poll_interval_s": 0.25,
+    "memory_sample_interval_s": 0.05,
+    "timeout_recovery": {
+      "method": "GET /slots 等待 is_processing=false",
+      "wait_timeout_s": 60,
+      "on_failure": "终止本程序启动的服务，剩余任务标记 not_attempted，不继续发请求"
+    }
+  },
+  "prompt_template": {
+    "template_id": "task_prompts_v1",
+    "system_prompt": "你是严格的评测作答器。只按题目要求输出答案，不要解释。",
+    "per_type": {
+      "single_field_extraction": "从下面的输入中提取：{field}。\n要求：只输出答案本身，不要加说明文字。\n关于单位与标点：1) 数量/金额/比例等数值类字段只输出数字本身（不加元、人、%、个等单位），字段名已标明单位时以字段名为准；2) 日期和时间按输入原文表述输出（如：10月18日、9:30）；3) 不要增加答案之外的标点或文字，但答案内部必要的字符必须保留（如电话号码中的连字符、小数点）；4) 如果输入中没有该信息，只输出：未提供。\n\n输入：\n{input}",
+      "json_extraction": "从下面的输入中提取指定字段，输出一个 JSON 对象。\n要求：1) 字段值使用输入原文中的表述；2) 缺失的字符串字段用 null；3) 只输出 JSON 对象本身，不要加代码围栏、解释或其他文字。\n\n需要提取的字段：{fields}\n\n输入：\n{input}",
+      "classification": "将下面的输入分类到唯一标签，标签只能是：{labels}。\n要求：只输出标签本身。\n\n输入：\n{input}",
+      "normalization": "按规则转换：{rule}\n要求：只输出转换结果，不要任何说明。\n\n输入：{input}"
+    }
+  },
+  "task_count_requested": 50,
+  "dataset_id": "test_tasks_v2",
+  "all_task_ids": [
+    "test-001",
+    "test-002",
+    "test-003",
+    "test-004",
+    "test-005",
+    "test-006",
+    "test-007",
+    "test-008",
+    "test-009",
+    "test-010",
+    "test-011",
+    "test-012",
+    "test-013",
+    "test-014",
+    "test-015",
+    "test-016",
+    "test-017",
+    "test-018",
+    "test-019",
+    "test-020",
+    "test-021",
+    "test-022",
+    "test-023",
+    "test-024",
+    "test-025",
+    "test-026",
+    "test-027",
+    "test-028",
+    "test-029",
+    "test-030",
+    "test-031",
+    "test-032",
+    "test-033",
+    "test-034",
+    "test-035",
+    "test-036",
+    "test-037",
+    "test-038",
+    "test-039",
+    "test-040",
+    "test-041",
+    "test-042",
+    "test-043",
+    "test-044",
+    "test-045",
+    "test-046",
+    "test-047",
+    "test-048",
+    "test-049",
+    "test-050"
+  ],
+  "preflight_passed": true,
+  "model_path": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "model_key": "Q4_K_M",
+  "backend_version": {
+    "command": "llama-server.exe --version",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64\n"
+  },
+  "server_argv": [
+    "-m",
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "--parallel",
+    "1",
+    "-c",
+    "1024",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "-ngl",
+    "0",
+    "--cache-reuse",
+    "0"
+  ],
+  "server_startup": {
+    "ok": true,
+    "error": null,
+    "server_startup_to_ready_s": 0.861764,
+    "health_poll_interval_s": 0.25,
+    "warmup": "backend default enabled (未传 --no-warmup)",
+    "backend_model_init_interval_s": 0.591691,
+    "model_load_time_s": null,
+    "model_load_time_reason": "model_load_time_s 留空: loading→loaded 区间的准确边界未核实(含后端初始化开销)，不称纯权重加载耗时；区间值记入 backend_model_init_interval_s"
+  },
+  "warmup_request": {
+    "marked_as": "warmup",
+    "ok": true,
+    "excluded_from_stats": true
+  },
+  "cache_reuse_check": {
+    "requests": [
+      {
+        "cache_n": 0,
+        "prompt_n": 30
+      },
+      {
+        "cache_n": 0,
+        "prompt_n": 30
+      }
+    ],
+    "passed": true
+  },
+  "memory": {
+    "peak_wset_mib": 586.555,
+    "sampled_peak_rss_mib": 585.414,
+    "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+    "sample_interval_s": 0.05
+  },
+  "requests_sent": 50,
+  "counts": {
+    "total": 50,
+    "ok": 50,
+    "request_failed": 0,
+    "timeout": 0,
+    "truncated": 0,
+    "format_correct": 21,
+    "content_correct": 21,
+    "correct": 16
+  },
+  "per_task_type": {
+    "single_field_extraction": {
+      "total": 15,
+      "correct": 5,
+      "format_correct": 5,
+      "content_correct": 5,
+      "failed": 0
+    },
+    "json_extraction": {
+      "total": 15,
+      "correct": 0,
+      "format_correct": 0,
+      "content_correct": 5,
+      "failed": 0
+    },
+    "classification": {
+      "total": 10,
+      "correct": 5,
+      "format_correct": 10,
+      "content_correct": 5,
+      "failed": 0
+    },
+    "normalization": {
+      "total": 10,
+      "correct": 6,
+      "format_correct": 6,
+      "content_correct": 6,
+      "failed": 0
+    }
+  },
+  "timeout_recoveries": [],
+  "not_attempted": [],
+  "execution_complete": true,
+  "quality_evaluation_valid": true,
+  "performance_record_valid": true,
+  "denominator_note": "分母=全部请求(含失败/超时/截断/格式错误); 无剔除无重试; 未完成整套任务时不得宣布完整正式正确率",
+  "cleanup": {
+    "attempted": true,
+    "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+    "server_self_exited": false,
+    "confirmed_exit": true,
+    "exit_code": 1
+  },
+  "orphan_servers_global_after": 0,
+  "cleanup_success": true,
+  "success": true,
+  "success_rule": "execution_complete AND cleanup_success; quality_evaluation_valid 与 performance_record_valid 单列报告",
+  "finished_at_utc": "2026-10-03T03:23:42.209+00:00",
+  "is_real_inference": true
+}

@@ -1,0 +1,85 @@
+{
+  "unit": 13,
+  "round": 5,
+  "model": "Q4_K_M",
+  "argv": [
+    "-m",
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "--parallel",
+    "1",
+    "-c",
+    "1024",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "-ngl",
+    "0",
+    "--cache-reuse",
+    "0"
+  ],
+  "resource_before": {
+    "time": "2026-10-03T03:22:21.014+00:00",
+    "cpu_percent_sample": 5.0,
+    "free_ram_gib": 12.22,
+    "llama_server_process_count_global": 0,
+    "note": "仅记录本机负载；不据此筛选数据"
+  },
+  "warmup_and_cache": {
+    "warmup_ok": true,
+    "cache_check": [
+      {
+        "cache_n": 0,
+        "prompt_n": 30
+      },
+      {
+        "cache_n": 0,
+        "prompt_n": 30
+      }
+    ],
+    "cache_ok": true,
+    "excluded_from_timed_total": true
+  },
+  "timed_requests": 5,
+  "server_startup": {
+    "ok": true,
+    "error": null,
+    "server_startup_to_ready_s": 0.770589,
+    "backend_model_init_interval_s": 0.573278,
+    "model_load_time_s": null,
+    "model_load_time_reason": "model_load_time_s 留空: loading→loaded 区间的准确边界未核实(含后端初始化开销)，不称纯权重加载耗时；区间值记入 backend_model_init_interval_s"
+  },
+  "memory": {
+    "peak_wset_mib": 518.805,
+    "sampled_peak_rss_mib": 518.805,
+    "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+    "sample_interval_s": 0.05
+  },
+  "ok": true,
+  "cleanup": {
+    "attempted": true,
+    "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+    "server_self_exited": false,
+    "confirmed_exit": true,
+    "exit_code": 1
+  },
+  "resource_after": {
+    "time": "2026-10-03T03:22:24.154+00:00",
+    "cpu_percent_sample": 4.5,
+    "free_ram_gib": 12.21,
+    "llama_server_process_count_global": 0,
+    "note": "仅记录本机负载；不据此筛选数据"
+  }
+}
