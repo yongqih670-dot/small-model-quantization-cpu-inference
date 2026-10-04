@@ -1,0 +1,879 @@
+{
+  "purpose": "Stage 6 前置只读链路核查（Stage 3 矩阵C请求证据）",
+  "evidence_basis": {
+    "existing_request_evidence": [
+      "results/raw/<stage3 formal run>/requests.jsonl 中请求时落盘的 user_message / response_body / raw_output / score / usage",
+      "results/raw/<stage3 formal run>/result.json 的配置快照与计数"
+    ],
+    "reconstruction_for_crosscheck": [
+      "messages 数组 = [模板system_prompt, 已存user_message] 依据 run_tasks.py 当前代码重建（请求体本身未整体存档）；渲染函数按当前代码重算，用于与已存 user_message 比对"
+    ],
+    "distinction_rule": "已存证据与重建内容冲突时以已存证据为准；本核查两者零冲突"
+  },
+  "runs": {
+    "Q4_K_M": {
+      "source": "results/raw/run_20261003_112320_formal_Q4_K_M_7eda40/requests.jsonl",
+      "n_records": 50,
+      "render_mismatch": [],
+      "score_mismatch": [],
+      "response_extraction_mismatch": [],
+      "finish_reason_counter": {
+        "stop": 50
+      },
+      "cached_tokens_values": [
+        0
+      ],
+      "generation_params_values": [
+        "{\"cache_prompt\": false, \"max_tokens\": 96, \"seed\": 42, \"temperature\": 0.0, \"top_p\": 1.0}"
+      ],
+      "classification": {
+        "unit": "候选标签在提示中的显示位置（非题目执行顺序）",
+        "rows": [
+          {
+            "task_id": "test-031",
+            "labels_dataset": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "labels_rendered": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "垃圾信息",
+            "gold_position": 0,
+            "output": "垃圾信息",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-032",
+            "labels_dataset": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "labels_rendered": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "正常信息",
+            "gold_position": 1,
+            "output": "垃圾信息",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-033",
+            "labels_dataset": [
+              "校内",
+              "校外"
+            ],
+            "labels_rendered": [
+              "校内",
+              "校外"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "校外",
+            "gold_position": 1,
+            "output": "校内",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-034",
+            "labels_dataset": [
+              "校内",
+              "校外"
+            ],
+            "labels_rendered": [
+              "校内",
+              "校外"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "校内",
+            "gold_position": 0,
+            "output": "校内",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-035",
+            "labels_dataset": [
+              "紧急",
+              "非紧急"
+            ],
+            "labels_rendered": [
+              "紧急",
+              "非紧急"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "紧急",
+            "gold_position": 0,
+            "output": "紧急",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-036",
+            "labels_dataset": [
+              "紧急",
+              "非紧急"
+            ],
+            "labels_rendered": [
+              "紧急",
+              "非紧急"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "非紧急",
+            "gold_position": 1,
+            "output": "紧急",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-037",
+            "labels_dataset": [
+              "正面",
+              "负面"
+            ],
+            "labels_rendered": [
+              "正面",
+              "负面"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "正面",
+            "gold_position": 0,
+            "output": "正面",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-038",
+            "labels_dataset": [
+              "正面",
+              "负面"
+            ],
+            "labels_rendered": [
+              "正面",
+              "负面"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "负面",
+            "gold_position": 1,
+            "output": "正面",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-039",
+            "labels_dataset": [
+              "可回收",
+              "不可回收"
+            ],
+            "labels_rendered": [
+              "可回收",
+              "不可回收"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "可回收",
+            "gold_position": 0,
+            "output": "可回收",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-040",
+            "labels_dataset": [
+              "可回收",
+              "不可回收"
+            ],
+            "labels_rendered": [
+              "可回收",
+              "不可回收"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "不可回收",
+            "gold_position": 1,
+            "output": "可回收",
+            "picked_position": 0
+          }
+        ],
+        "first_label_picks": 10,
+        "first_label_picks_n": 10,
+        "gold_position_distribution": {
+          "0": 5,
+          "1": 5
+        },
+        "claim_check": "三模型 30/30 选择提示中候选列表第一位；金标位于第一位/第二位各 5 题 -> 该模式为位置驱动"
+      },
+      "json": {
+        "rows": [
+          {
+            "task_id": "test-016",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 45
+          },
+          {
+            "task_id": "test-017",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 44
+          },
+          {
+            "task_id": "test-018",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 37
+          },
+          {
+            "task_id": "test-019",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 40
+          },
+          {
+            "task_id": "test-020",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 59
+          },
+          {
+            "task_id": "test-021",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 45
+          },
+          {
+            "task_id": "test-022",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 48
+          },
+          {
+            "task_id": "test-023",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 38
+          },
+          {
+            "task_id": "test-024",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 48
+          },
+          {
+            "task_id": "test-025",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 47
+          },
+          {
+            "task_id": "test-026",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 43
+          },
+          {
+            "task_id": "test-027",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 43
+          },
+          {
+            "task_id": "test-028",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 36
+          },
+          {
+            "task_id": "test-029",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 34
+          },
+          {
+            "task_id": "test-030",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 37
+          }
+        ],
+        "fence_present_count": 15,
+        "fence_present_n": 15,
+        "parse_method_counter": {
+          "fenced": 15
+        }
+      }
+    },
+    "Q5_K_M": {
+      "source": "results/raw/run_20261003_112342_formal_Q5_K_M_8b86de/requests.jsonl",
+      "n_records": 50,
+      "render_mismatch": [],
+      "score_mismatch": [],
+      "response_extraction_mismatch": [],
+      "finish_reason_counter": {
+        "stop": 50
+      },
+      "cached_tokens_values": [
+        0
+      ],
+      "generation_params_values": [
+        "{\"cache_prompt\": false, \"max_tokens\": 96, \"seed\": 42, \"temperature\": 0.0, \"top_p\": 1.0}"
+      ],
+      "classification": {
+        "unit": "候选标签在提示中的显示位置（非题目执行顺序）",
+        "rows": [
+          {
+            "task_id": "test-031",
+            "labels_dataset": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "labels_rendered": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "垃圾信息",
+            "gold_position": 0,
+            "output": "垃圾信息",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-032",
+            "labels_dataset": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "labels_rendered": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "正常信息",
+            "gold_position": 1,
+            "output": "垃圾信息",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-033",
+            "labels_dataset": [
+              "校内",
+              "校外"
+            ],
+            "labels_rendered": [
+              "校内",
+              "校外"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "校外",
+            "gold_position": 1,
+            "output": "校内",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-034",
+            "labels_dataset": [
+              "校内",
+              "校外"
+            ],
+            "labels_rendered": [
+              "校内",
+              "校外"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "校内",
+            "gold_position": 0,
+            "output": "校内",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-035",
+            "labels_dataset": [
+              "紧急",
+              "非紧急"
+            ],
+            "labels_rendered": [
+              "紧急",
+              "非紧急"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "紧急",
+            "gold_position": 0,
+            "output": "紧急",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-036",
+            "labels_dataset": [
+              "紧急",
+              "非紧急"
+            ],
+            "labels_rendered": [
+              "紧急",
+              "非紧急"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "非紧急",
+            "gold_position": 1,
+            "output": "紧急",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-037",
+            "labels_dataset": [
+              "正面",
+              "负面"
+            ],
+            "labels_rendered": [
+              "正面",
+              "负面"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "正面",
+            "gold_position": 0,
+            "output": "正面",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-038",
+            "labels_dataset": [
+              "正面",
+              "负面"
+            ],
+            "labels_rendered": [
+              "正面",
+              "负面"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "负面",
+            "gold_position": 1,
+            "output": "正面",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-039",
+            "labels_dataset": [
+              "可回收",
+              "不可回收"
+            ],
+            "labels_rendered": [
+              "可回收",
+              "不可回收"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "可回收",
+            "gold_position": 0,
+            "output": "可回收",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-040",
+            "labels_dataset": [
+              "可回收",
+              "不可回收"
+            ],
+            "labels_rendered": [
+              "可回收",
+              "不可回收"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "不可回收",
+            "gold_position": 1,
+            "output": "可回收",
+            "picked_position": 0
+          }
+        ],
+        "first_label_picks": 10,
+        "first_label_picks_n": 10,
+        "gold_position_distribution": {
+          "0": 5,
+          "1": 5
+        },
+        "claim_check": "三模型 30/30 选择提示中候选列表第一位；金标位于第一位/第二位各 5 题 -> 该模式为位置驱动"
+      },
+      "json": {
+        "rows": [
+          {
+            "task_id": "test-016",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 45
+          },
+          {
+            "task_id": "test-017",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 44
+          },
+          {
+            "task_id": "test-018",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 37
+          },
+          {
+            "task_id": "test-019",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 39
+          },
+          {
+            "task_id": "test-020",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 70
+          },
+          {
+            "task_id": "test-021",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 45
+          },
+          {
+            "task_id": "test-022",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 48
+          },
+          {
+            "task_id": "test-023",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 38
+          },
+          {
+            "task_id": "test-024",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 48
+          },
+          {
+            "task_id": "test-025",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 41
+          },
+          {
+            "task_id": "test-026",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 43
+          },
+          {
+            "task_id": "test-027",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 45
+          },
+          {
+            "task_id": "test-028",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 51
+          },
+          {
+            "task_id": "test-029",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 34
+          },
+          {
+            "task_id": "test-030",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 46
+          }
+        ],
+        "fence_present_count": 15,
+        "fence_present_n": 15,
+        "parse_method_counter": {
+          "fenced": 15
+        }
+      }
+    },
+    "Q8_0": {
+      "source": "results/raw/run_20261003_112411_formal_Q8_0_37181d/requests.jsonl",
+      "n_records": 50,
+      "render_mismatch": [],
+      "score_mismatch": [],
+      "response_extraction_mismatch": [],
+      "finish_reason_counter": {
+        "stop": 50
+      },
+      "cached_tokens_values": [
+        0
+      ],
+      "generation_params_values": [
+        "{\"cache_prompt\": false, \"max_tokens\": 96, \"seed\": 42, \"temperature\": 0.0, \"top_p\": 1.0}"
+      ],
+      "classification": {
+        "unit": "候选标签在提示中的显示位置（非题目执行顺序）",
+        "rows": [
+          {
+            "task_id": "test-031",
+            "labels_dataset": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "labels_rendered": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "垃圾信息",
+            "gold_position": 0,
+            "output": "垃圾信息",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-032",
+            "labels_dataset": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "labels_rendered": [
+              "垃圾信息",
+              "正常信息"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "正常信息",
+            "gold_position": 1,
+            "output": "垃圾信息",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-033",
+            "labels_dataset": [
+              "校内",
+              "校外"
+            ],
+            "labels_rendered": [
+              "校内",
+              "校外"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "校外",
+            "gold_position": 1,
+            "output": "校内",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-034",
+            "labels_dataset": [
+              "校内",
+              "校外"
+            ],
+            "labels_rendered": [
+              "校内",
+              "校外"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "校内",
+            "gold_position": 0,
+            "output": "校内",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-035",
+            "labels_dataset": [
+              "紧急",
+              "非紧急"
+            ],
+            "labels_rendered": [
+              "紧急",
+              "非紧急"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "紧急",
+            "gold_position": 0,
+            "output": "紧急",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-036",
+            "labels_dataset": [
+              "紧急",
+              "非紧急"
+            ],
+            "labels_rendered": [
+              "紧急",
+              "非紧急"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "非紧急",
+            "gold_position": 1,
+            "output": "紧急",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-037",
+            "labels_dataset": [
+              "正面",
+              "负面"
+            ],
+            "labels_rendered": [
+              "正面",
+              "负面"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "正面",
+            "gold_position": 0,
+            "output": "正面",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-038",
+            "labels_dataset": [
+              "正面",
+              "负面"
+            ],
+            "labels_rendered": [
+              "正面",
+              "负面"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "负面",
+            "gold_position": 1,
+            "output": "正面",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-039",
+            "labels_dataset": [
+              "可回收",
+              "不可回收"
+            ],
+            "labels_rendered": [
+              "可回收",
+              "不可回收"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "可回收",
+            "gold_position": 0,
+            "output": "可回收",
+            "picked_position": 0
+          },
+          {
+            "task_id": "test-040",
+            "labels_dataset": [
+              "可回收",
+              "不可回收"
+            ],
+            "labels_rendered": [
+              "可回收",
+              "不可回收"
+            ],
+            "label_order_matches_dataset": true,
+            "gold": "不可回收",
+            "gold_position": 1,
+            "output": "可回收",
+            "picked_position": 0
+          }
+        ],
+        "first_label_picks": 10,
+        "first_label_picks_n": 10,
+        "gold_position_distribution": {
+          "0": 5,
+          "1": 5
+        },
+        "claim_check": "三模型 30/30 选择提示中候选列表第一位；金标位于第一位/第二位各 5 题 -> 该模式为位置驱动"
+      },
+      "json": {
+        "rows": [
+          {
+            "task_id": "test-016",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 45
+          },
+          {
+            "task_id": "test-017",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 45
+          },
+          {
+            "task_id": "test-018",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 41
+          },
+          {
+            "task_id": "test-019",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 39
+          },
+          {
+            "task_id": "test-020",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 62
+          },
+          {
+            "task_id": "test-021",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 44
+          },
+          {
+            "task_id": "test-022",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 48
+          },
+          {
+            "task_id": "test-023",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 38
+          },
+          {
+            "task_id": "test-024",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 48
+          },
+          {
+            "task_id": "test-025",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 41
+          },
+          {
+            "task_id": "test-026",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 43
+          },
+          {
+            "task_id": "test-027",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 43
+          },
+          {
+            "task_id": "test-028",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 51
+          },
+          {
+            "task_id": "test-029",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 34
+          },
+          {
+            "task_id": "test-030",
+            "parse_method": "fenced",
+            "fence_present": true,
+            "completion_tokens": 37
+          }
+        ],
+        "fence_present_count": 15,
+        "fence_present_n": 15,
+        "parse_method_counter": {
+          "fenced": 15
+        }
+      }
+    }
+  },
+  "issues": [],
+  "verdict": "链路核查通过：150/150 渲染一致、评分重算一致、响应提取一致；无截断、无缓存复用、生成参数唯一；未发现提示渲染/默认值/响应提取/截断/评分错误",
+  "decision": "未发现足以改变原有现象解释的链路问题，两个诊断分支均可继续"
+}

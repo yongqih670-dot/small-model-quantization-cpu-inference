@@ -1,0 +1,17 @@
+11:59:52 | INFO    | 启动 llama-server: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\llama.cpp\llama-server.exe -m F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\models\qwen2.5-0.5b-instruct-q8_0.gguf --parallel 1 -c 1024 -b 2048 -ub 512 -ctk f16 -ctv f16 -t 4 -tb 4 -fa off -lm mmap -ngl 0 --cache-reuse 0 --host 127.0.0.1 --port 13808
+11:59:53 | INFO    | 预热=True 缓存校验=True
+11:59:54 | INFO    | [1/13] dev-006__J2 -> '{"会议主题": "产品评审会", "日期": "11月3日（周一）上午10:0' | 格式=True 内容=False 联合=False
+11:59:55 | INFO    | [2/13] dev-005__J1 -> '```json\n{\n  "快递公司": "中通",\n  "取件码": "8-2-' | 格式=False 内容=False 联合=False
+11:59:56 | INFO    | [3/13] dev-006__J1 -> '```json\n{\n  "会议主题": "产品评审会",\n  "日期": "11' | 格式=False 内容=True 联合=False
+11:59:56 | INFO    | [4/13] dev-005__J0 -> '```json\n{\n  "快递公司": "中通",\n  "取件码": "8-2-' | 格式=False 内容=False 联合=False
+11:59:57 | INFO    | [5/13] dev-007__rot1 -> '不停课' | 格式=True 内容=True 联合=True
+11:59:57 | INFO    | [6/13] dev-004__J1 -> '```json\n{\n  "课程名称": "《机器学习导论》",\n  "调整后的上' | 格式=False 内容=True 联合=False
+11:59:58 | INFO    | [7/13] dev-005__J2 -> '{"快递公司": "中通", "取件码": "8-2-3007", "收件人姓名' | 格式=True 内容=False 联合=False
+11:59:58 | INFO    | [8/13] dev-008__rot1 -> '求助' | 格式=True 内容=False 联合=False
+11:59:59 | INFO    | [9/13] dev-006__J0 -> '```json\n{\n  "会议主题": "产品评审会",\n  "日期": "11' | 格式=False 内容=True 联合=False
+12:00:00 | INFO    | [10/13] dev-004__J2 -> '{"课程名称": "《机器学习导论》", "调整后的上课时间": "周三3-4节' | 格式=True 内容=True 联合=True
+12:00:01 | INFO    | [11/13] dev-004__J0 -> '```json\n{\n  "课程名称": "《机器学习导论》",\n  "调整后的上' | 格式=False 内容=True 联合=False
+12:00:01 | INFO    | [12/13] dev-007__rot0 -> '停课' | 格式=True 内容=False 联合=False
+12:00:01 | INFO    | [13/13] dev-008__rot0 -> '二手出售' | 格式=True 内容=True 联合=True
+12:00:01 | INFO    | llama-server 退出: exit=1 (本程序主动终止, 已确认)
+12:00:05 | INFO    | 结果: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\results\stage6\run_20261004_115947_stage6dev_Q80_c70e1a\result.json (success=True)

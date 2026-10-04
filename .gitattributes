@@ -5,3 +5,6 @@ datasets/** -text
 environment/** -text
 docs/** -text
 tests/fixtures/** -text
+# Stage 6 预注册配置与脚本按字节原样存取（冻结哈希跨检出稳定）
+configs/stage6_*.json -text
+scripts/stage6_*.py -text

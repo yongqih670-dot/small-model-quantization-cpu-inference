@@ -1,0 +1,188 @@
+{
+  "plan_id": "stage6_plan_v1",
+  "title": "Stage 6 共同错误诊断实验（事后探索性）预注册",
+  "created_at_local": "2026-10-04",
+  "positioning": {
+    "type": "post_hoc_exploratory_diagnosis",
+    "not_claims": [
+      "不产生新的独立测试集成绩",
+      "不覆盖/不修改 Stage 3 正确率或任何历史结果",
+      "不据此修改原正式集",
+      "不宣称三个量化版本等价",
+      "不以本轮请求速度作性能排名"
+    ],
+    "baseline": "rev4 (提交 942573d)，git 工作区干净",
+    "inference_allowed": "仅现有 Q4_K_M/Q5_K_M/Q8_0 + 现有 llama.cpp build 11347 后端；不训练、不下载新模型、不升级后端、不做性能扫描、不扩大到其他模型"
+  },
+  "prior_evidence": {
+    "stage3_analysis_revision": "docs/stage3_analysis_revision.md §5",
+    "observed_common_errors": [
+      "分类题：三模型在全部10道分类题选择提示中候选列表第一个标签（30/30）",
+      "JSON题：三模型15道多字段抽取题全部输出带代码围栏（parse_method=fenced，15/15×3）"
+    ],
+    "chain_check": "results/stage6/chain_check/chain_check_report.json（只读核查通过，150/150 渲染/评分/提取一致，无链路错误）",
+    "evidence_basis": "Stage 3 requests.jsonl 请求时落盘的 user_message/response_body/score/usage 为已有请求证据；messages 数组重建仅作交叉核对且零冲突"
+  },
+  "hypotheses": {
+    "A_label_position": {
+      "statement": "在当前提示模板下，三个量化版本分类输出主要跟随候选标签的显示位置（首选显示位置0的标签），而非按语义判定；",
+      "primary_prediction": "轮换后选择显示位置0标签的比例显著高于 0.5（若纯位置跟随应为 1.0；若纯语义应与位置无关）",
+      "secondary_prediction": "同一题在两个轮换顺序下语义答案跟随显示首标签变化（输出随首标签改变），而非保持同一语义答案",
+      "falsifier": "若两轮换下选择与显示位置无关且语义答案稳定，则位置偏好假设不成立，共同错误另有来源"
+    },
+    "B_json_format": {
+      "statement": "JSON 输出加代码围栏的行为对提示中格式要求的强化存在剂量响应：J1（更强的明确格式要求）相对 J0 降低围栏率，J2（J1+格式示例）相对 J1 进一步降低；",
+      "primary_metrics": "J0/J1/J2 的围栏出现比例与直接可解析比例（诊断指标）；原评分器三档正确率（可比口径）",
+      "falsifier": "若 J1/J2 围栏率与 J0 无实质变化，则格式指令对该行为无干预效果",
+      "attribution_limits": [
+        "J2 相对 J1 的任何变化不能单独归因于示例内容（提示长度等同时变化）",
+        "格式改善与内容变化分开报告；内容退化必须如实报告"
+      ]
+    }
+  },
+  "conditions": {
+    "branch_A": {
+      "sample": "datasets/test/test_tasks.json 全部10条 classification 题（test-031..040）",
+      "models": ["Q4_K_M", "Q5_K_M", "Q8_0"],
+      "variants_per_task": "K 个循环轮换（rot_k = labels[k:]+labels[:k]），原顺序=rot0 包含在内，无重复请求",
+      "k_values_actual": {"all_tasks": 2},
+      "per_label_position_coverage": "每题 2 个轮换使每个标签在位置0/1 各出现一次",
+      "invariance": "题干、标签文字、金标（绑定含义不随位置改变）、system prompt、标点与说明不变；模板无编号，无编号-顺序一致性问题",
+      "requests": "10题 × 2序 × 3模型 = 60"
+    },
+    "branch_B": {
+      "sample": "datasets/test/test_tasks.json 全部15条 json_extraction 题（test-016..030）",
+      "models": ["Q4_K_M", "Q5_K_M", "Q8_0"],
+      "conditions": {
+        "J0": "原始提示，不作改动",
+        "J1": "J0 + 固定插入行：补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。（插入于要求段末行之后、『需要提取的字段』之前；文字与位置冻结于 stage6_build_variants.py）",
+        "J2": "J1 + 固定格式示例块（独立虚构内容：投影仪借用登记；与正式集字段/金标无交集，已程序化校验）"
+      },
+      "invariance": "题干、目标字段、缺失值规则、金标不变",
+      "no_interventions": "不使用 JSON 约束解码、自动修复或输出后处理",
+      "requests": "15题 × 3条件 × 3模型 = 135"
+    }
+  },
+  "execution": {
+    "config": "configs/stage6_config.json (config_id=stage6_diag_t4_c1024_v1)",
+    "http_settings_inherited": {
+      "threads": 4, "threads_batch": 4, "context_length": 1024,
+      "parallel": 1, "gpu_offload_layers": 0, "batch_size": 2048,
+      "ubatch_size": 512, "cache_type_k": "f16", "cache_type_v": "f16",
+      "flash_attn": "off", "load_mode": "mmap", "cache_reuse": 0,
+      "generation": {"temperature": 0.0, "top_p": 1.0, "seed": 42, "max_tokens": 96},
+      "request_timeout_s": 120
+    },
+    "context_budget": "最长变体（J2）prompt_tokens 预计约 250（Stage 3 实测 J0 最长 156 + 追加约 70-90），输出上限 96，ctx=1024 可容纳；不为本阶段调整上下文；dev 阶段实测最大 prompt_tokens 复核并写入运行记录",
+    "order": "datasets/stage6/stage6_order.json：canonical 顺序 = 分类变体(题目序×rot) + JSON变体(题目序×J0/J1/J2)，random.Random(20261004).shuffle 一次，三个模型使用同一 shuffled 顺序（便于配对）",
+    "single_process": "同一时刻仅一个推理进程；启动前 count_orphan_servers()>0 则拒绝运行",
+    "warmup": "每次服务启动后 1 次预热 + 2 次缓存复用检查（cache_n==0），辅助请求标记 excluded_from_stats",
+    "resources": "开始/结束记录 CPU 采样、可用内存、供电状态、可识别的 CircuitPilot 负载（按进程名识别；识别不到记 not_found_by_name，不宣称『全程无干扰』）",
+    "circuitpilot_rule": "若发现 CircuitPilot 计算密集负载则暂停本轮推理并汇报；本次开始前核查未发现该名称进程"
+  },
+  "request_budget": {
+    "formal_total": 195,
+    "branch_A": 60, "branch_B": 135,
+    "dev_validation": 39,
+    "auxiliary_per_server_start": 3,
+    "server_starts": {"dev": 3, "formal": 3},
+    "auxiliary_total": "39 dev + 3次启动×3请求×2阶段(预热1+缓存检查2) = 39 + 18 = 57",
+    "grand_total_estimate": 252,
+    "note": "分支A按真实标签数 K=2 计算（10×2×3=60），不强行套用规格示例的 90；辅助请求一律另列不计入成绩"
+  },
+  "dev_validation": {
+    "sample": "datasets/stage6/stage6_dev_variants.json：dev-007/008 分类×2序 + dev-004/005/006 JSON×3条件 = 13变体×3模型=39请求",
+    "purpose": "验证链路（渲染/发送/提取/评分/记录）与 J1/J2 插入文本效果方向；不得依据正式诊断结果反复修改提示",
+    "timing": "dev 运行先于冻结清单生成；冻结后不再改动变体/计划/指标定义",
+    "dev_context_check": "dev 运行记录最大 prompt_tokens，验证 J2 在 ctx=1024 内"
+  },
+  "freezing": {
+    "rule": "正式诊断输出产生前冻结：假设/条件/样本范围/随机顺序/指标/判定方法/最大生成长度/超时/失败与截断处理/模型后端输入模板评分文件指纹/预计请求数",
+    "manifest": "datasets/stage6/frozen_hashes_stage6.json（逐文件 SHA256）",
+    "gate": "正式运行前 stage6_exec.py 逐文件核验；不通过即拒绝运行；冻结后再改动任何被列文件须记录理由并重新冻结（历史清单不重冻结、不覆盖 run 快照）",
+    "frozen_before_formal": ["configs/stage6_plan.json", "configs/stage6_config.json",
+      "docs/STAGE6_PLAN.md", "datasets/stage6/*", "scripts/stage6_build_variants.py",
+      "scripts/stage6_exec.py", "scripts/stage6_analyze.py",
+      "scripts/score_answer.py", "scripts/llama_server_ctl.py",
+      "datasets/prompt_template.json", "datasets/test/test_tasks.json",
+      "datasets/dev/dev_tasks.json", "configs/formal_config.json",
+      "datasets/frozen_hashes_stage3.json", "models/model_manifest_v3.json",
+      "environment/backend_manifest.json",
+      "results/stage6/chain_check/chain_check_report.json"],
+    "not_frozen_note": "scripts/stage6_verify.py 为核验工具本身，不列入（避免自指）；其指纹记录于最终报告"
+  },
+  "scoring_and_metrics": {
+    "comparable_scores": "沿用冻结评分器 scripts/score_answer.py（与 Stage 3 完全同口径）：三档 format_correct/content_correct/correct；分母含失败/超时/截断",
+    "branch_A_primary": "选择显示位置0标签的比例（每模型 n=20，按题配对）",
+    "branch_A_secondary": [
+      "各显示位置的选择分布（位置0/位置1/不可映射）",
+      "原评分器内容/格式/联合正确率（按 rot0/rot1 分列）",
+      "同一题两轮换下语义答案是否恒定（mapped(rot0)==mapped(rot1)）",
+      "输出是否随首标签变化（raw(rot0)!=raw(rot1)）",
+      "不可映射比例"
+    ],
+    "branch_A_mapping_rule": {
+      "definition": "输出映射到该请求实际显示的候选标签：先 strip() 精确相等（level=exact），否则 normalize_text 相等（level=normalized）；两者皆否记 unmappable；无歧义映射之外一律不可映射，不允许宽松解析提高正确率",
+      "mapping_levels_ranked": ["exact", "normalized"],
+      "note": "映射规则独立于评分器，仅用于位置诊断；正式三档得分仍由原评分器给出"
+    },
+    "branch_A_statistics": "以原始题目为统计单位、按题配对；同题多排列与三模型不作为独立样本扩充样本量；比例报告 Wilson 95% CI；rot0 vs rot1 正确率做精确 McNemar（预期 b≈c，净效应可为零而位置跟随仍完全成立，故位置比例为首要指标）",
+    "branch_B_primary": "J0/J1/J2 每模型：围栏出现比例、直接可解析（strict parse_method=direct 且为对象）比例、原评分器格式/内容/联合正确率",
+    "branch_B_secondary": [
+      "逐题转移：相对J0 的 错误→正确、正确→错误（格式/内容/联合三口径，J0→J1 与 J1→J2）",
+      "实际输出 completion_tokens 分布与截断数",
+      "代表性原始输出案例（报告引用原文）"
+    ],
+    "branch_B_statistics": "按题配对的精确 McNemar（J0vsJ1、J1vsJ2、J0vsJ2；每模型×每指标族内 3 次比较做 Holm 校正）；小样本强调效应大小与不确定性，不强求显著；同题变体不当独立样本",
+    "significance_disclaimer": "全部检验为事后探索性；未检出显著不得写成等价或无差异"
+  },
+  "failure_handling": {
+    "max_tokens": 96,
+    "timeout_s": 120,
+    "truncation": "finish_reason=length 标记 truncated，保留记录计分母，不重试",
+    "request_failure": "保留 HTTP 状态/错误体，计分母，不静默重试",
+    "timeout_recovery": "GET /slots 确认空闲才继续；不空闲则终止服务，剩余单元标记 not_attempted",
+    "retest": "如需补测另存尝试记录及原因（attempt 序号递增），不覆盖第一条记录",
+    "no_reuse_of_broken_runs": "新运行创建不可变快照；禁止在存在缺陷的历史 run 上继续测量"
+  },
+  "baseline_consistency_check": {
+    "scope": "分类 rot0（10×3=30）与 JSON J0（15×3=45）共 75 个请求，与 Stage 3 矩阵C 对应原始输出逐字符比较",
+    "expectation": "temperature=0 + seed=42 + 同后端同模型同提示串行贪心生成，预期逐字符一致",
+    "on_mismatch": "列出具体题目、请求差异、配置差异及运行证据；跨阶段差异不归因于量化或提示修改（本阶段干预效果以本阶段同期基线比较）",
+    "evidence_paths": {
+      "Q4_K_M": "results/raw/run_20261003_112320_formal_Q4_K_M_7eda40/requests.jsonl",
+      "Q5_K_M": "results/raw/run_20261003_112342_formal_Q5_K_M_8b86de/requests.jsonl",
+      "Q8_0": "results/raw/run_20261003_112411_formal_Q8_0_37181d/requests.jsonl"
+    }
+  },
+  "record_schema": [
+    "run_id", "model_key", "model_path", "model_sha256", "backend_version",
+    "config_id", "phase", "branch", "unit_index_in_order", "variant_id",
+    "parent_task_id", "condition", "rotation", "labels_displayed",
+    "gold_position_in_display", "messages", "user_message", "prompt_sha256",
+    "raw_output", "http_status", "finish_reason", "usage_raw", "timings_raw",
+    "performance", "score(三档+detail)", "truncated", "diagnostic_flags",
+    "error", "error_type", "started_at_utc", "finished_at_utc", "generation_params"
+  ],
+  "analysis_artifacts": {
+    "script": "scripts/stage6_analyze.py（冻结后运行）",
+    "outputs": [
+      "results/stage6/stage6_summary.json",
+      "results/summary/stage6_cls_items.csv",
+      "results/summary/stage6_json_items.csv",
+      "results/summary/stage6_transitions.csv",
+      "plots/stage6_cls_position.png",
+      "plots/stage6_json_conditions.png"
+    ]
+  },
+  "deliverables": [
+    "Stage 6 计划/配置/变体数据/来源映射（本清单+datasets/stage6/）",
+    "冻结清单 datasets/stage6/frozen_hashes_stage6.json",
+    "执行清单 stage6_order.json 与各 run 快照（results/stage6/run_*/）",
+    "原始逐条结果 requests.jsonl + result.json（每 run）",
+    "独立分析脚本、汇总表、图（results/summary/stage6_*、plots/stage6_*）",
+    "docs/STAGE6_DIAGNOSIS_REPORT.md",
+    "实验完整性与历史证据未变的核验记录（scripts/stage6_verify.py 输出）"
+  ],
+  "boundaries_after_completion": "完成后停止：不自动启动新测试集验证、F16对照、上下文扫描或线程调优"
+}

@@ -1,0 +1,1066 @@
+{
+  "dataset_id": "stage6_cls_variants_v1",
+  "purpose": "分支A：分类标签循环轮换变体（10题×2序，全部K=2）",
+  "variants": [
+    {
+      "variant_id": "test-031__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-031",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "垃圾信息",
+      "labels_source_order": [
+        "垃圾信息",
+        "正常信息"
+      ],
+      "labels_displayed": [
+        "垃圾信息",
+        "正常信息"
+      ],
+      "labels": [
+        "垃圾信息",
+        "正常信息"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：同学你好，我是你的辅导员，请今晚8点前把学费8200元转到这个私人账户，逾期影响注册。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：垃圾信息、正常信息。\n要求：只输出标签本身。\n\n输入：\n分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：同学你好，我是你的辅导员，请今晚8点前把学费8200元转到这个私人账户，逾期影响注册。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：垃圾信息、正常信息。\n要求：只输出标签本身。\n\n输入：\n分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：同学你好，我是你的辅导员，请今晚8点前把学费8200元转到这个私人账户，逾期影响注册。"
+        }
+      ],
+      "prompt_sha256": "e18b85d20fd94a78560cfbf9d4132e3ba5ed781cf82d94f79151e57cc01274e6",
+      "messages_sha256": "04a01ce93c9315ea198c6bd42d5516cfca0d443597b60354fdff189bcaad60a7",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-031__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-031",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "垃圾信息",
+      "labels_source_order": [
+        "垃圾信息",
+        "正常信息"
+      ],
+      "labels_displayed": [
+        "正常信息",
+        "垃圾信息"
+      ],
+      "labels": [
+        "正常信息",
+        "垃圾信息"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：同学你好，我是你的辅导员，请今晚8点前把学费8200元转到这个私人账户，逾期影响注册。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：正常信息、垃圾信息。\n要求：只输出标签本身。\n\n输入：\n分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：同学你好，我是你的辅导员，请今晚8点前把学费8200元转到这个私人账户，逾期影响注册。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：正常信息、垃圾信息。\n要求：只输出标签本身。\n\n输入：\n分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：同学你好，我是你的辅导员，请今晚8点前把学费8200元转到这个私人账户，逾期影响注册。"
+        }
+      ],
+      "prompt_sha256": "85921dfcd6446355a3525a1ce0c39528afbd9082a30fca3a739d97bd6209c9b3",
+      "messages_sha256": "d8c6e64c747d942a0d43ca3749ab599d38470ef1e56b4f7c276e8aa0185d8e31",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-032__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-032",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "正常信息",
+      "labels_source_order": [
+        "垃圾信息",
+        "正常信息"
+      ],
+      "labels_displayed": [
+        "垃圾信息",
+        "正常信息"
+      ],
+      "labels": [
+        "垃圾信息",
+        "正常信息"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：图书馆通知：您借阅的《数据结构》将于3天后到期，可通过校园网续借一次。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：垃圾信息、正常信息。\n要求：只输出标签本身。\n\n输入：\n分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：图书馆通知：您借阅的《数据结构》将于3天后到期，可通过校园网续借一次。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：垃圾信息、正常信息。\n要求：只输出标签本身。\n\n输入：\n分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：图书馆通知：您借阅的《数据结构》将于3天后到期，可通过校园网续借一次。"
+        }
+      ],
+      "prompt_sha256": "c4c23f7b8f2fd65cae2d6337eab55fbe2a434087b3e0c07693ac5bbb36389f1c",
+      "messages_sha256": "ce334eff14130872abe5ac30f48745a60ae848d3d5c60061980e9cd4f8ba206e",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-032__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-032",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "正常信息",
+      "labels_source_order": [
+        "垃圾信息",
+        "正常信息"
+      ],
+      "labels_displayed": [
+        "正常信息",
+        "垃圾信息"
+      ],
+      "labels": [
+        "正常信息",
+        "垃圾信息"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：图书馆通知：您借阅的《数据结构》将于3天后到期，可通过校园网续借一次。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：正常信息、垃圾信息。\n要求：只输出标签本身。\n\n输入：\n分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：图书馆通知：您借阅的《数据结构》将于3天后到期，可通过校园网续借一次。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：正常信息、垃圾信息。\n要求：只输出标签本身。\n\n输入：\n分类规则：含推销商品或要求转账汇款内容的为垃圾信息，其余为正常信息。\n待分类文本：图书馆通知：您借阅的《数据结构》将于3天后到期，可通过校园网续借一次。"
+        }
+      ],
+      "prompt_sha256": "ee3cc95feb6f9f0586b5732a8bf45c58d686fad8e29b150c545fd4f2466c1392",
+      "messages_sha256": "803628e881432fb4292957cac5fc6c1164025052962a6f7ff51b994d84e726fc",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-033__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-033",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "校外",
+      "labels_source_order": [
+        "校内",
+        "校外"
+      ],
+      "labels_displayed": [
+        "校内",
+        "校外"
+      ],
+      "labels": [
+        "校内",
+        "校外"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：市民开放日：市科技馆本周六免费向所有公众开放，无需预约。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：校内、校外。\n要求：只输出标签本身。\n\n输入：\n分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：市民开放日：市科技馆本周六免费向所有公众开放，无需预约。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：校内、校外。\n要求：只输出标签本身。\n\n输入：\n分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：市民开放日：市科技馆本周六免费向所有公众开放，无需预约。"
+        }
+      ],
+      "prompt_sha256": "4429d7a8c88553cb72fc2cce4176901eab031e29058db1f0aec4464c3dde635c",
+      "messages_sha256": "f442f89cbca0076ee69a48daaab973e55d01a17a42c3340e9d551f4a23f6d53d",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-033__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-033",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "校外",
+      "labels_source_order": [
+        "校内",
+        "校外"
+      ],
+      "labels_displayed": [
+        "校外",
+        "校内"
+      ],
+      "labels": [
+        "校外",
+        "校内"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：市民开放日：市科技馆本周六免费向所有公众开放，无需预约。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：校外、校内。\n要求：只输出标签本身。\n\n输入：\n分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：市民开放日：市科技馆本周六免费向所有公众开放，无需预约。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：校外、校内。\n要求：只输出标签本身。\n\n输入：\n分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：市民开放日：市科技馆本周六免费向所有公众开放，无需预约。"
+        }
+      ],
+      "prompt_sha256": "80c5e43d90ec8283664c84513d8b7a6984b22336b78ac8e4eb7e82e8fff749ea",
+      "messages_sha256": "319f709165a140247cec7ed075a229cd0acbbdb045e16cf4e380261c445158a6",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-034__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-034",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "校内",
+      "labels_source_order": [
+        "校内",
+        "校外"
+      ],
+      "labels_displayed": [
+        "校内",
+        "校外"
+      ],
+      "labels": [
+        "校内",
+        "校外"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：英语角活动仅限本院学生参加，入场需出示学生证。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：校内、校外。\n要求：只输出标签本身。\n\n输入：\n分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：英语角活动仅限本院学生参加，入场需出示学生证。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：校内、校外。\n要求：只输出标签本身。\n\n输入：\n分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：英语角活动仅限本院学生参加，入场需出示学生证。"
+        }
+      ],
+      "prompt_sha256": "0e91bcd811f4b81d6df6d1dd87ba662b7c61ae4480951f54bd4a848a88727f6d",
+      "messages_sha256": "a4f7495ef37f546e8c080dec8efea7a2c998e8f206ba044121a59deaa32414ea",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-034__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-034",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "校内",
+      "labels_source_order": [
+        "校内",
+        "校外"
+      ],
+      "labels_displayed": [
+        "校外",
+        "校内"
+      ],
+      "labels": [
+        "校外",
+        "校内"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：英语角活动仅限本院学生参加，入场需出示学生证。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：校外、校内。\n要求：只输出标签本身。\n\n输入：\n分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：英语角活动仅限本院学生参加，入场需出示学生证。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：校外、校内。\n要求：只输出标签本身。\n\n输入：\n分类规则：仅面向本校师生开放的活动为校内，社会公众可参加的活动为校外。\n待分类文本：英语角活动仅限本院学生参加，入场需出示学生证。"
+        }
+      ],
+      "prompt_sha256": "a286bef797eefe2b27f370902eddc4508355e1fb574588abde9602cb0958a23c",
+      "messages_sha256": "54a78713a7f13b45ec10de5e0d6f267943cfc833956dbb435ec9e057f037a7c4",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-035__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-035",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "紧急",
+      "labels_source_order": [
+        "紧急",
+        "非紧急"
+      ],
+      "labels_displayed": [
+        "紧急",
+        "非紧急"
+      ],
+      "labels": [
+        "紧急",
+        "非紧急"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：您的包裹被扣留在海关，请立即拨打400-810-0166办理清关并支付费用。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：紧急、非紧急。\n要求：只输出标签本身。\n\n输入：\n分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：您的包裹被扣留在海关，请立即拨打400-810-0166办理清关并支付费用。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：紧急、非紧急。\n要求：只输出标签本身。\n\n输入：\n分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：您的包裹被扣留在海关，请立即拨打400-810-0166办理清关并支付费用。"
+        }
+      ],
+      "prompt_sha256": "3f23ae4634d4f7abb236333940ffeecc8916780578ea059cf00847278c60d973",
+      "messages_sha256": "e7c9bcfca732edeb76ef9b60dde5ccbf993623c84ac00e370e40d52bb75b0337",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-035__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-035",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "紧急",
+      "labels_source_order": [
+        "紧急",
+        "非紧急"
+      ],
+      "labels_displayed": [
+        "非紧急",
+        "紧急"
+      ],
+      "labels": [
+        "非紧急",
+        "紧急"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：您的包裹被扣留在海关，请立即拨打400-810-0166办理清关并支付费用。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：非紧急、紧急。\n要求：只输出标签本身。\n\n输入：\n分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：您的包裹被扣留在海关，请立即拨打400-810-0166办理清关并支付费用。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：非紧急、紧急。\n要求：只输出标签本身。\n\n输入：\n分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：您的包裹被扣留在海关，请立即拨打400-810-0166办理清关并支付费用。"
+        }
+      ],
+      "prompt_sha256": "1bf9de24647eb54bc2aadf09279aa4e6cd188271dc6b921b65fc1b16b223dcde",
+      "messages_sha256": "e0422fbccf4ed93e78f1e2bcc19ab11fb797105044ad5c750cae0c9da5465597",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-036__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-036",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "非紧急",
+      "labels_source_order": [
+        "紧急",
+        "非紧急"
+      ],
+      "labels_displayed": [
+        "紧急",
+        "非紧急"
+      ],
+      "labels": [
+        "紧急",
+        "非紧急"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：通知：请各班班长于本周五前把体检表收齐交到校医院前台。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：紧急、非紧急。\n要求：只输出标签本身。\n\n输入：\n分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：通知：请各班班长于本周五前把体检表收齐交到校医院前台。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：紧急、非紧急。\n要求：只输出标签本身。\n\n输入：\n分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：通知：请各班班长于本周五前把体检表收齐交到校医院前台。"
+        }
+      ],
+      "prompt_sha256": "0d51a4efdf5cfe477fc261345af7aba77bb6c441b71ef25a99fcd1c99385285a",
+      "messages_sha256": "a7ac8fc38f3e5d7d596253c0255044039bf069d35c6a458b9781c701ccee9a1d",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-036__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-036",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "非紧急",
+      "labels_source_order": [
+        "紧急",
+        "非紧急"
+      ],
+      "labels_displayed": [
+        "非紧急",
+        "紧急"
+      ],
+      "labels": [
+        "非紧急",
+        "紧急"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：通知：请各班班长于本周五前把体检表收齐交到校医院前台。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：非紧急、紧急。\n要求：只输出标签本身。\n\n输入：\n分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：通知：请各班班长于本周五前把体检表收齐交到校医院前台。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：非紧急、紧急。\n要求：只输出标签本身。\n\n输入：\n分类规则：要求收件人立即拨打电话或立即转账汇款的为紧急，其余为非紧急。\n待分类文本：通知：请各班班长于本周五前把体检表收齐交到校医院前台。"
+        }
+      ],
+      "prompt_sha256": "530fa69c63e308330939205ed69ff82d47beb5de6868422ec8ada6007762757e",
+      "messages_sha256": "3786422caf82c9ebb0f64e6640539677cc50420d146e7c9fae066d968332ff9f",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-037__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-037",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "正面",
+      "labels_source_order": [
+        "正面",
+        "负面"
+      ],
+      "labels_displayed": [
+        "正面",
+        "负面"
+      ],
+      "labels": [
+        "正面",
+        "负面"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：食堂三楼的麻辣香锅分量足味道好，比一楼强多了。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：正面、负面。\n要求：只输出标签本身。\n\n输入：\n分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：食堂三楼的麻辣香锅分量足味道好，比一楼强多了。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：正面、负面。\n要求：只输出标签本身。\n\n输入：\n分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：食堂三楼的麻辣香锅分量足味道好，比一楼强多了。"
+        }
+      ],
+      "prompt_sha256": "b80c73c4681c17b5006bac06e8deb93520a9823f58665d92282084f839dd61f1",
+      "messages_sha256": "ff078d11baf606c8ad6400999cb3417b2d4e50fcf3c6a736e2afeb90bbff812a",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-037__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-037",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "正面",
+      "labels_source_order": [
+        "正面",
+        "负面"
+      ],
+      "labels_displayed": [
+        "负面",
+        "正面"
+      ],
+      "labels": [
+        "负面",
+        "正面"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：食堂三楼的麻辣香锅分量足味道好，比一楼强多了。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：负面、正面。\n要求：只输出标签本身。\n\n输入：\n分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：食堂三楼的麻辣香锅分量足味道好，比一楼强多了。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：负面、正面。\n要求：只输出标签本身。\n\n输入：\n分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：食堂三楼的麻辣香锅分量足味道好，比一楼强多了。"
+        }
+      ],
+      "prompt_sha256": "244fa3aa7f27a35efe8c9ea0decdf95d9f2d261eb5c623d96973ef8997469e66",
+      "messages_sha256": "5965b61cab8c1f60ca0e3acff18a0f8ef3c76d29a2d9473159530f5bb44b3139",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-038__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-038",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "负面",
+      "labels_source_order": [
+        "正面",
+        "负面"
+      ],
+      "labels_displayed": [
+        "正面",
+        "负面"
+      ],
+      "labels": [
+        "正面",
+        "负面"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：新宿舍的热水器总是忽冷忽热，报修两次也没人来修。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：正面、负面。\n要求：只输出标签本身。\n\n输入：\n分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：新宿舍的热水器总是忽冷忽热，报修两次也没人来修。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：正面、负面。\n要求：只输出标签本身。\n\n输入：\n分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：新宿舍的热水器总是忽冷忽热，报修两次也没人来修。"
+        }
+      ],
+      "prompt_sha256": "ce34cb980c4927ccbb42445277a558e9ca7399bbd35fffec031c4cd008af4cfa",
+      "messages_sha256": "0069bbf405d47c31f34aa9a2b6dff03e4bbcb1dce57d06971679ca53a31cc2aa",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-038__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-038",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "负面",
+      "labels_source_order": [
+        "正面",
+        "负面"
+      ],
+      "labels_displayed": [
+        "负面",
+        "正面"
+      ],
+      "labels": [
+        "负面",
+        "正面"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：新宿舍的热水器总是忽冷忽热，报修两次也没人来修。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：负面、正面。\n要求：只输出标签本身。\n\n输入：\n分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：新宿舍的热水器总是忽冷忽热，报修两次也没人来修。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：负面、正面。\n要求：只输出标签本身。\n\n输入：\n分类规则：表达满意或赞扬的为正面，表达不满或抱怨的为负面。\n待分类文本：新宿舍的热水器总是忽冷忽热，报修两次也没人来修。"
+        }
+      ],
+      "prompt_sha256": "b42cce26ddfc9731899a264ef4c8f6b925fbcbc0cb0d62e0522ad4eca0743de0",
+      "messages_sha256": "4e6aede7276ca3c674a3c544e1e5bef9684a802232fec843df3e5b2c82402d7a",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-039__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-039",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "可回收",
+      "labels_source_order": [
+        "可回收",
+        "不可回收"
+      ],
+      "labels_displayed": [
+        "可回收",
+        "不可回收"
+      ],
+      "labels": [
+        "可回收",
+        "不可回收"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：一箱喝完的塑料瓶装矿泉水空瓶。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：可回收、不可回收。\n要求：只输出标签本身。\n\n输入：\n分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：一箱喝完的塑料瓶装矿泉水空瓶。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：可回收、不可回收。\n要求：只输出标签本身。\n\n输入：\n分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：一箱喝完的塑料瓶装矿泉水空瓶。"
+        }
+      ],
+      "prompt_sha256": "bd6664cf45725ba93ec4bf8ef19ddc8d2fab7f680d27d5cf14786b9c55731fdf",
+      "messages_sha256": "2542e5d7120fc80d252ccc12a198c8c6cc6a0a4a8ba8c8844bcf7617a7a8f991",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-039__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-039",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "可回收",
+      "labels_source_order": [
+        "可回收",
+        "不可回收"
+      ],
+      "labels_displayed": [
+        "不可回收",
+        "可回收"
+      ],
+      "labels": [
+        "不可回收",
+        "可回收"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：一箱喝完的塑料瓶装矿泉水空瓶。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：不可回收、可回收。\n要求：只输出标签本身。\n\n输入：\n分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：一箱喝完的塑料瓶装矿泉水空瓶。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：不可回收、可回收。\n要求：只输出标签本身。\n\n输入：\n分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：一箱喝完的塑料瓶装矿泉水空瓶。"
+        }
+      ],
+      "prompt_sha256": "ea6d36710027fa66af0ceb6ba1bd1636c97d8eef5672a47be2cd4981e80271e1",
+      "messages_sha256": "1448991845b9598a9e5af105994f09c9b555beea0ba9a5f63a1b3ba85b11a220",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-040__rot0",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-040",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "不可回收",
+      "labels_source_order": [
+        "可回收",
+        "不可回收"
+      ],
+      "labels_displayed": [
+        "可回收",
+        "不可回收"
+      ],
+      "labels": [
+        "可回收",
+        "不可回收"
+      ],
+      "rotation": 0,
+      "n_labels": 2,
+      "gold_position_in_display": 1,
+      "input": "分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：擦过油污的脏纸巾一团。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：可回收、不可回收。\n要求：只输出标签本身。\n\n输入：\n分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：擦过油污的脏纸巾一团。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：可回收、不可回收。\n要求：只输出标签本身。\n\n输入：\n分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：擦过油污的脏纸巾一团。"
+        }
+      ],
+      "prompt_sha256": "1193beaab3dcc143f697a98a2b1e44bac43b4c8473b94a8deb0bb5d4522908f3",
+      "messages_sha256": "327aa219769fb4b66349ae8fdcb180ea7c40a0f2012adf4df1703b7cc506e64d",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    {
+      "variant_id": "test-040__rot1",
+      "branch": "A",
+      "phase": "formal",
+      "parent_task_id": "test-040",
+      "task_type": "classification",
+      "scoring": "label",
+      "gold": "不可回收",
+      "labels_source_order": [
+        "可回收",
+        "不可回收"
+      ],
+      "labels_displayed": [
+        "不可回收",
+        "可回收"
+      ],
+      "labels": [
+        "不可回收",
+        "可回收"
+      ],
+      "rotation": 1,
+      "n_labels": 2,
+      "gold_position_in_display": 0,
+      "input": "分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：擦过油污的脏纸巾一团。",
+      "user_message": "将下面的输入分类到唯一标签，标签只能是：不可回收、可回收。\n要求：只输出标签本身。\n\n输入：\n分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：擦过油污的脏纸巾一团。",
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "将下面的输入分类到唯一标签，标签只能是：不可回收、可回收。\n要求：只输出标签本身。\n\n输入：\n分类规则：废纸、塑料瓶、金属罐属于可回收；用过的纸巾和废旧电池属于不可回收。\n待分类文本：擦过油污的脏纸巾一团。"
+        }
+      ],
+      "prompt_sha256": "5ad5eec802f4c1091b3cdf3088c3acbaa27293fae20abbb6065a629c57a12437",
+      "messages_sha256": "b19bcb2935a2602102b8a706b70547bf71d4d36a0aee6f1acea550a202e8d52b",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    }
+  ]
+}
