@@ -1,0 +1,152 @@
+{
+  "verdicts": {
+    "VR1_git_diff_scope_vs_rev4": {
+      "pass": true,
+      "detail": {
+        "forbidden": [],
+        "note": "仅允许新增 stage6 命名路径与修改 .gitattributes；允许项数量不写入报告（跨提交稳定）"
+      }
+    },
+    "VR2_gitattributes_allowlist_only": {
+      "pass": true,
+      "detail": {
+        "added": [
+          "# Stage 6 预注册配置与脚本按字节原样存取（冻结哈希跨检出稳定）",
+          "configs/stage6_*.json -text",
+          "scripts/stage6_*.py -text"
+        ],
+        "removed": [],
+        "expected_added": [
+          "# Stage 6 预注册配置与脚本按字节原样存取（冻结哈希跨检出稳定）",
+          "configs/stage6_*.json -text",
+          "scripts/stage6_*.py -text"
+        ]
+      }
+    },
+    "VR3_frozen_manifests_pass_dynamic_count": {
+      "pass": true,
+      "detail": {
+        "stage3_problems": [],
+        "stage3_file_count": 14,
+        "stage6_problems": [],
+        "stage6_file_count": 22,
+        "note": "文件数由清单动态统计，不硬编码"
+      }
+    },
+    "VR4_rescore_195_zero_mismatch": {
+      "pass": true,
+      "detail": {
+        "mismatches": [],
+        "checked": 195
+      }
+    },
+    "VR5_request_matrix_and_order": {
+      "pass": true,
+      "detail": {
+        "per_model_units": 65,
+        "order": "三模型一致且等于冻结顺序"
+      }
+    },
+    "VR6_baseline_75_actual_outputs": {
+      "pass": true,
+      "detail": {
+        "compared": 75,
+        "mismatches": [],
+        "fields": [
+          "raw_output",
+          "finish_reason",
+          "completion_tokens"
+        ]
+      }
+    },
+    "VR7_transitions_and_stats_recompute": {
+      "pass": true,
+      "detail": {
+        "families": "3模型×3指标×3比较=27",
+        "min_holm": 0.1875,
+        "expected_format_holm": {
+          "Q4_K_M": 0.375,
+          "Q5_K_M": 0.1875,
+          "Q8_0": 0.1875
+        }
+      }
+    },
+    "VR8_offline_counterexample_tests": {
+      "pass": true,
+      "detail": {
+        "holm_known_answer": true,
+        "family_grouping_counterexample": true,
+        "manifest_tamper_detection": true,
+        "gitattributes_allowlist_parser": true
+      }
+    },
+    "VR9_historical_hashes_stable": {
+      "pass": true,
+      "detail": {
+        "files": 523,
+        "identical": true,
+        "note": "仅覆盖 git 跟踪且路径不含 stage6 的文件"
+      }
+    },
+    "VR10_traceability_copy_matches_commit": {
+      "pass": true,
+      "detail": {
+        "files": 22,
+        "freeze1_to_freeze2": "仅 stage6_analyze.py 条目变化（图1修复重冻结）",
+        "declaration": "事后追溯副本；不回填原 run，不据此宣称当时已存档"
+      }
+    },
+    "VR11_ledger_247_21_268": {
+      "pass": true,
+      "detail": {
+        "n_runs": 7,
+        "task": 247,
+        "aux": 21,
+        "total": 268,
+        "scoring_errors": [
+          [
+            "run_20261004_115756_stage6dev_Q4KM_69930b",
+            4
+          ]
+        ],
+        "note": "评分异常仅存在于缺陷 dev 尝试并如实保留"
+      }
+    }
+  },
+  "counterexample_tests": {
+    "holm_known_answer": {
+      "pass": true,
+      "got": {
+        "a": 0.03,
+        "c": 0.06,
+        "b": 0.06
+      }
+    },
+    "family_grouping_counterexample": {
+      "pass": true,
+      "per_metric_3family_format": {
+        "J1->J2": 0.375,
+        "J0->J2": 0.375,
+        "J0->J1": 1.0
+      },
+      "legacy_merged_6family_format": {
+        "J1->J2": 0.75,
+        "J0->J2": 0.75,
+        "J0->J1": 1.0
+      },
+      "point": "旧6值合并族把格式 J1→J2 过度校正为 0.75；预注册3值族为 0.375"
+    },
+    "manifest_tamper_detection": {
+      "pass": true,
+      "clean_problems": [],
+      "tampered_problems": [
+        "哈希不一致: sample.txt"
+      ]
+    },
+    "gitattributes_allowlist_parser": {
+      "pass": true
+    }
+  },
+  "failures": [],
+  "overall": "PASS"
+}

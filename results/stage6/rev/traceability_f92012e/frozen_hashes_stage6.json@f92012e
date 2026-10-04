@@ -1,0 +1,30 @@
+{
+  "frozen_at": "2026-10-04T12:06:13",
+  "algorithm": "sha256",
+  "rule": "正式诊断输出产生前冻结（configs/stage6_plan.json::freezing）。正式运行前由 scripts/stage6_exec.py 逐文件核验；冻结后再改动任何被列文件须记录理由并重新冻结；历史冻结清单（Stage 2/3/4）不重冻结、不覆盖。",
+  "not_frozen_note": "scripts/stage6_verify.py 为核验工具本身，不列入（避免自指）",
+  "files": {
+    "configs/stage6_plan.json": "c4a43e1fb0f2d08fe07630f8300e8dd12b264e1ebc79ab3a4641798cd4dd90e8",
+    "configs/stage6_config.json": "9f452bcad3d6ae5e6d24e11c54cc6297fde9504857803df26c4133808bbcdbc0",
+    "docs/STAGE6_PLAN.md": "f720b80cb5b5e982a05bd3a25ef3de1bd5bd9754889104ee2502eea19736639f",
+    "datasets/stage6/stage6_cls_variants.json": "06e0ab8740f4e73e9223833855181f7db491bfaf6ea41204a8935f5998e69957",
+    "datasets/stage6/stage6_json_variants.json": "6d6ac7563b4bdecee5b98ead39c00f8221d318c04af109469d91edf4127fdbc2",
+    "datasets/stage6/stage6_dev_variants.json": "2214584821d651172a3b2f5ee341423b7523c89781391699cc358b8ad72825c3",
+    "datasets/stage6/stage6_source_map.json": "3b4de8b22ec28d49fa9db8bc81d1ee0edaa39ceb58e33586eb30a0802ee0d845",
+    "datasets/stage6/stage6_order.json": "6e9e5d6b8bbf5877a4c0afc32f08bbd649669ca5495e5caaa23ea04567149328",
+    "scripts/stage6_build_variants.py": "85c8afc078f0e91ce17c69b5e03ca8c242d4211e3d8653fd0006125972537673",
+    "scripts/stage6_exec.py": "6d88bd3e87f0971b9db773aa3c2e8e8a7ad055805c0e61110c7d1825632695ce",
+    "scripts/stage6_chain_check.py": "2e33c6bbd0d6a15180ecec2f91290f9dcb05c831243eb9d9eb97e77b3aaeb483",
+    "scripts/stage6_analyze.py": "dd57e2eaff41e10b31b7ad61e8adcd609e213eff0cc8dc14fe8a41798812c9cd",
+    "scripts/score_answer.py": "7f6e5a28ed2b66a2b48bc3342703a3481dc638d3efdc4ea7c704200b551270b4",
+    "scripts/llama_server_ctl.py": "e2c83d47403e8330d3d1cd6f89f23deb739422c886bf9bf5405d6f8d8594a69c",
+    "datasets/prompt_template.json": "4fca5ca148166615f9db44d930363ae688842e8b6aeb2f2da9e1804eec555647",
+    "datasets/test/test_tasks.json": "5e903f20eaefa13fbf4c7c8886bd2156bd92455118e0bce95a45736e51672fca",
+    "datasets/dev/dev_tasks.json": "0ac8658407a5410bfc60cafd17f766135de7ebf9d9465487830ca26acb981d10",
+    "configs/formal_config.json": "a1380d1aaec893c507373f42d41182b300c8fe71d91012626023ca9b38ce8177",
+    "datasets/frozen_hashes_stage3.json": "1d4cdfaf8dc82dbd4825886350e555bb666c123c54a10b7e224ac6af0957c36a",
+    "models/model_manifest_v3.json": "c3e85413dde702ac50f82f37cbddb753415aa903383b9892d3a1b46da20cf638",
+    "environment/backend_manifest.json": "b8e34a66e7f0f07aeb75fa973685e28c0dc2ce50b559c2f12b085f80eb8f56e6",
+    "results/stage6/chain_check/chain_check_report.json": "3fd77d8d24466a00343206dcf81b82636630e688635604895e10ab6b221404c6"
+  }
+}

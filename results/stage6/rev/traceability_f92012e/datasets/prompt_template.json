@@ -1,0 +1,18 @@
+{
+  "template_id": "task_prompts_v1",
+  "frozen_note": "提示模板随数据集一并冻结（见 datasets/frozen_hashes.json）；口径只允许依据开发集调整，调整须重新冻结并记录。",
+  "system_prompt": "你是严格的评测作答器。只按题目要求输出答案，不要解释。",
+  "per_type": {
+    "single_field_extraction": "从下面的输入中提取：{field}。\n要求：只输出答案本身，不要加说明文字。\n关于单位与标点：1) 数量/金额/比例等数值类字段只输出数字本身（不加元、人、%、个等单位），字段名已标明单位时以字段名为准；2) 日期和时间按输入原文表述输出（如：10月18日、9:30）；3) 不要增加答案之外的标点或文字，但答案内部必要的字符必须保留（如电话号码中的连字符、小数点）；4) 如果输入中没有该信息，只输出：未提供。\n\n输入：\n{input}",
+    "json_extraction": "从下面的输入中提取指定字段，输出一个 JSON 对象。\n要求：1) 字段值使用输入原文中的表述；2) 缺失的字符串字段用 null；3) 只输出 JSON 对象本身，不要加代码围栏、解释或其他文字。\n\n需要提取的字段：{fields}\n\n输入：\n{input}",
+    "classification": "将下面的输入分类到唯一标签，标签只能是：{labels}。\n要求：只输出标签本身。\n\n输入：\n{input}",
+    "normalization": "按规则转换：{rule}\n要求：只输出转换结果，不要任何说明。\n\n输入：{input}"
+  },
+  "generation_fixed": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 42,
+    "cache_prompt": false,
+    "note": "max_tokens 默认取运行配置；finish_reason=length 时标记截断，不重试"
+  }
+}

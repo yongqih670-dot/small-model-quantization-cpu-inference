@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-10-03T00:08:01+08:00",
+  "distribution": "llama.cpp 官方 GitHub Actions 预编译包 (win-cpu-x64)",
+  "distribution_zip": {
+    "filename": "llama-b11347-bin-win-cpu-x64.zip",
+    "path": "tools/llama-b11347-bin-win-cpu-x64.zip",
+    "sha256": "f1f7198a7c1cdf13bec7c2cf960947e0bec87401837a057134186132d870aa04",
+    "size_bytes": 19275609,
+    "download_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11347/llama-b11347-bin-win-cpu-x64.zip"
+  },
+  "version_output": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64\n"
+  },
+  "key_files_sha256": {
+    "llama-server.exe": {
+      "sha256": "c9d003c9f9fa3ae5968cb50fd750af22331d4d9fdccffccfc988ca840deb3589",
+      "size_bytes": 9216
+    },
+    "llama-cli.exe": {
+      "sha256": "cecdd35c83a3ef5de2fd150a5f0c40d12244c15eac1051126c39e6162947881e",
+      "size_bytes": 9216
+    },
+    "llama-bench.exe": {
+      "sha256": "b084322fe3671d1f8d7fcb0f1f03f012767cfbed0d01a3202e9fbb4d24327dc8",
+      "size_bytes": 9216
+    },
+    "llama.dll": {
+      "sha256": "88604a70f6d04d3bfbe009084ae5a464649c19e66590fc1a3003c9afd10ab5de",
+      "size_bytes": 3273216
+    },
+    "ggml.dll": {
+      "sha256": "c1c66d6e49e41a6723010db3981cdb09165faf52940fe786261ca2f9377b2ff2",
+      "size_bytes": 79872
+    },
+    "ggml-base.dll": {
+      "sha256": "a118ea558401ad0fe27efed965b3f87c1c3903416dc4b0e296262828de2b0bfa",
+      "size_bytes": 801280
+    },
+    "ggml-cpu-zen4.dll": {
+      "sha256": "6b243c06314b4685d2d7e418cd07588ec2c025437fea71a58f24de701ecf5eb4",
+      "size_bytes": 1649664
+    },
+    "ggml-cpu-x64.dll": {
+      "sha256": "b38d8bbdde327d62342c5962b164647dacd53e1283b1288a5513fea896a4b709",
+      "size_bytes": 908800
+    },
+    "libomp.dll": {
+      "sha256": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c",
+      "size_bytes": 768000
+    }
+  },
+  "cpu_variant_dlls_present": [
+    "ggml-cpu-alderlake.dll",
+    "ggml-cpu-cannonlake.dll",
+    "ggml-cpu-cascadelake.dll",
+    "ggml-cpu-cooperlake.dll",
+    "ggml-cpu-haswell.dll",
+    "ggml-cpu-icelake.dll",
+    "ggml-cpu-ivybridge.dll",
+    "ggml-cpu-piledriver.dll",
+    "ggml-cpu-sandybridge.dll",
+    "ggml-cpu-sapphirerapids.dll",
+    "ggml-cpu-skylakex.dll",
+    "ggml-cpu-sse42.dll",
+    "ggml-cpu-x64.dll",
+    "ggml-cpu-zen4.dll"
+  ],
+  "cpu_variant_loaded_evidence": "llama-bench/llama-server 启动日志: 'loaded CPU backend from ... ggml-cpu-zen4.dll'（本机为 Zen5, 使用可用的最近变体 zen4）",
+  "list_devices_stdout": "Available devices:\n  (none)",
+  "list_devices_stderr": "",
+  "gpu_devices": "无（list-devices 返回 none; 构建 win-cpu-x64 不含 GPU 后端）",
+  "help_evidence": [
+    "environment/evidence/llama_server_help_b11347.txt",
+    "environment/evidence/llama_bench_help_b11347.txt",
+    "environment/evidence/llama_server_list_devices.txt"
+  ]
+}

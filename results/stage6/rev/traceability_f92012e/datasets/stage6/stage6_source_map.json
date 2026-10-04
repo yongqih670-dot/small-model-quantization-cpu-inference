@@ -1,0 +1,1550 @@
+{
+  "purpose": "Stage 6 变体来源映射（变体 -> 父题 + 精确改动；父题均出自冻结数据集）",
+  "parent_sources": {
+    "formal": "datasets/test/test_tasks.json (test_tasks_v2 rev2, 已冻结)",
+    "dev": "datasets/dev/dev_tasks.json (已冻结)"
+  },
+  "fixed_insert_texts": {
+    "J1": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+    "J2": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+    "anchor": "\n\n需要提取的字段："
+  },
+  "variants": {
+    "test-031__rot0": {
+      "parent_task_id": "test-031",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "e18b85d20fd94a78560cfbf9d4132e3ba5ed781cf82d94f79151e57cc01274e6",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-031__rot1": {
+      "parent_task_id": "test-031",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "85921dfcd6446355a3525a1ce0c39528afbd9082a30fca3a739d97bd6209c9b3",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-032__rot0": {
+      "parent_task_id": "test-032",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "c4c23f7b8f2fd65cae2d6337eab55fbe2a434087b3e0c07693ac5bbb36389f1c",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-032__rot1": {
+      "parent_task_id": "test-032",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "ee3cc95feb6f9f0586b5732a8bf45c58d686fad8e29b150c545fd4f2466c1392",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-033__rot0": {
+      "parent_task_id": "test-033",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "4429d7a8c88553cb72fc2cce4176901eab031e29058db1f0aec4464c3dde635c",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-033__rot1": {
+      "parent_task_id": "test-033",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "80c5e43d90ec8283664c84513d8b7a6984b22336b78ac8e4eb7e82e8fff749ea",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-034__rot0": {
+      "parent_task_id": "test-034",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "0e91bcd811f4b81d6df6d1dd87ba662b7c61ae4480951f54bd4a848a88727f6d",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-034__rot1": {
+      "parent_task_id": "test-034",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "a286bef797eefe2b27f370902eddc4508355e1fb574588abde9602cb0958a23c",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-035__rot0": {
+      "parent_task_id": "test-035",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "3f23ae4634d4f7abb236333940ffeecc8916780578ea059cf00847278c60d973",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-035__rot1": {
+      "parent_task_id": "test-035",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "1bf9de24647eb54bc2aadf09279aa4e6cd188271dc6b921b65fc1b16b223dcde",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-036__rot0": {
+      "parent_task_id": "test-036",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "0d51a4efdf5cfe477fc261345af7aba77bb6c441b71ef25a99fcd1c99385285a",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-036__rot1": {
+      "parent_task_id": "test-036",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "530fa69c63e308330939205ed69ff82d47beb5de6868422ec8ada6007762757e",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-037__rot0": {
+      "parent_task_id": "test-037",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "b80c73c4681c17b5006bac06e8deb93520a9823f58665d92282084f839dd61f1",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-037__rot1": {
+      "parent_task_id": "test-037",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "244fa3aa7f27a35efe8c9ea0decdf95d9f2d261eb5c623d96973ef8997469e66",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-038__rot0": {
+      "parent_task_id": "test-038",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "ce34cb980c4927ccbb42445277a558e9ca7399bbd35fffec031c4cd008af4cfa",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-038__rot1": {
+      "parent_task_id": "test-038",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "b42cce26ddfc9731899a264ef4c8f6b925fbcbc0cb0d62e0522ad4eca0743de0",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-039__rot0": {
+      "parent_task_id": "test-039",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "bd6664cf45725ba93ec4bf8ef19ddc8d2fab7f680d27d5cf14786b9c55731fdf",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-039__rot1": {
+      "parent_task_id": "test-039",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "ea6d36710027fa66af0ceb6ba1bd1636c97d8eef5672a47be2cd4981e80271e1",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-040__rot0": {
+      "parent_task_id": "test-040",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "1193beaab3dcc143f697a98a2b1e44bac43b4c8473b94a8deb0bb5d4522908f3",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-040__rot1": {
+      "parent_task_id": "test-040",
+      "branch": "A",
+      "phase": "formal",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "5ad5eec802f4c1091b3cdf3088c3acbaa27293fae20abbb6065a629c57a12437",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "test-016__J0": {
+      "parent_task_id": "test-016",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "33824fa7aa70aa944202dbb0dc9e03a72a258d02ee6d977d2fb93974ebd9bf0b",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-016__J1": {
+      "parent_task_id": "test-016",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "507c995caf6853e1371ad0269d21f08ff42961b469655fe99e1e0c9bbecae0fe",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-016__J2": {
+      "parent_task_id": "test-016",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "21405d9b6593c3f7e2d0b786f5941c4475e0fd6226ffa19e72eac9ea32d93617",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-017__J0": {
+      "parent_task_id": "test-017",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "cddeda2be69b2203638a8510792990958952b7f4209b5068de6a2ba3c2bb9883",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-017__J1": {
+      "parent_task_id": "test-017",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "a53871a25ca9909372966dba01abe96f4820ef99a297c73fb1a8f17db0165862",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-017__J2": {
+      "parent_task_id": "test-017",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "7471423eb70ee06f45bbcb89ecf182f36a691cdf7bc64f1b0f8242315644e229",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-018__J0": {
+      "parent_task_id": "test-018",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "d909b03c6a9e15696f1996f8d2124c5087088493d19322515e7a2774a904e158",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-018__J1": {
+      "parent_task_id": "test-018",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "eb1271b68e1566a3993b51122c533e71908920a6580714caec0bf7dc0276c154",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-018__J2": {
+      "parent_task_id": "test-018",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "2b6e7156cb296b628d91c58a5daa07ad80a972127d9e2d9bb886a50b2374f8e2",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-019__J0": {
+      "parent_task_id": "test-019",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "844c82bc0f75e2f2c8883ff974792d771d5e78a035df4554c0d4db4f889ce876",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-019__J1": {
+      "parent_task_id": "test-019",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "ea89546b77789c767fbf370a453ce014b485b7e69ba3e872333c1dc61bcc5661",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-019__J2": {
+      "parent_task_id": "test-019",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "ea88f70187f6faa4dafd09e0b404a78fa4ed16b5885eec167b742a50f37c752f",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-020__J0": {
+      "parent_task_id": "test-020",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "48f1c7382213e57eb2cf121b75b5fdef2a56949350591bdacd16549ce989cf2a",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-020__J1": {
+      "parent_task_id": "test-020",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "648f19f83a864fee4f1821419c77476cd02126275d354988707524d582aa830f",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-020__J2": {
+      "parent_task_id": "test-020",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "b7ab5662e0a2c4f99ca80dec993a0552e4bbb5b878642e4ca506ba1690b811e1",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-021__J0": {
+      "parent_task_id": "test-021",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "d80ddea1efc03f2f5f0b255960b14ad2cc251f6b428b2c0608aafb8236580f45",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-021__J1": {
+      "parent_task_id": "test-021",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "6385cfa0d7bd7c1c419fe697800a4f8e92e7499cd26e8024ba60f627c28dcd34",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-021__J2": {
+      "parent_task_id": "test-021",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "4a09aa10af46212b5e81d9082e40f473254f84c757386dc938f4751b604f1073",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-022__J0": {
+      "parent_task_id": "test-022",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "21c0867a293634961ebc7bdea534357995bcd86e931234ac4864bb7ddc47837c",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-022__J1": {
+      "parent_task_id": "test-022",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "7cb84a1fcfefd7ba296c94effcf4dd18a7535532e2377512a043d81dcfeeedfb",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-022__J2": {
+      "parent_task_id": "test-022",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "d60f7fa1e1444346c93ab610d1776625fe9996aae881f0c27be48bf355abda2e",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-023__J0": {
+      "parent_task_id": "test-023",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "d958603f254847b45e095a13e7f1b8b6e9b7f9b93743d3ad7857f62d2244fc2c",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-023__J1": {
+      "parent_task_id": "test-023",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "7983af1f5c31f704abf1258d9c0ce54853023a750c96d52b9c35e28d6bc0e8bc",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-023__J2": {
+      "parent_task_id": "test-023",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "b0e709fcc2cab5a74a1e57723623386840b67c1033b38f2046cd7b33c632b6b4",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-024__J0": {
+      "parent_task_id": "test-024",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "4c49adf01bbea94521f968a44587d6293f18f8e3c59d308e6db03b65968379ac",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-024__J1": {
+      "parent_task_id": "test-024",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "34d47ae667333f94d71b1634d5de5a2ec0214db8d2c7285a48424c1a78613371",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-024__J2": {
+      "parent_task_id": "test-024",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "fab55b80f60e97bee9eac4318c6086b269db8d9cb945e1ef4df5b0383a433c11",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-025__J0": {
+      "parent_task_id": "test-025",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "1cdc7860cb6444af4b94a1efcecbe6858a6cae895202bdcba791ff89c6ed7694",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-025__J1": {
+      "parent_task_id": "test-025",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "9e5d581427d4b7fc11bbff31e7c19acb5fcb30e801683c74091146369cc4a468",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-025__J2": {
+      "parent_task_id": "test-025",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "989f2c7fe1e3dc010cbfcd9d1b5b5e7a54d53dce0228f68909f397578b87af93",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-026__J0": {
+      "parent_task_id": "test-026",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "e5fbbba52e9a81240bf41a7877dadc30ba26b5549ed29542422f59a6f0adb1a7",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-026__J1": {
+      "parent_task_id": "test-026",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "a2960a5b0d611bf13745eb8205cedf95d2da33a520c7911450c6980ca5418bd1",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-026__J2": {
+      "parent_task_id": "test-026",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "e342010a24af568ab0c9ca0c281bbaf9047cb432addbaf10143c309f5c12e1cf",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-027__J0": {
+      "parent_task_id": "test-027",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "5b5f78ea7aabb336264c901f813325375efcd28b34384def55120baba040f1e2",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-027__J1": {
+      "parent_task_id": "test-027",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "0880810295f96ba73728b7575a76843eb9791f585483f5364c14c51f04109d64",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-027__J2": {
+      "parent_task_id": "test-027",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "481d5815b91cba6239163404151bee25c9f756a787a287d32ba4db564cc451f6",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-028__J0": {
+      "parent_task_id": "test-028",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "9f488b38dbc2cbe239e331efc572abcbb2f867fe5cc015cf80db95a493df4158",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-028__J1": {
+      "parent_task_id": "test-028",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "6b2fd4f295847a4b5dea40f0906ac41497e3e057cc0a5e1b605ad77fb3b6500e",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-028__J2": {
+      "parent_task_id": "test-028",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "73789cd9a2339019dc435656021ec063d1792ae824e5aba42f2f4ebc69548c22",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-029__J0": {
+      "parent_task_id": "test-029",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "090ca4a177e932ebae2ef4a080fff83fe062624466a69f8cff744984a3d8b9a8",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-029__J1": {
+      "parent_task_id": "test-029",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "2f722be0f8fe79894bdb8f213d85c76ab40f5038bc9e36ee10d58039c254e3de",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-029__J2": {
+      "parent_task_id": "test-029",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "f5d952bda2dc0d4e5a6855676f27ce4ce580da2fc1a16d74bcbdb0160da3dd44",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-030__J0": {
+      "parent_task_id": "test-030",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "38b33593745cfb035f3a3d54bad46307687f9f567c2fd1beac3b12d5556e02e2",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "test-030__J1": {
+      "parent_task_id": "test-030",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "52145de11308cb661c588c128e756dd3d557f0f4d9f55d8a4e5f3b086cd980e8",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "test-030__J2": {
+      "parent_task_id": "test-030",
+      "branch": "B",
+      "phase": "formal",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "d12488f6961571959e3a2a5155ffff425af435e7778b02855b0295a287b255fd",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "dev-007__rot0": {
+      "parent_task_id": "dev-007",
+      "branch": "A",
+      "phase": "dev",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "cc419b6e057b9495e12939c5d1696976ea748045fd8352bc608d7f9083a1c82b",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "dev-007__rot1": {
+      "parent_task_id": "dev-007",
+      "branch": "A",
+      "phase": "dev",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "4fc404b0d8c94987a8ca394ef30daa25ada8a57c8b3410a654b2eaadd9342d30",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "dev-008__rot0": {
+      "parent_task_id": "dev-008",
+      "branch": "A",
+      "phase": "dev",
+      "condition_or_rotation": "rot0",
+      "prompt_sha256": "d5c3fb58f8d4cfc0c2bbdbf443e11025ed084a7332c03328607c55023601a469",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "dev-008__rot1": {
+      "parent_task_id": "dev-008",
+      "branch": "A",
+      "phase": "dev",
+      "condition_or_rotation": "rot1",
+      "prompt_sha256": "bfb566f1077c28f9f413c4ca244724bd53d69a9cdb3481e4e2cbf1e1eec11ae4",
+      "transformation": {
+        "kind": "cyclic_label_rotation",
+        "definition": "labels_displayed = labels[k:] + labels[:k], k=rotation",
+        "changed_fields": [
+          "labels_displayed(渲染进提示的标签顺序)"
+        ],
+        "unchanged_fields": [
+          "input",
+          "gold",
+          "标签文字集合",
+          "system prompt",
+          "模板其余文字与标点",
+          "评分方式"
+        ]
+      }
+    },
+    "dev-004__J0": {
+      "parent_task_id": "dev-004",
+      "branch": "B",
+      "phase": "dev",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "ad7c2bffc0b6ce17ef7927077e99da656fb6750a4a3c2407cf032341baebec43",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "dev-004__J1": {
+      "parent_task_id": "dev-004",
+      "branch": "B",
+      "phase": "dev",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "32ef9e4a8f4005411ac63ba1b23917dcd442d40d6e510e8e82617295b82f47ad",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "dev-004__J2": {
+      "parent_task_id": "dev-004",
+      "branch": "B",
+      "phase": "dev",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "c3addec84bce38afcc4fc4cece1b608dc1670921813ff30f23ea1e311b4ca981",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "dev-005__J0": {
+      "parent_task_id": "dev-005",
+      "branch": "B",
+      "phase": "dev",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "62c914c17d52d26a1bd6cd1f40e47313c2da825bb3bf790aafef69208bde7c8d",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "dev-005__J1": {
+      "parent_task_id": "dev-005",
+      "branch": "B",
+      "phase": "dev",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "0005855ac9cb3aa3eed96be63484935b866755d9e8509f29c8a9be389bb5d6e5",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "dev-005__J2": {
+      "parent_task_id": "dev-005",
+      "branch": "B",
+      "phase": "dev",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "1db88366491671e237820657fb4f2fe1ba21b60f64cd9f27a2116386aef1d54c",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "dev-006__J0": {
+      "parent_task_id": "dev-006",
+      "branch": "B",
+      "phase": "dev",
+      "condition_or_rotation": "J0",
+      "prompt_sha256": "1f6f0a6e291a7309ec3c857d06cbb67099ec14d6b88ead4d61ee19b65b5a1f98",
+      "transformation": {
+        "kind": "none",
+        "changed_fields": [],
+        "unchanged_fields": [
+          "全部（与父题渲染逐字节相同）"
+        ]
+      }
+    },
+    "dev-006__J1": {
+      "parent_task_id": "dev-006",
+      "branch": "B",
+      "phase": "dev",
+      "condition_or_rotation": "J1",
+      "prompt_sha256": "bfebe4902e9a6f952ad210a5d2feae53e60fddd154ba0abbced6aaa752e472e6",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "补充格式要求：只返回一个JSON对象，不使用Markdown代码围栏，不添加解释。",
+        "insert_position": "「要求」段末行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增一行格式要求"
+        ],
+        "unchanged_fields": [
+          "J0 全部原文",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    },
+    "dev-006__J2": {
+      "parent_task_id": "dev-006",
+      "branch": "B",
+      "phase": "dev",
+      "condition_or_rotation": "J2",
+      "prompt_sha256": "d534aa03f5489535b0271ca207aa496776f751cd67a1d3068aa8fb6edb004eaf",
+      "transformation": {
+        "kind": "fixed_insert",
+        "inserted_text": "\n示例（仅演示输出格式，内容与本题无关）：\n输入：社团办公室借出投影仪一台，借用人为研究生会宣传部，要求本周五17:00前归还。\n输出：\n{\"物品名称\": \"投影仪\", \"借用人\": \"研究生会宣传部\", \"归还期限\": \"本周五17:00前\"}",
+        "insert_position": "J1 插入行之后、空行+需要提取的字段 之前",
+        "changed_fields": [
+          "新增固定格式示例块"
+        ],
+        "unchanged_fields": [
+          "J1 全部原文（含其新增行）",
+          "金标",
+          "字段集",
+          "输入"
+        ]
+      }
+    }
+  }
+}

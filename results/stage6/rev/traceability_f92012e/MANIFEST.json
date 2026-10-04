@@ -1,0 +1,168 @@
+{
+  "purpose": "事后追溯副本（retrospective copy）：导出正式运行门禁实际核验的冻结材料，供事后核查；不回填原 run，不据此宣称正式运行当时已另行存档",
+  "source_commit": "f92012e",
+  "source_commit_subject": "Stage 6 pre-registration: joint error diagnosis plan, variants, chain check, dev validation, freeze",
+  "exported_at_utc": "2026-10-04T04:55:27+00:00",
+  "exported_by": "scripts/stage6_trace_export.py（零推理，只读 git）",
+  "basis": "f92012e 在冻结#1 之后、三个正式 run 之前提交且工作区干净，故其 blob 即正式运行时工作区字节；门禁当时核验的是工作区状态，本副本仅为事后可核查的导出物",
+  "files": {
+    "configs/stage6_plan.json": {
+      "sha256": "c4a43e1fb0f2d08fe07630f8300e8dd12b264e1ebc79ab3a4641798cd4dd90e8",
+      "size_bytes": 13688,
+      "git_blob_sha256": "c4a43e1fb0f2d08fe07630f8300e8dd12b264e1ebc79ab3a4641798cd4dd90e8",
+      "restore_status": "blob_identical"
+    },
+    "configs/stage6_config.json": {
+      "sha256": "9f452bcad3d6ae5e6d24e11c54cc6297fde9504857803df26c4133808bbcdbc0",
+      "size_bytes": 2722,
+      "git_blob_sha256": "9f452bcad3d6ae5e6d24e11c54cc6297fde9504857803df26c4133808bbcdbc0",
+      "restore_status": "blob_identical"
+    },
+    "docs/STAGE6_PLAN.md": {
+      "sha256": "f720b80cb5b5e982a05bd3a25ef3de1bd5bd9754889104ee2502eea19736639f",
+      "size_bytes": 7928,
+      "git_blob_sha256": "f720b80cb5b5e982a05bd3a25ef3de1bd5bd9754889104ee2502eea19736639f",
+      "restore_status": "blob_identical"
+    },
+    "datasets/stage6/stage6_cls_variants.json": {
+      "sha256": "06e0ab8740f4e73e9223833855181f7db491bfaf6ea41204a8935f5998e69957",
+      "size_bytes": 46684,
+      "git_blob_sha256": "06e0ab8740f4e73e9223833855181f7db491bfaf6ea41204a8935f5998e69957",
+      "restore_status": "blob_identical"
+    },
+    "datasets/stage6/stage6_json_variants.json": {
+      "sha256": "6d6ac7563b4bdecee5b98ead39c00f8221d318c04af109469d91edf4127fdbc2",
+      "size_bytes": 124770,
+      "git_blob_sha256": "6d6ac7563b4bdecee5b98ead39c00f8221d318c04af109469d91edf4127fdbc2",
+      "restore_status": "blob_identical"
+    },
+    "datasets/stage6/stage6_dev_variants.json": {
+      "sha256": "2214584821d651172a3b2f5ee341423b7523c89781391699cc358b8ad72825c3",
+      "size_bytes": 36216,
+      "git_blob_sha256": "2214584821d651172a3b2f5ee341423b7523c89781391699cc358b8ad72825c3",
+      "restore_status": "blob_identical"
+    },
+    "datasets/stage6/stage6_source_map.json": {
+      "sha256": "3b4de8b22ec28d49fa9db8bc81d1ee0edaa39ceb58e33586eb30a0802ee0d845",
+      "size_bytes": 55683,
+      "git_blob_sha256": "3b4de8b22ec28d49fa9db8bc81d1ee0edaa39ceb58e33586eb30a0802ee0d845",
+      "restore_status": "blob_identical"
+    },
+    "datasets/stage6/stage6_order.json": {
+      "sha256": "6e9e5d6b8bbf5877a4c0afc32f08bbd649669ca5495e5caaa23ea04567149328",
+      "size_bytes": 3547,
+      "git_blob_sha256": "6e9e5d6b8bbf5877a4c0afc32f08bbd649669ca5495e5caaa23ea04567149328",
+      "restore_status": "blob_identical"
+    },
+    "scripts/stage6_build_variants.py": {
+      "sha256": "85c8afc078f0e91ce17c69b5e03ca8c242d4211e3d8653fd0006125972537673",
+      "size_bytes": 15880,
+      "git_blob_sha256": "85c8afc078f0e91ce17c69b5e03ca8c242d4211e3d8653fd0006125972537673",
+      "restore_status": "blob_identical"
+    },
+    "scripts/stage6_exec.py": {
+      "sha256": "6d88bd3e87f0971b9db773aa3c2e8e8a7ad055805c0e61110c7d1825632695ce",
+      "size_bytes": 22598,
+      "git_blob_sha256": "6d88bd3e87f0971b9db773aa3c2e8e8a7ad055805c0e61110c7d1825632695ce",
+      "restore_status": "blob_identical"
+    },
+    "scripts/stage6_chain_check.py": {
+      "sha256": "2e33c6bbd0d6a15180ecec2f91290f9dcb05c831243eb9d9eb97e77b3aaeb483",
+      "size_bytes": 12112,
+      "git_blob_sha256": "2e33c6bbd0d6a15180ecec2f91290f9dcb05c831243eb9d9eb97e77b3aaeb483",
+      "restore_status": "blob_identical"
+    },
+    "scripts/stage6_analyze.py": {
+      "sha256": "dd57e2eaff41e10b31b7ad61e8adcd609e213eff0cc8dc14fe8a41798812c9cd",
+      "size_bytes": 21526,
+      "git_blob_sha256": "dd57e2eaff41e10b31b7ad61e8adcd609e213eff0cc8dc14fe8a41798812c9cd",
+      "restore_status": "blob_identical"
+    },
+    "scripts/score_answer.py": {
+      "sha256": "7f6e5a28ed2b66a2b48bc3342703a3481dc638d3efdc4ea7c704200b551270b4",
+      "size_bytes": 9687,
+      "git_blob_sha256": "7f6e5a28ed2b66a2b48bc3342703a3481dc638d3efdc4ea7c704200b551270b4",
+      "restore_status": "blob_identical"
+    },
+    "scripts/llama_server_ctl.py": {
+      "sha256": "e2c83d47403e8330d3d1cd6f89f23deb739422c886bf9bf5405d6f8d8594a69c",
+      "size_bytes": 21603,
+      "git_blob_sha256": "4d4278bc0742b587751ca98e1fc6a03f6a1922bfdd966ddf12ccba5988c6be73",
+      "restore_status": "crlf_restored"
+    },
+    "datasets/prompt_template.json": {
+      "sha256": "4fca5ca148166615f9db44d930363ae688842e8b6aeb2f2da9e1804eec555647",
+      "size_bytes": 1765,
+      "git_blob_sha256": "4fca5ca148166615f9db44d930363ae688842e8b6aeb2f2da9e1804eec555647",
+      "restore_status": "blob_identical"
+    },
+    "datasets/test/test_tasks.json": {
+      "sha256": "5e903f20eaefa13fbf4c7c8886bd2156bd92455118e0bce95a45736e51672fca",
+      "size_bytes": 21980,
+      "git_blob_sha256": "5e903f20eaefa13fbf4c7c8886bd2156bd92455118e0bce95a45736e51672fca",
+      "restore_status": "blob_identical"
+    },
+    "datasets/dev/dev_tasks.json": {
+      "sha256": "0ac8658407a5410bfc60cafd17f766135de7ebf9d9465487830ca26acb981d10",
+      "size_bytes": 4763,
+      "git_blob_sha256": "0ac8658407a5410bfc60cafd17f766135de7ebf9d9465487830ca26acb981d10",
+      "restore_status": "blob_identical"
+    },
+    "configs/formal_config.json": {
+      "sha256": "a1380d1aaec893c507373f42d41182b300c8fe71d91012626023ca9b38ce8177",
+      "size_bytes": 1353,
+      "git_blob_sha256": "a1380d1aaec893c507373f42d41182b300c8fe71d91012626023ca9b38ce8177",
+      "restore_status": "blob_identical"
+    },
+    "datasets/frozen_hashes_stage3.json": {
+      "sha256": "1d4cdfaf8dc82dbd4825886350e555bb666c123c54a10b7e224ac6af0957c36a",
+      "size_bytes": 1781,
+      "git_blob_sha256": "1d4cdfaf8dc82dbd4825886350e555bb666c123c54a10b7e224ac6af0957c36a",
+      "restore_status": "blob_identical"
+    },
+    "models/model_manifest_v3.json": {
+      "sha256": "c3e85413dde702ac50f82f37cbddb753415aa903383b9892d3a1b46da20cf638",
+      "size_bytes": 3616,
+      "git_blob_sha256": "87034c1cdc1b42097f052ae91b6a43050b88cb05c52618431e9e05a9efb2a1d8",
+      "restore_status": "crlf_restored"
+    },
+    "environment/backend_manifest.json": {
+      "sha256": "b8e34a66e7f0f07aeb75fa973685e28c0dc2ce50b559c2f12b085f80eb8f56e6",
+      "size_bytes": 3039,
+      "git_blob_sha256": "b8e34a66e7f0f07aeb75fa973685e28c0dc2ce50b559c2f12b085f80eb8f56e6",
+      "restore_status": "blob_identical"
+    },
+    "results/stage6/chain_check/chain_check_report.json": {
+      "sha256": "3fd77d8d24466a00343206dcf81b82636630e688635604895e10ab6b221404c6",
+      "size_bytes": 25262,
+      "git_blob_sha256": "3fd77d8d24466a00343206dcf81b82636630e688635604895e10ab6b221404c6",
+      "restore_status": "blob_identical"
+    }
+  },
+  "crlf_restoration_finding": {
+    "crlf_restored_paths": [
+      "scripts/llama_server_ctl.py",
+      "models/model_manifest_v3.json"
+    ],
+    "finding": "这些路径不在 .gitattributes -text 覆盖内：git blob 为 LF，冻结清单记录的是门禁当时核验的工作区字节（CRLF）；LF→CRLF 复原后与清单哈希逐一相符（已断言，否则中止）。门禁语义=工作区字节，故当时核验有效；本副本按工作区口径复原，属审计发现，不据此重新冻结",
+    "gate_semantics": "冻结清单哈希口径=工作区字节（freeze/verify 均按此核验）"
+  },
+  "freeze1_manifest": {
+    "frozen_at": "2026-10-04T12:06:13",
+    "file_count": 22
+  },
+  "freeze1_vs_freeze2_diff": {
+    "only_in_freeze1": [],
+    "only_in_freeze2": [],
+    "hash_changed": [
+      "scripts/stage6_analyze.py"
+    ],
+    "identical_count": 21
+  },
+  "non_goals": [
+    "不回填原 run 目录",
+    "不重新冻结",
+    "不补造当时快照",
+    "不据此宣称当时已存档"
+  ]
+}
