@@ -1,0 +1,70 @@
+12:08:29 | INFO    | 冻结清单核验通过（含历史 Stage 3 清单）
+12:08:33 | INFO    | 启动 llama-server: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\llama.cpp\llama-server.exe -m F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\models\qwen2.5-0.5b-instruct-q8_0.gguf --parallel 1 -c 1024 -b 2048 -ub 512 -ctk f16 -ctv f16 -t 4 -tb 4 -fa off -lm mmap -ngl 0 --cache-reuse 0 --host 127.0.0.1 --port 5594
+12:08:34 | INFO    | 预热=True 缓存校验=True
+12:08:34 | INFO    | [1/65] test-022__J1 -> '```json\n{\n  "比赛名称": "校运会电动平衡车趣味赛",\n  "报名' | 格式=False 内容=False 联合=False
+12:08:35 | INFO    | [2/65] test-032__rot1 -> '正常信息' | 格式=True 内容=True 联合=True
+12:08:35 | INFO    | [3/65] test-033__rot1 -> '校外' | 格式=True 内容=True 联合=True
+12:08:36 | INFO    | [4/65] test-022__J2 -> '{"物品名称": "电动平衡车", "报名截止时间": "4月9日17:00",' | 格式=False 内容=False 联合=False
+12:08:36 | INFO    | [5/65] test-017__J1 -> '```json\n{\n  "课程名称": "《Python程序设计》",\n  "任' | 格式=False 内容=True 联合=False
+12:08:37 | INFO    | [6/65] test-021__J1 -> '```json\n{\n  "书名": "《时间简史（普及版）》",\n  "作者":' | 格式=False 内容=True 联合=False
+12:08:38 | INFO    | [7/65] test-020__J0 -> '```json\n{\n  "航班号": "CZ3524",\n  "出发城市": "' | 格式=False 内容=False 联合=False
+12:08:39 | INFO    | [8/65] test-018__J2 -> '{"商品名称": "便携小风扇", "价格": "39.9元", "保修期": ' | 格式=False 内容=True 联合=False
+12:08:40 | INFO    | [9/65] test-024__J0 -> '```json\n{\n  "车次": "G102次",\n  "出发站": "北京南' | 格式=False 内容=False 联合=False
+12:08:40 | INFO    | [10/65] test-019__J2 -> '{"会议名称": "数据库课题组组会", "时间": "周四上午9:30", "' | 格式=True 内容=True 联合=True
+12:08:41 | INFO    | [11/65] test-016__J0 -> '```json\n{\n  "活动名称": "社团文化节",\n  "举办时间": "' | 格式=False 内容=True 联合=False
+12:08:42 | INFO    | [12/65] test-021__J0 -> '```json\n{\n  "书名": "《时间简史（普及版）》",\n  "作者":' | 格式=False 内容=True 联合=False
+12:08:42 | INFO    | [13/65] test-027__J1 -> '```json\n{\n  "宿舍楼": "竹园3号楼",\n  "楼层": "5层"' | 格式=False 内容=False 联合=False
+12:08:43 | INFO    | [14/65] test-032__rot0 -> '垃圾信息' | 格式=True 内容=False 联合=False
+12:08:44 | INFO    | [15/65] test-020__J2 -> '```json\n{\n  "航班号": "CZ3524",\n  "出发城市": "' | 格式=False 内容=False 联合=False
+12:08:44 | INFO    | [16/65] test-040__rot0 -> '可回收' | 格式=True 内容=False 联合=False
+12:08:44 | INFO    | [17/65] test-023__J0 -> '```json\n{\n  "医生姓名": "李国栋",\n  "科室": "骨科",' | 格式=False 内容=True 联合=False
+12:08:45 | INFO    | [18/65] test-031__rot0 -> '垃圾信息' | 格式=True 内容=True 联合=True
+12:08:45 | INFO    | [19/65] test-036__rot0 -> '紧急' | 格式=True 内容=False 联合=False
+12:08:46 | INFO    | [20/65] test-029__J2 -> '{"银行名称": "中国银行府前支行", "业务类型": "银行卡挂失", "办' | 格式=False 内容=False 联合=False
+12:08:46 | INFO    | [21/65] test-016__J1 -> '```json\n{\n  "活动名称": "社团文化节",\n  "举办时间": "' | 格式=False 内容=True 联合=False
+12:08:47 | INFO    | [22/65] test-028__J2 -> '{"电影名": "流浪地球2", "场次": "本周五晚7点", "学生票价":' | 格式=True 内容=False 联合=False
+12:08:48 | INFO    | [23/65] test-026__J1 -> '```json\n{\n  "培训主题": "消防知识培训",\n  "主讲人": "' | 格式=False 内容=False 联合=False
+12:08:48 | INFO    | [24/65] test-030__J2 -> '{"姓名": "陈一诺", "班级": "高二（3）班", "获奖等级": "省' | 格式=True 内容=True 联合=True
+12:08:49 | INFO    | [25/65] test-030__J0 -> '```json\n{\n  "姓名": "陈一诺",\n  "班级": "高二（3）班' | 格式=False 内容=True 联合=False
+12:08:50 | INFO    | [26/65] test-027__J2 -> '{"物品名称": "热水供应", "故障类型": "故障", "预计恢复时间":' | 格式=False 内容=False 联合=False
+12:08:51 | INFO    | [27/65] test-028__J0 -> '```json\n{\n  "电影名": "流浪地球2",\n  "场次": "本周五' | 格式=False 内容=False 联合=False
+12:08:51 | INFO    | [28/65] test-034__rot1 -> '校外' | 格式=True 内容=False 联合=False
+12:08:51 | INFO    | [29/65] test-031__rot1 -> '正常信息' | 格式=True 内容=False 联合=False
+12:08:52 | INFO    | [30/65] test-019__J0 -> '```json\n{\n  "会议名称": "数据库课题组组会",\n  "时间": ' | 格式=False 内容=True 联合=False
+12:08:52 | INFO    | [31/65] test-027__J0 -> '```json\n{\n  "宿舍楼": "竹园3号楼",\n  "楼层": "5层"' | 格式=False 内容=False 联合=False
+12:08:52 | INFO    | [32/65] test-038__rot0 -> '正面' | 格式=True 内容=False 联合=False
+12:08:53 | INFO    | [33/65] test-018__J1 -> '```json\n{\n  "商品名称": "便携小风扇",\n  "价格": 39.' | 格式=False 内容=False 联合=False
+12:08:54 | INFO    | [34/65] test-018__J0 -> '```json\n{\n  "商品名称": "便携小风扇",\n  "价格": 39.' | 格式=False 内容=False 联合=False
+12:08:55 | INFO    | [35/65] test-021__J2 -> '{"物品名称": "《时间简史（普及版）》", "借用人": "斯蒂芬·霍金",' | 格式=False 内容=False 联合=False
+12:08:55 | INFO    | [36/65] test-033__rot0 -> '校内' | 格式=True 内容=False 联合=False
+12:08:56 | INFO    | [37/65] test-023__J2 -> '{"医生姓名": "李国栋", "科室": "骨科", "出诊时间": "每周一' | 格式=True 内容=True 联合=True
+12:08:56 | INFO    | [38/65] test-026__J0 -> '```json\n{\n  "培训主题": "消防知识培训",\n  "主讲人": "' | 格式=False 内容=False 联合=False
+12:08:57 | INFO    | [39/65] test-028__J1 -> '```json\n{\n  "电影名": "流浪地球2",\n  "场次": "本周五' | 格式=False 内容=False 联合=False
+12:08:57 | INFO    | [40/65] test-039__rot0 -> '可回收' | 格式=True 内容=True 联合=True
+12:08:58 | INFO    | [41/65] test-025__J2 -> '```json\n{\n  "软件名称": "轻笔记App",\n  "版本": "v' | 格式=False 内容=True 联合=False
+12:08:59 | INFO    | [42/65] test-029__J0 -> '```json\n{\n  "银行名称": "中国银行",\n  "业务类型": "银' | 格式=False 内容=False 联合=False
+12:08:59 | INFO    | [43/65] test-036__rot1 -> '非紧急' | 格式=True 内容=True 联合=True
+12:08:59 | INFO    | [44/65] test-038__rot1 -> '正面' | 格式=True 内容=False 联合=False
+12:09:00 | INFO    | [45/65] test-030__J1 -> '```json\n{\n  "姓名": "陈一诺",\n  "班级": "高二（3）班' | 格式=False 内容=True 联合=False
+12:09:00 | INFO    | [46/65] test-024__J2 -> '{"物品名称": "二等座", "借用人": "王女士", "归还期限": "1' | 格式=False 内容=False 联合=False
+12:09:01 | INFO    | [47/65] test-037__rot1 -> '正面' | 格式=True 内容=True 联合=True
+12:09:01 | INFO    | [48/65] test-017__J0 -> '```json\n{\n  "课程名称": "《Python程序设计》",\n  "任' | 格式=False 内容=True 联合=False
+12:09:02 | INFO    | [49/65] test-022__J0 -> '```json\n{\n  "比赛名称": "校运会电动平衡车趣味赛",\n  "报名' | 格式=False 内容=False 联合=False
+12:09:03 | INFO    | [50/65] test-029__J1 -> '```json\n{\n  "银行名称": "中国银行",\n  "业务类型": "银' | 格式=False 内容=False 联合=False
+12:09:03 | INFO    | [51/65] test-035__rot1 -> '紧急' | 格式=True 内容=True 联合=True
+12:09:04 | INFO    | [52/65] test-019__J1 -> '```json\n{\n  "会议名称": "数据库课题组组会",\n  "时间": ' | 格式=False 内容=True 联合=False
+12:09:04 | INFO    | [53/65] test-035__rot0 -> '紧急' | 格式=True 内容=True 联合=True
+12:09:04 | INFO    | [54/65] test-023__J1 -> '```json\n{\n  "医生姓名": "李国栋",\n  "科室": "骨科",' | 格式=False 内容=True 联合=False
+12:09:05 | INFO    | [55/65] test-024__J1 -> '```json\n{\n  "车次": "G102次",\n  "出发站": "北京南' | 格式=False 内容=False 联合=False
+12:09:06 | INFO    | [56/65] test-025__J0 -> '```json\n{\n  "软件名称": "轻笔记App",\n  "版本": "v' | 格式=False 内容=True 联合=False
+12:09:07 | INFO    | [57/65] test-026__J2 -> '{"培训主题": "消防知识培训", "主讲人": "消保科郑安琪", "时长"' | 格式=True 内容=False 联合=False
+12:09:07 | INFO    | [58/65] test-037__rot0 -> '正面' | 格式=True 内容=True 联合=True
+12:09:08 | INFO    | [59/65] test-020__J1 -> '```json\n{\n  "航班号": "CZ3524",\n  "出发城市": "' | 格式=False 内容=False 联合=False
+12:09:08 | INFO    | [60/65] test-039__rot1 -> '不可回收' | 格式=True 内容=False 联合=False
+12:09:09 | INFO    | [61/65] test-017__J2 -> '```json\n{\n  "课程名称": "《Python程序设计》",\n  "任' | 格式=False 内容=True 联合=False
+12:09:09 | INFO    | [62/65] test-040__rot1 -> '不可回收' | 格式=True 内容=True 联合=True
+12:09:10 | INFO    | [63/65] test-025__J1 -> '```json\n{\n  "软件名称": "轻笔记App",\n  "版本": "v' | 格式=False 内容=True 联合=False
+12:09:10 | INFO    | [64/65] test-034__rot0 -> '校内' | 格式=True 内容=True 联合=True
+12:09:11 | INFO    | [65/65] test-016__J2 -> '{"活动名称": "社团文化节", "举办时间": "11月8日14:00", ' | 格式=False 内容=True 联合=False
+12:09:11 | INFO    | llama-server 退出: exit=1 (本程序主动终止, 已确认)
+12:09:14 | INFO    | 结果: F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\results\stage6\run_20261004_120828_stage6formal_Q80_16b35d\result.json (success=True)

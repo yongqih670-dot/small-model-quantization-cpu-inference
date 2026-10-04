@@ -350,6 +350,9 @@ def main() -> int:
     import matplotlib.pyplot as plt
     plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei"]
     plt.rcParams["axes.unicode_minus"] = False
+    test_tasks_all = json.loads(
+        (ROOT / "datasets" / "test" / "test_tasks.json")
+        .read_text(encoding="utf-8"))["tasks"]
 
     # 图1：分支A
     fig, axes = plt.subplots(1, 3, figsize=(15, 4.6))
@@ -361,13 +364,18 @@ def main() -> int:
         ax.bar(i, rate, 0.55, color=f"C{i}", alpha=0.85)
         ax.errorbar(i, (lo + hi) / 2, yerr=(hi - lo) / 2, fmt="none",
                     ecolor="k", capsize=4)
-        ax.text(i, rate + 0.04, f"{s['chose_first']}/{s['n_requests']}",
+        ax.text(i, max(rate, hi) + 0.05, f"{s['chose_first']}/{s['n_requests']}",
                 ha="center", fontsize=10)
     ax.set_xticks(range(3), MODELS)
-    ax.set_ylim(0, 1.12)
+    ax.set_ylim(0, 1.18)
     ax.axhline(0.5, ls="--", c="gray", lw=1)
     ax.set_ylabel("选择显示位置0标签的比例")
     ax.set_title("分支A：首位置选择比例（Wilson 95% CI）")
+    # 金标位置取自数据集原序（不随轮换变化），独立于运行记录
+    gold_pos_ds = {}
+    for t in test_tasks_all:
+        if t["task_type"] == "classification":
+            gold_pos_ds[t["id"]] = t["labels"].index(t["gold"])
     for pi, rot in ((1, 0), (2, 1)):
         ax = axes[pi]
         tasks = sorted({r["parent_task_id"] for r in cls_rows})
@@ -375,8 +383,7 @@ def main() -> int:
                       if r["model"] == m and r["parent_task_id"] == t
                       and r["rotation"] == rot)
                  for m in MODELS] for t in tasks]
-        golds = [next(r["gold_position"] for r in cls_rows
-                      if r["parent_task_id"] == t) for t in tasks]
+        golds = [gold_pos_ds[t] for t in tasks]
         mat = [[(2 if v is None else v) for v in row] for row in grid]
         im = ax.imshow(mat, cmap="coolwarm", vmin=-0.4, vmax=2.4, aspect="auto")
         ax.set_xticks(range(3), MODELS, fontsize=9)

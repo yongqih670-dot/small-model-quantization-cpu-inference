@@ -1,0 +1,9 @@
+{
+  "purpose": "Stage 6 正式诊断运行显式绑定（禁止自动选最新目录）",
+  "bound_at": "2026-10-04T12:09:14+08:00",
+  "runs": {
+    "Q4_K_M": "run_20261004_120636_stage6formal_Q4KM_ca81f5",
+    "Q5_K_M": "run_20261004_120735_stage6formal_Q5KM_a1f514",
+    "Q8_0": "run_20261004_120828_stage6formal_Q80_16b35d"
+  }
+}

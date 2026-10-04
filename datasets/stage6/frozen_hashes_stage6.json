@@ -1,5 +1,5 @@
 {
-  "frozen_at": "2026-10-04T12:06:13",
+  "frozen_at": "2026-10-04T12:14:30",
   "algorithm": "sha256",
   "rule": "正式诊断输出产生前冻结（configs/stage6_plan.json::freezing）。正式运行前由 scripts/stage6_exec.py 逐文件核验；冻结后再改动任何被列文件须记录理由并重新冻结；历史冻结清单（Stage 2/3/4）不重冻结、不覆盖。",
   "not_frozen_note": "scripts/stage6_verify.py 为核验工具本身，不列入（避免自指）",
@@ -15,7 +15,7 @@
     "scripts/stage6_build_variants.py": "85c8afc078f0e91ce17c69b5e03ca8c242d4211e3d8653fd0006125972537673",
     "scripts/stage6_exec.py": "6d88bd3e87f0971b9db773aa3c2e8e8a7ad055805c0e61110c7d1825632695ce",
     "scripts/stage6_chain_check.py": "2e33c6bbd0d6a15180ecec2f91290f9dcb05c831243eb9d9eb97e77b3aaeb483",
-    "scripts/stage6_analyze.py": "dd57e2eaff41e10b31b7ad61e8adcd609e213eff0cc8dc14fe8a41798812c9cd",
+    "scripts/stage6_analyze.py": "f911ee9f22ca5c522e63974231af35baf8b3eee7b7947c772c3371b062b9f89b",
     "scripts/score_answer.py": "7f6e5a28ed2b66a2b48bc3342703a3481dc638d3efdc4ea7c704200b551270b4",
     "scripts/llama_server_ctl.py": "e2c83d47403e8330d3d1cd6f89f23deb739422c886bf9bf5405d6f8d8594a69c",
     "datasets/prompt_template.json": "4fca5ca148166615f9db44d930363ae688842e8b6aeb2f2da9e1804eec555647",
@@ -26,5 +26,11 @@
     "models/model_manifest_v3.json": "c3e85413dde702ac50f82f37cbddb753415aa903383b9892d3a1b46da20cf638",
     "environment/backend_manifest.json": "b8e34a66e7f0f07aeb75fa973685e28c0dc2ce50b559c2f12b085f80eb8f56e6",
     "results/stage6/chain_check/chain_check_report.json": "3fd77d8d24466a00343206dcf81b82636630e688635604895e10ab6b221404c6"
-  }
+  },
+  "refreeze_log": [
+    {
+      "at": "2026-10-04T12:14:30",
+      "reason": "修复 stage6_analyze.py 图1 y轴金标位标注取值来源（原取运行记录，随轮换漂移；改为取数据集原序位置），并上移柱顶计数文本避开CI误差棒；纯图形标签修正，不改变任何数值指标与统计逻辑。正式运行的执行与汇总数值不受影响。"
+    }
+  ]
 }

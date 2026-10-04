@@ -53,6 +53,12 @@ def sha256_file(path: Path) -> str:
 
 
 def main() -> int:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--refreeze-reason", default=None,
+                    help="重新冻结理由（写入清单 refreeze_log；首次冻结不填）")
+    args = ap.parse_args()
+
     hashes = {}
     missing = []
     for rel in FILES:
@@ -73,9 +79,20 @@ def main() -> int:
                  "历史冻结清单（Stage 2/3/4）不重冻结、不覆盖。"),
         "not_frozen_note": "scripts/stage6_verify.py 为核验工具本身，不列入（避免自指）",
         "files": hashes}
+    if args.refreeze_reason:
+        prior = {}
+        if MANIFEST.is_file():
+            try:
+                prior = json.loads(MANIFEST.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                prior = {}
+        log = prior.get("refreeze_log", [])
+        log.append({"at": doc["frozen_at"], "reason": args.refreeze_reason})
+        doc["refreeze_log"] = log
     MANIFEST.write_text(json.dumps(doc, ensure_ascii=False, indent=2),
                         encoding="utf-8", newline="\n")
-    print(f"冻结清单已生成: {MANIFEST} ({len(hashes)} 文件)")
+    print(f"冻结清单已生成: {MANIFEST} ({len(hashes)} 文件)"
+          + (f" [重新冻结: {args.refreeze_reason}]" if args.refreeze_reason else ""))
     for rel, h in hashes.items():
         print(f"  {h[:16]}… {rel}")
     return 0

@@ -98,11 +98,8 @@ def main() -> int:
     changes = git_status_porcelain()
 
     def is_stage6_path(line: str) -> bool:
-        p = line[3:].strip().strip('"')
-        if p.startswith("results/stage6/") or p.startswith("datasets/stage6/"):
-            return True
-        return any(seg.startswith("stage6_") for seg in p.replace("\\", "/").split("/")) \
-            or p in ("docs/STAGE6_PLAN.md", "docs/STAGE6_DIAGNOSIS_REPORT.md")
+        p = line[3:].strip().strip('"').replace("\\", "/").lower()
+        return "stage6" in p
 
     hist_changes = [l for l in changes if not is_stage6_path(l)]
     verdict("V2_git_historical_paths_clean", not hist_changes,

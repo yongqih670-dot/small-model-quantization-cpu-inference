@@ -1,0 +1,232 @@
+{
+  "run_id": "run_20261004_120828_stage6formal_Q80_16b35d",
+  "script": "scripts/stage6_exec.py",
+  "mode": "formal",
+  "model_key": "Q8_0",
+  "config": "configs/stage6_config.json",
+  "started_at_utc": "2026-10-04T04:08:28.449+00:00",
+  "stage": "stage6_joint_error_diagnosis",
+  "is_real_inference": true,
+  "synthetic": false,
+  "exploratory_positioning": "事后探索性诊断；不产生新正式测试集成绩",
+  "config_id": "stage6_diag_t4_c1024_v1",
+  "config_snapshot": {
+    "config_id": "stage6_diag_t4_c1024_v1",
+    "comment": "Stage 6 共同错误诊断执行配置。全部服务端/生成参数从 Stage 3 正式配置 configs/formal_config.json (formal_stage3_t4_c1024_v1) 原样继承并显式重述（不凭记忆重写）；定位为事后探索性诊断，不产生新的正式测试集成绩。单推理进程、单 slot、串行请求；禁用跨请求提示缓存。threads=threads_batch=4 不是最优配置声明，仅为受控固定值。",
+    "inherits": "configs/formal_config.json",
+    "model_paths": {
+      "Q4_K_M": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "Q5_K_M": "models/qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "Q8_0": "models/qwen2.5-0.5b-instruct-q8_0.gguf"
+    },
+    "parallel": 1,
+    "threads": 4,
+    "threads_batch": 4,
+    "context_length": 1024,
+    "batch_size": 2048,
+    "ubatch_size": 512,
+    "cache_type_k": "f16",
+    "cache_type_v": "f16",
+    "flash_attn": "off",
+    "load_mode": "mmap",
+    "gpu_offload_layers": 0,
+    "cache_reuse": 0,
+    "cache_prompt_request_body": false,
+    "generation": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "seed": 42,
+      "max_tokens": 96
+    },
+    "request_timeout_s": 120,
+    "load_timeout_s": 300,
+    "health_poll_interval_s": 0.25,
+    "memory_sample_interval_s": 0.05,
+    "timeout_recovery": {
+      "method": "GET /slots 等待 is_processing=false",
+      "wait_timeout_s": 60,
+      "on_failure": "终止本程序启动的服务，剩余任务标记 not_attempted，不继续发请求"
+    },
+    "stage6_execution_rules": {
+      "order_source": "datasets/stage6/stage6_order.json (shuffled_formal / shuffled_dev)",
+      "same_order_all_models": true,
+      "single_inference_process": true,
+      "refuse_if_orphan_servers": "启动前 count_orphan_servers()>0 则拒绝（防止并发推理进程）",
+      "warmup_per_start": "1 次预热 + 2 次缓存复用检查（辅助请求，不计入成绩）",
+      "retry_policy": "失败/超时/截断全部保留原记录，不静默重试；如需补测另存尝试记录并说明原因",
+      "max_tokens_note": "与 Stage 3 正式一致取 96；finish_reason=length 标记截断，不重试",
+      "context_budget_note": "Stage 3 实测 JSON 提示最长 156 prompt tokens，J2 追加约 70-90 tokens，输出上限 96；1024 上下文充分容纳，无需统一调整（dev 阶段实测复核并记录）",
+      "dev_mode": "phase=dev 时加载 stage6_dev_variants.json，冻结门禁不适用（dev 先于冻结运行）；正式模式要求 Stage 6 冻结清单全部通过",
+      "freeze_gate": "datasets/stage6/frozen_hashes_stage6.json 逐文件 SHA256 比对 + models/model_manifest_v3.json + environment/backend_manifest.json + datasets/frozen_hashes_stage3.json（历史证据未改门禁）"
+    }
+  },
+  "inheritance_check_vs_formal_config": {
+    "keys_checked": [
+      "parallel",
+      "threads",
+      "threads_batch",
+      "context_length",
+      "batch_size",
+      "ubatch_size",
+      "cache_type_k",
+      "cache_type_v",
+      "flash_attn",
+      "load_mode",
+      "gpu_offload_layers",
+      "cache_reuse",
+      "generation",
+      "request_timeout_s",
+      "load_timeout_s",
+      "health_poll_interval_s",
+      "timeout_recovery"
+    ],
+    "mismatches": {},
+    "passed": true
+  },
+  "order_source": "stage6_order.json::shuffled_formal",
+  "order_seed": 20261004,
+  "units_planned": 65,
+  "orphan_servers_before": 0,
+  "freeze_check": {
+    "manifest": "datasets\\stage6\\frozen_hashes_stage6.json",
+    "history_manifest": "datasets\\frozen_hashes_stage3.json",
+    "problems": [],
+    "passed": true
+  },
+  "model": {
+    "key": "Q8_0",
+    "path": "models/qwen2.5-0.5b-instruct-q8_0.gguf",
+    "sha256": "ca59ca7f13d0e15a8cfa77bd17e65d24f6844b554a7b6c12e07a5f89ff76844e",
+    "manifest_v3_sha256": "ca59ca7f13d0e15a8cfa77bd17e65d24f6844b554a7b6c12e07a5f89ff76844e",
+    "manifest_match": true
+  },
+  "backend_version": {
+    "command": "llama-server.exe --version",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "version: 0.5.0-dev (build 11347, commit 5fc4f3c8c)\nbuilt with Clang 20.1.8 for Windows x86_64\n"
+  },
+  "backend_manifest_recorded": true,
+  "environment_at_start": {
+    "time": "2026-10-04T04:08:30.375+00:00",
+    "cpu_percent_sample": 5.0,
+    "free_ram_gib": 12.64,
+    "llama_server_process_count_global": 0,
+    "note": "仅记录本机负载；不据此筛选数据",
+    "power": {
+      "status": "recorded",
+      "percent": 99,
+      "power_plugged": true
+    },
+    "circuitpilot": {
+      "found": [],
+      "method": "process_name_substring(circuitpilot)",
+      "note": "仅按进程名识别；无法核验其内部负载时如实记录，不宣称全程无干扰"
+    }
+  },
+  "server_argv": [
+    "-m",
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+    "--parallel",
+    "1",
+    "-c",
+    "1024",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "-ngl",
+    "0",
+    "--cache-reuse",
+    "0"
+  ],
+  "server_startup": {
+    "ok": true,
+    "error": null,
+    "server_startup_to_ready_s": 0.595444
+  },
+  "warmup_request": {
+    "marked_as": "warmup_auxiliary",
+    "ok": true,
+    "excluded_from_stats": true
+  },
+  "cache_reuse_check": {
+    "requests": [
+      {
+        "cache_n": 0,
+        "prompt_n": 30
+      },
+      {
+        "cache_n": 0,
+        "prompt_n": 30
+      }
+    ],
+    "passed": true
+  },
+  "memory": {
+    "peak_wset_mib": 637.805,
+    "sampled_peak_rss_mib": 636.605,
+    "note": "peak_wset 为进程生命周期峰值, 非单请求峰值; sampled_peak 为间隔采样值",
+    "sample_interval_s": 0.05
+  },
+  "requests_sent": 65,
+  "counts": {
+    "total": 65,
+    "ok": 65,
+    "request_failed": 0,
+    "timeout": 0,
+    "truncated": 0
+  },
+  "scoring_errors": 0,
+  "max_prompt_tokens_seen": 256,
+  "context_budget_check": {
+    "ctx": 1024,
+    "max_prompt_tokens_seen": 256,
+    "fits": true
+  },
+  "timeout_recoveries": [],
+  "not_attempted": [],
+  "execution_complete": true,
+  "quality_evaluation_valid": true,
+  "denominator_note": "分母=全部请求(含失败/超时/截断); 无剔除无重试; 诊断结果不作为正式测试集成绩",
+  "cleanup": {
+    "attempted": true,
+    "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+    "server_self_exited": false,
+    "confirmed_exit": true,
+    "exit_code": 1
+  },
+  "environment_at_end": {
+    "time": "2026-10-04T04:09:11.424+00:00",
+    "cpu_percent_sample": 1.5,
+    "free_ram_gib": 12.81,
+    "llama_server_process_count_global": 0,
+    "note": "仅记录本机负载；不据此筛选数据",
+    "power": {
+      "status": "recorded",
+      "percent": 99,
+      "power_plugged": true
+    },
+    "circuitpilot": {
+      "found": [],
+      "method": "process_name_substring(circuitpilot)",
+      "note": "仅按进程名识别；无法核验其内部负载时如实记录，不宣称全程无干扰"
+    }
+  },
+  "cleanup_success": true,
+  "success": true,
+  "success_rule": "execution_complete AND cleanup_success",
+  "finished_at_utc": "2026-10-04T04:09:14.596+00:00"
+}
