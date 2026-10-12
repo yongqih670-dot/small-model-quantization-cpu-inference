@@ -87,7 +87,10 @@ def main() -> int:
 
     # V1 历史冻结清单
     v1 = check_manifest(ROOT / "datasets" / "frozen_hashes_stage3.json")
-    verdict("V1_stage3_frozen_files_unchanged", not v1, v1 or "21 文件全部一致")
+    n_v1 = len(json.loads((ROOT / "datasets" / "frozen_hashes_stage3.json")
+                          .read_text(encoding="utf-8"))["files"])
+    verdict("V1_stage3_frozen_files_unchanged", not v1,
+            v1 or f"{n_v1} 文件全部一致")
 
     # V2 git 历史路径零改动（排除 Stage 6 专属路径）
     HIST_PREFIXES = ("results/raw/", "results/summary/", "plots/",
@@ -107,7 +110,11 @@ def main() -> int:
 
     # V3 Stage 6 冻结清单
     v3 = check_manifest(ROOT / "datasets" / "stage6" / "frozen_hashes_stage6.json")
-    verdict("V3_stage6_frozen_files_unchanged", not v3, v3 or "22 文件全部一致")
+    n_v3 = len(json.loads((ROOT / "datasets" / "stage6" /
+                           "frozen_hashes_stage6.json")
+                          .read_text(encoding="utf-8"))["files"])
+    verdict("V3_stage6_frozen_files_unchanged", not v3,
+            v3 or f"{n_v3} 文件全部一致")
 
     # V4 变体单一因素独立复核
     template = json.loads((ROOT / "datasets" / "prompt_template.json")

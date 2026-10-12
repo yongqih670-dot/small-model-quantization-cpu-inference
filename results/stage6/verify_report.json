@@ -2,7 +2,7 @@
   "verdicts": {
     "V1_stage3_frozen_files_unchanged": {
       "pass": true,
-      "detail": "21 文件全部一致"
+      "detail": "14 文件全部一致"
     },
     "V2_git_historical_paths_clean": {
       "pass": true,
