@@ -1,0 +1,41 @@
+{
+  "model": "Q4_K_M",
+  "flags": [
+    "-ngl",
+    "0",
+    "-t",
+    "16",
+    "-tb",
+    "8",
+    "-c",
+    "1024",
+    "-np",
+    "1",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "--cache-reuse",
+    "0",
+    "--log-timestamps"
+  ],
+  "port": 61628,
+  "power_before": {
+    "plugged_in": true,
+    "percent": 99
+  },
+  "time_before": "2026-11-06T21:25:21.014275+08:00",
+  "available_mib": 17081.52734375,
+  "power_after": {
+    "plugged_in": true,
+    "percent": 99
+  }
+}

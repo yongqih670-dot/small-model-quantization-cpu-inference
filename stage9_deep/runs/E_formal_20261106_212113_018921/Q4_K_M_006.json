@@ -1,0 +1,44 @@
+{
+  "model": "Q4_K_M",
+  "sequence": 6,
+  "item": "1-4",
+  "candidate": 0,
+  "rule": 0,
+  "ok": true,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "正常信息"
+        }
+      }
+    ],
+    "created": 1793971276,
+    "model": "D:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3,
+      "prompt_tokens": 124,
+      "total_tokens": 127,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-yBM02MezqLqJhbDGcy0sU4xzYWq28f1p",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 124,
+      "prompt_ms": 298.428,
+      "prompt_per_token_ms": 2.4066774193548386,
+      "prompt_per_second": 415.5106089240956,
+      "predicted_n": 3,
+      "predicted_ms": 26.677,
+      "predicted_per_token_ms": 13.3385,
+      "predicted_per_second": 74.97094875735652
+    }
+  }
+}

@@ -2,7 +2,9 @@
 
 《计算机技术与应用》大模型期末大作业课题14：研究同一个约 0.5B 参数规模的小语言模型（Qwen2.5-0.5B-Instruct）在不同 GGUF 量化版本与 CPU 运行参数下的**文件大小、内存占用、提示处理速度、逐 Token 生成速度、端到端延迟与简单任务质量**。
 
-**当前阶段：Stage 8 已完成，新增预热与首次回答、输入长度与速度、标签位置复验三项实验。**
+**当前阶段：Stage 9 已完成，新增输出长度、两处标签顺序和分阶段线程配置实验。**
+
+[Stage 9 实验报告与复现方法](stage9_deep/README.md) · [实验方案](stage9_deep/PROTOCOL.md) · [462 条正式请求的统计与图表](stage9_deep/results/)
 
 [Stage 8 实验报告与复现方法](stage8_extensions/README.md) · [测试方案](stage8_extensions/PROTOCOL.md) · [三项结果汇总](stage8_extensions/results/summary.json)
 

@@ -1,0 +1,30 @@
+0.00.031.188 I srv  llama_server: initializing ...
+0.00.031.200 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.031.558 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.034.868 I srv    load_model: loading model 'D:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\stage7_local\assets\qwen2.5-0.5b-instruct-q4_k_m.gguf'
+0.00.555.629 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.643.535 I cmn          init: llama threadpool init, n_threads = 16
+0.00.759.708 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 1024, kv_unified = 'false'
+0.00.768.803 I srv  llama_server: model loaded
+0.00.768.819 I srv  llama_server: listening on http://127.0.0.1:53558
+0.00.810.593 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.00.810.651 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.00.944.540 I slot print_timing: id  0 | task 0 | prompt eval time =      22.17 ms /     4 tokens (    5.54 ms per token,   180.39 tokens per second)
+0.00.944.557 I slot print_timing: id  0 | task 0 |        eval time =     111.65 ms /     8 tokens (   15.95 ms per token,    62.70 tokens per second)
+0.00.944.561 I slot print_timing: id  0 | task 0 |       total time =     133.82 ms /    12 tokens
+0.00.944.563 I slot print_timing: id  0 | task 0 |    graphs reused =          7
+0.00.944.612 I slot      release: id  0 | task 0 | stop processing: n_tokens = 11, truncated = 0
+0.00.949.622 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 915119
+0.00.950.431 I slot launch_slot_: id  0 | task 9 | processing task, is_child = 0
+0.03.351.326 I slot print_timing: id  0 | task 9 | prompt eval time =    2097.24 ms /   768 tokens (    2.73 ms per token,   366.20 tokens per second)
+0.03.351.350 I slot print_timing: id  0 | task 9 |        eval time =     303.60 ms /    16 tokens (   20.24 ms per token,    49.41 tokens per second)
+0.03.351.353 I slot print_timing: id  0 | task 9 |       total time =    2400.84 ms /   784 tokens
+0.03.351.356 I slot print_timing: id  0 | task 9 |    graphs reused =         21
+0.03.351.444 I slot      release: id  0 | task 9 | stop processing: n_tokens = 783, truncated = 0
+0.03.356.397 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 0.082
+0.03.359.361 I slot launch_slot_: id  0 | task 26 | processing task, is_child = 0
+0.05.283.683 I slot print_timing: id  0 | task 26 | prompt eval time =     212.82 ms /    64 tokens (    3.33 ms per token,   300.73 tokens per second)
+0.05.283.700 I slot print_timing: id  0 | task 26 |        eval time =    1711.45 ms /    96 tokens (   18.02 ms per token,    55.51 tokens per second)
+0.05.283.703 I slot print_timing: id  0 | task 26 |       total time =    1924.27 ms /   160 tokens
+0.05.283.704 I slot print_timing: id  0 | task 26 |    graphs reused =        115
+0.05.283.749 I slot      release: id  0 | task 26 | stop processing: n_tokens = 159, truncated = 0

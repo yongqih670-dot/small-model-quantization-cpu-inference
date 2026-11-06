@@ -1,0 +1,33 @@
+{
+  "exp": "F",
+  "phase": "formal",
+  "hashes": {
+    "stage9_deep/bench.py": "998de55c3ec9d85164c4c35c43fea288548db949bb2dc0d4d44d6d47ede6cfcf",
+    "stage9_deep/F.py": "10ba16d8a11a021e7bd6d69682796582c45c8d2232dc422b5191bba875160fdf",
+    "stage9_deep/PROTOCOL.md": "d8117711ac1a2ad2e943d89f147cdbfeb325e5fdaf75f66212341d2075baa7dd",
+    "stage8_extensions/runs/B_formal_210313_349d9f/token_ids.json": "e7af4dbeafbbb5487f1f17451f5ad8bf72c68b012e855c31ef54d122eb9b0325",
+    "stage8_extensions/common.py": "5c6de3e42b605c2dbe746674b42d8be7dcd7db5685751338b2262a64a58aa763",
+    "stage8_extensions/inputs.json": "afe6964c626dd74af9302a0252e0d1f7032e12847d32a646888e20666fdd61f6",
+    "stage7_local/run_experiment.py": "8b80cadeb2f134ca920f9e5650755dfc7ab6bdf890185471e93692b7fec029b3",
+    "stage7_local/model_manifest.json": "839a9aed0ea8c372292fa0ef2c6700af1d70c7e53e32713e9095364cf48b1662"
+  },
+  "backend_sha": "f1f7198a7c1cdf13bec7c2cf960947e0bec87401837a057134186132d870aa04",
+  "weights": {
+    "Q4_K_M": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+  },
+  "pilot": "F_pilot_20261106_212330_409d30",
+  "started": "2026-11-06T21:24:19.152799+08:00",
+  "machine": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7",
+    "cpu": "AMD Ryzen AI 9 H 365 w/ Radeon 880M",
+    "physical_cores": 10,
+    "logical_cores": 20,
+    "ram_gib": 31.290393829345703,
+    "plugged_in": true
+  },
+  "passed": true,
+  "attempts": 162,
+  "expected": 162,
+  "completed": "2026-11-06T21:30:53.784671+08:00"
+}
