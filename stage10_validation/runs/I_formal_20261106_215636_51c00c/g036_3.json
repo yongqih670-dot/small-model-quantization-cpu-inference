@@ -1,0 +1,130 @@
+{
+  "round": 6,
+  "text": "manual",
+  "model": "Q8_0",
+  "t": 4,
+  "tb": 4,
+  "n": 768,
+  "g": 48,
+  "ok": true,
+  "start_ns": 19725488638900,
+  "end_ns": 19728094407400,
+  "response": {
+    "index": 0,
+    "content": "的记录。若未找到，应记录待复查，等待后续处理。\n\n在整理过程中，应记录每项活动的开始和结束时间，以及每项活动的负责人和原因。记录活动时，应使用规范的",
+    "tokens": [],
+    "id_slot": 0,
+    "stop": true,
+    "model": "D:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q8_0.gguf",
+    "tokens_predicted": 48,
+    "tokens_evaluated": 768,
+    "generation_settings": {
+      "seed": 42,
+      "temperature": 0.0,
+      "dynatemp_range": 0.0,
+      "dynatemp_exponent": 1.0,
+      "top_k": 40,
+      "top_p": 1.0,
+      "min_p": 0.05000000074505806,
+      "top_n_sigma": -1.0,
+      "xtc_probability": 0.0,
+      "xtc_threshold": 0.10000000149011612,
+      "typical_p": 1.0,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "dry_multiplier": 0.0,
+      "dry_base": 1.75,
+      "dry_allowed_length": 2,
+      "dry_penalty_last_n": 64,
+      "dry_sequence_breakers": [
+        "\n",
+        ":",
+        "\"",
+        "*"
+      ],
+      "mirostat": 0,
+      "mirostat_tau": 5.0,
+      "mirostat_eta": 0.10000000149011612,
+      "adaptive_target": -1.0,
+      "adaptive_decay": 0.8999999761581421,
+      "stop": [],
+      "max_tokens": 48,
+      "n_predict": 48,
+      "n_keep": 0,
+      "n_discard": 0,
+      "ignore_eos": true,
+      "stream": false,
+      "logit_bias": [
+        {
+          "bias": null,
+          "token": 128247
+        },
+        {
+          "bias": null,
+          "token": 151643
+        },
+        {
+          "bias": null,
+          "token": 151645
+        },
+        {
+          "bias": null,
+          "token": 151662
+        },
+        {
+          "bias": null,
+          "token": 151663
+        },
+        {
+          "bias": null,
+          "token": 151664
+        }
+      ],
+      "n_probs": 0,
+      "min_keep": 0,
+      "grammar": "",
+      "grammar_lazy": false,
+      "grammar_triggers": [],
+      "preserved_tokens": [],
+      "chat_format": "Content-only",
+      "reasoning_format": "deepseek",
+      "reasoning_in_content": false,
+      "generation_prompt": "",
+      "samplers": [
+        "penalties",
+        "dry",
+        "top_n_sigma",
+        "top_k",
+        "typ_p",
+        "top_p",
+        "min_p",
+        "xtc",
+        "temperature"
+      ],
+      "speculative.types": "none",
+      "timings_per_token": false,
+      "post_sampling_probs": false,
+      "backend_sampling": false,
+      "lora": []
+    },
+    "prompt": "本说明供虚构的社区资料室整理纸面观察记录使用。开始前，值班员先核对当天送来的周转箱数量，给每个箱子分配临时编号，并记录交接人、到达时刻和外观。尚未分拣的纸页不能与已编目的材料混放。若外箱潮湿，先隔开存放并通知修护人员，在交接单上写明受影响的区域。登记人员只描述肉眼可见的状态，不凭纸张颜色估计年代。\n\n建立工作台时应留出三个分区，分别存放待清点件、已核对件和需要退回说明的材料。准备好铅笔、无酸垫纸、尺和记录夹；订书机和食品留在桌面以外。使用临时编号时，前段表示项目，后段表示该项目中的顺序。遇到缺失页应登记缺口位置，不能将后面的编号整体前移以造成资料连续的印象。\n\n描述一份资料时，先抄录原题名，再写工作人员拟定的简短检索名。抄录部分保留原来的用字和空格，无法辨认的字用方括号标出。检索名可以使用规范地名，但需在备注栏列出原写法。若题名来自捐赠者口述，应记录访谈日期和记录人。口述的简称即使常用，也不能取代纸面上实际存在的署名。\n\n扫描时先用校准页确认边缘和色阶，再进行逐页采集。双面资料的正反面分别标记；空白页也要记下其位置，避免后续误判遗漏。每完成一个小组，核查图像方向、边缘是否完整、手写批注能否辨认。遇到折叠地图时先保存合拢状态，再拍摄展开后的各部分。无法安全展开的部分交由修护人员处理，在清单中标明待补拍。\n\n数字文件名由临时编号、页码和视图号组成。初次采集使用视图号一；补采集生成新视图号，不覆盖先前文件。将一次采集的图像集中写入清单，每行列出文件名、字节数、校验值、设备和操作日期。复制到第二处存储后重新计算校验值，任意一行不一致时标记该批次为待复查，记录检测结果与后续处置。\n\n复核者以纸面实物和图像同时为依据，逐项核对题名、页数、比例尺和说明。若两个来源的日期不一致，应分别抄录具体写法，并标注来源位置。例如信封上有邮戳日期，信纸末尾另有落款日期，这两个字段可以并存。遇到同名作者时，应检索已有记录中的活动地点和作品列表；信息不足则保留两个身份条目，待取得更直接的证据后再合并。\n\n提供阅览副本前，先查看捐赠协议中关于展示范围和复制用途的说明。限制展示的资料仅向获准人员提供阅览路径，公开目录可以保留基本题名和允许展示的描述。编目人员发现纸面含有私人地址时，在备注中提出复核需求，不能自行宣布资料已经公开。阅览副本添加必要的遮挡后，由第二名工作人员检查原件与副本是否被误放到相同位置。\n\n收工之前按箱核对件数，检查待处理架上的便签是否写清负责人和原因。完成的箱子按入库顺序摆放，保留足够通道供查找。临时表格可以导出为只读版本，但原始记录和修订说明都要留下。下一班接手时先读交接摘要，再打开待办清单；对有待判定的条目，应能从摘要找到实物与最近",
+    "has_new_line": true,
+    "truncated": false,
+    "stop_type": "limit",
+    "stopping_word": "",
+    "tokens_cached": 815,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 768,
+      "prompt_ms": 1891.774,
+      "prompt_per_token_ms": 2.463247395833333,
+      "prompt_per_second": 405.9681547584437,
+      "predicted_n": 48,
+      "predicted_ms": 710.848,
+      "predicted_per_token_ms": 15.124425531914893,
+      "predicted_per_second": 66.11821373908346
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "round": 6,
+  "text": "minutes",
+  "model": "Q4_K_M",
+  "t": 4,
+  "tb": 4,
+  "n": 768,
+  "g": 48,
+  "ok": true,
+  "start_ns": 19687675546300,
+  "end_ns": 19690119166100,
+  "response": {
+    "index": 0,
+    "content": "，居民小卡的制作需要在下周二前完成，但居民担心在周末前完成，会增加额外工作量。记录员在白板上写明，如果居民在周末前完成，可以将小卡作为",
+    "tokens": [],
+    "id_slot": 0,
+    "stop": true,
+    "model": "D:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "tokens_predicted": 48,
+    "tokens_evaluated": 768,
+    "generation_settings": {
+      "seed": 42,
+      "temperature": 0.0,
+      "dynatemp_range": 0.0,
+      "dynatemp_exponent": 1.0,
+      "top_k": 40,
+      "top_p": 1.0,
+      "min_p": 0.05000000074505806,
+      "top_n_sigma": -1.0,
+      "xtc_probability": 0.0,
+      "xtc_threshold": 0.10000000149011612,
+      "typical_p": 1.0,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "dry_multiplier": 0.0,
+      "dry_base": 1.75,
+      "dry_allowed_length": 2,
+      "dry_penalty_last_n": 64,
+      "dry_sequence_breakers": [
+        "\n",
+        ":",
+        "\"",
+        "*"
+      ],
+      "mirostat": 0,
+      "mirostat_tau": 5.0,
+      "mirostat_eta": 0.10000000149011612,
+      "adaptive_target": -1.0,
+      "adaptive_decay": 0.8999999761581421,
+      "stop": [],
+      "max_tokens": 48,
+      "n_predict": 48,
+      "n_keep": 0,
+      "n_discard": 0,
+      "ignore_eos": true,
+      "stream": false,
+      "logit_bias": [
+        {
+          "bias": null,
+          "token": 128247
+        },
+        {
+          "bias": null,
+          "token": 151643
+        },
+        {
+          "bias": null,
+          "token": 151645
+        },
+        {
+          "bias": null,
+          "token": 151662
+        },
+        {
+          "bias": null,
+          "token": 151663
+        },
+        {
+          "bias": null,
+          "token": 151664
+        }
+      ],
+      "n_probs": 0,
+      "min_keep": 0,
+      "grammar": "",
+      "grammar_lazy": false,
+      "grammar_triggers": [],
+      "preserved_tokens": [],
+      "chat_format": "Content-only",
+      "reasoning_format": "deepseek",
+      "reasoning_in_content": false,
+      "generation_prompt": "",
+      "samplers": [
+        "penalties",
+        "dry",
+        "top_n_sigma",
+        "top_k",
+        "typ_p",
+        "top_p",
+        "min_p",
+        "xtc",
+        "temperature"
+      ],
+      "speculative.types": "none",
+      "timings_per_token": false,
+      "post_sampling_probs": false,
+      "backend_sampling": false,
+      "lora": []
+    },
+    "prompt": "工作会议记录，议题为改造旧市场西侧的公共活动室。主持人首先确认今天只讨论空间用途、开放时段和设备维护；承包报价另行安排专场审阅。记录员在白板左侧列出到会人员代表的群体，右侧留下待补充证据的空栏。上次会议遗留的入口坡道宽度问题由勘测组先汇报，其他意见按发言顺序补记。\n\n勘测组介绍了四次现场观察。周一早晨进货车辆占用东侧巷口，周三放学时段学生在北门短暂停留，周五晚上有人在西墙边练习器乐，周日午后通行人数最少。代表们认为四次观察不足以覆盖节庆活动，因此建议记录天气、附近学校是否放假及临时摊位数量。交通志愿者表示可以提供轮值记录，但需要把行人数量与停留时间分开，不能简单把路过当成参加活动。\n\n居民代表谈到休息需求。住在二楼的老人希望晚上九点以后停止使用扩音器，同时保留安静棋桌。青年小组提出试用无线耳机排练，担心预算集中在音响设备后，没有足够经费修理桌椅。物业代表说明，目前墙内部分线路图纸不齐，在核查承载能力之前应避免确定设备种类。主持人将此议题列为电工现场勘察之后再议，并在白板上写明所需结论是安全功率范围。\n\n摊主代表提到雨天常有人把手推车临时停在活动室门廊。如果改造后取消遮雨区，货物可能堆到消防门附近。建筑师提出用可移动边界划分临时停车与候场区域，居民担心移动边界缺乏日常管理。与会者同意先用绳线在非营业时段模拟布置，邀请实际使用手推车的人走一遍；测试时记录转弯次数、最窄位置和避让空间，再决定是否制作固定设施。\n\n服务站讨论了如何收集不参加线上问卷的意见。对年长居民，可在缴费柜台放置带图示的小卡；对夜班人员，可在清晨换班时设十分钟的短访。记录员提醒，同一家庭可能以不同渠道提交相同需求，因此汇总时按意见内容合并主题，同时保留收到意见的渠道和次数。对少数使用者提出的无障碍需求，即便票数不高也要单列，后续通过现场测试核查。\n\n预算小组展示了三种支出时间表。第一种集中采购家具，第二种先完成基础照明，第三种预留部分资金供使用半年后再调整。会上没有票决定稿，要求下次把每一项的维护工时列清楚。清洁团队特别指出浅色地垫在雨季需要额外干燥时间，若储物间通风不足，易影响第二天开门。建筑师答应补充可拆洗材料与硬质地面两套方案的维护说明。\n\n关于排班，有人建议由社团轮流负责钥匙，有人希望聘请专职管理员。主持人请两方分别列出开门、巡场、闭室、故障联络四项任务的可执行办法。学生社团表示考试周可能无人到岗，需要一个替补机制。商户协会可以协助临时开门，但不承担财产保管。记录员将这两项限制写入任务表，避免后续把愿意协助误解为长期承诺。\n\n会议最后整理了可立即行动的事项。现场测量由勘测组负责，模拟布置从下周二午后开始，居民小卡由服务站在周末前设计完成。没有确定的开放时段暂时保持空白，等两轮试运营记录回来再议。下一次议程先处理安全与通道问题，然后再比较布置方案。参与者离开前各自确认所领任务，并在白板的照片上检查记录是否遗漏了前提条件。\n\n会后补记指出",
+    "has_new_line": false,
+    "truncated": false,
+    "stop_type": "limit",
+    "stopping_word": "",
+    "tokens_cached": 815,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 768,
+      "prompt_ms": 1833.14,
+      "prompt_per_token_ms": 2.386901041666667,
+      "prompt_per_second": 418.95327143589685,
+      "predicted_n": 48,
+      "predicted_ms": 594.872,
+      "predicted_per_token_ms": 12.656851063829786,
+      "predicted_per_second": 79.00859344531261
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "round": 1,
+  "text": "story",
+  "model": "Q8_0",
+  "t": 4,
+  "tb": 4,
+  "n": 768,
+  "g": 16,
+  "ok": true,
+  "start_ns": 19433960985000,
+  "end_ns": 19436317137500,
+  "response": {
+    "index": 0,
+    "content": "。她把一张纸条上的“南岸，黄昏”改成了“",
+    "tokens": [],
+    "id_slot": 0,
+    "stop": true,
+    "model": "D:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q8_0.gguf",
+    "tokens_predicted": 16,
+    "tokens_evaluated": 768,
+    "generation_settings": {
+      "seed": 42,
+      "temperature": 0.0,
+      "dynatemp_range": 0.0,
+      "dynatemp_exponent": 1.0,
+      "top_k": 40,
+      "top_p": 1.0,
+      "min_p": 0.05000000074505806,
+      "top_n_sigma": -1.0,
+      "xtc_probability": 0.0,
+      "xtc_threshold": 0.10000000149011612,
+      "typical_p": 1.0,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "dry_multiplier": 0.0,
+      "dry_base": 1.75,
+      "dry_allowed_length": 2,
+      "dry_penalty_last_n": 64,
+      "dry_sequence_breakers": [
+        "\n",
+        ":",
+        "\"",
+        "*"
+      ],
+      "mirostat": 0,
+      "mirostat_tau": 5.0,
+      "mirostat_eta": 0.10000000149011612,
+      "adaptive_target": -1.0,
+      "adaptive_decay": 0.8999999761581421,
+      "stop": [],
+      "max_tokens": 16,
+      "n_predict": 16,
+      "n_keep": 0,
+      "n_discard": 0,
+      "ignore_eos": true,
+      "stream": false,
+      "logit_bias": [
+        {
+          "bias": null,
+          "token": 128247
+        },
+        {
+          "bias": null,
+          "token": 151643
+        },
+        {
+          "bias": null,
+          "token": 151645
+        },
+        {
+          "bias": null,
+          "token": 151662
+        },
+        {
+          "bias": null,
+          "token": 151663
+        },
+        {
+          "bias": null,
+          "token": 151664
+        }
+      ],
+      "n_probs": 0,
+      "min_keep": 0,
+      "grammar": "",
+      "grammar_lazy": false,
+      "grammar_triggers": [],
+      "preserved_tokens": [],
+      "chat_format": "Content-only",
+      "reasoning_format": "deepseek",
+      "reasoning_in_content": false,
+      "generation_prompt": "",
+      "samplers": [
+        "penalties",
+        "dry",
+        "top_n_sigma",
+        "top_k",
+        "typ_p",
+        "top_p",
+        "min_p",
+        "xtc",
+        "temperature"
+      ],
+      "speculative.types": "none",
+      "timings_per_token": false,
+      "post_sampling_probs": false,
+      "backend_sampling": false,
+      "lora": []
+    },
+    "prompt": "我们第一次走进那座旧声像馆，是在雨停后的一个早晨。玻璃门后放着一张写满铅笔字的值班表，最后一栏只画了一个问号。管理员说，今年夏天他们要把散落在各层楼的磁带按来源归拢，却没人知道哪些盒子曾被借走又还了回来。我们决定先听，再登记，因为同一盘录音可能已经换过三次封面。\n\n一楼尽头有间小屋，门槛旁掉了半截木条。我把最靠外的一箱轻轻挪到桌边，里面露出一个写着“南岸，黄昏”的纸套。打开录音后，先是一阵车轮碾过碎石的声音，然后有人问最后一班渡船几点开。纸套上说那是一次民谣演出，声音却从头到尾都在码头。同行的阿简没有急着改名，她在卡片上写下“内容待核，原字照录”，又拍下纸套和胶带接头的位置。\n\n楼上的窗卡住了，风从窗框的毛毡中漏进来。老师傅搬来一只旧喇叭，接上电时先把音量调到最小。我们一面听，一面把听得见的地名另写在黄色便笺上。有个地名听起来像石桥，也有人觉得是四桥。我们在地图上找了半个钟头，决定暂时并列两种读法，等船工家属到场后再问。中午买饭回来，桌上的便笺被吹到地上，幸好每张都写了盘号。\n\n第二天，一位退休的邮递员带着旧通讯录来看我们。他没听出谁在问船，却认出远处敲铁的节奏，说那几年南岸正在修一段自行车坡道。阿简取来透明袋，请他把判断依据写在单独的小纸上。她提醒大家，亲历者记得声音，也可能把不同年份的事合在一起。我们另找了一份码头施工照片，背面铅印的日期和邮戳相差了整整一年。这个差异保留在登记表里，等以后交叉核对。\n\n到周五，馆里安排了一次不售票的试听。我们没有挑声音最清楚的片段，而是放了三段各有疑问的：第一段忽远忽近，第二段在一句话中间被剪断，第三段有两个人同时说话。窗边坐着的少女说，能不能把两个人的话分成两条字幕，让看不到口型的人也能跟上。老师傅拿出铅笔，在节目单背面试画了两排短线。她指出有两个停顿其实属于同一个说话人，现场好几个人点了点头。\n\n散场后，一位家长问为什么节目册上没有给录音起一个动听的名字。管理员把那张原字照录的卡片递给他，请他看看封面铅笔的深浅。最上层的“演出”两个字比较新，下层还有一行被橡皮擦淡了的数字。他看了一会儿，提出可以把几个名字都留在检索页，让后来的人用不同的记忆找到同一份录音。我们添了一个别名栏，又在页脚画出资料最早出现在哪一本登记簿里。\n\n傍晚我绕去码头看水位。栏杆已经换过，车轮经过时发出的声音比录音里更沉。对岸新修的步道挡住了旧坡道的位置，只留下一截石头埋在草里。我没有录一段今天的声音冒充从前，而是另开一张卡，把站立的位置、风向和时间写清。回到馆里时楼梯灯已经亮了，阿简还在给黄纸条打孔",
+    "has_new_line": false,
+    "truncated": false,
+    "stop_type": "limit",
+    "stopping_word": "",
+    "tokens_cached": 783,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 768,
+      "prompt_ms": 2074.877,
+      "prompt_per_token_ms": 2.7016627604166668,
+      "prompt_per_second": 370.142422900249,
+      "predicted_n": 16,
+      "predicted_ms": 260.741,
+      "predicted_per_token_ms": 17.38273333333333,
+      "predicted_per_second": 57.52835188942284
+    }
+  }
+}
