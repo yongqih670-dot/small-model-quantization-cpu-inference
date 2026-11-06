@@ -1,0 +1,53 @@
+{
+  "model": "Q5_K_M",
+  "sequence": 24,
+  "item": "new-20",
+  "rotation": 0,
+  "labels": [
+    "可回收",
+    "不可回收"
+  ],
+  "gold": "不可回收",
+  "ok": true,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "可回收"
+        }
+      }
+    ],
+    "created": 1793970359,
+    "model": "D:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3,
+      "prompt_tokens": 104,
+      "total_tokens": 107,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-SjaC4yFqgz0clMBqaJ6KI2T5NCiwf2hh",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 104,
+      "prompt_ms": 425.729,
+      "prompt_per_token_ms": 4.093548076923077,
+      "prompt_per_second": 244.28685854146653,
+      "predicted_n": 3,
+      "predicted_ms": 26.208,
+      "predicted_per_token_ms": 13.104,
+      "predicted_per_second": 76.31257631257631
+    }
+  },
+  "answer": "可回收",
+  "truncated": false,
+  "valid": true,
+  "correct": false,
+  "selected_position": 0
+}

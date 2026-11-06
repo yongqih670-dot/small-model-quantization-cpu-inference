@@ -1,0 +1,48 @@
+{
+  "model": "Q8_0",
+  "flags": [
+    "-ngl",
+    "0",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-c",
+    "1024",
+    "-np",
+    "1",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "--cache-reuse",
+    "0",
+    "--log-timestamps",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "54650"
+  ],
+  "model_file": "qwen2.5-0.5b-instruct-q8_0.gguf",
+  "warmup": true,
+  "power_before": {
+    "plugged_in": true,
+    "percent": 99
+  },
+  "available_mib": 19137.0,
+  "start_ns": 16214568944600,
+  "pid": 10172,
+  "ready_ns": 16215118750700,
+  "power_after": {
+    "plugged_in": true,
+    "percent": 99
+  }
+}

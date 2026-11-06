@@ -1,0 +1,53 @@
+{
+  "model": "Q8_0",
+  "sequence": 16,
+  "item": "new-11",
+  "rotation": 1,
+  "labels": [
+    "非紧急",
+    "紧急"
+  ],
+  "gold": "非紧急",
+  "ok": true,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "非紧急"
+        }
+      }
+    ],
+    "created": 1793970372,
+    "model": "D:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q8_0.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3,
+      "prompt_tokens": 105,
+      "total_tokens": 108,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-eYysdJiUb8VA6DmmnxMzvzRTgqswpQ84",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 105,
+      "prompt_ms": 259.341,
+      "prompt_per_token_ms": 2.4699142857142857,
+      "prompt_per_second": 404.8723495320832,
+      "predicted_n": 3,
+      "predicted_ms": 30.089,
+      "predicted_per_token_ms": 15.0445,
+      "predicted_per_second": 66.46947389411413
+    }
+  },
+  "answer": "非紧急",
+  "truncated": false,
+  "valid": true,
+  "correct": true,
+  "selected_position": 0
+}

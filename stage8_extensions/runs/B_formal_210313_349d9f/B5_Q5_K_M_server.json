@@ -1,0 +1,48 @@
+{
+  "model": "Q5_K_M",
+  "flags": [
+    "-ngl",
+    "0",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-c",
+    "1024",
+    "-np",
+    "1",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "--cache-reuse",
+    "0",
+    "--log-timestamps",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "65099"
+  ],
+  "model_file": "qwen2.5-0.5b-instruct-q5_k_m.gguf",
+  "warmup": true,
+  "power_before": {
+    "plugged_in": true,
+    "percent": 99
+  },
+  "available_mib": 18780.99609375,
+  "start_ns": 16278575541300,
+  "pid": 22424,
+  "ready_ns": 16279168226800,
+  "power_after": {
+    "plugged_in": true,
+    "percent": 99
+  }
+}

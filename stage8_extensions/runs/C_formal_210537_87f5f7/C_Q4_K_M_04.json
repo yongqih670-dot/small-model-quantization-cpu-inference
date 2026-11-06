@@ -1,0 +1,53 @@
+{
+  "model": "Q4_K_M",
+  "sequence": 4,
+  "item": "new-16",
+  "rotation": 0,
+  "labels": [
+    "正面",
+    "负面"
+  ],
+  "gold": "负面",
+  "ok": true,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "正面"
+        }
+      }
+    ],
+    "created": 1793970339,
+    "model": "D:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2,
+      "prompt_tokens": 98,
+      "total_tokens": 100,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-GVA1TWyoe1hkTz2ponKRgb1Yb2fSRQc9",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 98,
+      "prompt_ms": 193.708,
+      "prompt_per_token_ms": 1.976612244897959,
+      "prompt_per_second": 505.9161211720734,
+      "predicted_n": 2,
+      "predicted_ms": 14.051,
+      "predicted_per_token_ms": 14.051,
+      "predicted_per_second": 71.16931179275497
+    }
+  },
+  "answer": "正面",
+  "truncated": false,
+  "valid": true,
+  "correct": false,
+  "selected_position": 0
+}

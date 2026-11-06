@@ -1,0 +1,53 @@
+{
+  "model": "Q5_K_M",
+  "sequence": 6,
+  "item": "new-02",
+  "rotation": 0,
+  "labels": [
+    "垃圾信息",
+    "正常信息"
+  ],
+  "gold": "垃圾信息",
+  "ok": true,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "垃圾信息"
+        }
+      }
+    ],
+    "created": 1793970351,
+    "model": "D:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3,
+      "prompt_tokens": 105,
+      "total_tokens": 108,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-yBkZCKyLMnqyW6UtC7Dm7ngd5b8JKcqq",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 105,
+      "prompt_ms": 391.24,
+      "prompt_per_token_ms": 3.726095238095238,
+      "prompt_per_second": 268.3774665167161,
+      "predicted_n": 3,
+      "predicted_ms": 24.694,
+      "predicted_per_token_ms": 12.347,
+      "predicted_per_second": 80.99133392726978
+    }
+  },
+  "answer": "垃圾信息",
+  "truncated": false,
+  "valid": true,
+  "correct": true,
+  "selected_position": 0
+}
