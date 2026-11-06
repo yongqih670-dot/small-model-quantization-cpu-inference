@@ -1,0 +1,11 @@
+0.00.040.451 I srv  llama_server: initializing ...
+0.00.040.466 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.040.838 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.048.659 I srv    load_model: loading model 'D:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\stage7_local\assets\qwen2.5-0.5b-instruct-q8_0.gguf'
+STAGE7_LOAD ticks=2274694 hz=10000000 ok=1 no_alloc=1 vocab_only=0
+0.00.512.421 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+STAGE7_LOAD ticks=2880269 hz=10000000 ok=1 no_alloc=0 vocab_only=0
+0.00.613.659 I cmn          init: llama threadpool init, n_threads = 4
+0.00.727.790 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 1024, kv_unified = 'false'
+0.00.734.636 I srv  llama_server: model loaded
+0.00.734.646 I srv  llama_server: listening on http://127.0.0.1:57684

@@ -1,0 +1,51 @@
+{
+  "phase": "smoke",
+  "machine": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7",
+    "cpu": "AMD Ryzen AI 9 H 365 w/ Radeon 880M",
+    "physical_cores": 10,
+    "logical_cores": 20,
+    "ram_gib": 31.290393829345703,
+    "plugged_in": false
+  },
+  "assets": {
+    "timed_backend\\llama.dll": "8d10d5c4616e0d9b1b94f3033116428d561bb7488a14e5eafb5effdafc6ec996",
+    "timed_backend\\llama_original.dll": "88604a70f6d04d3bfbe009084ae5a464649c19e66590fc1a3003c9afd10ab5de",
+    "timed_backend\\llama-server.exe": "c9d003c9f9fa3ae5968cb50fd750af22331d4d9fdccffccfc988ca840deb3589",
+    "run_experiment.py": "700fb3f006c1cb6e3c4ad578fcef99ca95e99ab585c9242ace244f797e7aa49d"
+  },
+  "flags": [
+    "-ngl",
+    "0",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-c",
+    "1024",
+    "-np",
+    "1",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "--cache-reuse",
+    "0",
+    "--log-timestamps"
+  ],
+  "health_sleep_s": 0.01,
+  "model_sha256": {
+    "Q4_K_M": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+  },
+  "smoke_evidence": null,
+  "rounds": null
+}

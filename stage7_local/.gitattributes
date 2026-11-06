@@ -1,0 +1,2 @@
+# Preserve recorded bytes and script hashes across Git checkouts.
+* -text

@@ -1,0 +1,150 @@
+{
+  "phase": "formal",
+  "machine": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7",
+    "cpu": "AMD Ryzen AI 9 H 365 w/ Radeon 880M",
+    "physical_cores": 10,
+    "logical_cores": 20,
+    "ram_gib": 31.290393829345703,
+    "plugged_in": false
+  },
+  "assets": {
+    "timed_backend\\llama.dll": "8d10d5c4616e0d9b1b94f3033116428d561bb7488a14e5eafb5effdafc6ec996",
+    "timed_backend\\llama_original.dll": "88604a70f6d04d3bfbe009084ae5a464649c19e66590fc1a3003c9afd10ab5de",
+    "timed_backend\\llama-server.exe": "c9d003c9f9fa3ae5968cb50fd750af22331d4d9fdccffccfc988ca840deb3589",
+    "run_experiment.py": "8b80cadeb2f134ca920f9e5650755dfc7ab6bdf890185471e93692b7fec029b3"
+  },
+  "flags": [
+    "-ngl",
+    "0",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-c",
+    "1024",
+    "-np",
+    "1",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "--cache-reuse",
+    "0",
+    "--log-timestamps"
+  ],
+  "health_sleep_s": 0.01,
+  "model_sha256": {
+    "Q4_K_M": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "Q5_K_M": "041474553fcabfc2a2d67903f9d2c2e50bd92528e670da4f33b5d0ce6e59fd55",
+    "Q8_0": "ca59ca7f13d0e15a8cfa77bd17e65d24f6844b554a7b6c12e07a5f89ff76844e"
+  },
+  "smoke_evidence": "runs\\20261106_184820_smoke_569204\\summary.json",
+  "rounds": [
+    [
+      "Q4_K_M",
+      "Q5_K_M",
+      "Q8_0"
+    ],
+    [
+      "Q5_K_M",
+      "Q8_0",
+      "Q4_K_M"
+    ],
+    [
+      "Q8_0",
+      "Q4_K_M",
+      "Q5_K_M"
+    ],
+    [
+      "Q4_K_M",
+      "Q8_0",
+      "Q5_K_M"
+    ],
+    [
+      "Q8_0",
+      "Q5_K_M",
+      "Q4_K_M"
+    ],
+    [
+      "Q5_K_M",
+      "Q4_K_M",
+      "Q8_0"
+    ]
+  ],
+  "passed": true,
+  "summary": {
+    "Q4_K_M": {
+      "attempts": 6,
+      "valid": 6,
+      "metrics": {
+        "load_ms": {
+          "n": 6,
+          "mean": 297.20373333333333,
+          "sd": 5.40005236147453
+        },
+        "init_ms": {
+          "n": 6,
+          "mean": 685.9456666666666,
+          "sd": 22.931008426727935
+        },
+        "ready_ms": {
+          "n": 6,
+          "mean": 768.5443000003337,
+          "sd": 27.95189910377749
+        }
+      }
+    },
+    "Q5_K_M": {
+      "attempts": 6,
+      "valid": 6,
+      "metrics": {
+        "load_ms": {
+          "n": 6,
+          "mean": 275.68251666666663,
+          "sd": 8.191403984279296
+        },
+        "init_ms": {
+          "n": 6,
+          "mean": 674.4806666666667,
+          "sd": 20.10545276950178
+        },
+        "ready_ms": {
+          "n": 6,
+          "mean": 754.2310166672905,
+          "sd": 16.67400983515564
+        }
+      }
+    },
+    "Q8_0": {
+      "attempts": 6,
+      "valid": 6,
+      "metrics": {
+        "load_ms": {
+          "n": 6,
+          "mean": 282.36045,
+          "sd": 3.3138433763532085
+        },
+        "init_ms": {
+          "n": 6,
+          "mean": 688.5121666666666,
+          "sd": 19.743504363882952
+        },
+        "ready_ms": {
+          "n": 6,
+          "mean": 773.0087000005975,
+          "sd": 27.845103452439194
+        }
+      }
+    }
+  }
+}
