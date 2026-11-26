@@ -13,8 +13,6 @@
 [Stage 7 实验报告与复现方法](stage7_local/README.md) · [18 次正式启动的原始测量表](stage7_local/runs/20261106_191932_formal_4a2840/measurements.csv) · [Stage 6 错误诊断修订报告](docs/STAGE6_ANALYSIS_REVISION.md)
 Stage 7 在 Ryzen AI 9 H 365 上比较 Q4、Q5、Q8，文件预读后各启动 6 次。各阶段的机器、负载与测量边界见对应报告。
 
-**最终报告：[docs/FINAL_REPORT.md](docs/FINAL_REPORT.md)**｜证据索引：[docs/EVIDENCE_INDEX.md](docs/EVIDENCE_INDEX.md)｜答辩讲稿：[docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md)
-
 - 指标定义与测量边界：[docs/EXPERIMENT_PROTOCOL.md](docs/EXPERIMENT_PROTOCOL.md)
 - Stage 1 问题与修正对照：[docs/stage2_corrections.md](docs/stage2_corrections.md)
 - 冻结哈希（数据集/模板/评分器/配置）：[datasets/frozen_hashes.json](datasets/frozen_hashes.json)
@@ -164,9 +162,8 @@ cleanup_success ∧ cache_reuse_check.passed ∧ performance.performance_record_
   正式对照三矩阵执行与汇总（`results/summary/stage3_summary.json`、`plots/`）
 - ✅ Stage 4：分析修订（`docs/stage3_analysis_revision.md`、`stage3rev_*`）+
   线程实验（T∈{1,2,4,8,16,32}×5轮：90 个 bench 测量 + 150 条计时请求）
-- ✅ Stage 5：离线审计（v1 40 项 / v2 31 项核验全通过）、最终报告、
-  演示材料、交付打包（`delivery/` rev1–rev4，逐文件全量哈希核验；
-  Stage 4 冻结材料表述勘误见 `docs/STAGE5_ERRATUM.md`）
+- ✅ Stage 5：[离线审计](results/summary/audit_stage5_v2/)（v1 40 项 / v2 31 项核验全通过）
+  与 [Stage 4 冻结材料勘误](docs/STAGE5_ERRATUM.md)
 
 ## 命令一览（⚠ = 会实际启动模型推理）
 

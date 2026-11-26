@@ -17,6 +17,15 @@ logs/*.tmp
 logs/server_*.log
 logs/*.part
 
+# ---- 本地课程与答辩材料 ----
+/delivery/
+/docs/FINAL_REPORT.md
+/docs/EVIDENCE_INDEX.md
+/docs/DEMO_SCRIPT.md
+/课题14_汇报PPT.pptx
+/计算机技术与应用_大模型期末大作业课题指南.docx
+/guide_extract.txt
+
 # ---- 系统杂项 ----
 Thumbs.db
 .DS_Store
