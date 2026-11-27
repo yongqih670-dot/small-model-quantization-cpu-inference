@@ -1,0 +1,145 @@
+{
+  "batch": 6,
+  "model": "Q8_0",
+  "id": "q0593",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：换为秒，仅数字\n要求：只输出转换结果，不要任何说明。\n\n输入：木架穿槽测时为一分三十八秒。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：换为秒，仅数字\n要求：只输出转换结果，不要任何说明。\n\n输入：木架穿槽测时为一分三十八秒。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      71134,
+      17714,
+      45918,
+      3837,
+      99373,
+      82587,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      75405,
+      99630,
+      99621,
+      102776,
+      99507,
+      13343,
+      17714,
+      103238,
+      44991,
+      101526,
+      45918,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:08:43.335585+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "38秒"
+          }
+        }
+      ],
+      "created": 1795795723,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 66,
+        "total_tokens": 70,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-9bfAuGQEjPDakxtrx5XfcJZ0gOLQ1EM5",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 66,
+        "prompt_ms": 107.532,
+        "prompt_per_token_ms": 1.6292727272727272,
+        "prompt_per_second": 613.7707845106573,
+        "predicted_n": 4,
+        "predicted_ms": 36.113,
+        "predicted_per_token_ms": 12.037666666666667,
+        "predicted_per_second": 83.07257774208733
+      }
+    },
+    "client_e2e_s": 0.16297289985232055,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "batch": 13,
+  "model": "Q5_K_M",
+  "id": "q0612",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：按先向右5、再向下2移动，右为x正上为y正，输出“(x,y)”\n要求：只输出转换结果，不要任何说明。\n\n输入：插土地签的起始点为(-2,3)。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：按先向右5、再向下2移动，右为x正上为y正，输出“(x,y)”\n要求：只输出转换结果，不要任何说明。\n\n输入：插土地签的起始点为(-2,3)。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      59879,
+      60726,
+      69041,
+      64817,
+      20,
+      5373,
+      87256,
+      111228,
+      17,
+      101148,
+      3837,
+      64817,
+      17714,
+      87,
+      36556,
+      17447,
+      17714,
+      88,
+      36556,
+      3837,
+      66017,
+      70170,
+      87,
+      7358,
+      8,
+      88774,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      101255,
+      101962,
+      61755,
+      9370,
+      71618,
+      26606,
+      27442,
+      17714,
+      4080,
+      17,
+      11,
+      18,
+      8,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:16:39.923171+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(-1,1)"
+          }
+        }
+      ],
+      "created": 1795796200,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 87,
+        "total_tokens": 93,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-YzMw3gCkLf4ER8LpCGuqON41dm5Ccc1L",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 87,
+        "prompt_ms": 226.41,
+        "prompt_per_token_ms": 2.602413793103448,
+        "prompt_per_second": 384.25864581953095,
+        "predicted_n": 6,
+        "predicted_ms": 57.212,
+        "predicted_per_token_ms": 11.442400000000001,
+        "predicted_per_second": 87.39425295392576
+      }
+    },
+    "client_e2e_s": 0.2891324998345226,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

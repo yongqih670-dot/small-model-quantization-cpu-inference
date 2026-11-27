@@ -1,0 +1,157 @@
+{
+  "batch": 2,
+  "model": "FP16",
+  "id": "q0491",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：输出指定年月日 YYYY-MM-DD，各位数补零\n要求：只输出转换结果，不要任何说明。\n\n输入：仓库湿布检修记在2028年2月29日。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：输出指定年月日 YYYY-MM-DD，各位数补零\n要求：只输出转换结果，不要任何说明。\n\n输入：仓库湿布检修记在2028年2月29日。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      66017,
+      105146,
+      7948,
+      9754,
+      8903,
+      60591,
+      18506,
+      40175,
+      3837,
+      104280,
+      8863,
+      99622,
+      99822,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      106871,
+      100102,
+      51827,
+      112438,
+      40814,
+      18493,
+      17,
+      15,
+      17,
+      23,
+      7948,
+      17,
+      9754,
+      17,
+      24,
+      8903,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:04:59.110120+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "2028-02-29"
+          }
+        }
+      ],
+      "created": 1795795499,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 78,
+        "total_tokens": 89,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-6byqCFTXf8S27cn027Bgjwy0KfSg6B03",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 78,
+        "prompt_ms": 96.077,
+        "prompt_per_token_ms": 1.2317564102564103,
+        "prompt_per_second": 811.848829584604,
+        "predicted_n": 11,
+        "predicted_ms": 202.638,
+        "predicted_per_token_ms": 20.2638,
+        "predicted_per_second": 49.34908556144454
+      }
+    },
+    "client_e2e_s": 0.30401419987902045,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": true,
+    "content_correct": true,
+    "correct": true
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "batch": 5,
+  "model": "Q5_K_M",
+  "id": "q0506",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：把标明的短边厘米数换算为米，只写数字\n要求：只输出转换结果，不要任何说明。\n\n输入：旧地毯标签上写短边64厘米、长边160厘米。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：把标明的短边厘米数换算为米，只写数字\n要求：只输出转换结果，不要任何说明。\n\n输入：旧地毯标签上写短边64厘米、长边160厘米。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      99360,
+      117932,
+      9370,
+      99534,
+      99319,
+      105887,
+      8863,
+      71134,
+      69103,
+      17714,
+      72261,
+      3837,
+      91680,
+      61443,
+      82587,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      100052,
+      112110,
+      105151,
+      17447,
+      61443,
+      99534,
+      99319,
+      21,
+      19,
+      105887,
+      5373,
+      45861,
+      99319,
+      16,
+      21,
+      15,
+      105887,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:08:17.185797+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "6.4"
+          }
+        }
+      ],
+      "created": 1795795697,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 81,
+        "total_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-pm3BRG3645g5aufJeGP3IFZb5BFk1yQt",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 81,
+        "prompt_ms": 197.725,
+        "prompt_per_token_ms": 2.441049382716049,
+        "prompt_per_second": 409.6598811480592,
+        "predicted_n": 4,
+        "predicted_ms": 31.139,
+        "predicted_per_token_ms": 10.379666666666667,
+        "predicted_per_second": 96.342207521115
+      }
+    },
+    "client_e2e_s": 0.24888759991154075,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

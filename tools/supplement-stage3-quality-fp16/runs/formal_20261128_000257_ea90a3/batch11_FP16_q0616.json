@@ -1,0 +1,162 @@
+{
+  "batch": 11,
+  "model": "FP16",
+  "id": "q0616",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：输出目标位置相对于当前位置的方向，使用“上”“下”之一\n要求：只输出转换结果，不要任何说明。\n\n输入：入料台坐标的高度为9，预置槽高为6，水平位置相同。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：输出目标位置相对于当前位置的方向，使用“上”“下”之一\n要求：只输出转换结果，不要任何说明。\n\n输入：入料台坐标的高度为9，预置槽高为6，水平位置相同。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      66017,
+      100160,
+      81812,
+      108864,
+      108839,
+      105933,
+      3837,
+      37029,
+      2073,
+      17447,
+      854,
+      2073,
+      16872,
+      854,
+      100653,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      17254,
+      41406,
+      53938,
+      99901,
+      107641,
+      101251,
+      17714,
+      24,
+      3837,
+      98841,
+      21596,
+      102776,
+      44636,
+      17714,
+      21,
+      3837,
+      100021,
+      81812,
+      102486,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:14:49.502145+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "上"
+          }
+        }
+      ],
+      "created": 1795796089,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 83,
+        "total_tokens": 85,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-xGnEC0nFe7pVcRwtCGNCVq3JmdDO99is",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 98.125,
+        "prompt_per_token_ms": 1.1822289156626506,
+        "prompt_per_second": 845.8598726114649,
+        "predicted_n": 2,
+        "predicted_ms": 20.799,
+        "predicted_per_token_ms": 20.799,
+        "predicted_per_second": 48.07923457858551
+      }
+    },
+    "client_e2e_s": 0.1373805000912398,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

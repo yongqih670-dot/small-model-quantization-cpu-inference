@@ -1,0 +1,155 @@
+{
+  "batch": 11,
+  "model": "Q5_K_M",
+  "id": "q0519",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：输出平均每个匣子的重量（克），无单位\n要求：只输出转换结果，不要任何说明。\n\n输入：四个完全同重的入档布匣总重504克。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：输出平均每个匣子的重量（克），无单位\n要求：只输出转换结果，不要任何说明。\n\n输入：四个完全同重的入档布匣总重504克。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      66017,
+      101200,
+      103991,
+      119143,
+      44729,
+      9370,
+      106102,
+      9909,
+      99316,
+      48272,
+      42192,
+      75317,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      100802,
+      100372,
+      40916,
+      29258,
+      9370,
+      17254,
+      100104,
+      51827,
+      119143,
+      59743,
+      29258,
+      20,
+      15,
+      19,
+      99316,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:14:36.103391+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "252.0"
+          }
+        }
+      ],
+      "created": 1795796076,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 76,
+        "total_tokens": 82,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-O49meu0eHuIz9tHylzmBfa7F8z6JKL07",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 76,
+        "prompt_ms": 188.352,
+        "prompt_per_token_ms": 2.4783157894736845,
+        "prompt_per_second": 403.4998301053347,
+        "predicted_n": 6,
+        "predicted_ms": 56.373,
+        "predicted_per_token_ms": 11.2746,
+        "predicted_per_second": 88.69494261437212
+      }
+    },
+    "client_e2e_s": 0.2660763000603765,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

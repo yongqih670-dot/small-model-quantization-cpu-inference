@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-27T23:40:17.799699+08:00",
+  "hashes": {
+    "tools/supplement-stage10-g-1616/collect.py": "00ac8305bf9e2f6c8bbdbb79e81038c69e249c720e9612dd46f12f9d470d73e6",
+    "tools/supplement-stage10-g-1616/analyze.py": "0d478ad3d9f8f21730a468f8b563fcb30228a9e813ba6178a55a0ab43b43e34b",
+    "tools/supplement-stage10-g-1616/PLAN.md": "a6b24efce5b857d7c95e9297fd0fa0704e56ec302e92e73506649895aeb8a9b3",
+    "tools/supplement-stage10-g-1616/schedule.json": "8c605d244b4cf7f4a368eda4a80d9df3649063a41d9e196b77c37acb4a18ccf9",
+    "stage9_deep/bench.py": "de226eb41c8068b25850f1665d98c5702a9ee1a38314c7512fe2bd0185fae59a",
+    "stage8_extensions/runs/B_formal_224751_9a1c64/token_ids.json": "e7af4dbeafbbb5487f1f17451f5ad8bf72c68b012e855c31ef54d122eb9b0325",
+    "stage8_extensions/common.py": "5c6de3e42b605c2dbe746674b42d8be7dcd7db5685751338b2262a64a58aa763",
+    "stage8_extensions/inputs.json": "afe6964c626dd74af9302a0252e0d1f7032e12847d32a646888e20666fdd61f6",
+    "stage8_extensions/results/summary.json": "a33382ba46d8c38c3646ca8c356e0ad069d86da4868aa423188c7c1ca92fee5b",
+    "stage7_local/run_experiment.py": "8b80cadeb2f134ca920f9e5650755dfc7ab6bdf890185471e93692b7fec029b3",
+    "stage7_local/model_manifest.json": "839a9aed0ea8c372292fa0ef2c6700af1d70c7e53e32713e9095364cf48b1662",
+    "environment/system_info_v2.json": "0440a7a7bd6bc2d49149825aca07dc1a6ec9320fb33cfd48fd62ee7ddf8d84b7",
+    "stage10_validation/runs/G_formal_20261127_230001_c5eb06/completion.json": "f165d32f1b15447047230dfc64e4dbabd30a2949b7c278a429901d02e2b6fadc",
+    "stage10_validation/results/G_paired.csv": "55a062278664ad355d01fa20538ecab3788871cfd528ef764ab981c09e081479"
+  }
+}

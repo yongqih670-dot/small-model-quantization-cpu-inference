@@ -1,0 +1,167 @@
+{
+  "batch": 9,
+  "model": "Q5_K_M",
+  "id": "q0587",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：按 F=1.8×C+32 转为华氏，保留一位小数\n要求：只输出转换结果，不要任何说明。\n\n输入：架空廊实测7.5摄氏度，需用华氏显示。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：按 F=1.8×C+32 转为华氏，保留一位小数\n要求：只输出转换结果，不要任何说明。\n\n输入：架空廊实测7.5摄氏度，需用华氏显示。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      59879,
+      434,
+      28,
+      16,
+      13,
+      23,
+      17568,
+      34,
+      10,
+      18,
+      17,
+      8908,
+      121,
+      105,
+      17714,
+      85361,
+      104057,
+      3837,
+      104465,
+      101961,
+      30709,
+      8863,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      99630,
+      34794,
+      101701,
+      39973,
+      99507,
+      22,
+      13,
+      20,
+      100099,
+      104057,
+      26381,
+      3837,
+      58362,
+      11622,
+      85361,
+      104057,
+      54021,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:12:53.043142+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "162.0"
+          }
+        }
+      ],
+      "created": 1795795973,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 88,
+        "total_tokens": 94,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-P4sqom450pfRZQUzDasx9wfdCAyyCgnY",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 88,
+        "prompt_ms": 221.464,
+        "prompt_per_token_ms": 2.516636363636364,
+        "prompt_per_second": 397.35577791424345,
+        "predicted_n": 6,
+        "predicted_ms": 54.511,
+        "predicted_per_token_ms": 10.9022,
+        "predicted_per_second": 91.72460604281704
+      }
+    },
+    "client_e2e_s": 0.28083540010266006,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "batch": 15,
+  "model": "Q8_0",
+  "id": "q0526",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：把点号两边的序号互换，分隔仍用点号\n要求：只输出转换结果，不要任何说明。\n\n输入：遮光器原有凭签17.38。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：把点号两边的序号互换，分隔仍用点号\n要求：只输出转换结果，不要任何说明。\n\n输入：遮光器原有凭签17.38。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      99360,
+      27442,
+      17992,
+      110159,
+      9370,
+      32044,
+      17992,
+      99524,
+      71134,
+      3837,
+      17177,
+      99859,
+      99754,
+      11622,
+      27442,
+      17992,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      106515,
+      99225,
+      31548,
+      108888,
+      100284,
+      61755,
+      16,
+      22,
+      13,
+      18,
+      23,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:18:46.248701+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "遮光器原有凭签17.38"
+          }
+        }
+      ],
+      "created": 1795796326,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 76,
+        "total_tokens": 88,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-l2vApwLgna2IHpv7yVHJdfj2wObesTxv",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 76,
+        "prompt_ms": 111.989,
+        "prompt_per_token_ms": 1.4735394736842107,
+        "prompt_per_second": 678.6380805257659,
+        "predicted_n": 12,
+        "predicted_ms": 138.062,
+        "predicted_per_token_ms": 12.55109090909091,
+        "predicted_per_second": 79.67434920542944
+      }
+    },
+    "client_e2e_s": 0.2548245000652969,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

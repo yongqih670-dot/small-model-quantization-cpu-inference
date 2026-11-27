@@ -1,0 +1,151 @@
+{
+  "batch": 14,
+  "model": "Q4_K_M",
+  "id": "q0576",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：仅取分号前的文本，不带分号\n要求：只输出转换结果，不要任何说明。\n\n输入：线路配置字段为靠壁窗；短桥外。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：仅取分号前的文本，不带分号\n要求：只输出转换结果，不要任何说明。\n\n输入：线路配置字段为靠壁窗；短桥外。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      99373,
+      18158,
+      17177,
+      17992,
+      24562,
+      9370,
+      108704,
+      3837,
+      16530,
+      99278,
+      17177,
+      17992,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      104634,
+      85767,
+      44931,
+      17714,
+      99904,
+      100265,
+      100237,
+      24968,
+      99534,
+      100391,
+      47815,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:18:00.002371+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "靠壁窗"
+          }
+        }
+      ],
+      "created": 1795796280,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 72,
+        "total_tokens": 76,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-313UBRrDovs6Nr1uEFEzrVohVEynHbvZ",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 72,
+        "prompt_ms": 110.088,
+        "prompt_per_token_ms": 1.529,
+        "prompt_per_second": 654.0222367560498,
+        "predicted_n": 4,
+        "predicted_ms": 30.717,
+        "predicted_per_token_ms": 10.238999999999999,
+        "predicted_per_second": 97.66578767457759
+      }
+    },
+    "client_e2e_s": 0.15969210001640022,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": true,
+    "content_correct": true,
+    "correct": true
+  }
+}

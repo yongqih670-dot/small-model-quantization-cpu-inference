@@ -1,0 +1,155 @@
+{
+  "batch": 1,
+  "model": "FP16",
+  "id": "q0530",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：按“区域/序号”写出登记值，序号补三位\n要求：只输出转换结果，不要任何说明。\n\n输入：交接人说区域是副棚，序号为9。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：按“区域/序号”写出登记值，序号补三位\n要求：只输出转换结果，不要任何说明。\n\n输入：交接人说区域是副棚，序号为9。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      59879,
+      2073,
+      101065,
+      14,
+      32044,
+      17992,
+      854,
+      112672,
+      104141,
+      25511,
+      3837,
+      32044,
+      17992,
+      99622,
+      103359,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      113989,
+      17340,
+      36587,
+      101065,
+      20412,
+      99310,
+      103031,
+      3837,
+      32044,
+      17992,
+      17714,
+      24,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:03:43.566404+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "副棚9"
+          }
+        }
+      ],
+      "created": 1795795423,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 76,
+        "total_tokens": 80,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-2B3hYR2x64MJhdlWZ9WaEM2SiNOliu5M",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 76,
+        "prompt_ms": 81.861,
+        "prompt_per_token_ms": 1.0771184210526317,
+        "prompt_per_second": 928.4030246393276,
+        "predicted_n": 4,
+        "predicted_ms": 65.917,
+        "predicted_per_token_ms": 21.972333333333335,
+        "predicted_per_second": 45.51177996571446
+      }
+    },
+    "client_e2e_s": 0.16878570010885596,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

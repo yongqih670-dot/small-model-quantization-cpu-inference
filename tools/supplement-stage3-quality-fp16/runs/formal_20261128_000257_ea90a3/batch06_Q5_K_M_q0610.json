@@ -1,0 +1,154 @@
+{
+  "batch": 6,
+  "model": "Q5_K_M",
+  "id": "q0610",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：用总额除以人数，每人按两位小数给出\n要求：只输出转换结果，不要任何说明。\n\n输入：四名参与者支付工棚净费87元，平摊。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：用总额除以人数，每人按两位小数给出\n要求：只输出转换结果，不要任何说明。\n\n输入：四名参与者支付工棚净费87元，平摊。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      11622,
+      105298,
+      20755,
+      23031,
+      104346,
+      3837,
+      108156,
+      59879,
+      105352,
+      30709,
+      8863,
+      107485,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      63703,
+      13072,
+      111842,
+      68262,
+      48692,
+      103031,
+      99547,
+      80268,
+      23,
+      22,
+      23305,
+      3837,
+      49111,
+      105199,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:09:13.376961+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "2.05元"
+          }
+        }
+      ],
+      "created": 1795795753,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 75,
+        "total_tokens": 81,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-SLwKRjcxrLU0qArNdSIxfFBKNq1leq2Y",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 75,
+        "prompt_ms": 192.146,
+        "prompt_per_token_ms": 2.5619466666666666,
+        "prompt_per_second": 390.3281879404203,
+        "predicted_n": 6,
+        "predicted_ms": 54.224,
+        "predicted_per_token_ms": 10.8448,
+        "predicted_per_second": 92.21009147241075
+      }
+    },
+    "client_e2e_s": 0.2675612000748515,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

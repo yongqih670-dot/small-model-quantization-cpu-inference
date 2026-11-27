@@ -8,3 +8,9 @@ tests/fixtures/** -text
 # Stage 6 预注册配置与脚本按字节原样存取（冻结哈希跨检出稳定）
 configs/stage6_*.json -text
 scripts/stage6_*.py -text
+# 补测采用冻结时的原始字节
+tools/supplement-stage10-g-1616/** -text
+tools/supplement-stage3-quality-fp16/** -text
+scripts/run_tasks.py text eol=crlf
+scripts/llama_server_ctl.py text eol=crlf
+models/model_manifest_v3.json text eol=crlf

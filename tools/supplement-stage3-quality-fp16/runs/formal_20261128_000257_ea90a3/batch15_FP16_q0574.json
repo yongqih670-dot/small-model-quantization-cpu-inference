@@ -1,0 +1,149 @@
+{
+  "batch": 15,
+  "model": "FP16",
+  "id": "q0574",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：保留字符串的前三个汉字\n要求：只输出转换结果，不要任何说明。\n\n输入：制图便签写曲檐灯回廊，题要求缩写。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：保留字符串的前三个汉字\n要求：只输出转换结果，不要任何说明。\n\n输入：制图便签写曲檐灯回廊，题要求缩写。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      104465,
+      66558,
+      9370,
+      24562,
+      101124,
+      114311,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      43316,
+      28029,
+      99364,
+      61755,
+      61443,
+      100036,
+      114939,
+      100183,
+      18397,
+      101701,
+      3837,
+      33872,
+      101882,
+      99872,
+      61443,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:19:09.533700+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "制图便签写曲檐灯回廊"
+          }
+        }
+      ],
+      "created": 1795796349,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 70,
+        "total_tokens": 81,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-zso1RK9k7NovBPe7ejuxx0iT6Y62WP8P",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 70,
+        "prompt_ms": 89.334,
+        "prompt_per_token_ms": 1.2762,
+        "prompt_per_second": 783.5762419683435,
+        "predicted_n": 11,
+        "predicted_ms": 205.433,
+        "predicted_per_token_ms": 20.5433,
+        "predicted_per_second": 48.67767106550555
+      }
+    },
+    "client_e2e_s": 0.29981719981878996,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

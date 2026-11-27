@@ -1,0 +1,17 @@
+[
+  {
+    "batch": 0,
+    "tasks": [
+      "pilot1",
+      "pilot2",
+      "pilot3",
+      "pilot4"
+    ],
+    "models": [
+      "Q4_K_M",
+      "Q5_K_M",
+      "Q8_0",
+      "FP16"
+    ]
+  }
+]

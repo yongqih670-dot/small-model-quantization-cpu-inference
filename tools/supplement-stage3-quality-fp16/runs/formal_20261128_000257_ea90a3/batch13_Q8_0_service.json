@@ -1,0 +1,193 @@
+{
+  "batch": 13,
+  "model": "Q8_0",
+  "started": "2026-11-28T00:16:43.816599+08:00",
+  "power_before": {
+    "plugged": true,
+    "percent": 99
+  },
+  "cache_check": {
+    "passed": true,
+    "requests": [
+      {
+        "ok": true,
+        "http_status": 200,
+        "body": {
+          "choices": [
+            {
+              "finish_reason": "length",
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Hello"
+              }
+            }
+          ],
+          "created": 1795796204,
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion",
+          "usage": {
+            "completion_tokens": 1,
+            "prompt_tokens": 30,
+            "total_tokens": 31,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "id": "chatcmpl-6oi5WZMG7kWubzS0q1ngEO62pWibGx0K",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 30,
+            "prompt_ms": 64.731,
+            "prompt_per_token_ms": 2.1576999999999997,
+            "prompt_per_second": 463.45645826574594,
+            "predicted_n": 1,
+            "predicted_ms": 0.001,
+            "predicted_per_token_ms": 0.0,
+            "predicted_per_second": 0.0
+          }
+        },
+        "client_e2e_s": 0.0689009998459369,
+        "error": null,
+        "error_type": null
+      },
+      {
+        "ok": true,
+        "http_status": 200,
+        "body": {
+          "choices": [
+            {
+              "finish_reason": "length",
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Hello"
+              }
+            }
+          ],
+          "created": 1795796204,
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion",
+          "usage": {
+            "completion_tokens": 1,
+            "prompt_tokens": 30,
+            "total_tokens": 31,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "id": "chatcmpl-mzPjlQ1wxIjyYyfoThNnDTjgCIJxZSpd",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 30,
+            "prompt_ms": 60.457,
+            "prompt_per_token_ms": 2.015233333333333,
+            "prompt_per_second": 496.2204542071224,
+            "predicted_n": 1,
+            "predicted_ms": 0.001,
+            "predicted_per_token_ms": 0.0,
+            "predicted_per_second": 0.0
+          }
+        },
+        "client_e2e_s": 0.08706849999725819,
+        "error": null,
+        "error_type": null
+      },
+      {
+        "ok": true,
+        "http_status": 200,
+        "body": {
+          "choices": [
+            {
+              "finish_reason": "length",
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Hello"
+              }
+            }
+          ],
+          "created": 1795796204,
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion",
+          "usage": {
+            "completion_tokens": 1,
+            "prompt_tokens": 30,
+            "total_tokens": 31,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "id": "chatcmpl-ccaHGY0qSbJviQsWFz1uFHPVt3nMSztm",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 30,
+            "prompt_ms": 57.079,
+            "prompt_per_token_ms": 1.9026333333333334,
+            "prompt_per_second": 525.5873438567598,
+            "predicted_n": 1,
+            "predicted_ms": 0.001,
+            "predicted_per_token_ms": 0.0,
+            "predicted_per_second": 0.0
+          }
+        },
+        "client_e2e_s": 0.0744595997966826,
+        "error": null,
+        "error_type": null
+      }
+    ]
+  },
+  "ready": {
+    "ok": true,
+    "error": null
+  },
+  "pid": 88332,
+  "argv": [
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\llama.cpp\\llama-server.exe",
+    "-m",
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+    "--parallel",
+    "1",
+    "-c",
+    "1024",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "-ngl",
+    "0",
+    "--cache-reuse",
+    "0",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "1760"
+  ],
+  "cleanup": {
+    "attempted": true,
+    "method": "terminate()=Windows TerminateProcess(主动强制终止)",
+    "server_self_exited": false,
+    "confirmed_exit": true,
+    "exit_code": 1
+  },
+  "power_after": {
+    "plugged": true,
+    "percent": 99
+  },
+  "finished": "2026-11-28T00:16:59.657773+08:00"
+}

@@ -1,0 +1,11 @@
+{
+  "group": "r37_c2",
+  "block": 7,
+  "round": 37,
+  "config": [
+    8,
+    16
+  ],
+  "ok": true,
+  "reached_ready": true
+}

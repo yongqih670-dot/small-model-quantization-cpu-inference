@@ -1,0 +1,130 @@
+{
+  "phase": "pilot",
+  "started": "2026-11-28T00:02:43.115674+08:00",
+  "machine": {
+    "cpu": "AMD Ryzen 9 9955HX 16-Core Processor",
+    "os": "Windows-11-10.0.26100-SP0",
+    "python": "3.12.7",
+    "cores": 16,
+    "threads": 32,
+    "ram_bytes": 33483378688,
+    "power": {
+      "plugged": true,
+      "percent": 99
+    }
+  },
+  "assets": {
+    "Q4_K_M": {
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+      "size_bytes": 491400032,
+      "gguf_version": 3,
+      "tensor_count": 291,
+      "file_type": 15,
+      "tokenizer_keys": {
+        "tokenizer.ggml.model": "35b5fa96b5f7fc8c0addda0366ee9029c0e3f4c0fb1b604032bc88054dc127a6",
+        "tokenizer.ggml.pre": "990e4f305ba24d6340e5c629e476833c725021a877cda723fcf86969ec73d2b6",
+        "tokenizer.ggml.tokens": "472ef7f46405c14df0f3b3c29ca6acf94ba51409f55861e532e2e5d42f48a27e",
+        "tokenizer.ggml.token_type": "7447a6647d69a6d309d2ed8d314a3431daa753bce32c26589384b425e212bce0",
+        "tokenizer.ggml.merges": "2ff617ef6beefbb249e7980b0d7fd31eedede40d318b4f367342570684649bd7",
+        "tokenizer.ggml.eos_token_id": "2dcd78369d013b23ca81d96ca6caf071005d25ff64d73bd03d3eec7638013881",
+        "tokenizer.ggml.padding_token_id": "0428ddfd7c56d83be46c913a2c41edce49c3087e344c19ebf0ad42bedc99e0f7",
+        "tokenizer.ggml.bos_token_id": "0428ddfd7c56d83be46c913a2c41edce49c3087e344c19ebf0ad42bedc99e0f7",
+        "tokenizer.ggml.add_bos_token": "e16ab60aa1eeb7074ca590e8a95bc4ce6264aa74f4f79359e580ede60b892bbe",
+        "tokenizer.chat_template": "6f495a91b505269ba6d5e819a1d16495ca38ef157e17e39e2c06f36491cfbcf9"
+      }
+    },
+    "Q5_K_M": {
+      "sha256": "041474553fcabfc2a2d67903f9d2c2e50bd92528e670da4f33b5d0ce6e59fd55",
+      "size_bytes": 522186592,
+      "gguf_version": 3,
+      "tensor_count": 291,
+      "file_type": 17,
+      "tokenizer_keys": {
+        "tokenizer.ggml.model": "35b5fa96b5f7fc8c0addda0366ee9029c0e3f4c0fb1b604032bc88054dc127a6",
+        "tokenizer.ggml.pre": "990e4f305ba24d6340e5c629e476833c725021a877cda723fcf86969ec73d2b6",
+        "tokenizer.ggml.tokens": "472ef7f46405c14df0f3b3c29ca6acf94ba51409f55861e532e2e5d42f48a27e",
+        "tokenizer.ggml.token_type": "7447a6647d69a6d309d2ed8d314a3431daa753bce32c26589384b425e212bce0",
+        "tokenizer.ggml.merges": "2ff617ef6beefbb249e7980b0d7fd31eedede40d318b4f367342570684649bd7",
+        "tokenizer.ggml.eos_token_id": "2dcd78369d013b23ca81d96ca6caf071005d25ff64d73bd03d3eec7638013881",
+        "tokenizer.ggml.padding_token_id": "0428ddfd7c56d83be46c913a2c41edce49c3087e344c19ebf0ad42bedc99e0f7",
+        "tokenizer.ggml.bos_token_id": "0428ddfd7c56d83be46c913a2c41edce49c3087e344c19ebf0ad42bedc99e0f7",
+        "tokenizer.ggml.add_bos_token": "e16ab60aa1eeb7074ca590e8a95bc4ce6264aa74f4f79359e580ede60b892bbe",
+        "tokenizer.chat_template": "6f495a91b505269ba6d5e819a1d16495ca38ef157e17e39e2c06f36491cfbcf9"
+      }
+    },
+    "Q8_0": {
+      "sha256": "ca59ca7f13d0e15a8cfa77bd17e65d24f6844b554a7b6c12e07a5f89ff76844e",
+      "size_bytes": 675710816,
+      "gguf_version": 3,
+      "tensor_count": 291,
+      "file_type": 7,
+      "tokenizer_keys": {
+        "tokenizer.ggml.model": "35b5fa96b5f7fc8c0addda0366ee9029c0e3f4c0fb1b604032bc88054dc127a6",
+        "tokenizer.ggml.pre": "990e4f305ba24d6340e5c629e476833c725021a877cda723fcf86969ec73d2b6",
+        "tokenizer.ggml.tokens": "472ef7f46405c14df0f3b3c29ca6acf94ba51409f55861e532e2e5d42f48a27e",
+        "tokenizer.ggml.token_type": "7447a6647d69a6d309d2ed8d314a3431daa753bce32c26589384b425e212bce0",
+        "tokenizer.ggml.merges": "2ff617ef6beefbb249e7980b0d7fd31eedede40d318b4f367342570684649bd7",
+        "tokenizer.ggml.eos_token_id": "2dcd78369d013b23ca81d96ca6caf071005d25ff64d73bd03d3eec7638013881",
+        "tokenizer.ggml.padding_token_id": "0428ddfd7c56d83be46c913a2c41edce49c3087e344c19ebf0ad42bedc99e0f7",
+        "tokenizer.ggml.bos_token_id": "0428ddfd7c56d83be46c913a2c41edce49c3087e344c19ebf0ad42bedc99e0f7",
+        "tokenizer.ggml.add_bos_token": "e16ab60aa1eeb7074ca590e8a95bc4ce6264aa74f4f79359e580ede60b892bbe",
+        "tokenizer.chat_template": "6f495a91b505269ba6d5e819a1d16495ca38ef157e17e39e2c06f36491cfbcf9"
+      }
+    },
+    "FP16": {
+      "sha256": "8e0ae26000627ed62de0e78e41860af70094558b9d2913385c842a6aa06cf3fc",
+      "size_bytes": 1266425696,
+      "gguf_version": 3,
+      "tensor_count": 291,
+      "file_type": 1,
+      "tokenizer_keys": {
+        "tokenizer.ggml.model": "35b5fa96b5f7fc8c0addda0366ee9029c0e3f4c0fb1b604032bc88054dc127a6",
+        "tokenizer.ggml.pre": "990e4f305ba24d6340e5c629e476833c725021a877cda723fcf86969ec73d2b6",
+        "tokenizer.ggml.tokens": "472ef7f46405c14df0f3b3c29ca6acf94ba51409f55861e532e2e5d42f48a27e",
+        "tokenizer.ggml.token_type": "7447a6647d69a6d309d2ed8d314a3431daa753bce32c26589384b425e212bce0",
+        "tokenizer.ggml.merges": "2ff617ef6beefbb249e7980b0d7fd31eedede40d318b4f367342570684649bd7",
+        "tokenizer.ggml.eos_token_id": "2dcd78369d013b23ca81d96ca6caf071005d25ff64d73bd03d3eec7638013881",
+        "tokenizer.ggml.padding_token_id": "0428ddfd7c56d83be46c913a2c41edce49c3087e344c19ebf0ad42bedc99e0f7",
+        "tokenizer.ggml.bos_token_id": "0428ddfd7c56d83be46c913a2c41edce49c3087e344c19ebf0ad42bedc99e0f7",
+        "tokenizer.ggml.add_bos_token": "e16ab60aa1eeb7074ca590e8a95bc4ce6264aa74f4f79359e580ede60b892bbe",
+        "tokenizer.chat_template": "6f495a91b505269ba6d5e819a1d16495ca38ef157e17e39e2c06f36491cfbcf9"
+      }
+    }
+  },
+  "backend_sha": "f1f7198a7c1cdf13bec7c2cf960947e0bec87401837a057134186132d870aa04",
+  "hashes": {
+    "tools/supplement-stage3-quality-fp16/extraction.txt": "f096b7aaf6d623913eb5ffe109f0273fda04a97d0743f6f43d3bd598f1ca5d40",
+    "tools/supplement-stage3-quality-fp16/json_extraction.txt": "79e8e535c26add4b97abaca4132d965f4352679d30d2df08f3f0acf0fef6c0df",
+    "tools/supplement-stage3-quality-fp16/classification.txt": "537f7a9f9b713c2cacc56ec9a3d9d637925d582b5a5ba31fb689b1206fcc6c90",
+    "tools/supplement-stage3-quality-fp16/normalization.txt": "b5a38db782c8b01f8758b7d7bd398d3265c75bb02e0ac3613f857c807d9df055",
+    "tools/supplement-stage3-quality-fp16/tasks.json": "53d886ddda8faf3922fee727db6452c3d2bc2e5fdb84547bfb82b91f11c76c9e",
+    "tools/supplement-stage3-quality-fp16/pilot.json": "01a050a4cae7b058a9e81bae6f35d446467d18e3e831427e2340586fba9d5f3e",
+    "tools/supplement-stage3-quality-fp16/data_audit.json": "a5ae7340d5395149bf3508cd7a7e5ca75a9d84851bc1ea4e136b87a887f098b1",
+    "tools/supplement-stage3-quality-fp16/schedule.json": "7a025cfe30e03523f14f4c33650eef481dd811ca4b9b77244ace97175a03162d",
+    "tools/supplement-stage3-quality-fp16/model_spec.json": "c30c5106196416b2efd5396efe038746373a2d80a2d992c6a694b531cb7f1f51",
+    "tools/supplement-stage3-quality-fp16/PLAN.md": "14f4839ef2b0be5c7a22ce7b84d55e4e4e709f7abf5d044655dd8c8548a6ba9f",
+    "tools/supplement-stage3-quality-fp16/dataset.py": "44b1eebdbaadf9b47a5c80753e01db47f8f44120d98430a2a593fb0c0b8793bd",
+    "tools/supplement-stage3-quality-fp16/weights.py": "0b158c4db5aaef1192ecd8dd0b886e94ba58be50d5cb9df0ec5da2c1006b2ac1",
+    "tools/supplement-stage3-quality-fp16/collect.py": "747a3cd6cc57673c3f635f5c5e359870a65b5ab1a11d1497dc33656ba781d530",
+    "tools/supplement-stage3-quality-fp16/analyze.py": "bc5da15a35aa37ab43f103242c2d60f71e1db4774ed805899863148452768c14",
+    "datasets/prompt_template.json": "4fca5ca148166615f9db44d930363ae688842e8b6aeb2f2da9e1804eec555647",
+    "configs/formal_config.json": "a1380d1aaec893c507373f42d41182b300c8fe71d91012626023ca9b38ce8177",
+    "datasets/frozen_hashes_stage3.json": "1d4cdfaf8dc82dbd4825886350e555bb666c123c54a10b7e224ac6af0957c36a",
+    "scripts/run_tasks.py": "de1592d42271a7a70a527892da1af8b91bc6a580eb02e653da169ef7745a3573",
+    "scripts/score_answer.py": "7f6e5a28ed2b66a2b48bc3342703a3481dc638d3efdc4ea7c704200b551270b4",
+    "scripts/llama_server_ctl.py": "e2c83d47403e8330d3d1cd6f89f23deb739422c886bf9bf5405d6f8d8594a69c",
+    "models/model_manifest_v3.json": "c3e85413dde702ac50f82f37cbddb753415aa903383b9892d3a1b46da20cf638",
+    "environment/system_info_v2.json": "0440a7a7bd6bc2d49149825aca07dc1a6ec9320fb33cfd48fd62ee7ddf8d84b7",
+    "datasets/dev/dev_tasks.json": "0ac8658407a5410bfc60cafd17f766135de7ebf9d9465487830ca26acb981d10",
+    "datasets/test/test_tasks.json": "5e903f20eaefa13fbf4c7c8886bd2156bd92455118e0bce95a45736e51672fca",
+    "datasets/stage6/stage6_cls_variants.json": "06e0ab8740f4e73e9223833855181f7db491bfaf6ea41204a8935f5998e69957",
+    "datasets/stage6/stage6_dev_variants.json": "2214584821d651172a3b2f5ee341423b7523c89781391699cc358b8ad72825c3",
+    "datasets/stage6/stage6_json_variants.json": "6d6ac7563b4bdecee5b98ead39c00f8221d318c04af109469d91edf4127fdbc2",
+    "stage7_local/smoke_request.json": "0c436e2be2663d57d8ab8bb5de9fa69517679ce8ae814eaf9b1fdd8213486f55",
+    "stage8_extensions/inputs.json": "afe6964c626dd74af9302a0252e0d1f7032e12847d32a646888e20666fdd61f6",
+    "stage9_deep/new_items.json": "ab699c08421449687aab4937c39ea2176598595a0a31da072f2621d92e3b78d3",
+    "stage10_validation/holdout.json": "6721c470a6a10abcc7f441354cd78c5cb09b7985d407e2794d860d313087735f",
+    "stage10_validation/texts.json": "f8a21ab262df5b4515207d2533716155ae73bd130c988d4ef019b5d709a3f88a"
+  },
+  "pilot": null
+}

@@ -1,0 +1,149 @@
+{
+  "batch": 6,
+  "model": "Q8_0",
+  "id": "q0626",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：以小写表示指定三字母缩写\n要求：只输出转换结果，不要任何说明。\n\n输入：借阅台新装识别模组标为NFC。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：以小写表示指定三字母缩写\n要求：只输出转换结果，不要任何说明。\n\n输入：借阅台新装识别模组标为NFC。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      23031,
+      30709,
+      61443,
+      51463,
+      105146,
+      44991,
+      110788,
+      99872,
+      61443,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      99588,
+      99915,
+      53938,
+      16628,
+      98641,
+      102450,
+      53772,
+      40027,
+      30844,
+      17714,
+      45,
+      6754,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:08:31.749738+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "NFC"
+          }
+        }
+      ],
+      "created": 1795795711,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 70,
+        "total_tokens": 73,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-cMKdZh8u3HlsDjdcPl4ewaygSB2D5c8g",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 70,
+        "prompt_ms": 107.949,
+        "prompt_per_token_ms": 1.5421285714285713,
+        "prompt_per_second": 648.454362708316,
+        "predicted_n": 3,
+        "predicted_ms": 25.625,
+        "predicted_per_token_ms": 12.8125,
+        "predicted_per_second": 78.04878048780488
+      }
+    },
+    "client_e2e_s": 0.1645438999403268,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

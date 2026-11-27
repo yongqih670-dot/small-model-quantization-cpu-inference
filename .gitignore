@@ -2,8 +2,13 @@
 *.gguf
 models/*.gguf
 
-# ---- 推理后端二进制（llama.cpp 预编译程序，体积大） ----
-tools/
+# ---- 本地工具与可复算实验 ----
+/tools/*
+!/tools/supplement-stage10-g-1616/
+!/tools/supplement-stage3-quality-fp16/
+/tools/supplement-stage10-g-1616/recomputed/
+/tools/supplement-stage3-quality-fp16/recomputed/
+/tools/supplement-stage3-quality-fp16/draft-freeze-before-gold-wording-review/
 
 # ---- Python ----
 __pycache__/

@@ -1,0 +1,156 @@
+{
+  "batch": 4,
+  "model": "FP16",
+  "id": "q0570",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：将点位编号倒序写出，用空格分开\n要求：只输出转换结果，不要任何说明。\n\n输入：点位原顺序为 X03、X14、X25。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：将点位编号倒序写出，用空格分开\n要求：只输出转换结果，不要任何说明。\n\n输入：点位原顺序为 X03、X14、X25。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      44063,
+      27442,
+      24156,
+      72640,
+      99805,
+      32044,
+      112672,
+      3837,
+      11622,
+      34794,
+      33983,
+      107878,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      27442,
+      24156,
+      52129,
+      107684,
+      17714,
+      1599,
+      15,
+      18,
+      5373,
+      55,
+      16,
+      19,
+      5373,
+      55,
+      17,
+      20,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:06:22.499837+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "X03 X14 X25"
+          }
+        }
+      ],
+      "created": 1795795582,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 10,
+        "prompt_tokens": 77,
+        "total_tokens": 87,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-CPDMwC0Bg36qqR6uDxMoEnx6k8XRZgvU",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 77,
+        "prompt_ms": 93.031,
+        "prompt_per_token_ms": 1.2081948051948053,
+        "prompt_per_second": 827.6810955487956,
+        "predicted_n": 10,
+        "predicted_ms": 180.366,
+        "predicted_per_token_ms": 20.040666666666667,
+        "predicted_per_second": 49.898539636073316
+      }
+    },
+    "client_e2e_s": 0.27821579994633794,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

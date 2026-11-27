@@ -1,0 +1,154 @@
+{
+  "batch": 12,
+  "model": "Q8_0",
+  "id": "q0608",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：按折扣比例求省下的金额，输出整数\n要求：只输出转换结果，不要任何说明。\n\n输入：小木桌名签原价75元，等候折扣八折。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：按折扣比例求省下的金额，输出整数\n要求：只输出转换结果，不要任何说明。\n\n输入：小木桌名签原价75元，等候折扣八折。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      59879,
+      110785,
+      102136,
+      30918,
+      65770,
+      101373,
+      80094,
+      3837,
+      66017,
+      63431,
+      8863,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      30709,
+      75405,
+      100299,
+      13072,
+      61755,
+      52129,
+      50292,
+      22,
+      20,
+      23305,
+      3837,
+      111801,
+      110785,
+      99568,
+      99699,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:15:27.935745+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "15"
+          }
+        }
+      ],
+      "created": 1795796128,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 75,
+        "total_tokens": 78,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-QgMePC9snhljPS60laMQ24e9u9g2wMz8",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 75,
+        "prompt_ms": 125.028,
+        "prompt_per_token_ms": 1.66704,
+        "prompt_per_second": 599.8656300988578,
+        "predicted_n": 3,
+        "predicted_ms": 25.682,
+        "predicted_per_token_ms": 12.841,
+        "predicted_per_second": 77.8755548633284
+      }
+    },
+    "client_e2e_s": 0.17002209997735918,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": true,
+    "content_correct": true,
+    "correct": true
+  }
+}

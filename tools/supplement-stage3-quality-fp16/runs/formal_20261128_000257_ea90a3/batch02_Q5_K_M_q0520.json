@@ -1,0 +1,159 @@
+{
+  "batch": 2,
+  "model": "Q5_K_M",
+  "id": "q0520",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：按1盎司=30毫升换为毫升，只写整数\n要求：只输出转换结果，不要任何说明。\n\n输入：手账里把颜料水用量记为8.5盎司。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：按1盎司=30毫升换为毫升，只写整数\n要求：只输出转换结果，不要任何说明。\n\n输入：手账里把颜料水用量记为8.5盎司。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      59879,
+      16,
+      120385,
+      64643,
+      28,
+      18,
+      15,
+      117033,
+      71134,
+      17714,
+      117033,
+      3837,
+      91680,
+      61443,
+      63431,
+      8863,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      44934,
+      80101,
+      69249,
+      99360,
+      100847,
+      41406,
+      52510,
+      113363,
+      40814,
+      17714,
+      23,
+      13,
+      20,
+      120385,
+      64643,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:04:18.900368+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "85毫升"
+          }
+        }
+      ],
+      "created": 1795795459,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 80,
+        "total_tokens": 84,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-DrCQaMiDaQ6A243lP4cWGqTGZBULMyBu",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 204.365,
+        "prompt_per_token_ms": 2.5545625000000003,
+        "prompt_per_second": 391.4564627015389,
+        "predicted_n": 4,
+        "predicted_ms": 29.626,
+        "predicted_per_token_ms": 9.875333333333334,
+        "predicted_per_second": 101.26240464456896
+      }
+    },
+    "client_e2e_s": 0.23858809983357787,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

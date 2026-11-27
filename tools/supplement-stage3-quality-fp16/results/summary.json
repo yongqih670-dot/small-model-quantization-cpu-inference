@@ -1,0 +1,516 @@
+{
+  "run": "formal_20261128_000257_ea90a3",
+  "machine": {
+    "cpu": "AMD Ryzen 9 9955HX 16-Core Processor",
+    "os": "Windows-11-10.0.26100-SP0",
+    "python": "3.12.7",
+    "cores": 16,
+    "threads": 32,
+    "ram_bytes": 33483378688,
+    "power": {
+      "plugged": true,
+      "percent": 99
+    }
+  },
+  "scipy": "1.13.1",
+  "completed_record": true,
+  "clean_services": 64,
+  "per_model": {
+    "Q4_K_M": {
+      "planned": 640,
+      "attempted": 640,
+      "counts": {
+        "ok": 639,
+        "truncated": 1
+      },
+      "format_correct": 221,
+      "content_correct": 190,
+      "correct": 145
+    },
+    "Q5_K_M": {
+      "planned": 640,
+      "attempted": 640,
+      "counts": {
+        "ok": 640
+      },
+      "format_correct": 212,
+      "content_correct": 183,
+      "correct": 133
+    },
+    "Q8_0": {
+      "planned": 640,
+      "attempted": 640,
+      "counts": {
+        "ok": 640
+      },
+      "format_correct": 217,
+      "content_correct": 190,
+      "correct": 141
+    },
+    "FP16": {
+      "planned": 640,
+      "attempted": 640,
+      "counts": {
+        "ok": 640
+      },
+      "format_correct": 217,
+      "content_correct": 191,
+      "correct": 142
+    }
+  },
+  "planned": 2560,
+  "attempted": 2560,
+  "primary": {
+    "candidate": "Q4_K_M",
+    "reference": "FP16",
+    "metric": "correct",
+    "strata": [
+      {
+        "type": "single_field_extraction",
+        "pairs": 160,
+        "planned": 160,
+        "plus": 10,
+        "minus": 3,
+        "ties": 147,
+        "mean": 0.04375
+      },
+      {
+        "type": "json_extraction",
+        "pairs": 160,
+        "planned": 160,
+        "plus": 0,
+        "minus": 0,
+        "ties": 160,
+        "mean": 0
+      },
+      {
+        "type": "classification",
+        "pairs": 160,
+        "planned": 160,
+        "plus": 5,
+        "minus": 6,
+        "ties": 149,
+        "mean": -0.00625
+      },
+      {
+        "type": "normalization",
+        "pairs": 160,
+        "planned": 160,
+        "plus": 2,
+        "minus": 5,
+        "ties": 153,
+        "mean": -0.01875
+      }
+    ],
+    "total_pairs": 640,
+    "estimate": 0.004687499999999999,
+    "lower95": -0.009610737518564092,
+    "ci95": [
+      -0.012360636137837095,
+      0.02173563613783709
+    ],
+    "confirmed": true
+  },
+  "secondary": [
+    {
+      "candidate": "Q4_K_M",
+      "reference": "FP16",
+      "metric": "format_correct",
+      "strata": [
+        {
+          "type": "single_field_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 10,
+          "minus": 3,
+          "ties": 147,
+          "mean": 0.04375
+        },
+        {
+          "type": "json_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        },
+        {
+          "type": "classification",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        },
+        {
+          "type": "normalization",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 2,
+          "minus": 5,
+          "ties": 153,
+          "mean": -0.01875
+        }
+      ],
+      "total_pairs": 640,
+      "estimate": 0.0062499999999999995,
+      "lower95": -0.005211135638272381,
+      "ci95": [
+        -0.007420076789988953,
+        0.01992007678998895
+      ]
+    },
+    {
+      "candidate": "Q4_K_M",
+      "reference": "FP16",
+      "metric": "content_correct",
+      "strata": [
+        {
+          "type": "single_field_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 10,
+          "minus": 3,
+          "ties": 147,
+          "mean": 0.04375
+        },
+        {
+          "type": "json_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 7,
+          "minus": 11,
+          "ties": 142,
+          "mean": -0.025
+        },
+        {
+          "type": "classification",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 5,
+          "minus": 6,
+          "ties": 149,
+          "mean": -0.00625
+        },
+        {
+          "type": "normalization",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 2,
+          "minus": 5,
+          "ties": 153,
+          "mean": -0.01875
+        }
+      ],
+      "total_pairs": 640,
+      "estimate": -0.001562500000000001,
+      "lower95": -0.019551996063752096,
+      "ci95": [
+        -0.02300890279061728,
+        0.01988390279061728
+      ]
+    },
+    {
+      "candidate": "Q5_K_M",
+      "reference": "FP16",
+      "metric": "format_correct",
+      "strata": [
+        {
+          "type": "single_field_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 4,
+          "ties": 156,
+          "mean": -0.025
+        },
+        {
+          "type": "json_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        },
+        {
+          "type": "classification",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        },
+        {
+          "type": "normalization",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 3,
+          "minus": 4,
+          "ties": 153,
+          "mean": -0.00625
+        }
+      ],
+      "total_pairs": 640,
+      "estimate": -0.0078125,
+      "lower95": -0.016348743654400553,
+      "ci95": [
+        -0.017993914536821105,
+        0.0023689145368211047
+      ]
+    },
+    {
+      "candidate": "Q5_K_M",
+      "reference": "FP16",
+      "metric": "content_correct",
+      "strata": [
+        {
+          "type": "single_field_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 4,
+          "ties": 156,
+          "mean": -0.025
+        },
+        {
+          "type": "json_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 9,
+          "minus": 8,
+          "ties": 143,
+          "mean": 0.00625
+        },
+        {
+          "type": "classification",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 4,
+          "ties": 156,
+          "mean": -0.025
+        },
+        {
+          "type": "normalization",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 3,
+          "minus": 4,
+          "ties": 153,
+          "mean": -0.00625
+        }
+      ],
+      "total_pairs": 640,
+      "estimate": -0.0125,
+      "lower95": -0.02706665149277546,
+      "ci95": [
+        -0.02986855839452735,
+        0.00486855839452735
+      ]
+    },
+    {
+      "candidate": "Q5_K_M",
+      "reference": "FP16",
+      "metric": "correct",
+      "strata": [
+        {
+          "type": "single_field_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 4,
+          "ties": 156,
+          "mean": -0.025
+        },
+        {
+          "type": "json_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        },
+        {
+          "type": "classification",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 4,
+          "ties": 156,
+          "mean": -0.025
+        },
+        {
+          "type": "normalization",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 3,
+          "minus": 4,
+          "ties": 153,
+          "mean": -0.00625
+        }
+      ],
+      "total_pairs": 640,
+      "estimate": -0.0140625,
+      "lower95": -0.023999746230788765,
+      "ci95": [
+        -0.0259111445723217,
+        -0.002213855427678298
+      ]
+    },
+    {
+      "candidate": "Q8_0",
+      "reference": "FP16",
+      "metric": "format_correct",
+      "strata": [
+        {
+          "type": "single_field_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 1,
+          "minus": 1,
+          "ties": 158,
+          "mean": 0
+        },
+        {
+          "type": "json_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        },
+        {
+          "type": "classification",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        },
+        {
+          "type": "normalization",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        }
+      ],
+      "total_pairs": 640,
+      "estimate": 0,
+      "lower95": -0.003667427346304177,
+      "ci95": [
+        -0.0043778685791233205,
+        0.0043778685791233205
+      ]
+    },
+    {
+      "candidate": "Q8_0",
+      "reference": "FP16",
+      "metric": "content_correct",
+      "strata": [
+        {
+          "type": "single_field_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 1,
+          "minus": 1,
+          "ties": 158,
+          "mean": 0
+        },
+        {
+          "type": "json_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 2,
+          "minus": 2,
+          "ties": 156,
+          "mean": 0
+        },
+        {
+          "type": "classification",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 1,
+          "minus": 2,
+          "ties": 157,
+          "mean": -0.00625
+        },
+        {
+          "type": "normalization",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        }
+      ],
+      "total_pairs": 640,
+      "estimate": -0.0015625,
+      "lower95": -0.009310437109120417,
+      "ci95": [
+        -0.010800655257764063,
+        0.0076756552577640635
+      ]
+    },
+    {
+      "candidate": "Q8_0",
+      "reference": "FP16",
+      "metric": "correct",
+      "strata": [
+        {
+          "type": "single_field_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 1,
+          "minus": 1,
+          "ties": 158,
+          "mean": 0
+        },
+        {
+          "type": "json_extraction",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        },
+        {
+          "type": "classification",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 1,
+          "minus": 2,
+          "ties": 157,
+          "mean": -0.00625
+        },
+        {
+          "type": "normalization",
+          "pairs": 160,
+          "planned": 160,
+          "plus": 0,
+          "minus": 0,
+          "ties": 160,
+          "mean": 0
+        }
+      ],
+      "total_pairs": 640,
+      "estimate": -0.0015625,
+      "lower95": -0.007341323088079358,
+      "ci95": [
+        -0.00845480825928024,
+        0.0053298082592802415
+      ]
+    }
+  ]
+}

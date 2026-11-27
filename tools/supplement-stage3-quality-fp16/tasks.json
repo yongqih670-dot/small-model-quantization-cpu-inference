@@ -1,0 +1,7842 @@
+[
+  {
+    "field": "静音室门牌",
+    "gold": "E17",
+    "input": "闭馆试行期间，可申请使用走廊尽头的静音室E17，儿童区照常。",
+    "scoring": "exact",
+    "id": "q0001",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "闭馆试行期间，可申请使用走廊尽头的静音室E17，儿童区照常。"
+  },
+  {
+    "field": "纪念册领取窗口",
+    "gold": "北门志愿台",
+    "input": "往届船工的纪念册将在午后发放，领取窗口为北门志愿台。",
+    "scoring": "exact",
+    "id": "q0002",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "往届船工的纪念册将在午后发放，领取窗口为北门志愿台。"
+  },
+  {
+    "field": "鱼市迁入的市场名称",
+    "gold": "望潮仓库市集",
+    "input": "因原址排水改造，周日鱼市整体迁入望潮仓库市集。",
+    "scoring": "exact",
+    "id": "q0003",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "因原址排水改造，周日鱼市整体迁入望潮仓库市集。"
+  },
+  {
+    "field": "冰车租用的押金（元）",
+    "gold": "150",
+    "input": "磨损险为8元，冰车按时结算，租用时另付押金150元。",
+    "scoring": "exact",
+    "id": "q0004",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "磨损险为8元，冰车按时结算，租用时另付押金150元。"
+  },
+  {
+    "field": "橙色雨披的归还点",
+    "gold": "戏台后台",
+    "input": "蓝雨披交签到棚，橙色雨披用后交回戏台后台。",
+    "scoring": "exact",
+    "id": "q0005",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "蓝雨披交签到棚，橙色雨披用后交回戏台后台。"
+  },
+  {
+    "field": "展览的票价",
+    "gold": "未提供",
+    "input": "岩层拓印展设在旧盐库，开放期为三个周末，请从二号坡道进入。",
+    "scoring": "exact",
+    "id": "q0006",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "岩层拓印展设在旧盐库，开放期为三个周末，请从二号坡道进入。"
+  },
+  {
+    "field": "停用的楼梯编号",
+    "gold": "S-04",
+    "input": "造纸间顶灯施工，楼梯S-04暂封，货梯仅供材料使用。",
+    "scoring": "exact",
+    "id": "q0007",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "造纸间顶灯施工，楼梯S-04暂封，货梯仅供材料使用。"
+  },
+  {
+    "field": "河边拍卖起拍时间",
+    "gold": "14:45",
+    "input": "河边旧物拍卖13:30开始验看，14:45拍槌起拍。",
+    "scoring": "exact",
+    "id": "q0008",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "河边旧物拍卖13:30开始验看，14:45拍槌起拍。"
+  },
+  {
+    "field": "狸猫观察路线的集合地",
+    "gold": "竹拱桥西端",
+    "input": "狸猫观察只接收预约名单，集合地为竹拱桥西端。",
+    "scoring": "exact",
+    "id": "q0009",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "狸猫观察只接收预约名单，集合地为竹拱桥西端。"
+  },
+  {
+    "field": "新装扶手的颜色",
+    "gold": "墨绿",
+    "input": "塔台二层新装了墨绿扶手，地面暂时仍贴黄色警示线。",
+    "scoring": "exact",
+    "id": "q0010",
+    "task_type": "single_field_extraction",
+    "source_family": "告示",
+    "source_text": "塔台二层新装了墨绿扶手，地面暂时仍贴黄色警示线。"
+  },
+  {
+    "field": "漏水工单的优先级",
+    "gold": "紧急",
+    "input": "泵房漏水报修已派单，标为紧急，常规巡检依旧排在下午。",
+    "scoring": "exact",
+    "id": "q0011",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "泵房漏水报修已派单，标为紧急，常规巡检依旧排在下午。"
+  },
+  {
+    "field": "待替换保险的额定电流（安培）",
+    "gold": "3.2",
+    "input": "测得支路电流1.8A，旧保险发黑，按3.2A规格更换。",
+    "scoring": "exact",
+    "id": "q0012",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "测得支路电流1.8A，旧保险发黑，按3.2A规格更换。"
+  },
+  {
+    "field": "完成镜头除尘的技术员",
+    "gold": "简一铭",
+    "input": "星轨相机误报光斑；负责关单的简一铭完成了镜头除尘。",
+    "scoring": "exact",
+    "id": "q0013",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "星轨相机误报光斑；负责关单的简一铭完成了镜头除尘。"
+  },
+  {
+    "field": "结冰告警解除的原因",
+    "gold": "探头复温",
+    "input": "风机仍停机；系统解除结冰告警的原因记为探头复温。",
+    "scoring": "exact",
+    "id": "q0014",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "风机仍停机；系统解除结冰告警的原因记为探头复温。"
+  },
+  {
+    "field": "战棋柜缺少的棋子数量",
+    "gold": "3",
+    "input": "战棋柜总计应有64枚，盘点明确记下短缺3枚。",
+    "scoring": "exact",
+    "id": "q0015",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "战棋柜总计应有64枚，盘点明确记下短缺3枚。"
+  },
+  {
+    "field": "隔板修补所用胶带的型号",
+    "gold": "TP-40",
+    "input": "修补隔板领料单：胶带TP-40；拆除用的刷子由现场自备。",
+    "scoring": "exact",
+    "id": "q0016",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "修补隔板领料单：胶带TP-40；拆除用的刷子由现场自备。"
+  },
+  {
+    "field": "打印旧车票需要使用的纸盒",
+    "gold": "侧进纸盒",
+    "input": "旧车票为厚卡，请使用侧进纸盒；默认纸盒留给账单。",
+    "scoring": "exact",
+    "id": "q0017",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "旧车票为厚卡，请使用侧进纸盒；默认纸盒留给账单。"
+  },
+  {
+    "field": "灭火器换新日期",
+    "gold": "未提供",
+    "input": "器材检查：灭火器铅封完整，压力在绿区，外壳贴有巡查编号。",
+    "scoring": "exact",
+    "id": "q0018",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "器材检查：灭火器铅封完整，压力在绿区，外壳贴有巡查编号。"
+  },
+  {
+    "field": "故障灯所在侧",
+    "gold": "右侧",
+    "input": "开机后左边通风口有声响，右侧故障灯由绿转红。",
+    "scoring": "exact",
+    "id": "q0019",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "开机后左边通风口有声响，右侧故障灯由绿转红。"
+  },
+  {
+    "field": "密封件的材质",
+    "gold": "硅胶",
+    "input": "换下的垫圈发硬，备用密封件是硅胶，本次按常温使用。",
+    "scoring": "exact",
+    "id": "q0020",
+    "task_type": "single_field_extraction",
+    "source_family": "工单",
+    "source_text": "换下的垫圈发硬，备用密封件是硅胶，本次按常温使用。"
+  },
+  {
+    "field": "最后确认带的饮料",
+    "gold": "麦茶",
+    "input": "甲：可带汽水吗？乙：汽水留给隔壁，我们桌最后定带麦茶。",
+    "scoring": "exact",
+    "id": "q0021",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "甲：可带汽水吗？乙：汽水留给隔壁，我们桌最后定带麦茶。"
+  },
+  {
+    "field": "请人代看的儿童绘本",
+    "gold": "《小岛的灯》",
+    "input": "敏：如果我下班晚，麻烦先把《小岛的灯》读给朵朵听，拼图等我回来。",
+    "scoring": "exact",
+    "id": "q0022",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "敏：如果我下班晚，麻烦先把《小岛的灯》读给朵朵听，拼图等我回来。"
+  },
+  {
+    "field": "约定先问的售票方",
+    "gold": "轮渡公司",
+    "input": "甲：剧院已经回复。乙：有联票问题先问轮渡公司，再找旅舍。",
+    "scoring": "exact",
+    "id": "q0023",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "甲：剧院已经回复。乙：有联票问题先问轮渡公司，再找旅舍。"
+  },
+  {
+    "field": "旧毯子最终要送去哪里",
+    "gold": "漂流物资柜",
+    "input": "邻居：旧毯别放车尾。帮我今天把它送到漂流物资柜。",
+    "scoring": "exact",
+    "id": "q0024",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "邻居：旧毯别放车尾。帮我今天把它送到漂流物资柜。"
+  },
+  {
+    "field": "排练用曲子的原调",
+    "gold": "降E调",
+    "input": "乐手说排练会改成D调，曲谱首页原调写的是降E调。",
+    "scoring": "exact",
+    "id": "q0025",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "乐手说排练会改成D调，曲谱首页原调写的是降E调。"
+  },
+  {
+    "field": "下次订台打算坐的位置",
+    "gold": "窗边高脚位",
+    "input": "他们嫌上次的沙发灯暗，下次订台要求坐窗边高脚位。",
+    "scoring": "exact",
+    "id": "q0026",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "他们嫌上次的沙发灯暗，下次订台要求坐窗边高脚位。"
+  },
+  {
+    "field": "应给谁留一把免押雨伞",
+    "gold": "林子舟",
+    "input": "阿冬自带雨伞，只有刚来临时帮忙的林子舟需要留一把免押伞。",
+    "scoring": "exact",
+    "id": "q0027",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "阿冬自带雨伞，只有刚来临时帮忙的林子舟需要留一把免押伞。"
+  },
+  {
+    "field": "要在纪念章上刻的字",
+    "gold": "回响",
+    "input": "草案写着同行，见面商量后，纪念章改刻回响。",
+    "scoring": "exact",
+    "id": "q0028",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "草案写着同行，见面商量后，纪念章改刻回响。"
+  },
+  {
+    "field": "对话约定的交接星期",
+    "gold": "周二",
+    "input": "甲说原计划是周四。乙：周二才有车，改周二交接。",
+    "scoring": "exact",
+    "id": "q0029",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "甲说原计划是周四。乙：周二才有车，改周二交接。"
+  },
+  {
+    "field": "左右两份薄荷糖中保留哪侧",
+    "gold": "左边",
+    "input": "把右边那包薄荷糖给保安，左边这包等晚班再开。",
+    "scoring": "exact",
+    "id": "q0030",
+    "task_type": "single_field_extraction",
+    "source_family": "对话",
+    "source_text": "把右边那包薄荷糖给保安，左边这包等晚班再开。"
+  },
+  {
+    "field": "录像首次跌帧时段",
+    "gold": "00:37",
+    "input": "00:26增益稳定；00:37第一次出现跌帧，00:41恢复双通道。",
+    "scoring": "exact",
+    "id": "q0031",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "00:26增益稳定；00:37第一次出现跌帧，00:41恢复双通道。"
+  },
+  {
+    "field": "入库袋的称重结果（千克）",
+    "gold": "1.26",
+    "input": "袋子封口完好，入库秤读取净重1.26千克，货架限重4千克。",
+    "scoring": "exact",
+    "id": "q0032",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "袋子封口完好，入库秤读取净重1.26千克，货架限重4千克。"
+  },
+  {
+    "field": "被跳过的登记号",
+    "gold": "R046",
+    "input": "流水号R045已入册；纸带跳过R046，下一条为R047。",
+    "scoring": "exact",
+    "id": "q0033",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "流水号R045已入册；纸带跳过R046，下一条为R047。"
+  },
+  {
+    "field": "触发自动回卷的剩余电量",
+    "gold": "12",
+    "input": "初始电量63%，回卷于剩余12%触发，回库后才开始充电。",
+    "scoring": "exact",
+    "id": "q0034",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "初始电量63%，回卷于剩余12%触发，回库后才开始充电。"
+  },
+  {
+    "field": "翻译工作的中间状态",
+    "gold": "待校对",
+    "input": "第一行登记已分配，第二行修订为待校对，终审尚未操作。",
+    "scoring": "exact",
+    "id": "q0035",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "第一行登记已分配，第二行修订为待校对，终审尚未操作。"
+  },
+  {
+    "field": "显示盘校准后的偏差（毫米）",
+    "gold": "0.04",
+    "input": "校准前偏差0.19毫米，复测偏差0.04毫米，留待周六签收。",
+    "scoring": "exact",
+    "id": "q0036",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "校准前偏差0.19毫米，复测偏差0.04毫米，留待周六签收。"
+  },
+  {
+    "field": "发生挤压时袋口的方向",
+    "gold": "朝下",
+    "input": "运输图像注记：包裹出现挤压时袋口朝下，事后已转正。",
+    "scoring": "exact",
+    "id": "q0037",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "运输图像注记：包裹出现挤压时袋口朝下，事后已转正。"
+  },
+  {
+    "field": "指示屏附近的湿度读数",
+    "gold": "48",
+    "input": "指示屏温度25℃，旁边的湿度探头此时为48%，背光为自动。",
+    "scoring": "exact",
+    "id": "q0038",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "指示屏温度25℃，旁边的湿度探头此时为48%，背光为自动。"
+  },
+  {
+    "field": "两次刷新之间的间隔（秒）",
+    "gold": "9",
+    "input": "操作员按表计时，刷新间隔9秒。屏幕总共重绘17次。",
+    "scoring": "exact",
+    "id": "q0039",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "操作员按表计时，刷新间隔9秒。屏幕总共重绘17次。"
+  },
+  {
+    "field": "门禁记录刷的是哪一侧门",
+    "gold": "西侧门",
+    "input": "入口岗电话中断；日志记录刷卡位置为西侧门。",
+    "scoring": "exact",
+    "id": "q0040",
+    "task_type": "single_field_extraction",
+    "source_family": "队列日志",
+    "source_text": "入口岗电话中断；日志记录刷卡位置为西侧门。"
+  },
+  {
+    "field": "总账中被撤回的项目",
+    "gold": "岸电补贴",
+    "input": "周账：雾灯校验已结，岸电补贴撤回，活动桨修复尚未付款。",
+    "scoring": "exact",
+    "id": "q0041",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "周账：雾灯校验已结，岸电补贴撤回，活动桨修复尚未付款。"
+  },
+  {
+    "field": "预约手推车的时长（小时）",
+    "gold": "2.5",
+    "input": "手推车预约：使用2.5小时；借还间各留十分钟点验。",
+    "scoring": "exact",
+    "id": "q0042",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "手推车预约：使用2.5小时；借还间各留十分钟点验。"
+  },
+  {
+    "field": "本笔运输费计入的账户",
+    "gold": "公用器皿",
+    "input": "付款页列运输费84元，分摊账户为公用器皿，发票尚待上传。",
+    "scoring": "exact",
+    "id": "q0043",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "付款页列运输费84元，分摊账户为公用器皿，发票尚待上传。"
+  },
+  {
+    "field": "最早可以取到的配件",
+    "gold": "砂轮卡扣",
+    "input": "库存卡：砂轮卡扣即取，木规要星期三，皮尺缺货。",
+    "scoring": "exact",
+    "id": "q0044",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "库存卡：砂轮卡扣即取，木规要星期三，皮尺缺货。"
+  },
+  {
+    "field": "表中不随总件数计费的东西",
+    "gold": "支架",
+    "input": "清单：布条和画框均按件，支架计入赠品，不另收取。",
+    "scoring": "exact",
+    "id": "q0045",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "清单：布条和画框均按件，支架计入赠品，不另收取。"
+  },
+  {
+    "field": "橱窗更换的总面积（平方米）",
+    "gold": "7.6",
+    "input": "更换橱窗：总面积7.6平方米，胶缝共3条，玻璃待选色。",
+    "scoring": "exact",
+    "id": "q0046",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "更换橱窗：总面积7.6平方米，胶缝共3条，玻璃待选色。"
+  },
+  {
+    "field": "有反光标记的租品",
+    "gold": "双头拖绳",
+    "input": "货签：露营绳无标识，双头拖绳有反光标记，短缆需打结。",
+    "scoring": "exact",
+    "id": "q0047",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "货签：露营绳无标识，双头拖绳有反光标记，短缆需打结。"
+  },
+  {
+    "field": "使用中的扫描分辨率",
+    "gold": "600 dpi",
+    "input": "归档表：扫描分辨率600 dpi，色深24位，导出尺寸尚未确定。",
+    "scoring": "exact",
+    "id": "q0048",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "归档表：扫描分辨率600 dpi，色深24位，导出尺寸尚未确定。"
+  },
+  {
+    "field": "水样卡上的记录单位",
+    "gold": "毫升",
+    "input": "容器上刻盎司；水样卡的记录单位写的是毫升。",
+    "scoring": "exact",
+    "id": "q0049",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "容器上刻盎司；水样卡的记录单位写的是毫升。"
+  },
+  {
+    "field": "结账时购买的帆布卷颜色",
+    "gold": "铅灰",
+    "input": "取样有松绿与铅灰，结账只购买铅灰帆布卷。",
+    "scoring": "exact",
+    "id": "q0050",
+    "task_type": "single_field_extraction",
+    "source_family": "表格摘录",
+    "source_text": "取样有松绿与铅灰，结账只购买铅灰帆布卷。"
+  },
+  {
+    "field": "步行绕行路线的出口",
+    "gold": "茶碾巷",
+    "input": "穿水榭要绕开封桥，步行绕行路线从茶碾巷出来。",
+    "scoring": "exact",
+    "id": "q0051",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "穿水榭要绕开封桥，步行绕行路线从茶碾巷出来。"
+  },
+  {
+    "field": "到岬角后计划乘的交通工具",
+    "gold": "接驳电瓶车",
+    "input": "先骑行到岬角，最后一段靠接驳电瓶车进林场。",
+    "scoring": "exact",
+    "id": "q0052",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "先骑行到岬角，最后一段靠接驳电瓶车进林场。"
+  },
+  {
+    "field": "观鸟行程首个停靠点",
+    "gold": "照影台",
+    "input": "潮道未干，观鸟先停照影台，后面再折回浅塘。",
+    "scoring": "exact",
+    "id": "q0053",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "潮道未干，观鸟先停照影台，后面再折回浅塘。"
+  },
+  {
+    "field": "当天安排的午餐形式",
+    "gold": "自带冷餐",
+    "input": "船上取消热食，只能按通知自带冷餐。晚餐仍在餐厅。",
+    "scoring": "exact",
+    "id": "q0054",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "船上取消热食，只能按通知自带冷餐。晚餐仍在餐厅。"
+  },
+  {
+    "field": "骑手补水间停留分钟数",
+    "gold": "18",
+    "input": "出发前热身12分钟，骑手补水间可停留18分钟。",
+    "scoring": "exact",
+    "id": "q0055",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "出发前热身12分钟，骑手补水间可停留18分钟。"
+  },
+  {
+    "field": "静修的预订楼层",
+    "gold": "四楼",
+    "input": "登记台在一楼，静修订的是四楼的整层房间。",
+    "scoring": "exact",
+    "id": "q0056",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "登记台在一楼，静修订的是四楼的整层房间。"
+  },
+  {
+    "field": "停车票有效期截至几点",
+    "gold": "21:10",
+    "input": "停车票由傍晚开始生效，可用至21:10，入园券不能续停。",
+    "scoring": "exact",
+    "id": "q0057",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "停车票由傍晚开始生效，可用至21:10，入园券不能续停。"
+  },
+  {
+    "field": "班车换乘后使用的站台序号",
+    "gold": "B5",
+    "input": "从旧旅站搭短线，再到站台B5换乘新城快线。",
+    "scoring": "exact",
+    "id": "q0058",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "从旧旅站搭短线，再到站台B5换乘新城快线。"
+  },
+  {
+    "field": "到达验票口之前负责点人数的人",
+    "gold": "贺采文",
+    "input": "导游带路，抵达验票口之前由贺采文点人数。",
+    "scoring": "exact",
+    "id": "q0059",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "导游带路，抵达验票口之前由贺采文点人数。"
+  },
+  {
+    "field": "路书中特别标注绕开的坡面",
+    "gold": "冰面坡",
+    "input": "路书要求避开冰面坡，碎石路可慢行通过。",
+    "scoring": "exact",
+    "id": "q0060",
+    "task_type": "single_field_extraction",
+    "source_family": "行程",
+    "source_text": "路书要求避开冰面坡，碎石路可慢行通过。"
+  },
+  {
+    "field": "灰盒初次启动应按住的键",
+    "gold": "校验键",
+    "input": "初次启动灰盒先按住校验键再上电，平常只按开关。",
+    "scoring": "exact",
+    "id": "q0061",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "初次启动灰盒先按住校验键再上电，平常只按开关。"
+  },
+  {
+    "field": "用于折封的部件名称",
+    "gold": "压耳",
+    "input": "送纸槽太薄时，不要压翻盖，应使用两侧的压耳折封。",
+    "scoring": "exact",
+    "id": "q0062",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "送纸槽太薄时，不要压翻盖，应使用两侧的压耳折封。"
+  },
+  {
+    "field": "可以接触茶叶的内层材质",
+    "gold": "食品级陶瓷",
+    "input": "塑料面为外壳，内层食品级陶瓷可以直接接触茶叶。",
+    "scoring": "exact",
+    "id": "q0063",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "塑料面为外壳，内层食品级陶瓷可以直接接触茶叶。"
+  },
+  {
+    "field": "应先清理的小孔",
+    "gold": "排砂孔",
+    "input": "失去流量后逆时针卸下盒盖，先清理排砂孔再洗其他滤网。",
+    "scoring": "exact",
+    "id": "q0064",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "失去流量后逆时针卸下盒盖，先清理排砂孔再洗其他滤网。"
+  },
+  {
+    "field": "箭头标注的旋转方向",
+    "gold": "顺时针",
+    "input": "图二箭头标注顺时针，逆向转动会松开画架。",
+    "scoring": "exact",
+    "id": "q0065",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "图二箭头标注顺时针，逆向转动会松开画架。"
+  },
+  {
+    "field": "适配手柄的最小宽度（厘米）",
+    "gold": "2",
+    "input": "快速接口适配宽度2至4厘米的手柄，过窄会卡不牢。",
+    "scoring": "exact",
+    "id": "q0066",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "快速接口适配宽度2至4厘米的手柄，过窄会卡不牢。"
+  },
+  {
+    "field": "准备工作需要涂抹的溶剂",
+    "gold": "清水",
+    "input": "用清水轻擦卡槽即可，切勿直接涂橙油或酒精。",
+    "scoring": "exact",
+    "id": "q0067",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "用清水轻擦卡槽即可，切勿直接涂橙油或酒精。"
+  },
+  {
+    "field": "长按校对键的秒数",
+    "gold": "6",
+    "input": "按一下切换镜面，长按6秒才能进入校对。",
+    "scoring": "exact",
+    "id": "q0068",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "按一下切换镜面，长按6秒才能进入校对。"
+  },
+  {
+    "field": "未安装脚套时允许放置的表面",
+    "gold": "木台",
+    "input": "未安装脚套时将设备放在木台，避免在玻璃上震动。",
+    "scoring": "exact",
+    "id": "q0069",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "未安装脚套时将设备放在木台，避免在玻璃上震动。"
+  },
+  {
+    "field": "日落模式支持的电池品牌",
+    "gold": "未提供",
+    "input": "本机电池为两节七号。日落模式在室外照度下降后自动启动。",
+    "scoring": "exact",
+    "id": "q0070",
+    "task_type": "single_field_extraction",
+    "source_family": "说明书",
+    "source_text": "本机电池为两节七号。日落模式在室外照度下降后自动启动。"
+  },
+  {
+    "field": "给马房留下的工具",
+    "gold": "宽齿梳",
+    "input": "门口的软刷请扔，给马房留下宽齿梳和一张用法卡。",
+    "scoring": "exact",
+    "id": "q0071",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "门口的软刷请扔，给马房留下宽齿梳和一张用法卡。"
+  },
+  {
+    "field": "应锁住的抽屉",
+    "gold": "第三格",
+    "input": "第三格有旧纪念币，不在时锁着。第一格钥匙可公用。",
+    "scoring": "exact",
+    "id": "q0072",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "第三格有旧纪念币，不在时锁着。第一格钥匙可公用。"
+  },
+  {
+    "field": "这次补领的纸张规格",
+    "gold": "A5",
+    "input": "边纸用完了，补领A5一包，裁纸灯留着做标记。",
+    "scoring": "exact",
+    "id": "q0073",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "边纸用完了，补领A5一包，裁纸灯留着做标记。"
+  },
+  {
+    "field": "墙上月历选择的图案",
+    "gold": "白鹭",
+    "input": "第一张没有日期，第二张是白鹭图案；墙上用白鹭那张。",
+    "scoring": "exact",
+    "id": "q0074",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "第一张没有日期，第二张是白鹭图案；墙上用白鹭那张。"
+  },
+  {
+    "field": "库房里应优先解冻的物品",
+    "gold": "桃泥",
+    "input": "冷柜提醒：晚饭前先解冻桃泥，青团隔天才吃。",
+    "scoring": "exact",
+    "id": "q0075",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "冷柜提醒：晚饭前先解冻桃泥，青团隔天才吃。"
+  },
+  {
+    "field": "借出的空盒要放回第几层",
+    "gold": "第五层",
+    "input": "空盒归还时不用盖盖子，放回第五层靠墙位置。",
+    "scoring": "exact",
+    "id": "q0076",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "空盒归还时不用盖盖子，放回第五层靠墙位置。"
+  },
+  {
+    "field": "夜班开始前必须交还的凭证",
+    "gold": "挂牌证",
+    "input": "夜班同事换人，开始前交还挂牌证，临时贴条别一起带走。",
+    "scoring": "exact",
+    "id": "q0077",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "夜班同事换人，开始前交还挂牌证，临时贴条别一起带走。"
+  },
+  {
+    "field": "买的绳索应每段剪多长（米）",
+    "gold": "1.8",
+    "input": "整条绳有12米，为长桌剪几段，每段1.8米。",
+    "scoring": "exact",
+    "id": "q0078",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "整条绳有12米，为长桌剪几段，每段1.8米。"
+  },
+  {
+    "field": "参与拍照者在标记处佩戴的徽章颜色",
+    "gold": "亮银",
+    "input": "有人把铜章交给胸前戴红花的人，拍照者统一佩亮银徽章。",
+    "scoring": "exact",
+    "id": "q0079",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "有人把铜章交给胸前戴红花的人，拍照者统一佩亮银徽章。"
+  },
+  {
+    "field": "临时托付的小狗名字",
+    "gold": "石凳",
+    "input": "临时下雨小狗石凳留在咖啡房托班，另一只跟我车走。",
+    "scoring": "exact",
+    "id": "q0080",
+    "task_type": "single_field_extraction",
+    "source_family": "便签",
+    "source_text": "临时下雨小狗石凳留在咖啡房托班，另一只跟我车走。"
+  },
+  {
+    "field": "冷风扇测得的峰值风速",
+    "gold": "6.3",
+    "input": "风扇低档在仪表上约2.5m/s，快速档峰值风速为6.3m/s。",
+    "scoring": "exact",
+    "id": "q0081",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "风扇低档在仪表上约2.5m/s，快速档峰值风速为6.3m/s。"
+  },
+  {
+    "field": "试验盒读出的峰值压力（千帕）",
+    "gold": "17.5",
+    "input": "松开阀前，数据记录盒保存峰压17.5千帕；卸压后为5.2。",
+    "scoring": "exact",
+    "id": "q0082",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "松开阀前，数据记录盒保存峰压17.5千帕；卸压后为5.2。"
+  },
+  {
+    "field": "需要充气的球编号",
+    "gold": "M-12",
+    "input": "比色贴显示M-10偏亮，压力读数显示只有M-12需要充气。",
+    "scoring": "exact",
+    "id": "q0083",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "比色贴显示M-10偏亮，压力读数显示只有M-12需要充气。"
+  },
+  {
+    "field": "标定板归零后的相位角",
+    "gold": "0",
+    "input": "第一次报告相位角-2°。按校正键重新归零后相位角显示0°。",
+    "scoring": "exact",
+    "id": "q0084",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "第一次报告相位角-2°。按校正键重新归零后相位角显示0°。"
+  },
+  {
+    "field": "新针达到目标长度花的分钟数",
+    "gold": "4",
+    "input": "旧针达到终点用7分钟，新针4分钟达到目标长度。",
+    "scoring": "exact",
+    "id": "q0085",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "旧针达到终点用7分钟，新针4分钟达到目标长度。"
+  },
+  {
+    "field": "达到警戒线时容器余量",
+    "gold": "5",
+    "input": "容器总量20升，达到警戒线时余量5升，禁止再抽取。",
+    "scoring": "exact",
+    "id": "q0086",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "容器总量20升，达到警戒线时余量5升，禁止再抽取。"
+  },
+  {
+    "field": "蓝色圆盘离地高度（厘米）",
+    "gold": "18.7",
+    "input": "图像批注：黄盘距地16厘米，蓝色圆盘离地18.7厘米。",
+    "scoring": "exact",
+    "id": "q0087",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "图像批注：黄盘距地16厘米，蓝色圆盘离地18.7厘米。"
+  },
+  {
+    "field": "屏幕判定故障的字样",
+    "gold": "探头反插",
+    "input": "屏幕先自检，故障判断字样为探头反插，代码栏空白。",
+    "scoring": "exact",
+    "id": "q0088",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "屏幕先自检，故障判断字样为探头反插，代码栏空白。"
+  },
+  {
+    "field": "罩内没有启动的设备名称",
+    "gold": "雾化器",
+    "input": "反馈屏收到风泵和计数器已启动，罩内未启动的是雾化器。",
+    "scoring": "exact",
+    "id": "q0089",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "反馈屏收到风泵和计数器已启动，罩内未启动的是雾化器。"
+  },
+  {
+    "field": "泊位声呐本次最大深度读数",
+    "gold": "24.6",
+    "input": "本次设备探测最浅8.4米，最大深度24.6米，自动存档。",
+    "scoring": "exact",
+    "id": "q0090",
+    "task_type": "single_field_extraction",
+    "source_family": "仪表读数",
+    "source_text": "本次设备探测最浅8.4米，最大深度24.6米，自动存档。"
+  },
+  {
+    "field": "销售方预计送来的物件",
+    "gold": "厚玻璃罐",
+    "input": "客服回复封口盖仓库没有，预计发来厚玻璃罐一只。",
+    "scoring": "exact",
+    "id": "q0091",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "客服回复封口盖仓库没有，预计发来厚玻璃罐一只。"
+  },
+  {
+    "field": "临时通行证允许进的门",
+    "gold": "粮仓侧门",
+    "input": "正门在修坡，临时通行证仅允许进粮仓侧门，出场不限。",
+    "scoring": "exact",
+    "id": "q0092",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "正门在修坡，临时通行证仅允许进粮仓侧门，出场不限。"
+  },
+  {
+    "field": "周售后例会改用的平台",
+    "gold": "白板室直播",
+    "input": "今早通知：之前用电话汇报，本周售后例会改为白板室直播。",
+    "scoring": "exact",
+    "id": "q0093",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "今早通知：之前用电话汇报，本周售后例会改为白板室直播。"
+  },
+  {
+    "field": "墙板返厂原因",
+    "gold": "榫口尺寸不符",
+    "input": "客户已收到托盘；墙板安排返厂，理由是榫口尺寸不符。",
+    "scoring": "exact",
+    "id": "q0094",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "客户已收到托盘；墙板安排返厂，理由是榫口尺寸不符。"
+  },
+  {
+    "field": "审核反馈要求补交的材料名",
+    "gold": "水域使用同意书",
+    "input": "水域申请审查完毕，需另附水域使用同意书，其他附件均齐。",
+    "scoring": "exact",
+    "id": "q0095",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "水域申请审查完毕，需另附水域使用同意书，其他附件均齐。"
+  },
+  {
+    "field": "纪念票退票的最晚日期",
+    "gold": "3月17日",
+    "input": "退票截止为3月17日，纪念票交换日则在3月20日。",
+    "scoring": "exact",
+    "id": "q0096",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "退票截止为3月17日，纪念票交换日则在3月20日。"
+  },
+  {
+    "field": "承诺优先上门的服务对象",
+    "gold": "独居老人",
+    "input": "队长说明本周雨多，优先给独居老人上门换滤片。",
+    "scoring": "exact",
+    "id": "q0097",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "队长说明本周雨多，优先给独居老人上门换滤片。"
+  },
+  {
+    "field": "纸票遗失后可接受的替代凭证",
+    "gold": "订单存根",
+    "input": "售票窗口要求遗失纸票时出示订单存根，聊天截屏作无效。",
+    "scoring": "exact",
+    "id": "q0098",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "售票窗口要求遗失纸票时出示订单存根，聊天截屏作无效。"
+  },
+  {
+    "field": "预约车辆是否需要提前付款",
+    "gold": "无需提前付款",
+    "input": "话务记录：调度确认可排预约车辆，明确说无需提前付款。",
+    "scoring": "exact",
+    "id": "q0099",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "话务记录：调度确认可排预约车辆，明确说无需提前付款。"
+  },
+  {
+    "field": "要求更改账号密码的原因",
+    "gold": "初始口令外泄",
+    "input": "邮件告知密码需重设，理由是初始口令外泄。",
+    "scoring": "exact",
+    "id": "q0100",
+    "task_type": "single_field_extraction",
+    "source_family": "问询回复",
+    "source_text": "邮件告知密码需重设，理由是初始口令外泄。"
+  },
+  {
+    "field": "白班留给夜班的首要事项",
+    "gold": "试铃",
+    "input": "交接提示：整理纸箱不急，夜班一到先试铃，结果挂到登记板。",
+    "scoring": "exact",
+    "id": "q0101",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "交接提示：整理纸箱不急，夜班一到先试铃，结果挂到登记板。"
+  },
+  {
+    "field": "需要用垫棉固定的器具",
+    "gold": "银丝拨片",
+    "input": "橱柜内雕花柄可散放，银丝拨片怕弯需要垫棉固定。",
+    "scoring": "exact",
+    "id": "q0102",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "橱柜内雕花柄可散放，银丝拨片怕弯需要垫棉固定。"
+  },
+  {
+    "field": "替班结束时寄存柜钥匙应交给谁",
+    "gold": "姚若川",
+    "input": "先把封单放到票盒。替班结束时，寄存柜钥匙交还姚若川。",
+    "scoring": "exact",
+    "id": "q0103",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "先把封单放到票盒。替班结束时，寄存柜钥匙交还姚若川。"
+  },
+  {
+    "field": "留在门外待领的桶的颜色",
+    "gold": "砖红",
+    "input": "蓝桶已拖回清洗，砖红桶继续放门外等人领。",
+    "scoring": "exact",
+    "id": "q0104",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "蓝桶已拖回清洗，砖红桶继续放门外等人领。"
+  },
+  {
+    "field": "从冰柜调到室温保管的货品",
+    "gold": "松脂样块",
+    "input": "交接卡标注松脂样块移出冰柜改为室温，标本纸继续冷藏。",
+    "scoring": "exact",
+    "id": "q0105",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "交接卡标注松脂样块移出冰柜改为室温，标本纸继续冷藏。"
+  },
+  {
+    "field": "隔日入库前要查的单据",
+    "gold": "预检收据",
+    "input": "隔日准备入库时先查预检收据，终检记录当晚归档。",
+    "scoring": "exact",
+    "id": "q0106",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "隔日准备入库时先查预检收据，终检记录当晚归档。"
+  },
+  {
+    "field": "末班开门时需关闭的指示灯",
+    "gold": "楼顶红灯",
+    "input": "末班开门前保持通风，一旦开门就关掉楼顶红灯。",
+    "scoring": "exact",
+    "id": "q0107",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "末班开门前保持通风，一旦开门就关掉楼顶红灯。"
+  },
+  {
+    "field": "应当交接的钥匙数量",
+    "gold": "4",
+    "input": "留有两把工位钥匙不用交接，需交接的房门钥匙是4把。",
+    "scoring": "exact",
+    "id": "q0108",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "留有两把工位钥匙不用交接，需交接的房门钥匙是4把。"
+  },
+  {
+    "field": "盐雾柜清理过程中留用的液体",
+    "gold": "蒸馏水",
+    "input": "柜内旧清洁瓶两只，只有蒸馏水保留给后班。",
+    "scoring": "exact",
+    "id": "q0109",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "柜内旧清洁瓶两只，只有蒸馏水保留给后班。"
+  },
+  {
+    "field": "现场监看持续至几点",
+    "gold": "19:40",
+    "input": "交接前不离岗，现场监看到19:40，再去停车位集合。",
+    "scoring": "exact",
+    "id": "q0110",
+    "task_type": "single_field_extraction",
+    "source_family": "交接",
+    "source_text": "交接前不离岗，现场监看到19:40，再去停车位集合。"
+  },
+  {
+    "field": "置换后实际支付价格（元）",
+    "gold": "36",
+    "input": "旧卷回收费8元，票据清楚打印置换后实付36元。",
+    "scoring": "exact",
+    "id": "q0111",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "旧卷回收费8元，票据清楚打印置换后实付36元。"
+  },
+  {
+    "field": "有赠送布套的碗型",
+    "gold": "带把深碗",
+    "input": "柜台标价单上，带把深碗随赠布套，浅碟需另买。",
+    "scoring": "exact",
+    "id": "q0112",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "柜台标价单上，带把深碗随赠布套，浅碟需另买。"
+  },
+  {
+    "field": "领货码中间的连字符要保留的全码",
+    "gold": "E17-49",
+    "input": "愚人节抽签卡在结单时打印领货码E17-49，旧的折折券作废。",
+    "scoring": "exact",
+    "id": "q0113",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "愚人节抽签卡在结单时打印领货码E17-49，旧的折折券作废。"
+  },
+  {
+    "field": "本次交易开票品名",
+    "gold": "竹制屏风",
+    "input": "付款对象为小院工作组，开票品名确认为竹制屏风。",
+    "scoring": "exact",
+    "id": "q0114",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "付款对象为小院工作组，开票品名确认为竹制屏风。"
+  },
+  {
+    "field": "临时寄卖对象",
+    "gold": "手摇画笔架",
+    "input": "扳手不设寄卖，今日只接一件手摇画笔架临时寄卖。",
+    "scoring": "exact",
+    "id": "q0115",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "扳手不设寄卖，今日只接一件手摇画笔架临时寄卖。"
+  },
+  {
+    "field": "报名费退回的比例",
+    "gold": "80",
+    "input": "团员临时退出，报名费按80%原路退回。",
+    "scoring": "exact",
+    "id": "q0116",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "团员临时退出，报名费按80%原路退回。"
+  },
+  {
+    "field": "需称重出售的货物",
+    "gold": "扁面包",
+    "input": "圆袋饼干按包售卖，扁面包要求在柜台称重再收款。",
+    "scoring": "exact",
+    "id": "q0117",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "圆袋饼干按包售卖，扁面包要求在柜台称重再收款。"
+  },
+  {
+    "field": "盖印使用的墨色",
+    "gold": "紫黑",
+    "input": "收款员拿了三种印泥，销售盖印使用紫黑一盒。",
+    "scoring": "exact",
+    "id": "q0118",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "收款员拿了三种印泥，销售盖印使用紫黑一盒。"
+  },
+  {
+    "field": "打包分隔所用材质",
+    "gold": "牛皮纸",
+    "input": "订货详情指定用牛皮纸分隔，外箱无需印图案。",
+    "scoring": "exact",
+    "id": "q0119",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "订货详情指定用牛皮纸分隔，外箱无需印图案。"
+  },
+  {
+    "field": "标旧价的销售牌所处位置",
+    "gold": "收银台底边",
+    "input": "调价后新牌挂横杆，标旧价的销售牌暂夹收银台底边等回收。",
+    "scoring": "exact",
+    "id": "q0120",
+    "task_type": "single_field_extraction",
+    "source_family": "销售明细",
+    "source_text": "调价后新牌挂横杆，标旧价的销售牌暂夹收银台底边等回收。"
+  },
+  {
+    "field": "夜间放映的字幕语言",
+    "gold": "粤语",
+    "input": "日间解说为普通话，夜间放映用粤语字幕。",
+    "scoring": "exact",
+    "id": "q0121",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "日间解说为普通话，夜间放映用粤语字幕。"
+  },
+  {
+    "field": "计时结束后移交给评委的纸件",
+    "gold": "答题描线纸",
+    "input": "计时蜂鸣响后停笔，将答题描线纸移交评委，草稿可带走。",
+    "scoring": "exact",
+    "id": "q0122",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "计时蜂鸣响后停笔，将答题描线纸移交评委，草稿可带走。"
+  },
+  {
+    "field": "伞艺比赛的规定主题",
+    "gold": "风口",
+    "input": "开幕场用社团旗暖场，本次伞艺比赛的规定主题为风口。",
+    "scoring": "exact",
+    "id": "q0123",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "开幕场用社团旗暖场，本次伞艺比赛的规定主题为风口。"
+  },
+  {
+    "field": "木偶展开幕式入口",
+    "gold": "廊桥南口",
+    "input": "后台演员走斜坡，木偶展开幕式观众入口是廊桥南口。",
+    "scoring": "exact",
+    "id": "q0124",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "后台演员走斜坡，木偶展开幕式观众入口是廊桥南口。"
+  },
+  {
+    "field": "市集义卖的获益对象",
+    "gold": "候鸟救护站",
+    "input": "入口左边出售闲置雨鞋，义卖所得全部捐给候鸟救护站。",
+    "scoring": "exact",
+    "id": "q0125",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "入口左边出售闲置雨鞋，义卖所得全部捐给候鸟救护站。"
+  },
+  {
+    "field": "读剧闭幕前联唱的曲名",
+    "gold": "《空舟》",
+    "input": "主持人宣布读剧临近闭幕时联唱《空舟》，留白时段不加返场。",
+    "scoring": "exact",
+    "id": "q0126",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "主持人宣布读剧临近闭幕时联唱《空舟》，留白时段不加返场。"
+  },
+  {
+    "field": "舞台中线离第一排座位的距离（米）",
+    "gold": "3.6",
+    "input": "从舞台中线到第一排座位3.6米，音响列在中线右侧。",
+    "scoring": "exact",
+    "id": "q0127",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "从舞台中线到第一排座位3.6米，音响列在中线右侧。"
+  },
+  {
+    "field": "研习活动不允许携带的工具",
+    "gold": "液态墨瓶",
+    "input": "研习须自备炭笔和纸夹，禁止带液态墨瓶进房间。",
+    "scoring": "exact",
+    "id": "q0128",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "研习须自备炭笔和纸夹，禁止带液态墨瓶进房间。"
+  },
+  {
+    "field": "赛后合照采用的背景色",
+    "gold": "浅棕",
+    "input": "跑道亮蓝，赛后合照前挂浅棕背景，号码布交回。",
+    "scoring": "exact",
+    "id": "q0129",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "跑道亮蓝，赛后合照前挂浅棕背景，号码布交回。"
+  },
+  {
+    "field": "桌游角预留给儿童的时段",
+    "gold": "15:20至16:00",
+    "input": "桌游角上午开放给成人，预留儿童时段为15:20至16:00。",
+    "scoring": "exact",
+    "id": "q0130",
+    "task_type": "single_field_extraction",
+    "source_family": "活动手册",
+    "source_text": "桌游角上午开放给成人，预留儿童时段为15:20至16:00。"
+  },
+  {
+    "field": "需复检的鹅颈管所在柜位",
+    "gold": "C09",
+    "input": "水斗无裂纹，鹅颈管在C09柜位需复检，没带探灯。",
+    "scoring": "exact",
+    "id": "q0131",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "水斗无裂纹，鹅颈管在C09柜位需复检，没带探灯。"
+  },
+  {
+    "field": "已回收的护栏数量",
+    "gold": "11",
+    "input": "全场护栏原先15片，记录显示已回收11片。",
+    "scoring": "exact",
+    "id": "q0132",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "全场护栏原先15片，记录显示已回收11片。"
+  },
+  {
+    "field": "巡查到树洞有积水的地方",
+    "gold": "倒湾路口",
+    "input": "倒湾路口发现树洞积水，柴场无可见积水。",
+    "scoring": "exact",
+    "id": "q0133",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "倒湾路口发现树洞积水，柴场无可见积水。"
+  },
+  {
+    "field": "复位失败的设备名称",
+    "gold": "翻页控制器",
+    "input": "两台设备先断电，折杆成功复位，翻页控制器复位失败。",
+    "scoring": "exact",
+    "id": "q0134",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "两台设备先断电，折杆成功复位，翻页控制器复位失败。"
+  },
+  {
+    "field": "渠道下游漂浮物的类别",
+    "gold": "浮木",
+    "input": "巡渠记录：上游有包装膜，下游漂浮的是浮木并已打捞。",
+    "scoring": "exact",
+    "id": "q0135",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "巡渠记录：上游有包装膜，下游漂浮的是浮木并已打捞。"
+  },
+  {
+    "field": "不是样本来源的地点",
+    "gold": "第六停车区",
+    "input": "二号岗交来了样本，日志备注第六停车区未取样。",
+    "scoring": "exact",
+    "id": "q0136",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "二号岗交来了样本，日志备注第六停车区未取样。"
+  },
+  {
+    "field": "要求补漆的室外设施",
+    "gold": "小行人门",
+    "input": "栏杆和墙面尚好，小行人门需补刷，出入口不用改动。",
+    "scoring": "exact",
+    "id": "q0137",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "栏杆和墙面尚好，小行人门需补刷，出入口不用改动。"
+  },
+  {
+    "field": "车轮螺栓标记的字母",
+    "gold": "K",
+    "input": "工单备注车轮第一个螺栓用K标记，其余无字母。",
+    "scoring": "exact",
+    "id": "q0138",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "工单备注车轮第一个螺栓用K标记，其余无字母。"
+  },
+  {
+    "field": "复检需要使用的固定物件",
+    "gold": "水平尺",
+    "input": "拍照证明请留档，复检时需拿水平尺校准立柱。",
+    "scoring": "exact",
+    "id": "q0139",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "拍照证明请留档，复检时需拿水平尺校准立柱。"
+  },
+  {
+    "field": "隔离布置的最小距离（米）",
+    "gold": "4.5",
+    "input": "围挡离取样位至少4.5米，警示牌间距为1米。",
+    "scoring": "exact",
+    "id": "q0140",
+    "task_type": "single_field_extraction",
+    "source_family": "巡检记录",
+    "source_text": "围挡离取样位至少4.5米，警示牌间距为1米。"
+  },
+  {
+    "field": "节目改播后的首档名称",
+    "gold": "《风铃列车》",
+    "input": "早间专题调到下午，改播后的首档为《风铃列车》。",
+    "scoring": "exact",
+    "id": "q0141",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "早间专题调到下午，改播后的首档为《风铃列车》。"
+  },
+  {
+    "field": "替代公交到达的桥名",
+    "gold": "沙脊桥",
+    "input": "城北线路停发，替代公交到沙脊桥后原路返回。",
+    "scoring": "exact",
+    "id": "q0142",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "城北线路停发，替代公交到沙脊桥后原路返回。"
+  },
+  {
+    "field": "本轮社区播报的结束语",
+    "gold": "明晨再会",
+    "input": "按线路报完路况，不播天气。请将明晨再会作为结束语。",
+    "scoring": "exact",
+    "id": "q0143",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "按线路报完路况，不播天气。请将明晨再会作为结束语。"
+  },
+  {
+    "field": "整点提示音一共有几下",
+    "gold": "8",
+    "input": "在一段缓冲静默后有8下整点提示音，播音员随后开口。",
+    "scoring": "exact",
+    "id": "q0144",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "在一段缓冲静默后有8下整点提示音，播音员随后开口。"
+  },
+  {
+    "field": "采访问答实际使用的语言",
+    "gold": "客家话",
+    "input": "记者用普通话暖场，正式采访问答改用客家话。",
+    "scoring": "exact",
+    "id": "q0145",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "记者用普通话暖场，正式采访问答改用客家话。"
+  },
+  {
+    "field": "段落中提到巡展新增的区域",
+    "gold": "北侧回廊",
+    "input": "南边旧馆续开，巡展新增区域为北侧回廊。",
+    "scoring": "exact",
+    "id": "q0146",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "南边旧馆续开，巡展新增区域为北侧回廊。"
+  },
+  {
+    "field": "广播中征集的物品",
+    "gold": "旧式瓶塞",
+    "input": "青少年工作坊征集旧式瓶塞，数量交给值班老师汇总。",
+    "scoring": "exact",
+    "id": "q0147",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "青少年工作坊征集旧式瓶塞，数量交给值班老师汇总。"
+  },
+  {
+    "field": "江面灯船的出发码头",
+    "gold": "钝石码头",
+    "input": "造船厂给灯船安装线灯，当晚出发点为钝石码头。",
+    "scoring": "exact",
+    "id": "q0148",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "造船厂给灯船安装线灯，当晚出发点为钝石码头。"
+  },
+  {
+    "field": "预告公布的短片时长（分钟）",
+    "gold": "13",
+    "input": "短片预告写明片长13分钟，座谈预计半小时。",
+    "scoring": "exact",
+    "id": "q0149",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "短片预告写明片长13分钟，座谈预计半小时。"
+  },
+  {
+    "field": "值班播音员临时更换的原因",
+    "gold": "交通管制",
+    "input": "告知听众：因为交通管制，今晚由杨蔓临时接替上一位播音员。",
+    "scoring": "exact",
+    "id": "q0150",
+    "task_type": "single_field_extraction",
+    "source_family": "播报稿",
+    "source_text": "告知听众：因为交通管制，今晚由杨蔓临时接替上一位播音员。"
+  },
+  {
+    "field": "馆藏胶片盒的标签文字",
+    "gold": "搭戏台",
+    "input": "放映厅拍到灯架，胶片盒原标签登记值为搭戏台。",
+    "scoring": "exact",
+    "id": "q0151",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "放映厅拍到灯架，胶片盒原标签登记值为搭戏台。"
+  },
+  {
+    "field": "刻在防风门外的年代",
+    "gold": "民国十年",
+    "input": "防风门内贴有年检码，外侧石沿刻的是民国十年。",
+    "scoring": "exact",
+    "id": "q0152",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "防风门内贴有年检码，外侧石沿刻的是民国十年。"
+  },
+  {
+    "field": "借给工坊的老字号工具",
+    "gold": "竹篾剪",
+    "input": "布样和竹篾剪同时登记，只有竹篾剪借给工坊做演示。",
+    "scoring": "exact",
+    "id": "q0153",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "布样和竹篾剪同时登记，只有竹篾剪借给工坊做演示。"
+  },
+  {
+    "field": "民谣抄本的采集地",
+    "gold": "泥雀村",
+    "input": "田野采风录音另附，民谣抄本采集地标成泥雀村。",
+    "scoring": "exact",
+    "id": "q0154",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "田野采风录音另附，民谣抄本采集地标成泥雀村。"
+  },
+  {
+    "field": "诗牌上作者使用的笔名",
+    "gold": "红桦",
+    "input": "作者本名印在馆签下方，诗牌题款使用笔名红桦。",
+    "scoring": "exact",
+    "id": "q0155",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "作者本名印在馆签下方，诗牌题款使用笔名红桦。"
+  },
+  {
+    "field": "壁画修复的首要环节",
+    "gold": "补强灰泥",
+    "input": "专家组议定先补强灰泥，再进行除尘与拍照。",
+    "scoring": "exact",
+    "id": "q0156",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "专家组议定先补强灰泥，再进行除尘与拍照。"
+  },
+  {
+    "field": "捐赠人要求归还的容器名",
+    "gold": "月白箱",
+    "input": "捐赠作品已签入库，捐赠人注明月白箱装过作品需归还。",
+    "scoring": "exact",
+    "id": "q0157",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "捐赠作品已签入库，捐赠人注明月白箱装过作品需归还。"
+  },
+  {
+    "field": "旧唱片背面的曲目名",
+    "gold": "《雨落棚顶》",
+    "input": "正面刻《晚街》，这张旧唱片背面曲目为《雨落棚顶》。",
+    "scoring": "exact",
+    "id": "q0158",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "正面刻《晚街》，这张旧唱片背面曲目为《雨落棚顶》。"
+  },
+  {
+    "field": "地窖拱顶所见砖的颜色",
+    "gold": "赤褐",
+    "input": "展签记地窖地面为暗灰石板，拱顶可见赤褐砖。",
+    "scoring": "exact",
+    "id": "q0159",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "展签记地窖地面为暗灰石板，拱顶可见赤褐砖。"
+  },
+  {
+    "field": "伴奏留声机的出厂地点",
+    "gold": "苇原市",
+    "input": "档案写唱针由北方进口，整台伴奏留声机出厂于苇原市。",
+    "scoring": "exact",
+    "id": "q0160",
+    "task_type": "single_field_extraction",
+    "source_family": "文化档案",
+    "source_text": "档案写唱针由北方进口，整台伴奏留声机出厂于苇原市。"
+  },
+  {
+    "fields": [
+      "地点",
+      "找回物"
+    ],
+    "gold": {
+      "地点": "百叶窗平台",
+      "找回物": "胡桃壳口哨"
+    },
+    "input": "值守人在百叶窗平台找到胡桃壳口哨，已交给大厅。",
+    "scoring": "json",
+    "id": "q0161",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "值守人在百叶窗平台找到胡桃壳口哨，已交给大厅。"
+  },
+  {
+    "fields": [
+      "制造地",
+      "器件"
+    ],
+    "gold": {
+      "制造地": "锡芒镇",
+      "器件": "桌面剪灯"
+    },
+    "input": "铭片要移存：这盏桌面剪灯来自锡芒镇，表面无需擦拭。",
+    "scoring": "json",
+    "id": "q0162",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "铭片要移存：这盏桌面剪灯来自锡芒镇，表面无需擦拭。"
+  },
+  {
+    "fields": [
+      "交付物",
+      "收件人"
+    ],
+    "gold": {
+      "交付物": "瓦片拓图",
+      "收件人": "孟知铃"
+    },
+    "input": "请把瓦片拓图亲手交给孟知铃，余件明天再寄。",
+    "scoring": "json",
+    "id": "q0163",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "请把瓦片拓图亲手交给孟知铃，余件明天再寄。"
+  },
+  {
+    "fields": [
+      "领用时段",
+      "装备"
+    ],
+    "gold": {
+      "领用时段": "夜间",
+      "装备": "罩面围裙"
+    },
+    "input": "寄存册：罩面围裙只在夜间领用，白色工具套无此限制。",
+    "scoring": "json",
+    "id": "q0164",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "寄存册：罩面围裙只在夜间领用，白色工具套无此限制。"
+  },
+  {
+    "fields": [
+      "图案",
+      "外沿"
+    ],
+    "gold": {
+      "图案": "双鱼",
+      "外沿": "淡金"
+    },
+    "input": "零件券的外沿涂淡金，中央指定印双鱼，尺寸跟旧券相同。",
+    "scoring": "json",
+    "id": "q0165",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "零件券的外沿涂淡金，中央指定印双鱼，尺寸跟旧券相同。"
+  },
+  {
+    "fields": [
+      "补登记理由",
+      "簿册"
+    ],
+    "gold": {
+      "补登记理由": "错放旧号签",
+      "簿册": "排灯底册"
+    },
+    "input": "排灯底册需补登记一笔，由于错放旧号签，条目先挂起。",
+    "scoring": "json",
+    "id": "q0166",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "排灯底册需补登记一笔，由于错放旧号签，条目先挂起。"
+  },
+  {
+    "fields": [
+      "首选花束",
+      "花器"
+    ],
+    "gold": {
+      "首选花束": "黄栌枝",
+      "花器": "矮胆瓶"
+    },
+    "input": "周末门面用黄栌枝摆在矮胆瓶，前台另收一束荆条。",
+    "scoring": "json",
+    "id": "q0167",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "周末门面用黄栌枝摆在矮胆瓶，前台另收一束荆条。"
+  },
+  {
+    "fields": [
+      "借阅者",
+      "归还日"
+    ],
+    "gold": {
+      "借阅者": "江栖野",
+      "归还日": "周六"
+    },
+    "input": "江栖野借走旧航图，跟档案员说周六还回。",
+    "scoring": "json",
+    "id": "q0168",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "江栖野借走旧航图，跟档案员说周六还回。"
+  },
+  {
+    "fields": [
+      "装订材料",
+      "完成时间"
+    ],
+    "gold": {
+      "装订材料": "棉线",
+      "完成时间": null
+    },
+    "input": "边角标签弄丢了，册子只能看出用棉线装订。",
+    "scoring": "json",
+    "id": "q0169",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "边角标签弄丢了，册子只能看出用棉线装订。"
+  },
+  {
+    "fields": [
+      "作业队",
+      "分配区域"
+    ],
+    "gold": {
+      "作业队": "灰鹤队",
+      "分配区域": "后广场"
+    },
+    "input": "派工板刚重新写过：灰鹤队留守后广场，支援车尚未签到。",
+    "scoring": "json",
+    "id": "q0170",
+    "task_type": "json_extraction",
+    "source_family": "登记条",
+    "source_text": "派工板刚重新写过：灰鹤队留守后广场，支援车尚未签到。"
+  },
+  {
+    "fields": [
+      "受影响部门",
+      "恢复日"
+    ],
+    "gold": {
+      "受影响部门": "胶片阅览室",
+      "恢复日": "7月6日"
+    },
+    "input": "胶片阅览室暂时关灯检修，定于7月6日恢复；取票亭照开。",
+    "scoring": "json",
+    "id": "q0171",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "胶片阅览室暂时关灯检修，定于7月6日恢复；取票亭照开。"
+  },
+  {
+    "fields": [
+      "撤销路线",
+      "替代路线"
+    ],
+    "gold": {
+      "撤销路线": "沿崖栈道",
+      "替代路线": "围河小路"
+    },
+    "input": "护林站通知游客停用沿崖栈道，改走围河小路，照旧在岔口验票。",
+    "scoring": "json",
+    "id": "q0172",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "护林站通知游客停用沿崖栈道，改走围河小路，照旧在岔口验票。"
+  },
+  {
+    "fields": [
+      "暂停项",
+      "保留项"
+    ],
+    "gold": {
+      "暂停项": "耳机租借",
+      "保留项": "字幕导览"
+    },
+    "input": "今天仅暂停耳机租借，字幕导览仍随入馆票提供。",
+    "scoring": "json",
+    "id": "q0173",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "今天仅暂停耳机租借，字幕导览仍随入馆票提供。"
+  },
+  {
+    "fields": [
+      "新发放点",
+      "物资"
+    ],
+    "gold": {
+      "新发放点": "斗拱廊",
+      "物资": "雨鞋套"
+    },
+    "input": "体育馆内部封绳，雨鞋套改在斗拱廊发放。",
+    "scoring": "json",
+    "id": "q0174",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "体育馆内部封绳，雨鞋套改在斗拱廊发放。"
+  },
+  {
+    "fields": [
+      "旧入口",
+      "新入口"
+    ],
+    "gold": {
+      "旧入口": "松窗门",
+      "新入口": "长廊尽头"
+    },
+    "input": "联合排查期间改由长廊尽头入内，原先的松窗门挂锁。",
+    "scoring": "json",
+    "id": "q0175",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "联合排查期间改由长廊尽头入内，原先的松窗门挂锁。"
+  },
+  {
+    "fields": [
+      "说明会主题",
+      "会议室"
+    ],
+    "gold": {
+      "说明会主题": "小修工具登记",
+      "会议室": "鸦嘴间"
+    },
+    "input": "请到鸦嘴间参加小修工具登记说明会，带正面的凭证照片。",
+    "scoring": "json",
+    "id": "q0176",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "请到鸦嘴间参加小修工具登记说明会，带正面的凭证照片。"
+  },
+  {
+    "fields": [
+      "提前结束的活动",
+      "结束时刻"
+    ],
+    "gold": {
+      "提前结束的活动": "手鼓教室",
+      "结束时刻": "16:40"
+    },
+    "input": "因场地要清洁，手鼓教室今天16:40结束，围棋班准时。",
+    "scoring": "json",
+    "id": "q0177",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "因场地要清洁，手鼓教室今天16:40结束，围棋班准时。"
+  },
+  {
+    "fields": [
+      "演出类型",
+      "票价"
+    ],
+    "gold": {
+      "演出类型": "影戏",
+      "票价": null
+    },
+    "input": "周五将有影戏演出，观演区用绳子划开，入场经侧口。",
+    "scoring": "json",
+    "id": "q0178",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "周五将有影戏演出，观演区用绳子划开，入场经侧口。"
+  },
+  {
+    "fields": [
+      "处理物",
+      "接收方"
+    ],
+    "gold": {
+      "处理物": "杂色毛巾",
+      "接收方": "西郊洗整点"
+    },
+    "input": "寄放满月的杂色毛巾将统一送西郊洗整点，认领先到值台。",
+    "scoring": "json",
+    "id": "q0179",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "寄放满月的杂色毛巾将统一送西郊洗整点，认领先到值台。"
+  },
+  {
+    "fields": [
+      "送水对象",
+      "补给位置"
+    ],
+    "gold": {
+      "送水对象": "后台候场人",
+      "补给位置": "道具箱旁"
+    },
+    "input": "请把水杯放在道具箱旁，供后台候场人领取。",
+    "scoring": "json",
+    "id": "q0180",
+    "task_type": "json_extraction",
+    "source_family": "通告",
+    "source_text": "请把水杯放在道具箱旁，供后台候场人领取。"
+  },
+  {
+    "fields": [
+      "维修对象",
+      "材料"
+    ],
+    "gold": {
+      "维修对象": "投射镜",
+      "材料": "薄铜箔"
+    },
+    "input": "为了挡住投射镜边缘漏光，师傅取了薄铜箔补缝。",
+    "scoring": "json",
+    "id": "q0181",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "为了挡住投射镜边缘漏光，师傅取了薄铜箔补缝。"
+  },
+  {
+    "fields": [
+      "替换位置",
+      "统计栏"
+    ],
+    "gold": {
+      "替换位置": "角部舱位",
+      "统计栏": "当日故障"
+    },
+    "input": "整张巡检卡补写角部舱位替换件，统计归入当日故障。",
+    "scoring": "json",
+    "id": "q0182",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "整张巡检卡补写角部舱位替换件，统计归入当日故障。"
+  },
+  {
+    "fields": [
+      "借用工具",
+      "工具归还地"
+    ],
+    "gold": {
+      "借用工具": "线锯",
+      "工具归还地": "石阶门厅"
+    },
+    "input": "折板需要线锯修角。完事把线锯拿回石阶门厅。",
+    "scoring": "json",
+    "id": "q0183",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "折板需要线锯修角。完事把线锯拿回石阶门厅。"
+  },
+  {
+    "fields": [
+      "评估员",
+      "待查项目"
+    ],
+    "gold": {
+      "评估员": "聂青泉",
+      "待查项目": "电平码漂移"
+    },
+    "input": "聂青泉下午到货梯，负责评估电平码漂移。",
+    "scoring": "json",
+    "id": "q0184",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "聂青泉下午到货梯，负责评估电平码漂移。"
+  },
+  {
+    "fields": [
+      "紧固方式",
+      "部件"
+    ],
+    "gold": {
+      "紧固方式": "铆接",
+      "部件": "弧形裙片"
+    },
+    "input": "新版本弧形裙片采用铆接，稍早打磨用的夹具已入箱。",
+    "scoring": "json",
+    "id": "q0185",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "新版本弧形裙片采用铆接，稍早打磨用的夹具已入箱。"
+  },
+  {
+    "fields": [
+      "清洁面",
+      "禁用物"
+    ],
+    "gold": {
+      "清洁面": "平整背板",
+      "禁用物": "松油"
+    },
+    "input": "擦拭从平整背板做起，清洁时禁用松油，旧手巾可留用。",
+    "scoring": "json",
+    "id": "q0186",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "擦拭从平整背板做起，清洁时禁用松油，旧手巾可留用。"
+  },
+  {
+    "fields": [
+      "维修地址",
+      "维修日期"
+    ],
+    "gold": {
+      "维修地址": "栖雁坊六号",
+      "维修日期": null
+    },
+    "input": "返修单上只确定去栖雁坊六号，等值守人回话。",
+    "scoring": "json",
+    "id": "q0187",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "返修单上只确定去栖雁坊六号，等值守人回话。"
+  },
+  {
+    "fields": [
+      "通电指示",
+      "检测环节"
+    ],
+    "gold": {
+      "通电指示": "白点闪动",
+      "检测环节": "自检前"
+    },
+    "input": "白点闪动在自检前出现，接下来才检测门闩和风道。",
+    "scoring": "json",
+    "id": "q0188",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "白点闪动在自检前出现，接下来才检测门闩和风道。"
+  },
+  {
+    "fields": [
+      "接头规格",
+      "胶面颜色"
+    ],
+    "gold": {
+      "接头规格": "K3",
+      "胶面颜色": "暗红"
+    },
+    "input": "配对样条暗红胶面完整，装的是K3规格接头。",
+    "scoring": "json",
+    "id": "q0189",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "配对样条暗红胶面完整，装的是K3规格接头。"
+  },
+  {
+    "fields": [
+      "故障原因",
+      "处理人"
+    ],
+    "gold": {
+      "故障原因": "滚轴错位",
+      "处理人": "申余生"
+    },
+    "input": "申余生签了工单，故障原因定位为滚轴错位。",
+    "scoring": "json",
+    "id": "q0190",
+    "task_type": "json_extraction",
+    "source_family": "修理",
+    "source_text": "申余生签了工单，故障原因定位为滚轴错位。"
+  },
+  {
+    "fields": [
+      "商品",
+      "支付方式"
+    ],
+    "gold": {
+      "商品": "云纹手账套",
+      "支付方式": "礼品卡"
+    },
+    "input": "受理云纹手账套订单，结账用礼品卡，余额在下联打印。",
+    "scoring": "json",
+    "id": "q0191",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "受理云纹手账套订单，结账用礼品卡，余额在下联打印。"
+  },
+  {
+    "fields": [
+      "交易号",
+      "用途"
+    ],
+    "gold": {
+      "交易号": "V5-806",
+      "用途": "偿还磨损费"
+    },
+    "input": "柜员用V5-806作为交易号，备注偿还磨损费。",
+    "scoring": "json",
+    "id": "q0192",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "柜员用V5-806作为交易号，备注偿还磨损费。"
+  },
+  {
+    "fields": [
+      "赠品",
+      "购买物"
+    ],
+    "gold": {
+      "赠品": "铜圈书签",
+      "购买物": "绒布匣"
+    },
+    "input": "每个绒布匣附送铜圈书签，说明卡可放前台回收。",
+    "scoring": "json",
+    "id": "q0193",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "每个绒布匣附送铜圈书签，说明卡可放前台回收。"
+  },
+  {
+    "fields": [
+      "开票名称",
+      "对账对象"
+    ],
+    "gold": {
+      "开票名称": "竹排桌板",
+      "对账对象": "芦田木作组"
+    },
+    "input": "芦田木作组月底统一对账，本联开票名称为竹排桌板。",
+    "scoring": "json",
+    "id": "q0194",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "芦田木作组月底统一对账，本联开票名称为竹排桌板。"
+  },
+  {
+    "fields": [
+      "开始计费点",
+      "计费对象"
+    ],
+    "gold": {
+      "开始计费点": "发放时",
+      "计费对象": "剧场拐杖"
+    },
+    "input": "剧场拐杖按小时租，发放时开始计费，会议扶手不收费。",
+    "scoring": "json",
+    "id": "q0195",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "剧场拐杖按小时租，发放时开始计费，会议扶手不收费。"
+  },
+  {
+    "fields": [
+      "退款去向",
+      "退款原因"
+    ],
+    "gold": {
+      "退款去向": "储值余额",
+      "退款原因": "色号断货"
+    },
+    "input": "由于色号断货，预售的货款退到储值余额。",
+    "scoring": "json",
+    "id": "q0196",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "由于色号断货，预售的货款退到储值余额。"
+  },
+  {
+    "fields": [
+      "接收箱号",
+      "清点单位"
+    ],
+    "gold": {
+      "接收箱号": "第九格",
+      "清点单位": "捆"
+    },
+    "input": "翻出剩余电线，接收箱号为第九格，管理员按捆清点。",
+    "scoring": "json",
+    "id": "q0197",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "翻出剩余电线，接收箱号为第九格，管理员按捆清点。"
+  },
+  {
+    "fields": [
+      "运单指定楼层",
+      "收货方"
+    ],
+    "gold": {
+      "运单指定楼层": "三楼",
+      "收货方": "联轴检修室"
+    },
+    "input": "联轴检修室的运单要求把抬杆工具送三楼，留柜待领。",
+    "scoring": "json",
+    "id": "q0198",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "联轴检修室的运单要求把抬杆工具送三楼，留柜待领。"
+  },
+  {
+    "fields": [
+      "出库内容",
+      "运费"
+    ],
+    "gold": {
+      "出库内容": "羊毛轴帽",
+      "运费": null
+    },
+    "input": "羊毛轴帽已经出库，销售凭证只列货品本身。",
+    "scoring": "json",
+    "id": "q0199",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "羊毛轴帽已经出库，销售凭证只列货品本身。"
+  },
+  {
+    "fields": [
+      "物品来源",
+      "调拨去向"
+    ],
+    "gold": {
+      "物品来源": "学社自有",
+      "调拨去向": "纸飞机角"
+    },
+    "input": "纸飞机角临时缺少拉线尺，调拨用尺为学社自有。",
+    "scoring": "json",
+    "id": "q0200",
+    "task_type": "json_extraction",
+    "source_family": "单据",
+    "source_text": "纸飞机角临时缺少拉线尺，调拨用尺为学社自有。"
+  },
+  {
+    "fields": [
+      "代传口信的人",
+      "收信方"
+    ],
+    "gold": {
+      "代传口信的人": "舒彦",
+      "收信方": "沙岗讲解员"
+    },
+    "input": "舒彦说她路过沙岗，会把闭道的口信带给沙岗讲解员。",
+    "scoring": "json",
+    "id": "q0201",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "舒彦说她路过沙岗，会把闭道的口信带给沙岗讲解员。"
+  },
+  {
+    "fields": [
+      "希望延用的曲式",
+      "新增乐器"
+    ],
+    "gold": {
+      "希望延用的曲式": "慢三拍",
+      "新增乐器": "陶铃"
+    },
+    "input": "乐队群商量，陶铃只加两下，整体还是慢三拍。",
+    "scoring": "json",
+    "id": "q0202",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "乐队群商量，陶铃只加两下，整体还是慢三拍。"
+  },
+  {
+    "fields": [
+      "出借人",
+      "彩旗数量原文"
+    ],
+    "gold": {
+      "出借人": "叶香岑",
+      "彩旗数量原文": "五面"
+    },
+    "input": "叶香岑从箱子里拿了五面彩旗借给摊主。",
+    "scoring": "json",
+    "id": "q0203",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "叶香岑从箱子里拿了五面彩旗借给摊主。"
+  },
+  {
+    "fields": [
+      "初选动物",
+      "最终动物"
+    ],
+    "gold": {
+      "初选动物": "岩雀",
+      "最终动物": "灰燕"
+    },
+    "input": "插画群起初画岩雀，后来一致确定画灰燕，细枝稍尖。",
+    "scoring": "json",
+    "id": "q0204",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "插画群起初画岩雀，后来一致确定画灰燕，细枝稍尖。"
+  },
+  {
+    "fields": [
+      "补录方式",
+      "归档地点"
+    ],
+    "gold": {
+      "补录方式": "拍照",
+      "归档地点": "后台侧架"
+    },
+    "input": "讲评人要求先拍照补录，再把实物移到后台侧架的长盒。",
+    "scoring": "json",
+    "id": "q0205",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "讲评人要求先拍照补录，再把实物移到后台侧架的长盒。"
+  },
+  {
+    "fields": [
+      "去程出发点",
+      "回程终点"
+    ],
+    "gold": {
+      "去程出发点": "开船墩",
+      "回程终点": "两层埠"
+    },
+    "input": "向导让我在开船墩等车，回程在两层埠下。",
+    "scoring": "json",
+    "id": "q0206",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "向导让我在开船墩等车，回程在两层埠下。"
+  },
+  {
+    "fields": [
+      "说明纸颜色",
+      "夹纸物"
+    ],
+    "gold": {
+      "说明纸颜色": "浅蓝",
+      "夹纸物": "磁纽"
+    },
+    "input": "讲师交代夹说明纸一定用磁纽，那叠浅蓝纸可以分批发。",
+    "scoring": "json",
+    "id": "q0207",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "讲师交代夹说明纸一定用磁纽，那叠浅蓝纸可以分批发。"
+  },
+  {
+    "fields": [
+      "想先试的茶",
+      "约定杯型"
+    ],
+    "gold": {
+      "想先试的茶": "旧荒白",
+      "约定杯型": "高沿杯"
+    },
+    "input": "两位约好先试旧荒白，服务员应拿高沿杯，不用宽口碗。",
+    "scoring": "json",
+    "id": "q0208",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "两位约好先试旧荒白，服务员应拿高沿杯，不用宽口碗。"
+  },
+  {
+    "fields": [
+      "讲不清的鸣声",
+      "来源"
+    ],
+    "gold": {
+      "讲不清的鸣声": "呼噜噜",
+      "来源": null
+    },
+    "input": "女孩模仿刚才窗外的声音，说听起来像呼噜噜。",
+    "scoring": "json",
+    "id": "q0209",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "女孩模仿刚才窗外的声音，说听起来像呼噜噜。"
+  },
+  {
+    "fields": [
+      "交还衣架的人",
+      "衣架形状"
+    ],
+    "gold": {
+      "交还衣架的人": "罗椿",
+      "衣架形状": "弯月形"
+    },
+    "input": "大家嘱托罗椿归还弯月形衣架，其它木圈分开捆。",
+    "scoring": "json",
+    "id": "q0210",
+    "task_type": "json_extraction",
+    "source_family": "转述",
+    "source_text": "大家嘱托罗椿归还弯月形衣架，其它木圈分开捆。"
+  },
+  {
+    "fields": [
+      "租借标题",
+      "留档介质"
+    ],
+    "gold": {
+      "租借标题": "《凹门》",
+      "留档介质": "缩微胶片"
+    },
+    "input": "古戏谱《凹门》仅供借阅，存根留在缩微胶片。",
+    "scoring": "json",
+    "id": "q0211",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "古戏谱《凹门》仅供借阅，存根留在缩微胶片。"
+  },
+  {
+    "fields": [
+      "录音采集月",
+      "演奏乐器"
+    ],
+    "gold": {
+      "录音采集月": "腊月",
+      "演奏乐器": "月琴"
+    },
+    "input": "新入录音两本，来稿标注腊月采集，配乐只有月琴。",
+    "scoring": "json",
+    "id": "q0212",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "新入录音两本，来稿标注腊月采集，配乐只有月琴。"
+  },
+  {
+    "fields": [
+      "砖拱旧用途",
+      "新用途"
+    ],
+    "gold": {
+      "砖拱旧用途": "藏冰",
+      "新用途": "花苗过冬"
+    },
+    "input": "园林说明卡写砖拱早年藏冰，如今允许花苗过冬。",
+    "scoring": "json",
+    "id": "q0213",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "园林说明卡写砖拱早年藏冰，如今允许花苗过冬。"
+  },
+  {
+    "fields": [
+      "别名",
+      "记录地区"
+    ],
+    "gold": {
+      "别名": "飞飞帽",
+      "记录地区": "卢湾岗"
+    },
+    "input": "卢湾岗衣饰条目登记该帽别名飞飞帽，售价未随档。",
+    "scoring": "json",
+    "id": "q0214",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "卢湾岗衣饰条目登记该帽别名飞飞帽，售价未随档。"
+  },
+  {
+    "fields": [
+      "清单新增材料",
+      "清单原有地名"
+    ],
+    "gold": {
+      "清单新增材料": "岩盐晶体",
+      "清单原有地名": "相见峡"
+    },
+    "input": "旧标本条目原有相见峡，复核追加材料岩盐晶体。",
+    "scoring": "json",
+    "id": "q0215",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "旧标本条目原有相见峡，复核追加材料岩盐晶体。"
+  },
+  {
+    "fields": [
+      "护身木牌形状",
+      "文字"
+    ],
+    "gold": {
+      "护身木牌形状": "柿饼形",
+      "文字": "松涛"
+    },
+    "input": "护身木牌呈柿饼形，中央刻松涛；背面有修补痕。",
+    "scoring": "json",
+    "id": "q0216",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "护身木牌呈柿饼形，中央刻松涛；背面有修补痕。"
+  },
+  {
+    "fields": [
+      "剧照原拍摄者",
+      "入藏批次"
+    ],
+    "gold": {
+      "剧照原拍摄者": "栾修绮",
+      "入藏批次": "初春批"
+    },
+    "input": "初春批剧照一册已入库，照片签名为栾修绮。",
+    "scoring": "json",
+    "id": "q0217",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "初春批剧照一册已入库，照片签名为栾修绮。"
+  },
+  {
+    "fields": [
+      "鱼纹印染试样的底布",
+      "留档编号"
+    ],
+    "gold": {
+      "鱼纹印染试样的底布": "土布",
+      "留档编号": "C-68"
+    },
+    "input": "鱼纹印染试样用土布制作，留档编到C-68。",
+    "scoring": "json",
+    "id": "q0218",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "鱼纹印染试样用土布制作，留档编到C-68。"
+  },
+  {
+    "fields": [
+      "摄影册作者",
+      "完成年份"
+    ],
+    "gold": {
+      "摄影册作者": "许矶",
+      "完成年份": null
+    },
+    "input": "摄影册扉页署许矶，所有题记只写地点和当天温度。",
+    "scoring": "json",
+    "id": "q0219",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "摄影册扉页署许矶，所有题记只写地点和当天温度。"
+  },
+  {
+    "fields": [
+      "展签还原方式",
+      "使用工具"
+    ],
+    "gold": {
+      "展签还原方式": "手刻",
+      "使用工具": "斜刃刀"
+    },
+    "input": "明年展签遵循手刻还原要求，使用斜刃刀削边。",
+    "scoring": "json",
+    "id": "q0220",
+    "task_type": "json_extraction",
+    "source_family": "档案",
+    "source_text": "明年展签遵循手刻还原要求，使用斜刃刀削边。"
+  },
+  {
+    "fields": [
+      "悬吊物",
+      "吊点"
+    ],
+    "gold": {
+      "悬吊物": "雨量杯",
+      "吊点": "芦篷末端"
+    },
+    "input": "挪走秤台，雨量杯须悬在芦篷末端以便校读。",
+    "scoring": "json",
+    "id": "q0221",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "挪走秤台，雨量杯须悬在芦篷末端以便校读。"
+  },
+  {
+    "fields": [
+      "绕线路径",
+      "停缆位置"
+    ],
+    "gold": {
+      "绕线路径": "左壁",
+      "停缆位置": "扁棚背后"
+    },
+    "input": "线缆从左壁绕过去，停缆标记贴在扁棚背后。",
+    "scoring": "json",
+    "id": "q0222",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "线缆从左壁绕过去，停缆标记贴在扁棚背后。"
+  },
+  {
+    "fields": [
+      "观察窗规格",
+      "压条"
+    ],
+    "gold": {
+      "观察窗规格": "圆角",
+      "压条": "波纹铝条"
+    },
+    "input": "新观察窗要做圆角，边缘压上波纹铝条再上色。",
+    "scoring": "json",
+    "id": "q0223",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "新观察窗要做圆角，边缘压上波纹铝条再上色。"
+  },
+  {
+    "fields": [
+      "校平对象",
+      "合格标记"
+    ],
+    "gold": {
+      "校平对象": "常闭踏板",
+      "合格标记": "淡紫点"
+    },
+    "input": "竞速轨的常闭踏板重新校平，合格后记淡紫点。",
+    "scoring": "json",
+    "id": "q0224",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "竞速轨的常闭踏板重新校平，合格后记淡紫点。"
+  },
+  {
+    "fields": [
+      "排水沟具备的结构",
+      "三角标示颜色"
+    ],
+    "gold": {
+      "排水沟具备的结构": "双折坡",
+      "三角标示颜色": "花青"
+    },
+    "input": "排水沟图画成双折坡，入口三角标示用花青。",
+    "scoring": "json",
+    "id": "q0225",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "排水沟图画成双折坡，入口三角标示用花青。"
+  },
+  {
+    "fields": [
+      "挡板选材",
+      "连接方式"
+    ],
+    "gold": {
+      "挡板选材": "短节楠木",
+      "连接方式": "半搭接"
+    },
+    "input": "施工计划靠墙挡板采用短节楠木，连接一律半搭接。",
+    "scoring": "json",
+    "id": "q0226",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "施工计划靠墙挡板采用短节楠木，连接一律半搭接。"
+  },
+  {
+    "fields": [
+      "校准仪",
+      "采购商"
+    ],
+    "gold": {
+      "校准仪": "传口尺",
+      "采购商": null
+    },
+    "input": "发货清单上这一页只有传口尺一项校准仪，需要核对封签。",
+    "scoring": "json",
+    "id": "q0227",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "发货清单上这一页只有传口尺一项校准仪，需要核对封签。"
+  },
+  {
+    "fields": [
+      "延长路线",
+      "停止地点"
+    ],
+    "gold": {
+      "延长路线": "东侧吊轨",
+      "停止地点": "绳筒框"
+    },
+    "input": "改用东侧吊轨延伸到绳筒框后结束，后面不再加轨。",
+    "scoring": "json",
+    "id": "q0228",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "改用东侧吊轨延伸到绳筒框后结束，后面不再加轨。"
+  },
+  {
+    "fields": [
+      "基座外形",
+      "底面材料"
+    ],
+    "gold": {
+      "基座外形": "六边形",
+      "底面材料": "毛面橡胶"
+    },
+    "input": "基座外形为六边形，底面贴了毛面橡胶避滑。",
+    "scoring": "json",
+    "id": "q0229",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "基座外形为六边形，底面贴了毛面橡胶避滑。"
+  },
+  {
+    "fields": [
+      "喷漆区",
+      "完成条件"
+    ],
+    "gold": {
+      "喷漆区": "连廊天花",
+      "完成条件": "外轮廓全部覆盖"
+    },
+    "input": "喷枪覆盖连廊天花，外轮廓全部覆盖后方结束。",
+    "scoring": "json",
+    "id": "q0230",
+    "task_type": "json_extraction",
+    "source_family": "工程",
+    "source_text": "喷枪覆盖连廊天花，外轮廓全部覆盖后方结束。"
+  },
+  {
+    "fields": [
+      "菜畦留种品种",
+      "附加标记"
+    ],
+    "gold": {
+      "菜畦留种品种": "螺纹豆",
+      "附加标记": "靛线"
+    },
+    "input": "菜畦保留螺纹豆做来年种子，成袋后以靛线区分。",
+    "scoring": "json",
+    "id": "q0231",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "菜畦保留螺纹豆做来年种子，成袋后以靛线区分。"
+  },
+  {
+    "fields": [
+      "摆架作物",
+      "摆架时间"
+    ],
+    "gold": {
+      "摆架作物": "蔓蜜瓜",
+      "摆架时间": "申时"
+    },
+    "input": "农人给蔓蜜瓜摆架，定在申时，籽料晚些清理。",
+    "scoring": "json",
+    "id": "q0232",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "农人给蔓蜜瓜摆架，定在申时，籽料晚些清理。"
+  },
+  {
+    "fields": [
+      "防风物",
+      "地块"
+    ],
+    "gold": {
+      "防风物": "旧麻帘",
+      "地块": "鹅掌地"
+    },
+    "input": "鹅掌地刚移苗，西侧用旧麻帘挡风，南边保留通道。",
+    "scoring": "json",
+    "id": "q0233",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "鹅掌地刚移苗，西侧用旧麻帘挡风，南边保留通道。"
+  },
+  {
+    "fields": [
+      "稻壳存放点",
+      "移送工具"
+    ],
+    "gold": {
+      "稻壳存放点": "草拐棚",
+      "移送工具": "推车"
+    },
+    "input": "压好的稻壳用推车运往草拐棚，门口已清出位置。",
+    "scoring": "json",
+    "id": "q0234",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "压好的稻壳用推车运往草拐棚，门口已清出位置。"
+  },
+  {
+    "fields": [
+      "甜柿试验地",
+      "掩盖材料"
+    ],
+    "gold": {
+      "甜柿试验地": "二号坡边",
+      "掩盖材料": "松针"
+    },
+    "input": "二号坡边试种甜柿，掩土后盖松针保湿。",
+    "scoring": "json",
+    "id": "q0235",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "二号坡边试种甜柿，掩土后盖松针保湿。"
+  },
+  {
+    "fields": [
+      "夏苗遮阳物",
+      "苗的领回人"
+    ],
+    "gold": {
+      "夏苗遮阳物": "编草片",
+      "苗的领回人": "桓羽东"
+    },
+    "input": "桓羽东领回夏苗，须用编草片遮阳，勿密封容器。",
+    "scoring": "json",
+    "id": "q0236",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "桓羽东领回夏苗，须用编草片遮阳，勿密封容器。"
+  },
+  {
+    "fields": [
+      "水沟去向",
+      "入水点"
+    ],
+    "gold": {
+      "水沟去向": "井栏菜园",
+      "入水点": "过街涵口"
+    },
+    "input": "从过街涵口引水，清好的水沟通向井栏菜园。",
+    "scoring": "json",
+    "id": "q0237",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "从过街涵口引水，清好的水沟通向井栏菜园。"
+  },
+  {
+    "fields": [
+      "留用工具",
+      "退库工具"
+    ],
+    "gold": {
+      "留用工具": "宽头分苗签",
+      "退库工具": "立柄小锄"
+    },
+    "input": "分苗完成后，宽头分苗签留在畦边，立柄小锄退库。",
+    "scoring": "json",
+    "id": "q0238",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "分苗完成后，宽头分苗签留在畦边，立柄小锄退库。"
+  },
+  {
+    "fields": [
+      "标识物",
+      "豆株编号"
+    ],
+    "gold": {
+      "标识物": "蓝漆圆片",
+      "豆株编号": null
+    },
+    "input": "分拣过的豆株上有蓝漆圆片，卡上只标是否系牢。",
+    "scoring": "json",
+    "id": "q0239",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "分拣过的豆株上有蓝漆圆片，卡上只标是否系牢。"
+  },
+  {
+    "fields": [
+      "梯田测风装置",
+      "读数人"
+    ],
+    "gold": {
+      "梯田测风装置": "风线旗",
+      "读数人": "白珑"
+    },
+    "input": "白珑巡上梯田，负责读取风线旗的朝向。",
+    "scoring": "json",
+    "id": "q0240",
+    "task_type": "json_extraction",
+    "source_family": "农业",
+    "source_text": "白珑巡上梯田，负责读取风线旗的朝向。"
+  },
+  {
+    "fields": [
+      "酸味来源",
+      "拌菜"
+    ],
+    "gold": {
+      "酸味来源": "柚醋",
+      "拌菜": "芥蓝丝"
+    },
+    "input": "芥蓝丝尚未拌匀，厨师嘱咐酸味只用柚醋调。",
+    "scoring": "json",
+    "id": "q0241",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "芥蓝丝尚未拌匀，厨师嘱咐酸味只用柚醋调。"
+  },
+  {
+    "fields": [
+      "罐口封物",
+      "罐内食品"
+    ],
+    "gold": {
+      "罐口封物": "竹纸",
+      "罐内食品": "芝麻果脯"
+    },
+    "input": "盛芝麻果脯的罐子口部封竹纸，不盖旋盖。",
+    "scoring": "json",
+    "id": "q0242",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "盛芝麻果脯的罐子口部封竹纸，不盖旋盖。"
+  },
+  {
+    "fields": [
+      "午后点单简称",
+      "应配餐具"
+    ],
+    "gold": {
+      "午后点单简称": "双卷",
+      "应配餐具": "长柄叉"
+    },
+    "input": "双卷这单是午后的，出菜应配长柄叉。",
+    "scoring": "json",
+    "id": "q0243",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "双卷这单是午后的，出菜应配长柄叉。"
+  },
+  {
+    "fields": [
+      "留作热饮的液体",
+      "杯口方向"
+    ],
+    "gold": {
+      "留作热饮的液体": "姜蜜水",
+      "杯口方向": "朝外"
+    },
+    "input": "姜蜜水加热后装入小杯，摆桌时杯口朝外。",
+    "scoring": "json",
+    "id": "q0244",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "姜蜜水加热后装入小杯，摆桌时杯口朝外。"
+  },
+  {
+    "fields": [
+      "拣出食材",
+      "送往灶区"
+    ],
+    "gold": {
+      "拣出食材": "软甜椒",
+      "送往灶区": "西边水台"
+    },
+    "input": "先挑走软甜椒，通过便门送到西边水台。",
+    "scoring": "json",
+    "id": "q0245",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "先挑走软甜椒，通过便门送到西边水台。"
+  },
+  {
+    "fields": [
+      "实际用的筐型",
+      "是否系绳"
+    ],
+    "gold": {
+      "实际用的筐型": "矮圆筐",
+      "是否系绳": "不系绳"
+    },
+    "input": "打包员找了矮圆筐装香叶，不系绳，盖折页即可。",
+    "scoring": "json",
+    "id": "q0246",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "打包员找了矮圆筐装香叶，不系绳，盖折页即可。"
+  },
+  {
+    "fields": [
+      "冰箱留置汤底",
+      "标签样式"
+    ],
+    "gold": {
+      "冰箱留置汤底": "桂鱼汤",
+      "标签样式": "蓝底白字"
+    },
+    "input": "桂鱼汤留冰箱过夜，贴蓝底白字标签以免混拿。",
+    "scoring": "json",
+    "id": "q0247",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "桂鱼汤留冰箱过夜，贴蓝底白字标签以免混拿。"
+  },
+  {
+    "fields": [
+      "替换的淋料",
+      "保留的辅料"
+    ],
+    "gold": {
+      "替换的淋料": "橙贝酱",
+      "保留的辅料": "米纸"
+    },
+    "input": "更新菜牌，淋料改成橙贝酱，底下的米纸保持原样。",
+    "scoring": "json",
+    "id": "q0248",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "更新菜牌，淋料改成橙贝酱，底下的米纸保持原样。"
+  },
+  {
+    "fields": [
+      "合餐组名",
+      "结账时间"
+    ],
+    "gold": {
+      "合餐组名": "向日桌",
+      "结账时间": null
+    },
+    "input": "包厢单标为向日桌，厨房另外收到了加勺提醒。",
+    "scoring": "json",
+    "id": "q0249",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "包厢单标为向日桌，厨房另外收到了加勺提醒。"
+  },
+  {
+    "fields": [
+      "餐车上第一份菜",
+      "送达座位"
+    ],
+    "gold": {
+      "餐车上第一份菜": "腌蒜苔",
+      "送达座位": "水槽窗位"
+    },
+    "input": "把腌蒜苔先推出来，第一份送至水槽窗位。",
+    "scoring": "json",
+    "id": "q0250",
+    "task_type": "json_extraction",
+    "source_family": "餐饮",
+    "source_text": "把腌蒜苔先推出来，第一份送至水槽窗位。"
+  },
+  {
+    "fields": [
+      "近景灯色",
+      "远背景图"
+    ],
+    "gold": {
+      "近景灯色": "橘黄",
+      "远背景图": "水草"
+    },
+    "input": "排练近景灯打橘黄，背景幕远处留水草纹样。",
+    "scoring": "json",
+    "id": "q0251",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "排练近景灯打橘黄，背景幕远处留水草纹样。"
+  },
+  {
+    "fields": [
+      "出场暗号",
+      "走位"
+    ],
+    "gold": {
+      "出场暗号": "揉手腕",
+      "走位": "偏台口"
+    },
+    "input": "她揉手腕是出场暗号，提灯人走偏台口。",
+    "scoring": "json",
+    "id": "q0252",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "她揉手腕是出场暗号，提灯人走偏台口。"
+  },
+  {
+    "fields": [
+      "合成音素材",
+      "短片画面"
+    ],
+    "gold": {
+      "合成音素材": "钥匙碰杯",
+      "短片画面": "孤树"
+    },
+    "input": "干声采集钥匙碰杯用于短片，画面始终是孤树。",
+    "scoring": "json",
+    "id": "q0253",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "干声采集钥匙碰杯用于短片，画面始终是孤树。"
+  },
+  {
+    "fields": [
+      "退场顺序",
+      "演员集合点"
+    ],
+    "gold": {
+      "退场顺序": "先鼓手",
+      "演员集合点": "石屏幕后"
+    },
+    "input": "退场先鼓手，演员集体去石屏幕后清点罩衣。",
+    "scoring": "json",
+    "id": "q0254",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "退场先鼓手，演员集体去石屏幕后清点罩衣。"
+  },
+  {
+    "fields": [
+      "台阶装饰",
+      "灯光切换时机"
+    ],
+    "gold": {
+      "台阶装饰": "纸月牙",
+      "灯光切换时机": "片尾字幕起"
+    },
+    "input": "脚灯换色需等片尾字幕起，台阶仍用纸月牙装饰。",
+    "scoring": "json",
+    "id": "q0255",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "脚灯换色需等片尾字幕起，台阶仍用纸月牙装饰。"
+  },
+  {
+    "fields": [
+      "取消的动作",
+      "保留的动作"
+    ],
+    "gold": {
+      "取消的动作": "转伞",
+      "保留的动作": "捧灯"
+    },
+    "input": "导演改场，取消转伞这一拍，捧灯动作不动。",
+    "scoring": "json",
+    "id": "q0256",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "导演改场，取消转伞这一拍，捧灯动作不动。"
+  },
+  {
+    "fields": [
+      "试场器乐",
+      "演员鞋面"
+    ],
+    "gold": {
+      "试场器乐": "鱼鼓",
+      "演员鞋面": "麻布"
+    },
+    "input": "试场用鱼鼓分两次收音，演员穿麻布鞋面便于消音。",
+    "scoring": "json",
+    "id": "q0257",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "试场用鱼鼓分两次收音，演员穿麻布鞋面便于消音。"
+  },
+  {
+    "fields": [
+      "装饰固定物",
+      "舞台场馆"
+    ],
+    "gold": {
+      "装饰固定物": "扣簧",
+      "舞台场馆": "鹿窑剧社"
+    },
+    "input": "鹿窑剧社的檐口装饰松了，后勤用扣簧固定。",
+    "scoring": "json",
+    "id": "q0258",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "鹿窑剧社的檐口装饰松了，后勤用扣簧固定。"
+  },
+  {
+    "fields": [
+      "歌唱者",
+      "座位号"
+    ],
+    "gold": {
+      "歌唱者": "古雪桥",
+      "座位号": null
+    },
+    "input": "这张歇场证明写古雪桥领唱，随后从偏门退场。",
+    "scoring": "json",
+    "id": "q0259",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "这张歇场证明写古雪桥领唱，随后从偏门退场。"
+  },
+  {
+    "fields": [
+      "换景所用挡光物",
+      "待推景物"
+    ],
+    "gold": {
+      "换景所用挡光物": "浅色纱片",
+      "待推景物": "灰雪窗"
+    },
+    "input": "浅色纱片临时挡光，征得同意后再推灰雪窗上台。",
+    "scoring": "json",
+    "id": "q0260",
+    "task_type": "json_extraction",
+    "source_family": "剧场",
+    "source_text": "浅色纱片临时挡光，征得同意后再推灰雪窗上台。"
+  },
+  {
+    "fields": [
+      "下一泊位",
+      "运输品"
+    ],
+    "gold": {
+      "下一泊位": "石斜泊",
+      "运输品": "藤灯罩"
+    },
+    "input": "船上还载着藤灯罩，航测员告知下一泊位石斜泊。",
+    "scoring": "json",
+    "id": "q0261",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "船上还载着藤灯罩，航测员告知下一泊位石斜泊。"
+  },
+  {
+    "fields": [
+      "远端检测点",
+      "通行工具"
+    ],
+    "gold": {
+      "远端检测点": "桩莲头",
+      "通行工具": "短臂平车"
+    },
+    "input": "从堤口过去要换乘短臂平车，目标是远端桩莲头。",
+    "scoring": "json",
+    "id": "q0262",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "从堤口过去要换乘短臂平车，目标是远端桩莲头。"
+  },
+  {
+    "fields": [
+      "临时码头",
+      "货物外包"
+    ],
+    "gold": {
+      "临时码头": "艾草横街",
+      "货物外包": "蜡布"
+    },
+    "input": "临时码头在艾草横街，货物需要再包一层蜡布。",
+    "scoring": "json",
+    "id": "q0263",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "临时码头在艾草横街，货物需要再包一层蜡布。"
+  },
+  {
+    "fields": [
+      "停靠方向",
+      "车辆号"
+    ],
+    "gold": {
+      "停靠方向": "面东",
+      "车辆号": "R28"
+    },
+    "input": "场地指派R28车辆先停，停靠时面东，四轮保持直线。",
+    "scoring": "json",
+    "id": "q0264",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "场地指派R28车辆先停，停靠时面东，四轮保持直线。"
+  },
+  {
+    "fields": [
+      "下午渡口开门时刻",
+      "收费凭据"
+    ],
+    "gold": {
+      "下午渡口开门时刻": "13:05",
+      "收费凭据": "鼻形票"
+    },
+    "input": "开门时钟调整到13:05，渡口查票前收鼻形票。",
+    "scoring": "json",
+    "id": "q0265",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "开门时钟调整到13:05，渡口查票前收鼻形票。"
+  },
+  {
+    "fields": [
+      "目标岔道",
+      "应随车保留"
+    ],
+    "gold": {
+      "目标岔道": "乞桥沟",
+      "应随车保留": "细柞木桨"
+    },
+    "input": "达乞桥沟换小艇时，细柞木桨先保留在车上。",
+    "scoring": "json",
+    "id": "q0266",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "达乞桥沟换小艇时，细柞木桨先保留在车上。"
+  },
+  {
+    "fields": [
+      "遇雨改开的门",
+      "收费动作"
+    ],
+    "gold": {
+      "遇雨改开的门": "坡顶检票亭",
+      "收费动作": "扫码补录"
+    },
+    "input": "雨天改在坡顶检票亭开放，缴费由工作人员扫码补录。",
+    "scoring": "json",
+    "id": "q0267",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "雨天改在坡顶检票亭开放，缴费由工作人员扫码补录。"
+  },
+  {
+    "fields": [
+      "车内失落物",
+      "交还处"
+    ],
+    "gold": {
+      "车内失落物": "搪瓷挂角",
+      "交还处": "小堤口调度台"
+    },
+    "input": "回场扫地发现搪瓷挂角，交到小堤口调度台等认领。",
+    "scoring": "json",
+    "id": "q0268",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "回场扫地发现搪瓷挂角，交到小堤口调度台等认领。"
+  },
+  {
+    "fields": [
+      "雾灯编号",
+      "点亮时间"
+    ],
+    "gold": {
+      "雾灯编号": "W015",
+      "点亮时间": null
+    },
+    "input": "备件单写W015雾灯已插线，控制台等调度口令。",
+    "scoring": "json",
+    "id": "q0269",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "备件单写W015雾灯已插线，控制台等调度口令。"
+  },
+  {
+    "fields": [
+      "默认停放层",
+      "需要装载的东西"
+    ],
+    "gold": {
+      "默认停放层": "地下二层",
+      "需要装载的东西": "旗杆袋"
+    },
+    "input": "先按默认位置停地下二层，把旗杆袋装车再上坡。",
+    "scoring": "json",
+    "id": "q0270",
+    "task_type": "json_extraction",
+    "source_family": "水陆交通",
+    "source_text": "先按默认位置停地下二层，把旗杆袋装车再上坡。"
+  },
+  {
+    "fields": [
+      "唱针的收纳袋",
+      "退针状态"
+    ],
+    "gold": {
+      "唱针的收纳袋": "蓝绒袋",
+      "退针状态": "尚未退针"
+    },
+    "input": "回录时挂上尚未退针提醒，唱针最后放蓝绒袋。",
+    "scoring": "json",
+    "id": "q0271",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "回录时挂上尚未退针提醒，唱针最后放蓝绒袋。"
+  },
+  {
+    "fields": [
+      "镜头测试用图",
+      "选择的焦段"
+    ],
+    "gold": {
+      "镜头测试用图": "小窗横格",
+      "选择的焦段": "中焦"
+    },
+    "input": "切换中焦对拍小窗横格，余杆需退出取景框。",
+    "scoring": "json",
+    "id": "q0272",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "切换中焦对拍小窗横格，余杆需退出取景框。"
+  },
+  {
+    "fields": [
+      "照片修补位",
+      "参考物"
+    ],
+    "gold": {
+      "照片修补位": "远处雪脊",
+      "参考物": "黑桦枝"
+    },
+    "input": "前景无需补色，远处雪脊按黑桦枝做对比修补。",
+    "scoring": "json",
+    "id": "q0273",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "前景无需补色，远处雪脊按黑桦枝做对比修补。"
+  },
+  {
+    "fields": [
+      "滤罩存放处",
+      "推车朝向"
+    ],
+    "gold": {
+      "滤罩存放处": "绳纸箱",
+      "推车朝向": "背光"
+    },
+    "input": "把滤罩放绳纸箱，再让推车背光以免早晨起雾。",
+    "scoring": "json",
+    "id": "q0274",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "把滤罩放绳纸箱，再让推车背光以免早晨起雾。"
+  },
+  {
+    "fields": [
+      "字幕输出样式",
+      "画面最终比例"
+    ],
+    "gold": {
+      "字幕输出样式": "手写体",
+      "画面最终比例": "4:3"
+    },
+    "input": "临时样片最终画面比例4:3，字幕输出手写体。",
+    "scoring": "json",
+    "id": "q0275",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "临时样片最终画面比例4:3，字幕输出手写体。"
+  },
+  {
+    "fields": [
+      "需校改的声部",
+      "修改原因"
+    ],
+    "gold": {
+      "需校改的声部": "第三轨",
+      "修改原因": "击鼓偏后"
+    },
+    "input": "第三轨的击鼓偏后，需要导入时间码做校改。",
+    "scoring": "json",
+    "id": "q0276",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "第三轨的击鼓偏后，需要导入时间码做校改。"
+  },
+  {
+    "fields": [
+      "相纸熟成后存放工具",
+      "取件人"
+    ],
+    "gold": {
+      "相纸熟成后存放工具": "盖盘",
+      "取件人": "洪小弋"
+    },
+    "input": "相纸熟成即入盖盘，取件由洪小弋登记条码。",
+    "scoring": "json",
+    "id": "q0277",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "相纸熟成即入盖盘，取件由洪小弋登记条码。"
+  },
+  {
+    "fields": [
+      "新谱第一页印字",
+      "旧谱颜色"
+    ],
+    "gold": {
+      "新谱第一页印字": "桔灯合唱",
+      "旧谱颜色": "青灰"
+    },
+    "input": "旧谱青灰封皮，新谱第一页印桔灯合唱便于区分。",
+    "scoring": "json",
+    "id": "q0278",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "旧谱青灰封皮，新谱第一页印桔灯合唱便于区分。"
+  },
+  {
+    "fields": [
+      "耳罩控制口径",
+      "配套输出线长度"
+    ],
+    "gold": {
+      "耳罩控制口径": "手动调节",
+      "配套输出线长度": null
+    },
+    "input": "耳罩可手动调节，配套输出线厂家会另贴备件标签。",
+    "scoring": "json",
+    "id": "q0279",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "耳罩可手动调节，配套输出线厂家会另贴备件标签。"
+  },
+  {
+    "fields": [
+      "模拟声命名",
+      "文件类型"
+    ],
+    "gold": {
+      "模拟声命名": "薄靴踩水",
+      "文件类型": "WAV"
+    },
+    "input": "拟声“薄靴踩水”的文件类型用WAV，台账同名登记。",
+    "scoring": "json",
+    "id": "q0280",
+    "task_type": "json_extraction",
+    "source_family": "音像",
+    "source_text": "拟声“薄靴踩水”的文件类型用WAV，台账同名登记。"
+  },
+  {
+    "fields": [
+      "募捐对象",
+      "收集物品"
+    ],
+    "gold": {
+      "募捐对象": "堤边阅览棚",
+      "收集物品": "伞骨"
+    },
+    "input": "堤边阅览棚修整经费不足，社区为它收集伞骨义卖。",
+    "scoring": "json",
+    "id": "q0281",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "堤边阅览棚修整经费不足，社区为它收集伞骨义卖。"
+  },
+  {
+    "fields": [
+      "误投箱",
+      "正确箱"
+    ],
+    "gold": {
+      "误投箱": "开元收信格",
+      "正确箱": "薄帘棚票夹"
+    },
+    "input": "通知：嘉宾票请交到薄帘棚票夹，误投开元收信格的已退回。",
+    "scoring": "json",
+    "id": "q0282",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "通知：嘉宾票请交到薄帘棚票夹，误投开元收信格的已退回。"
+  },
+  {
+    "fields": [
+      "活页课题",
+      "参加人群"
+    ],
+    "gold": {
+      "活页课题": "浸蓝布",
+      "参加人群": "新迁入家庭"
+    },
+    "input": "浸蓝布展示课安排给新迁入家庭，每场由邻居带看。",
+    "scoring": "json",
+    "id": "q0283",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "浸蓝布展示课安排给新迁入家庭，每场由邻居带看。"
+  },
+  {
+    "fields": [
+      "换阅上限原文",
+      "展台名称"
+    ],
+    "gold": {
+      "换阅上限原文": "两册",
+      "展台名称": "岩脚边读台"
+    },
+    "input": "岩脚边读台每人最多换阅两册，相同题名只签一次。",
+    "scoring": "json",
+    "id": "q0284",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "岩脚边读台每人最多换阅两册，相同题名只签一次。"
+  },
+  {
+    "fields": [
+      "新手训练时段",
+      "首项内容"
+    ],
+    "gold": {
+      "新手训练时段": "早潮后",
+      "首项内容": "模拟系绳"
+    },
+    "input": "早潮后进行新手训练，首项先教模拟系绳。",
+    "scoring": "json",
+    "id": "q0285",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "早潮后进行新手训练，首项先教模拟系绳。"
+  },
+  {
+    "fields": [
+      "公告发出方",
+      "活动取消原因"
+    ],
+    "gold": {
+      "公告发出方": "手工影社",
+      "活动取消原因": "外墙粉刷"
+    },
+    "input": "因外墙粉刷，手工影社发出取消本周配色课的公告。",
+    "scoring": "json",
+    "id": "q0286",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "因外墙粉刷，手工影社发出取消本周配色课的公告。"
+  },
+  {
+    "fields": [
+      "橱窗投票物",
+      "最后表单颜色"
+    ],
+    "gold": {
+      "橱窗投票物": "麻线结",
+      "最后表单颜色": "绛蓝"
+    },
+    "input": "橱窗投票选麻线结的环绕样式，最后使用绛蓝表单。",
+    "scoring": "json",
+    "id": "q0287",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "橱窗投票选麻线结的环绕样式，最后使用绛蓝表单。"
+  },
+  {
+    "fields": [
+      "快递义送范围",
+      "收件期限"
+    ],
+    "gold": {
+      "快递义送范围": "造林北铺",
+      "收件期限": null
+    },
+    "input": "造林北铺的网格登记新增快递义送类别，门厅可咨询。",
+    "scoring": "json",
+    "id": "q0288",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "造林北铺的网格登记新增快递义送类别，门厅可咨询。"
+  },
+  {
+    "fields": [
+      "集会口号",
+      "拼旗用的字"
+    ],
+    "gold": {
+      "集会口号": "慢慢走",
+      "拼旗用的字": "云栖"
+    },
+    "input": "代班点名员说集会喊慢慢走，拼旗中央另外用云栖两字。",
+    "scoring": "json",
+    "id": "q0289",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "代班点名员说集会喊慢慢走，拼旗中央另外用云栖两字。"
+  },
+  {
+    "fields": [
+      "早餐筹备地点",
+      "任务负责人"
+    ],
+    "gold": {
+      "早餐筹备地点": "榆坪临时灶",
+      "任务负责人": "陈苏杨"
+    },
+    "input": "陈苏杨主持早餐筹备，锅炉集中到榆坪临时灶。",
+    "scoring": "json",
+    "id": "q0290",
+    "task_type": "json_extraction",
+    "source_family": "社区活动",
+    "source_text": "陈苏杨主持早餐筹备，锅炉集中到榆坪临时灶。"
+  },
+  {
+    "fields": [
+      "测试晶体",
+      "空白对照"
+    ],
+    "gold": {
+      "测试晶体": "云钙玻片",
+      "空白对照": "干砂砾"
+    },
+    "input": "云钙玻片和干砂砾并排计数，干砂砾为空白对照。",
+    "scoring": "json",
+    "id": "q0291",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "云钙玻片和干砂砾并排计数，干砂砾为空白对照。"
+  },
+  {
+    "fields": [
+      "固定装置",
+      "灯位"
+    ],
+    "gold": {
+      "固定装置": "米字卡",
+      "灯位": "靠墙角"
+    },
+    "input": "模型在米字卡上固定，灯挪到靠墙角避免直射。",
+    "scoring": "json",
+    "id": "q0292",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "模型在米字卡上固定，灯挪到靠墙角避免直射。"
+  },
+  {
+    "fields": [
+      "样品载液",
+      "映射编号"
+    ],
+    "gold": {
+      "样品载液": "稀盐水",
+      "映射编号": "L-27"
+    },
+    "input": "将稀盐水换入L-27对应记录，编号不可另取。",
+    "scoring": "json",
+    "id": "q0293",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "将稀盐水换入L-27对应记录，编号不可另取。"
+  },
+  {
+    "fields": [
+      "干燥容器",
+      "旁路进口"
+    ],
+    "gold": {
+      "干燥容器": "长嘴瓶",
+      "旁路进口": "上沿小孔"
+    },
+    "input": "长嘴瓶专用来干燥，以其上沿小孔做旁路进口。",
+    "scoring": "json",
+    "id": "q0294",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "长嘴瓶专用来干燥，以其上沿小孔做旁路进口。"
+  },
+  {
+    "fields": [
+      "等待封瓶的材料",
+      "留出的档位"
+    ],
+    "gold": {
+      "等待封瓶的材料": "粗筛石粉",
+      "留出的档位": "三档"
+    },
+    "input": "混样结束后粗筛石粉待封瓶，处理箱先留三档。",
+    "scoring": "json",
+    "id": "q0295",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "混样结束后粗筛石粉待封瓶，处理箱先留三档。"
+  },
+  {
+    "fields": [
+      "原留处",
+      "多余台账去处"
+    ],
+    "gold": {
+      "原留处": "排架",
+      "多余台账去处": "废字号档"
+    },
+    "input": "完整的留排架，重复的台账归到废字号档。",
+    "scoring": "json",
+    "id": "q0296",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "完整的留排架，重复的台账归到废字号档。"
+  },
+  {
+    "fields": [
+      "测试记录的刻度材质",
+      "安装位置"
+    ],
+    "gold": {
+      "测试记录的刻度材质": "纸贴",
+      "安装位置": "电机下缘"
+    },
+    "input": "刻度用纸贴临时试排，安装在电机下缘贴紧。",
+    "scoring": "json",
+    "id": "q0297",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "刻度用纸贴临时试排，安装在电机下缘贴紧。"
+  },
+  {
+    "fields": [
+      "蓝泡样本来源",
+      "初检图编号"
+    ],
+    "gold": {
+      "蓝泡样本来源": "左槽",
+      "初检图编号": "H-71"
+    },
+    "input": "初检图H-71只拍蓝泡，样本取自左槽并有签条。",
+    "scoring": "json",
+    "id": "q0298",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "初检图H-71只拍蓝泡，样本取自左槽并有签条。"
+  },
+  {
+    "fields": [
+      "设计草稿标题",
+      "交稿日"
+    ],
+    "gold": {
+      "设计草稿标题": "《沙尘传声》",
+      "交稿日": null
+    },
+    "input": "草稿标题登记为《沙尘传声》，老师只批复可用练习本。",
+    "scoring": "json",
+    "id": "q0299",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "草稿标题登记为《沙尘传声》，老师只批复可用练习本。"
+  },
+  {
+    "fields": [
+      "稀隔板颜色",
+      "归拢地方"
+    ],
+    "gold": {
+      "稀隔板颜色": "半透明蓝",
+      "归拢地方": "中庭机架"
+    },
+    "input": "半透明蓝的稀隔板受光时边角能辨认，放回中庭机架。",
+    "scoring": "json",
+    "id": "q0300",
+    "task_type": "json_extraction",
+    "source_family": "科研手记",
+    "source_text": "半透明蓝的稀隔板受光时边角能辨认，放回中庭机架。"
+  },
+  {
+    "fields": [
+      "借用中转站",
+      "开始时刻"
+    ],
+    "gold": {
+      "借用中转站": "洞口檐下",
+      "开始时刻": "8:25"
+    },
+    "input": "预订绳车已通过，8:25到洞口檐下办理中转。",
+    "scoring": "json",
+    "id": "q0301",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "预订绳车已通过，8:25到洞口檐下办理中转。"
+  },
+  {
+    "fields": [
+      "在长椅旁等的人",
+      "要领取的东西"
+    ],
+    "gold": {
+      "在长椅旁等的人": "葛渔舟",
+      "要领取的东西": "折叠卷尺"
+    },
+    "input": "折叠卷尺分配给葛渔舟，他会在长椅旁等候。",
+    "scoring": "json",
+    "id": "q0302",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "折叠卷尺分配给葛渔舟，他会在长椅旁等候。"
+  },
+  {
+    "fields": [
+      "访客使用的术语卡",
+      "取用抽屉"
+    ],
+    "gold": {
+      "访客使用的术语卡": "布声字卡",
+      "取用抽屉": "第六层"
+    },
+    "input": "访客要布声字卡，就从第六层抽屉内拿。",
+    "scoring": "json",
+    "id": "q0303",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "访客要布声字卡，就从第六层抽屉内拿。"
+  },
+  {
+    "fields": [
+      "签到台的粘标",
+      "摆台处"
+    ],
+    "gold": {
+      "签到台的粘标": "梅花圆点",
+      "摆台处": "小铜门边"
+    },
+    "input": "会客签到台摆小铜门边，名卡上粘梅花圆点。",
+    "scoring": "json",
+    "id": "q0304",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "会客签到台摆小铜门边，名卡上粘梅花圆点。"
+  },
+  {
+    "fields": [
+      "预约棋台颜色",
+      "客人昵称"
+    ],
+    "gold": {
+      "预约棋台颜色": "水红",
+      "客人昵称": "翻页人"
+    },
+    "input": "翻页人先订水红棋台，备注可带自己的棋盒。",
+    "scoring": "json",
+    "id": "q0305",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "翻页人先订水红棋台，备注可带自己的棋盒。"
+  },
+  {
+    "fields": [
+      "放映观看位置",
+      "发出提醒者"
+    ],
+    "gold": {
+      "放映观看位置": "白柱后三排",
+      "发出提醒者": "小雨传达室"
+    },
+    "input": "小雨传达室发提醒，入场请坐白柱后三排。",
+    "scoring": "json",
+    "id": "q0306",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "小雨传达室发提醒，入场请坐白柱后三排。"
+  },
+  {
+    "fields": [
+      "送达台签人物",
+      "交接地点"
+    ],
+    "gold": {
+      "送达台签人物": "陆安珩",
+      "交接地点": "黄砖口"
+    },
+    "input": "黄砖口等交接，把台签当面递给陆安珩。",
+    "scoring": "json",
+    "id": "q0307",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "黄砖口等交接，把台签当面递给陆安珩。"
+  },
+  {
+    "fields": [
+      "参观团选择的导览路径",
+      "需归还物件"
+    ],
+    "gold": {
+      "参观团选择的导览路径": "短廊串门",
+      "需归还物件": "纸炬"
+    },
+    "input": "团客改为短廊串门路线，结束请归还纸炬道具。",
+    "scoring": "json",
+    "id": "q0308",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "团客改为短廊串门路线，结束请归还纸炬道具。"
+  },
+  {
+    "fields": [
+      "帐篷预约需要的地钉类型",
+      "租价"
+    ],
+    "gold": {
+      "帐篷预约需要的地钉类型": "扁铝钉",
+      "租价": null
+    },
+    "input": "帐篷预约单说配套扁铝钉可点验，过道不占位。",
+    "scoring": "json",
+    "id": "q0309",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "帐篷预约单说配套扁铝钉可点验，过道不占位。"
+  },
+  {
+    "fields": [
+      "预订展墙纹面",
+      "带来的配件"
+    ],
+    "gold": {
+      "预订展墙纹面": "云面",
+      "带来的配件": "半窗钩"
+    },
+    "input": "预订的展墙为云面，访客自带半窗钩到场。",
+    "scoring": "json",
+    "id": "q0310",
+    "task_type": "json_extraction",
+    "source_family": "预约确认",
+    "source_text": "预订的展墙为云面，访客自带半窗钩到场。"
+  },
+  {
+    "fields": [
+      "发现地点",
+      "羽色"
+    ],
+    "gold": {
+      "发现地点": "尖篷底",
+      "羽色": "褐白"
+    },
+    "input": "尖篷底落了一只褐白羽色的鸟，小朋友退开观察。",
+    "scoring": "json",
+    "id": "q0311",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "尖篷底落了一只褐白羽色的鸟，小朋友退开观察。"
+  },
+  {
+    "fields": [
+      "先变色的牌子",
+      "新颜色"
+    ],
+    "gold": {
+      "先变色的牌子": "烟箱告示",
+      "新颜色": "浅青"
+    },
+    "input": "大雾后烟箱告示最早变色，由深墨转为浅青。",
+    "scoring": "json",
+    "id": "q0312",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "大雾后烟箱告示最早变色，由深墨转为浅青。"
+  },
+  {
+    "fields": [
+      "岸边遗落",
+      "清理方式"
+    ],
+    "gold": {
+      "岸边遗落": "弯玻璃",
+      "清理方式": "夹杆拾取"
+    },
+    "input": "步道岸边遗落弯玻璃，维护组用夹杆拾取。",
+    "scoring": "json",
+    "id": "q0313",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "步道岸边遗落弯玻璃，维护组用夹杆拾取。"
+  },
+  {
+    "fields": [
+      "洼处浮沫面积",
+      "邻近地名"
+    ],
+    "gold": {
+      "洼处浮沫面积": "半米见方",
+      "邻近地名": "杜桥汀"
+    },
+    "input": "杜桥汀在洼边有半米见方浮沫，已经贴记录牌。",
+    "scoring": "json",
+    "id": "q0314",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "杜桥汀在洼边有半米见方浮沫，已经贴记录牌。"
+  },
+  {
+    "fields": [
+      "夜间随风响的物件",
+      "附着位置"
+    ],
+    "gold": {
+      "夜间随风响的物件": "风罩盖",
+      "附着位置": "溜坡立杆"
+    },
+    "input": "夜间响声定位到风罩盖，原来还挂在溜坡立杆上。",
+    "scoring": "json",
+    "id": "q0315",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "夜间响声定位到风罩盖，原来还挂在溜坡立杆上。"
+  },
+  {
+    "fields": [
+      "入户观察目标",
+      "查看日期"
+    ],
+    "gold": {
+      "入户观察目标": "门铃遮布",
+      "查看日期": "寒露当天"
+    },
+    "input": "寒露当天再次入户检查门铃遮布，外盆无需翻看。",
+    "scoring": "json",
+    "id": "q0316",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "寒露当天再次入户检查门铃遮布，外盆无需翻看。"
+  },
+  {
+    "fields": [
+      "研判原因",
+      "要调整的设施"
+    ],
+    "gold": {
+      "研判原因": "石底沉降",
+      "要调整的设施": "收水口"
+    },
+    "input": "沿道走看后觉得石底沉降，准备调整收水口的位置。",
+    "scoring": "json",
+    "id": "q0317",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "沿道走看后觉得石底沉降，准备调整收水口的位置。"
+  },
+  {
+    "fields": [
+      "展棚侧边物件",
+      "缠附物"
+    ],
+    "gold": {
+      "展棚侧边物件": "米筛框",
+      "缠附物": "黄麻绳"
+    },
+    "input": "棚侧米筛框缠了黄麻绳，松扣尚在，可以卸掉。",
+    "scoring": "json",
+    "id": "q0318",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "棚侧米筛框缠了黄麻绳，松扣尚在，可以卸掉。"
+  },
+  {
+    "fields": [
+      "泥面出现的纹样",
+      "首次出现时刻"
+    ],
+    "gold": {
+      "泥面出现的纹样": "双圈",
+      "首次出现时刻": null
+    },
+    "input": "潮来前观察员只记下泥面有双圈纹样，雨伞未动。",
+    "scoring": "json",
+    "id": "q0319",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "潮来前观察员只记下泥面有双圈纹样，雨伞未动。"
+  },
+  {
+    "fields": [
+      "清除有味道的叶子",
+      "送往地点"
+    ],
+    "gold": {
+      "清除有味道的叶子": "焦枫叶",
+      "送往地点": "杉根堆"
+    },
+    "input": "焦枫叶堆一打开就有气味，打捆后送往杉根堆。",
+    "scoring": "json",
+    "id": "q0320",
+    "task_type": "json_extraction",
+    "source_family": "环境观察",
+    "source_text": "焦枫叶堆一打开就有气味，打捆后送往杉根堆。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：第一次去石刻馆做亲子临摹，请帮一家三口留周日晨场。",
+    "scoring": "label",
+    "id": "q0321",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "第一次去石刻馆做亲子临摹，请帮一家三口留周日晨场。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：已约了小剧场的试听，来电把该次日期从立夏当天挪到周五。",
+    "scoring": "label",
+    "id": "q0322",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "已约了小剧场的试听，来电把该次日期从立夏当天挪到周五。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：明天搬鼓，问仓库能否新给我登记一辆平板手推车。",
+    "scoring": "label",
+    "id": "q0323",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "明天搬鼓，问仓库能否新给我登记一辆平板手推车。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：原定给木匠留北侧访客位，现在请保留那条订单并换到西门。",
+    "scoring": "label",
+    "id": "q0324",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "原定给木匠留北侧访客位，现在请保留那条订单并换到西门。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：排练队从未预定过录音棚，现申请下午留一小时完成合唱。",
+    "scoring": "label",
+    "id": "q0325",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "排练队从未预定过录音棚，现申请下午留一小时完成合唱。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：露营订单已付费，我们改带双人帐，请把原预约的草地格换大。",
+    "scoring": "label",
+    "id": "q0326",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "露营订单已付费，我们改带双人帐，请把原预约的草地格换大。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：拿到储物卡后想约一个空的小柜，这次还没办过预约。",
+    "scoring": "label",
+    "id": "q0327",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "拿到储物卡后想约一个空的小柜，这次还没办过预约。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：方言老师已有社区课堂预约，临时出差请把那节课改晚上。",
+    "scoring": "label",
+    "id": "q0328",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "方言老师已有社区课堂预约，临时出差请把那节课改晚上。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：朋友想拍结业照，我到服务台新订一间布景房。",
+    "scoring": "label",
+    "id": "q0329",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "朋友想拍结业照，我到服务台新订一间布景房。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：旧餐车留位在柳下，请保持订单，把停靠点由柳下换成门卫岗外。",
+    "scoring": "label",
+    "id": "q0330",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "旧餐车留位在柳下，请保持订单，把停靠点由柳下换成门卫岗外。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：今天来店申请给新买的藤椅排一次上色服务，系统没有旧单。",
+    "scoring": "label",
+    "id": "q0331",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "今天来店申请给新买的藤椅排一次上色服务，系统没有旧单。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：先前排队登记的校靶时间临时遇到停电，请改成次日一早。",
+    "scoring": "label",
+    "id": "q0332",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "先前排队登记的校靶时间临时遇到停电，请改成次日一早。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：这支摄制组刚进社区，第一次申请预留消防通道以外的上下货点。",
+    "scoring": "label",
+    "id": "q0333",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "这支摄制组刚进社区，第一次申请预留消防通道以外的上下货点。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：周三换藏书约已确认，现在只能周六来，把原单改到周六。",
+    "scoring": "label",
+    "id": "q0334",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "周三换藏书约已确认，现在只能周六来，把原单改到周六。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：在补漆间给折叠桌首次约个午后工位，登记单目前整张是空的。",
+    "scoring": "label",
+    "id": "q0335",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "在补漆间给折叠桌首次约个午后工位，登记单目前整张是空的。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：保洁车原约午睡前推下楼，组长说请修改为午睡后。",
+    "scoring": "label",
+    "id": "q0336",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "保洁车原约午睡前推下楼，组长说请修改为午睡后。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：留言想新预约观雾栏边一个位置，群里还没替他报名。",
+    "scoring": "label",
+    "id": "q0337",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "留言想新预约观雾栏边一个位置，群里还没替他报名。"
+  },
+  {
+    "labels": [
+      "更改预约",
+      "新预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：滑轮体验原有两人，今天来电说在那条预约上再添一人。",
+    "scoring": "label",
+    "id": "q0338",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "滑轮体验原有两人，今天来电说在那条预约上再添一人。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "新预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：竹筛师傅到柜台初次预留一个讲解时段，地址已登记。",
+    "scoring": "label",
+    "id": "q0339",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "竹筛师傅到柜台初次预留一个讲解时段，地址已登记。"
+  },
+  {
+    "labels": [
+      "新预约",
+      "更改预约"
+    ],
+    "gold": "更改预约",
+    "input": "分类规则：以本次明确要做的动作为准，创建一条原先不存在的预约为新预约，改动已存在的预约为更改预约。\n待分类文本：雨廊灯展已有票，客服收到请求调整原预定的入场时间。",
+    "scoring": "label",
+    "id": "q0340",
+    "task_type": "classification",
+    "source_family": "预约",
+    "source_text": "雨廊灯展已有票，客服收到请求调整原预定的入场时间。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：散场时我的灰绸手套没带走，谁在斜坡护栏看到请联系我。",
+    "scoring": "label",
+    "id": "q0341",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "散场时我的灰绸手套没带走，谁在斜坡护栏看到请联系我。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：售票员扫地时发现一枚橡果吊坠，失主可凭绳色来南门认领。",
+    "scoring": "label",
+    "id": "q0342",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "售票员扫地时发现一枚橡果吊坠，失主可凭绳色来南门认领。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：把硬红记录本落在摊位后，里面是我这周的烘焙配比。",
+    "scoring": "label",
+    "id": "q0343",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "把硬红记录本落在摊位后，里面是我这周的烘焙配比。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：晨跑在台阶拾到旧式计步器，已经放到执勤棚等主人。",
+    "scoring": "label",
+    "id": "q0344",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "晨跑在台阶拾到旧式计步器，已经放到执勤棚等主人。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：配送员说自己的壶盖掉了，有人捡到白瓷盖请带到发车点。",
+    "scoring": "label",
+    "id": "q0345",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "配送员说自己的壶盖掉了，有人捡到白瓷盖请带到发车点。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：洗衣房窗口暂存一条虎头领带，是工作人员从烘衣筒里捞出的。",
+    "scoring": "label",
+    "id": "q0346",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "洗衣房窗口暂存一条虎头领带，是工作人员从烘衣筒里捞出的。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：我在锣声桥用完望远镜忘了装包，帮忙先看一眼旧木椅底下。",
+    "scoring": "label",
+    "id": "q0347",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "我在锣声桥用完望远镜忘了装包，帮忙先看一眼旧木椅底下。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：茶客捡到毛边雨靴套一只，请丢它的人去店后问柜员。",
+    "scoring": "label",
+    "id": "q0348",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "茶客捡到毛边雨靴套一只，请丢它的人去店后问柜员。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：车回库才发现随身的停车计费夹空了，希望刚才的乘客帮看看。",
+    "scoring": "label",
+    "id": "q0349",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "车回库才发现随身的停车计费夹空了，希望刚才的乘客帮看看。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：讲者在讲台拾得压花格尺，失主说出背面的笔迹便可取。",
+    "scoring": "label",
+    "id": "q0350",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "讲者在讲台拾得压花格尺，失主说出背面的笔迹便可取。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：我的银柄短刷跟租来的工具混了，哪个队装进包请退给我。",
+    "scoring": "label",
+    "id": "q0351",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "我的银柄短刷跟租来的工具混了，哪个队装进包请退给我。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：夜班扫出不属于本站的折页乐谱，现贴告示请所有者来核对。",
+    "scoring": "label",
+    "id": "q0352",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "夜班扫出不属于本站的折页乐谱，现贴告示请所有者来核对。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：商贩收摊找不到自己的贝壳零钱包，问附近谁见过。",
+    "scoring": "label",
+    "id": "q0353",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "商贩收摊找不到自己的贝壳零钱包，问附近谁见过。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：晒场边捡到象棋谱一张，放在雨亭的拾物柜候领。",
+    "scoring": "label",
+    "id": "q0354",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "晒场边捡到象棋谱一张，放在雨亭的拾物柜候领。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：求转发：有孔的梅纹钥匙牌是我丢在东墙根的，图样见背面。",
+    "scoring": "label",
+    "id": "q0355",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "求转发：有孔的梅纹钥匙牌是我丢在东墙根的，图样见背面。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：在空游池见到一根戏服腰带，保管处登记后开放认领。",
+    "scoring": "label",
+    "id": "q0356",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "在空游池见到一根戏服腰带，保管处登记后开放认领。"
+  },
+  {
+    "labels": [
+      "寻物求助",
+      "寻主招领"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：投完旧书才发现公交月票夹也掉下去了，请值班人帮忙捞回。",
+    "scoring": "label",
+    "id": "q0357",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "投完旧书才发现公交月票夹也掉下去了，请值班人帮忙捞回。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：在沿岸绳扣箱发现一串麻线风铃，请主人凭结扣样式领取。",
+    "scoring": "label",
+    "id": "q0358",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "在沿岸绳扣箱发现一串麻线风铃，请主人凭结扣样式领取。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻物求助",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：找回父亲小指南针的悬赏还有效，最后一次用是在黑石平台。",
+    "scoring": "label",
+    "id": "q0359",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "找回父亲小指南针的悬赏还有效，最后一次用是在黑石平台。"
+  },
+  {
+    "labels": [
+      "寻主招领",
+      "寻物求助"
+    ],
+    "gold": "寻主招领",
+    "input": "分类规则：消息发出者失去东西并请求找回为寻物求助，发现别人的物品并联系物主领取为寻主招领。\n待分类文本：临时站台有人捡起没署名的水墨票夹，招领电话已贴到栏杆。",
+    "scoring": "label",
+    "id": "q0360",
+    "task_type": "classification",
+    "source_family": "失物",
+    "source_text": "临时站台有人捡起没署名的水墨票夹，招领电话已贴到栏杆。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：河堤扶桨资格必须本人到调度台采集掌印后才能发证。",
+    "scoring": "label",
+    "id": "q0361",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "河堤扶桨资格必须本人到调度台采集掌印后才能发证。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：木架账簿的扫描本可在线申请、支付并下载，办理各环节均可在网页完成。",
+    "scoring": "label",
+    "id": "q0362",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "木架账簿的扫描本可在线申请、支付并下载，办理各环节均可在网页完成。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：编号夹补购以前能寄件，现在领新号要本人在柜口对照原件。",
+    "scoring": "label",
+    "id": "q0363",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "编号夹补购以前能寄件，现在领新号要本人在柜口对照原件。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：移栽照片补登记可以网页提交，确认函发到站内信，全程无需跑柜台。",
+    "scoring": "label",
+    "id": "q0364",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "移栽照片补登记可以网页提交，确认函发到站内信，全程无需跑柜台。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：展台重印凭证必须本人去查看水印并当面签收，线上只可选择打印字体。",
+    "scoring": "label",
+    "id": "q0365",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "展台重印凭证必须本人去查看水印并当面签收，线上只可选择打印字体。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：溪流课程的取消与退票均由程序自动办完，电子回执在手机显示。",
+    "scoring": "label",
+    "id": "q0366",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "溪流课程的取消与退票均由程序自动办完，电子回执在手机显示。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：申请无人唱片机需要在器具店本人演示并签领，电子预约只是排队。",
+    "scoring": "label",
+    "id": "q0367",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "申请无人唱片机需要在器具店本人演示并签领，电子预约只是排队。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：窗口关闭期间，耳罩押金用手机表单申退，款直接进入原账户。",
+    "scoring": "label",
+    "id": "q0368",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "窗口关闭期间，耳罩押金用手机表单申退，款直接进入原账户。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：街道提供线上领号，但要亲到烟囱仓核验腰带尺码才算办完。",
+    "scoring": "label",
+    "id": "q0369",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "街道提供线上领号，但要亲到烟囱仓核验腰带尺码才算办完。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：周刊取阅权限续订全部在账户里处理，电子权限立即生效。",
+    "scoring": "label",
+    "id": "q0370",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "周刊取阅权限续订全部在账户里处理，电子权限立即生效。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：捐献影册要本人到旧文书处作一次实物鉴定后才收。",
+    "scoring": "label",
+    "id": "q0371",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "捐献影册要本人到旧文书处作一次实物鉴定后才收。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：小车周线变更在平台发起，电子许可证由系统生成并在线领取。",
+    "scoring": "label",
+    "id": "q0372",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "小车周线变更在平台发起，电子许可证由系统生成并在线领取。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：灯塔看护交接资格要到堤侧现场听铃确认，不能远程代验。",
+    "scoring": "label",
+    "id": "q0373",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "灯塔看护交接资格要到堤侧现场听铃确认，不能远程代验。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：道具舞衣申请可线上交材料、核准、结清，邮寄到门，无需办理现场事项。",
+    "scoring": "label",
+    "id": "q0374",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "道具舞衣申请可线上交材料、核准、结清，邮寄到门，无需办理现场事项。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：改配漆盘编号申请要本人携原编号盘到中心测量，否则不受理。",
+    "scoring": "label",
+    "id": "q0375",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "改配漆盘编号申请要本人携原编号盘到中心测量，否则不受理。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：提交屏幕照片即可补领新学习码，系统会发送激活消息。",
+    "scoring": "label",
+    "id": "q0376",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "提交屏幕照片即可补领新学习码，系统会发送激活消息。"
+  },
+  {
+    "labels": [
+      "必须到场",
+      "仅线上办"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：保洁服尺码报错可先登记，但本人必须来更衣亭亲手试回合适规格。",
+    "scoring": "label",
+    "id": "q0377",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "保洁服尺码报错可先登记，但本人必须来更衣亭亲手试回合适规格。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：短训凭证申领在小程序一次提交，获准后凭系统下载电子版。",
+    "scoring": "label",
+    "id": "q0378",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "短训凭证申领在小程序一次提交，获准后凭系统下载电子版。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "必须到场",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：摊主续领橡果夹需要本人去有号桌完成现场点交。",
+    "scoring": "label",
+    "id": "q0379",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "摊主续领橡果夹需要本人去有号桌完成现场点交。"
+  },
+  {
+    "labels": [
+      "仅线上办",
+      "必须到场"
+    ],
+    "gold": "仅线上办",
+    "input": "分类规则：以完成申请是否要求本人到指定地点为准。必须亲到为必须到场；可全程在线完成并取得结果为仅线上办。\n待分类文本：电子档题名更正在内网审批，正式回执通过邮件发回，不安排来访。",
+    "scoring": "label",
+    "id": "q0380",
+    "task_type": "classification",
+    "source_family": "办理",
+    "source_text": "电子档题名更正在内网审批，正式回执通过邮件发回，不安排来访。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：打包错成两把刷子，顾客把多出的退回，店家原路退付差价。",
+    "scoring": "label",
+    "id": "q0381",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "打包错成两把刷子，顾客把多出的退回，店家原路退付差价。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：伞厂同意替换碎骨的那把伞，补发完整伞具且保留原款。",
+    "scoring": "label",
+    "id": "q0382",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "伞厂同意替换碎骨的那把伞，补发完整伞具且保留原款。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：贴纸卷售完，店家取消订单并把全额转回买家卡里。",
+    "scoring": "label",
+    "id": "q0383",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "贴纸卷售完，店家取消订单并把全额转回买家卡里。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：匣子内铰链反装，售后直接用相同版匣子替换，交易金额保留。",
+    "scoring": "label",
+    "id": "q0384",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "匣子内铰链反装，售后直接用相同版匣子替换，交易金额保留。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：订的旋转风车无法交货，柜员只操作返还顾客订金。",
+    "scoring": "label",
+    "id": "q0385",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "订的旋转风车无法交货，柜员只操作返还顾客订金。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：用户同意用带孔墙书架更换直边款，商家注明支付金额不退。",
+    "scoring": "label",
+    "id": "q0386",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "用户同意用带孔墙书架更换直边款，商家注明支付金额不退。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：面袋外层破了，顾客按协议退货，现金已由值班员还给他。",
+    "scoring": "label",
+    "id": "q0387",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "面袋外层破了，顾客按协议退货，现金已由值班员还给他。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：主顾收到掉扣围布，报价未变，服务台只换一件带扣围布。",
+    "scoring": "label",
+    "id": "q0388",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "主顾收到掉扣围布，报价未变，服务台只换一件带扣围布。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：执照贴服务取消，系统把贴膜的钱从分账回充至购买账户。",
+    "scoring": "label",
+    "id": "q0389",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "执照贴服务取消，系统把贴膜的钱从分账回充至购买账户。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：礼盒撞扁，经协商换一盒内容完全相同的成品，不退货款。",
+    "scoring": "label",
+    "id": "q0390",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "礼盒撞扁，经协商换一盒内容完全相同的成品，不退货款。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：小舟包场因水面关闭而解约，代收款已悉数返给订场人。",
+    "scoring": "label",
+    "id": "q0391",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "小舟包场因水面关闭而解约，代收款已悉数返给订场人。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：尺套没合上，店主补寄新的尺套替换旧物，明确无退款。",
+    "scoring": "label",
+    "id": "q0392",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "尺套没合上，店主补寄新的尺套替换旧物，明确无退款。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：损坏漆杯不补发，售后决定返还杯子的购买金额。",
+    "scoring": "label",
+    "id": "q0393",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "损坏漆杯不补发，售后决定返还杯子的购买金额。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：羊毛风衣版型寄错，仓库只调来正确版型交换，不涉及返款。",
+    "scoring": "label",
+    "id": "q0394",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "羊毛风衣版型寄错，仓库只调来正确版型交换，不涉及返款。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：只有一个竹环被误收费，发票作废后将误收金额返原路径。",
+    "scoring": "label",
+    "id": "q0395",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "只有一个竹环被误收费，发票作废后将误收金额返原路径。"
+  },
+  {
+    "labels": [
+      "退钱",
+      "只换货"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：带粉戒托断角，与柜员协定等价更换新戒托，票款维持。",
+    "scoring": "label",
+    "id": "q0396",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "带粉戒托断角，与柜员协定等价更换新戒托，票款维持。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：找不到选中的素箔纸货号，供货方决定直接退回全部预付。",
+    "scoring": "label",
+    "id": "q0397",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "找不到选中的素箔纸货号，供货方决定直接退回全部预付。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：鞋宽不合，按售后记录仅换成加宽号，已付款项留在原交易。",
+    "scoring": "label",
+    "id": "q0398",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "鞋宽不合，按售后记录仅换成加宽号，已付款项留在原交易。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "退钱",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：手划铃到手发现没响，买家退回该件并收到了转账退款。",
+    "scoring": "label",
+    "id": "q0399",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "手划铃到手发现没响，买家退回该件并收到了转账退款。"
+  },
+  {
+    "labels": [
+      "只换货",
+      "退钱"
+    ],
+    "gold": "只换货",
+    "input": "分类规则：按售后决定分类。明确返还款项为退钱；仅以同款或合约允许的其他商品替换、款不退为只换货。\n待分类文本：两节画笔木杆纹不对，作坊给顾客更换合约规定的款式，没有返还款项。",
+    "scoring": "label",
+    "id": "q0400",
+    "task_type": "classification",
+    "source_family": "处置",
+    "source_text": "两节画笔木杆纹不对，作坊给顾客更换合约规定的款式，没有返还款项。"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：我一只手扶不住鱼灯架，能来帮我固定右端吗？",
+    "scoring": "label",
+    "id": "q0401",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "我一只手扶不住鱼灯架，能来帮我固定右端吗？"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：告知：岩石讲解牌已经贴好，明日会自己补边角。",
+    "scoring": "label",
+    "id": "q0402",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "告知：岩石讲解牌已经贴好，明日会自己补边角。"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：松江巷的纸片掉得满地，借我你的夹柄和盘子行吗？",
+    "scoring": "label",
+    "id": "q0403",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "松江巷的纸片掉得满地，借我你的夹柄和盘子行吗？"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：和大家同步一下，八只旧窗纽已入库，另一箱正在做入库检查。",
+    "scoring": "label",
+    "id": "q0404",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "和大家同步一下，八只旧窗纽已入库，另一箱正在做入库检查。"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：我的针线锥找不到了，请你帮我看看桌布下。",
+    "scoring": "label",
+    "id": "q0405",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "我的针线锥找不到了，请你帮我看看桌布下。"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：报个进展：补字已完成第一册，今天仍在自己校第二册。",
+    "scoring": "label",
+    "id": "q0406",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "报个进展：补字已完成第一册，今天仍在自己校第二册。"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：现场还没布投票线，请来帮忙把黄绳拴到柱丫上。",
+    "scoring": "label",
+    "id": "q0407",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "现场还没布投票线，请来帮忙把黄绳拴到柱丫上。"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：材料运到下坡口。我们队已经开始把布条分色。",
+    "scoring": "label",
+    "id": "q0408",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "材料运到下坡口。我们队已经开始把布条分色。"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：不熟悉机房食物盒的总闸，能否派个管理员来示范？",
+    "scoring": "label",
+    "id": "q0409",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "不熟悉机房食物盒的总闸，能否派个管理员来示范？"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：用过的暖瓶送去点收，盘点按时间继续，人都到了。",
+    "scoring": "label",
+    "id": "q0410",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "用过的暖瓶送去点收，盘点按时间继续，人都到了。"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：去偏门想搬斧柄盒，请帮我一起从拐角抬出去。",
+    "scoring": "label",
+    "id": "q0411",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "去偏门想搬斧柄盒，请帮我一起从拐角抬出去。"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：报备：旧镜面已清润并贴检签，软角架也随车入库。",
+    "scoring": "label",
+    "id": "q0412",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "报备：旧镜面已清润并贴检签，软角架也随车入库。"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：雨蓬侧圈松了，请从工具处叫个熟悉卡件的人来接手。",
+    "scoring": "label",
+    "id": "q0413",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "雨蓬侧圈松了，请从工具处叫个熟悉卡件的人来接手。"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：交代一下抬货到盘仓已经完成，我正在擦除板上的旧符。",
+    "scoring": "label",
+    "id": "q0414",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "交代一下抬货到盘仓已经完成，我正在擦除板上的旧符。"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：蓝票夹在底层很难够着，劳烦递一柄厚木夹。",
+    "scoring": "label",
+    "id": "q0415",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "蓝票夹在底层很难够着，劳烦递一柄厚木夹。"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：快递已由配送台代点货，验直角的事仍由本组自行处理。",
+    "scoring": "label",
+    "id": "q0416",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "快递已由配送台代点货，验直角的事仍由本组自行处理。"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：送灯的轮子卡墙脚，请来帮车夫打个同方向信号。",
+    "scoring": "label",
+    "id": "q0417",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "送灯的轮子卡墙脚，请来帮车夫打个同方向信号。"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：关于纹布，照相已拍五个批次，下一步我们准备自己算用料。",
+    "scoring": "label",
+    "id": "q0418",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "关于纹布，照相已拍五个批次，下一步我们准备自己算用料。"
+  },
+  {
+    "labels": [
+      "告知进度",
+      "请求协助"
+    ],
+    "gold": "请求协助",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：我扫不了堤台高处，能不能帮我带一根长柄刷？",
+    "scoring": "label",
+    "id": "q0419",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "我扫不了堤台高处，能不能帮我带一根长柄刷？"
+  },
+  {
+    "labels": [
+      "请求协助",
+      "告知进度"
+    ],
+    "gold": "告知进度",
+    "input": "分类规则：消息明确向收件人要求帮助为请求协助；只报告已经完成或正在进行的事项为告知进度。\n待分类文本：值班汇报：木桥缺口都围上红绳，审核小组已复核。",
+    "scoring": "label",
+    "id": "q0420",
+    "task_type": "classification",
+    "source_family": "助务",
+    "source_text": "值班汇报：木桥缺口都围上红绳，审核小组已复核。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：管弦灯节听说落冰，主办人发告示确定本场停办。",
+    "scoring": "label",
+    "id": "q0421",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "管弦灯节听说落冰，主办人发告示确定本场停办。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：栏杆刚换过，学校说明布纸飞机比赛按周二原通知举行。",
+    "scoring": "label",
+    "id": "q0422",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "栏杆刚换过，学校说明布纸飞机比赛按周二原通知举行。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：台面临时要检修，荷灯小组通知这次授课正式取消。",
+    "scoring": "label",
+    "id": "q0423",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "台面临时要检修，荷灯小组通知这次授课正式取消。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：雾灰已经散开，管理员确认午后的野枝识别活动照常。",
+    "scoring": "label",
+    "id": "q0424",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "雾灰已经散开，管理员确认午后的野枝识别活动照常。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：工具全调往外地，木偶指法辅导本周不安排。",
+    "scoring": "label",
+    "id": "q0425",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "工具全调往外地，木偶指法辅导本周不安排。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：旧剧场灯故障已处理，今晚原定独唱见面会继续举办。",
+    "scoring": "label",
+    "id": "q0426",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "旧剧场灯故障已处理，今晚原定独唱见面会继续举办。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：铁片涂字所需纸张短缺，组委会已通知这场不举行。",
+    "scoring": "label",
+    "id": "q0427",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "铁片涂字所需纸张短缺，组委会已通知这场不举行。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：雨棚加固完毕，定时放映按原计划开放给参观者。",
+    "scoring": "label",
+    "id": "q0428",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "雨棚加固完毕，定时放映按原计划开放给参观者。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：排练室通行口封闭，向导说已取消原定鼓槌讲堂。",
+    "scoring": "label",
+    "id": "q0429",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "排练室通行口封闭，向导说已取消原定鼓槌讲堂。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：获批使用旧食堂，周午阅报会依约开场。",
+    "scoring": "label",
+    "id": "q0430",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "获批使用旧食堂，周午阅报会依约开场。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：山路因树倒而关闭，摄影棚统一通知周六夜拍停办。",
+    "scoring": "label",
+    "id": "q0431",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "山路因树倒而关闭，摄影棚统一通知周六夜拍停办。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：早晨有风预警，主持人午前更新为浅塘摸石课如期开展。",
+    "scoring": "label",
+    "id": "q0432",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "早晨有风预警，主持人午前更新为浅塘摸石课如期开展。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：水幕槽要换电，平衡步道演示此次整场取消，观众不再来。",
+    "scoring": "label",
+    "id": "q0433",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "水幕槽要换电，平衡步道演示此次整场取消，观众不再来。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：虽然签到牌弄脏，分组体验仍按既定时段开展。",
+    "scoring": "label",
+    "id": "q0434",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "虽然签到牌弄脏，分组体验仍按既定时段开展。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：导师出差临时延长，本次风筝放飞课确认不办。",
+    "scoring": "label",
+    "id": "q0435",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "导师出差临时延长，本次风筝放飞课确认不办。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：船坞地面已干，旧篷布体验活动确认仍按原公告进行。",
+    "scoring": "label",
+    "id": "q0436",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "船坞地面已干，旧篷布体验活动确认仍按原公告进行。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：因拉练车辆停放进不了院，舞台铆饰鉴赏课明日取消。",
+    "scoring": "label",
+    "id": "q0437",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "因拉练车辆停放进不了院，舞台铆饰鉴赏课明日取消。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：厅里的入场提示已复亮，今天的山文朗读原时开讲。",
+    "scoring": "label",
+    "id": "q0438",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "厅里的入场提示已复亮，今天的山文朗读原时开讲。"
+  },
+  {
+    "labels": [
+      "活动取消",
+      "活动照常"
+    ],
+    "gold": "活动取消",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：小队过河的导向绳损坏，主办方撤掉今天的枯叶辨识活动。",
+    "scoring": "label",
+    "id": "q0439",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "小队过河的导向绳损坏，主办方撤掉今天的枯叶辨识活动。"
+  },
+  {
+    "labels": [
+      "活动照常",
+      "活动取消"
+    ],
+    "gold": "活动照常",
+    "input": "分类规则：以对外最终通告为准，宣布本次不举办为活动取消，明确原安排继续执行为活动照常。\n待分类文本：项目信息核定，小修插花评比照旧在雨厅举办。",
+    "scoring": "label",
+    "id": "q0440",
+    "task_type": "classification",
+    "source_family": "排程",
+    "source_text": "项目信息核定，小修插花评比照旧在雨厅举办。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：修字盘的师傅解释得清楚，新的刻位准确，整次服务满意。",
+    "scoring": "label",
+    "id": "q0441",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "修字盘的师傅解释得清楚，新的刻位准确，整次服务满意。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：这家旧柜运送两次把抽屉拖伤，沟通经理推诿，体验很差。",
+    "scoring": "label",
+    "id": "q0442",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "这家旧柜运送两次把抽屉拖伤，沟通经理推诿，体验很差。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：鸭脚木展签租借速度快，归还点通畅，下次还会预定。",
+    "scoring": "label",
+    "id": "q0443",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "鸭脚木展签租借速度快，归还点通畅，下次还会预定。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：亲试石屏扩音，传声断断续续，听众认为不值得去买预约。",
+    "scoring": "label",
+    "id": "q0444",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "亲试石屏扩音，传声断断续续，听众认为不值得去买预约。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：山腰茶棚清静，领杯既快又细心，是我喜欢的休憩处。",
+    "scoring": "label",
+    "id": "q0445",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "山腰茶棚清静，领杯既快又细心，是我喜欢的休憩处。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：侧门出借方叫了三次也没人来，不愿再预约。",
+    "scoring": "label",
+    "id": "q0446",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "侧门出借方叫了三次也没人来，不愿再预约。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：合影冲印色彩自然，校样问询耐心，给工作人员好评。",
+    "scoring": "label",
+    "id": "q0447",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "合影冲印色彩自然，校样问询耐心，给工作人员好评。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：借过的手轮又重又卡，还得自己搬回，顾客打低分。",
+    "scoring": "label",
+    "id": "q0448",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "借过的手轮又重又卡，还得自己搬回，顾客打低分。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：早市摊台给的纸套不漏，排班也准时，非常满意。",
+    "scoring": "label",
+    "id": "q0449",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "早市摊台给的纸套不漏，排班也准时，非常满意。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：暖幕预约超出等候时间也无人解释，整体令人失望。",
+    "scoring": "label",
+    "id": "q0450",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "暖幕预约超出等候时间也无人解释，整体令人失望。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：试摆窄轮轻推车，动作顺手且接待礼貌，用户明确表示认可。",
+    "scoring": "label",
+    "id": "q0451",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "试摆窄轮轻推车，动作顺手且接待礼貌，用户明确表示认可。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：纱窗添扣修得草率，新扣一拉便松，我不满意此次修理。",
+    "scoring": "label",
+    "id": "q0452",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "纱窗添扣修得草率，新扣一拉便松，我不满意此次修理。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：送试听谱的人准时且不催，借谱体验足以推荐给邻居。",
+    "scoring": "label",
+    "id": "q0453",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "送试听谱的人准时且不催，借谱体验足以推荐给邻居。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：丢失的靠背承诺补发但始终没人回，售后体验糟糕。",
+    "scoring": "label",
+    "id": "q0454",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "丢失的靠背承诺补发但始终没人回，售后体验糟糕。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：壁灯清理完成后边缘干净，没有弄湿墙纸，点赞。",
+    "scoring": "label",
+    "id": "q0455",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "壁灯清理完成后边缘干净，没有弄湿墙纸，点赞。"
+  },
+  {
+    "labels": [
+      "正面体验",
+      "负面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：第一天陪同讲解敷衍，听错地点还拒绝重新说一遍。",
+    "scoring": "label",
+    "id": "q0456",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "第一天陪同讲解敷衍，听错地点还拒绝重新说一遍。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：领旗流程快捷，签到时还提醒我检查栓环，体验很好。",
+    "scoring": "label",
+    "id": "q0457",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "领旗流程快捷，签到时还提醒我检查栓环，体验很好。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：维修皮轴中途另收未说明的费用，用户给了差评。",
+    "scoring": "label",
+    "id": "q0458",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "维修皮轴中途另收未说明的费用，用户给了差评。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "正面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：窗页手作教练一步步带动作，也留了复训看板，好感明显。",
+    "scoring": "label",
+    "id": "q0459",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "窗页手作教练一步步带动作，也留了复训看板，好感明显。"
+  },
+  {
+    "labels": [
+      "负面体验",
+      "正面体验"
+    ],
+    "gold": "负面体验",
+    "input": "分类规则：以对指定服务的整体评价为准，明确满意为正面体验，明确不满意为负面体验。\n待分类文本：拆下的黄槽边被扔在雨里，领用过程让我非常不满。",
+    "scoring": "label",
+    "id": "q0460",
+    "task_type": "classification",
+    "source_family": "体验",
+    "source_text": "拆下的黄槽边被扔在雨里，领用过程让我非常不满。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：茶水间里只剩喝完冲干净的空塑料饮料瓶，按规则分桶。",
+    "scoring": "label",
+    "id": "q0461",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "茶水间里只剩喝完冲干净的空塑料饮料瓶，按规则分桶。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：午餐后桌上剩一个沾满炸油的餐盒，保洁登记这件。",
+    "scoring": "label",
+    "id": "q0462",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "午餐后桌上剩一个沾满炸油的餐盒，保洁登记这件。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：活动物资拆开后留下干净纸盒，人们准备处理箱子。",
+    "scoring": "label",
+    "id": "q0463",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "活动物资拆开后留下干净纸盒，人们准备处理箱子。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：木橱掉下一片碎陶瓷，先拿硬纸板托好再分桶。",
+    "scoring": "label",
+    "id": "q0464",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "木橱掉下一片碎陶瓷，先拿硬纸板托好再分桶。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：厂门边的贩卖机下面有个空金属罐，已经倒干。",
+    "scoring": "label",
+    "id": "q0465",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "厂门边的贩卖机下面有个空金属罐，已经倒干。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：照顾小孩擦嘴的餐巾纸用过了，准备从摇椅旁收走。",
+    "scoring": "label",
+    "id": "q0466",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "照顾小孩擦嘴的餐巾纸用过了，准备从摇椅旁收走。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：把雕印好的画卡从干净纸盒取出，需分类的是空盒。",
+    "scoring": "label",
+    "id": "q0467",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "把雕印好的画卡从干净纸盒取出，需分类的是空盒。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：熟食棚丢出的塑料餐盒全是油污，要按规定投放。",
+    "scoring": "label",
+    "id": "q0468",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "熟食棚丢出的塑料餐盒全是油污，要按规定投放。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：参加徒步拿来已冲洗的塑料饮料瓶，离场前要放入正确箱。",
+    "scoring": "label",
+    "id": "q0469",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "参加徒步拿来已冲洗的塑料饮料瓶，离场前要放入正确箱。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：仓库标本碟摔坏后留下碎陶瓷，清洁人员需分桶。",
+    "scoring": "label",
+    "id": "q0470",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "仓库标本碟摔坏后留下碎陶瓷，清洁人员需分桶。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：金属饮料罐没有剩余液体，清场小组问它归哪类。",
+    "scoring": "label",
+    "id": "q0471",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "金属饮料罐没有剩余液体，清场小组问它归哪类。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：油炸摊裁掉盒盖，剩下待清运的是沾油餐盒。",
+    "scoring": "label",
+    "id": "q0472",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "油炸摊裁掉盒盖，剩下待清运的是沾油餐盒。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：铺子要处理开封后仍干净的空纸盒，里面的绳索已另收。",
+    "scoring": "label",
+    "id": "q0473",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "铺子要处理开封后仍干净的空纸盒，里面的绳索已另收。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：书桌上用餐巾纸擦去冰糕残水，待扔物为使用过的餐巾纸。",
+    "scoring": "label",
+    "id": "q0474",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "书桌上用餐巾纸擦去冰糕残水，待扔物为使用过的餐巾纸。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：一包演出物资的外层是完整干净纸盒，内件已入柜。",
+    "scoring": "label",
+    "id": "q0475",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "一包演出物资的外层是完整干净纸盒，内件已入柜。"
+  },
+  {
+    "labels": [
+      "其他垃圾",
+      "可回收"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：破裂花盏被扫成一堆碎陶瓷，处理负责人在问类别。",
+    "scoring": "label",
+    "id": "q0476",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "破裂花盏被扫成一堆碎陶瓷，处理负责人在问类别。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：临走把石凳边的废金属罐拾走，请按给定规则投放。",
+    "scoring": "label",
+    "id": "q0477",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "临走把石凳边的废金属罐拾走，请按给定规则投放。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：夜班交班前要扔用于清理手指的已用餐巾纸。",
+    "scoring": "label",
+    "id": "q0478",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "夜班交班前要扔用于清理手指的已用餐巾纸。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "可回收",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：从背包取出完全倒空的塑料饮料瓶，想到旅店有分类桶。",
+    "scoring": "label",
+    "id": "q0479",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "从背包取出完全倒空的塑料饮料瓶，想到旅店有分类桶。"
+  },
+  {
+    "labels": [
+      "可回收",
+      "其他垃圾"
+    ],
+    "gold": "其他垃圾",
+    "input": "分类规则：仅按本题规则，干净纸盒、塑料饮料瓶、金属罐归可回收，使用过的餐巾纸、碎陶瓷、沾油餐盒归其他垃圾。\n待分类文本：现场用完的棉布可洗，现在问的是旁边另一件沾油餐盒应分哪类。",
+    "scoring": "label",
+    "id": "q0480",
+    "task_type": "classification",
+    "source_family": "回收",
+    "source_text": "现场用完的棉布可洗，现在问的是旁边另一件沾油餐盒应分哪类。"
+  },
+  {
+    "rule": "转为24小时制 HH:MM，小时保留两位",
+    "gold": "05:08",
+    "input": "抽水泵清点提醒定在早晨5点08分。",
+    "scoring": "exact",
+    "id": "q0481",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "抽水泵清点提醒定在早晨5点08分。"
+  },
+  {
+    "rule": "转为24小时制 HH:MM，小时保留两位",
+    "gold": "21:17",
+    "input": "末船靠横栏的钟响在晚上9点17分。",
+    "scoring": "exact",
+    "id": "q0482",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "末船靠横栏的钟响在晚上9点17分。"
+  },
+  {
+    "rule": "用 HH:MM 表示，起算后加给出的分钟数",
+    "gold": "12:43",
+    "input": "银叶门讲义从12:18发出，25分钟后收起。",
+    "scoring": "exact",
+    "id": "q0483",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "银叶门讲义从12:18发出，25分钟后收起。"
+  },
+  {
+    "rule": "转为 HH:MM，凌晨零点写00",
+    "gold": "00:07",
+    "input": "印样要在凌晨0点7分送进风乾柜。",
+    "scoring": "exact",
+    "id": "q0484",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "印样要在凌晨0点7分送进风乾柜。"
+  },
+  {
+    "rule": "用 HH:MM 表示开炉前给出的分钟数",
+    "gold": "16:38",
+    "input": "炉台定于17:00启用，捋清线组应提前22分钟。",
+    "scoring": "exact",
+    "id": "q0485",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "炉台定于17:00启用，捋清线组应提前22分钟。"
+  },
+  {
+    "rule": "以 HH:MM 输出，午夜为00:00",
+    "gold": "00:00",
+    "input": "闸室接班日当中并无变更，在次日正好午夜办理。",
+    "scoring": "exact",
+    "id": "q0486",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "闸室接班日当中并无变更，在次日正好午夜办理。"
+  },
+  {
+    "rule": "将所指时间转为24小时制 HH:MM",
+    "gold": "15:30",
+    "input": "绘图室告诉学员下午3点半来领笔。",
+    "scoring": "exact",
+    "id": "q0487",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "绘图室告诉学员下午3点半来领笔。"
+  },
+  {
+    "rule": "将区间写成 HH:MM-HH:MM，每个时分两位",
+    "gold": "07:10-08:55",
+    "input": "探潮只允许早上7点10分到早上8点55分之间出发。",
+    "scoring": "exact",
+    "id": "q0488",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "探潮只允许早上7点10分到早上8点55分之间出发。"
+  },
+  {
+    "rule": "将累计秒数写为分钟与秒 MM:SS",
+    "gold": "02:15",
+    "input": "计时盘记录载沙筐完整通过用135秒。",
+    "scoring": "exact",
+    "id": "q0489",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "计时盘记录载沙筐完整通过用135秒。"
+  },
+  {
+    "rule": "把累计时间写为 HH:MM:SS",
+    "gold": "01:01:01",
+    "input": "棚顶修补从上栏到下栏共经过3661秒。",
+    "scoring": "exact",
+    "id": "q0490",
+    "task_type": "normalization",
+    "source_family": "时间格式",
+    "source_text": "棚顶修补从上栏到下栏共经过3661秒。"
+  },
+  {
+    "rule": "输出指定年月日 YYYY-MM-DD，各位数补零",
+    "gold": "2028-02-29",
+    "input": "仓库湿布检修记在2028年2月29日。",
+    "scoring": "exact",
+    "id": "q0491",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "仓库湿布检修记在2028年2月29日。"
+  },
+  {
+    "rule": "输出走访最后一天，写成 YYYY-MM-DD",
+    "gold": "2030-06-05",
+    "input": "2030年6月3日开始走访，连续三天，起始日计第一天。",
+    "scoring": "exact",
+    "id": "q0492",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "2030年6月3日开始走访，连续三天，起始日计第一天。"
+  },
+  {
+    "rule": "转为 YYYY-MM-DD",
+    "gold": "2029-10-04",
+    "input": "打捆带在2029年十月四日重新挂签。",
+    "scoring": "exact",
+    "id": "q0493",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "打捆带在2029年十月四日重新挂签。"
+  },
+  {
+    "rule": "输出次日，写作 YYYY-MM-DD",
+    "gold": "2027-01-01",
+    "input": "篷桥值夜安排自2026年12月31日开始，休息安排在次日。",
+    "scoring": "exact",
+    "id": "q0494",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "篷桥值夜安排自2026年12月31日开始，休息安排在次日。"
+  },
+  {
+    "rule": "按 YYYY-MM-DD 输出，以纸本日期为准",
+    "gold": "2032-03-09",
+    "input": "备忘录写3月8日，签字纸本给出2032年3月9日。",
+    "scoring": "exact",
+    "id": "q0495",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "备忘录写3月8日，签字纸本给出2032年3月9日。"
+  },
+  {
+    "rule": "用 YYYY-MM-DD 给出夹板上的日期",
+    "gold": "2027-08-02",
+    "input": "装配夹板印作2027/8/2，处置栏空白。",
+    "scoring": "exact",
+    "id": "q0496",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "装配夹板印作2027/8/2，处置栏空白。"
+  },
+  {
+    "rule": "以 YYYY-MM-DD 写计划日前七天的日期",
+    "gold": "2031-04-01",
+    "input": "齿轮展定在2031年4月8日开始，展前七天冻结色样。",
+    "scoring": "exact",
+    "id": "q0497",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "齿轮展定在2031年4月8日开始，展前七天冻结色样。"
+  },
+  {
+    "rule": "日期转为 YYYY-MM，省略日",
+    "gold": "2034-11",
+    "input": "策展补充说明的提交时间为2034年11月9日。",
+    "scoring": "exact",
+    "id": "q0498",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "策展补充说明的提交时间为2034年11月9日。"
+  },
+  {
+    "rule": "转成 YYYYMMDD 的八位数字",
+    "gold": "20270507",
+    "input": "木版上的登记日印为2027年5月7日。",
+    "scoring": "exact",
+    "id": "q0499",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "木版上的登记日印为2027年5月7日。"
+  },
+  {
+    "rule": "写成 DD/MM/YYYY，不省略零",
+    "gold": "06/01/2033",
+    "input": "铜盘试用通过日为2033年1月6日。",
+    "scoring": "exact",
+    "id": "q0500",
+    "task_type": "normalization",
+    "source_family": "日期",
+    "source_text": "铜盘试用通过日为2033年1月6日。"
+  },
+  {
+    "rule": "把原长度从米换为厘米，仅输出数字",
+    "gold": "235",
+    "input": "展带从第一枚铜钉到末端是2.35米。",
+    "scoring": "exact",
+    "id": "q0501",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "展带从第一枚铜钉到末端是2.35米。"
+  },
+  {
+    "rule": "将所给直径由毫米换为厘米，仅输出数字",
+    "gold": "0.45",
+    "input": "橡木图钉的圆杆直径为4.5毫米。",
+    "scoring": "exact",
+    "id": "q0502",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "橡木图钉的圆杆直径为4.5毫米。"
+  },
+  {
+    "rule": "按1千米=1000米写出演练全程米数，仅数字",
+    "gold": "1240",
+    "input": "车轮试骑的全程在路线牌注明1.24千米。",
+    "scoring": "exact",
+    "id": "q0503",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "车轮试骑的全程在路线牌注明1.24千米。"
+  },
+  {
+    "rule": "从厘米换算为毫米，只写整数",
+    "gold": "863",
+    "input": "清洗过的门垫窄边为86.3厘米。",
+    "scoring": "exact",
+    "id": "q0504",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "清洗过的门垫窄边为86.3厘米。"
+  },
+  {
+    "rule": "用厘米表示合在一起的长度，只写数字",
+    "gold": "106",
+    "input": "帘子的末端有26厘米缺头，补上0.8米长的同面布段。",
+    "scoring": "exact",
+    "id": "q0505",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "帘子的末端有26厘米缺头，补上0.8米长的同面布段。"
+  },
+  {
+    "rule": "把标明的短边厘米数换算为米，只写数字",
+    "gold": "0.64",
+    "input": "旧地毯标签上写短边64厘米、长边160厘米。",
+    "scoring": "exact",
+    "id": "q0506",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "旧地毯标签上写短边64厘米、长边160厘米。"
+  },
+  {
+    "rule": "呎单位按1呎=30厘米换算为厘米，输出数字",
+    "gold": "75",
+    "input": "戏棚旧卷帛的固定绳记成2.5呎。",
+    "scoring": "exact",
+    "id": "q0507",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "戏棚旧卷帛的固定绳记成2.5呎。"
+  },
+  {
+    "rule": "以毫米输出剩余长度，仅数字",
+    "gold": "177",
+    "input": "木楔长20厘米，从细头锯掉23毫米后登记余料。",
+    "scoring": "exact",
+    "id": "q0508",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "木楔长20厘米，从细头锯掉23毫米后登记余料。"
+  },
+  {
+    "rule": "计算相差多少厘米，输出无负号的数字",
+    "gold": "45",
+    "input": "翻书台高0.91米，低门架高0.46米。",
+    "scoring": "exact",
+    "id": "q0509",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "翻书台高0.91米，低门架高0.46米。"
+  },
+  {
+    "rule": "把直线长度写为米与厘米，用“X米Y厘米”",
+    "gold": "3米7厘米",
+    "input": "遮阳单边测得307厘米。",
+    "scoring": "exact",
+    "id": "q0510",
+    "task_type": "normalization",
+    "source_family": "尺度换算",
+    "source_text": "遮阳单边测得307厘米。"
+  },
+  {
+    "rule": "每瓶毫升数求总毫升数，输出整数",
+    "gold": "1050",
+    "input": "试色水瓶装了三瓶，每瓶350毫升。",
+    "scoring": "exact",
+    "id": "q0511",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "试色水瓶装了三瓶，每瓶350毫升。"
+  },
+  {
+    "rule": "将升换为毫升，只写数字",
+    "gold": "75",
+    "input": "备用墨池的满格标有0.075升。",
+    "scoring": "exact",
+    "id": "q0512",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "备用墨池的满格标有0.075升。"
+  },
+  {
+    "rule": "将千克换为克，只输出整数",
+    "gold": "2040",
+    "input": "棉线筐称得2.04千克。",
+    "scoring": "exact",
+    "id": "q0513",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "棉线筐称得2.04千克。"
+  },
+  {
+    "rule": "按1斤=500克，输出以克为单位的数字",
+    "gold": "1750",
+    "input": "备品短绳合计标为三斤半。",
+    "scoring": "exact",
+    "id": "q0514",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "备品短绳合计标为三斤半。"
+  },
+  {
+    "rule": "给出扣除容器后的货重，单位克，只写整数",
+    "gold": "258",
+    "input": "带盖陶罐与茶渣合重612克，空罐354克。",
+    "scoring": "exact",
+    "id": "q0515",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "带盖陶罐与茶渣合重612克，空罐354克。"
+  },
+  {
+    "rule": "按1吨=1000千克，将净重写为千克数字",
+    "gold": "1325",
+    "input": "货台秤在拴绳后显示净重1.325吨。",
+    "scoring": "exact",
+    "id": "q0516",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "货台秤在拴绳后显示净重1.325吨。"
+  },
+  {
+    "rule": "输出合并的升数，最多两位小数且去除末尾0",
+    "gold": "1.17",
+    "input": "舞台边回收清水870毫升，另有备用清水0.3升。",
+    "scoring": "exact",
+    "id": "q0517",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "舞台边回收清水870毫升，另有备用清水0.3升。"
+  },
+  {
+    "rule": "按“X升Y毫升”写出钵的容积",
+    "gold": "2升350毫升",
+    "input": "盛雨水的钵，满钵记录为2350毫升。",
+    "scoring": "exact",
+    "id": "q0518",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "盛雨水的钵，满钵记录为2350毫升。"
+  },
+  {
+    "rule": "输出平均每个匣子的重量（克），无单位",
+    "gold": "126",
+    "input": "四个完全同重的入档布匣总重504克。",
+    "scoring": "exact",
+    "id": "q0519",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "四个完全同重的入档布匣总重504克。"
+  },
+  {
+    "rule": "按1盎司=30毫升换为毫升，只写整数",
+    "gold": "255",
+    "input": "手账里把颜料水用量记为8.5盎司。",
+    "scoring": "exact",
+    "id": "q0520",
+    "task_type": "normalization",
+    "source_family": "容量重量",
+    "source_text": "手账里把颜料水用量记为8.5盎司。"
+  },
+  {
+    "rule": "将英文字母转为大写，数字和连字符保持",
+    "gold": "LU-7Z",
+    "input": "卡表混写为 lu-7z。",
+    "scoring": "exact",
+    "id": "q0521",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "卡表混写为 lu-7z。"
+  },
+  {
+    "rule": "编号中数字不足四位补前导零，格式“X-0000”",
+    "gold": "M-0043",
+    "input": "编号串上写着字母M、序号43。",
+    "scoring": "exact",
+    "id": "q0522",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "编号串上写着字母M、序号43。"
+  },
+  {
+    "rule": "去掉编号中的空格并保持大小写",
+    "gold": "Ae09f",
+    "input": "旧票边打印成 Ae 09 f。",
+    "scoring": "exact",
+    "id": "q0523",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "旧票边打印成 Ae 09 f。"
+  },
+  {
+    "rule": "将组号与子号用短横线相连，均保持原样",
+    "gold": "XE-K021",
+    "input": "盖布分给组号XE，袋内子号K021。",
+    "scoring": "exact",
+    "id": "q0524",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "盖布分给组号XE，袋内子号K021。"
+  },
+  {
+    "rule": "删除短横线，保留大写字母和数字原序",
+    "gold": "Q7M09",
+    "input": "图签串登记：Q7-M-09。",
+    "scoring": "exact",
+    "id": "q0525",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "图签串登记：Q7-M-09。"
+  },
+  {
+    "rule": "把点号两边的序号互换，分隔仍用点号",
+    "gold": "38.17",
+    "input": "遮光器原有凭签17.38。",
+    "scoring": "exact",
+    "id": "q0526",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "遮光器原有凭签17.38。"
+  },
+  {
+    "rule": "将末尾的十进制两位数字前面加#，无其他字符",
+    "gold": "#62",
+    "input": "留存卷编号PW62，系统只要其末尾序号。",
+    "scoring": "exact",
+    "id": "q0527",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "留存卷编号PW62，系统只要其末尾序号。"
+  },
+  {
+    "rule": "输出序号末三位，保留前导零",
+    "gold": "057",
+    "input": "墨舟归类号为S58057。",
+    "scoring": "exact",
+    "id": "q0528",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "墨舟归类号为S58057。"
+  },
+  {
+    "rule": "把编号中的小写字母转为大写并删掉冒号",
+    "gold": "WG034",
+    "input": "旧检条代码为 wg:034。",
+    "scoring": "exact",
+    "id": "q0529",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "旧检条代码为 wg:034。"
+  },
+  {
+    "rule": "按“区域/序号”写出登记值，序号补三位",
+    "gold": "副棚/009",
+    "input": "交接人说区域是副棚，序号为9。",
+    "scoring": "exact",
+    "id": "q0530",
+    "task_type": "normalization",
+    "source_family": "编码",
+    "source_text": "交接人说区域是副棚，序号为9。"
+  },
+  {
+    "rule": "按“总数−已领”计算余数，仅数字",
+    "gold": "14",
+    "input": "备用木销库存55枚，上午39枚领出。",
+    "scoring": "exact",
+    "id": "q0531",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "备用木销库存55枚，上午39枚领出。"
+  },
+  {
+    "rule": "求六包同样数量的石花贴纸合计，只输出整数",
+    "gold": "102",
+    "input": "每包17枚，共发六包给朗读小组。",
+    "scoring": "exact",
+    "id": "q0532",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "每包17枚，共发六包给朗读小组。"
+  },
+  {
+    "rule": "把两笔票数相加，按整数填结果",
+    "gold": "80",
+    "input": "北棚42张船票，西棚另送38张。",
+    "scoring": "exact",
+    "id": "q0533",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "北棚42张船票，西棚另送38张。"
+  },
+  {
+    "rule": "按总货重除车数计算每车装同样重量，只写整数",
+    "gold": "36",
+    "input": "四辆模型车均分144克配重片。",
+    "scoring": "exact",
+    "id": "q0534",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "四辆模型车均分144克配重片。"
+  },
+  {
+    "rule": "按“原数量×3−剩余”算实际用量，只写整数",
+    "gold": "29",
+    "input": "三卷各有12段蓝细线；使用后合计余7段。",
+    "scoring": "exact",
+    "id": "q0535",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "三卷各有12段蓝细线；使用后合计余7段。"
+  },
+  {
+    "rule": "按目标容量减现量计算需加多少，只写整数",
+    "gold": "67",
+    "input": "风铃盒要装满120只，现已点到53只。",
+    "scoring": "exact",
+    "id": "q0536",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "风铃盒要装满120只，现已点到53只。"
+  },
+  {
+    "rule": "把上午与晚场数量作非负差，输出整数",
+    "gold": "45",
+    "input": "上午台边售出25枚徽章，晚场售出70枚。",
+    "scoring": "exact",
+    "id": "q0537",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "上午台边售出25枚徽章，晚场售出70枚。"
+  },
+  {
+    "rule": "按第一个数减第二个数再加第三个数，仅数字",
+    "gold": "48",
+    "input": "运单交接从70起，扣27后补领5。",
+    "scoring": "exact",
+    "id": "q0538",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "运单交接从70起，扣27后补领5。"
+  },
+  {
+    "rule": "用原值减去给出的两项报损，输出整数",
+    "gold": "82",
+    "input": "薄砖原发96片，起吊裂9片，装车又毁5片。",
+    "scoring": "exact",
+    "id": "q0539",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "薄砖原发96片，起吊裂9片，装车又毁5片。"
+  },
+  {
+    "rule": "两袋等量，每袋追加9枚后合计，输出整数",
+    "gold": "74",
+    "input": "试样分两袋，每袋起初28枚。",
+    "scoring": "exact",
+    "id": "q0540",
+    "task_type": "normalization",
+    "source_family": "整数运算",
+    "source_text": "试样分两袋，每袋起初28枚。"
+  },
+  {
+    "rule": "把给出的比例转成百分数，保留百分号",
+    "gold": "37.5%",
+    "input": "抽出的粉线是整张装饰布带的3/8。",
+    "scoring": "exact",
+    "id": "q0541",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "抽出的粉线是整张装饰布带的3/8。"
+  },
+  {
+    "rule": "用小数写百分比，不带%",
+    "gold": "0.125",
+    "input": "小时工资账上记维修提成为12.5%。",
+    "scoring": "exact",
+    "id": "q0542",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "小时工资账上记维修提成为12.5%。"
+  },
+  {
+    "rule": "将冒号比例按最大公因数约分，用冒号",
+    "gold": "3:5",
+    "input": "蘸墨与清洗液的分装份数为12比20。",
+    "scoring": "exact",
+    "id": "q0543",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "蘸墨与清洗液的分装份数为12比20。"
+  },
+  {
+    "rule": "按已用÷总量写百分比，保留%",
+    "gold": "35%",
+    "input": "待清点丝带共70米，已按舞装标记剪去24.5米。",
+    "scoring": "exact",
+    "id": "q0544",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "待清点丝带共70米，已按舞装标记剪去24.5米。"
+  },
+  {
+    "rule": "将比例转为最简分数 x/y",
+    "gold": "7/20",
+    "input": "监看池面积占整个大厅的35%。",
+    "scoring": "exact",
+    "id": "q0545",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "监看池面积占整个大厅的35%。"
+  },
+  {
+    "rule": "给出减价后需要支付的金额，输出整数",
+    "gold": "84",
+    "input": "屏柜原价120元，结算按原价的七折。",
+    "scoring": "exact",
+    "id": "q0546",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "屏柜原价120元，结算按原价的七折。"
+  },
+  {
+    "rule": "求一整张地图的已描线部分比例，写成分数并约分",
+    "gold": "2/5",
+    "input": "扇状地图片切成15张等份，目前已描完6张。",
+    "scoring": "exact",
+    "id": "q0547",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "扇状地图片切成15张等份，目前已描完6张。"
+  },
+  {
+    "rule": "将小数转为百分数，百分位末尾0省略",
+    "gold": "8.2%",
+    "input": "水箱剩余量占满量的0.082。",
+    "scoring": "exact",
+    "id": "q0548",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "水箱剩余量占满量的0.082。"
+  },
+  {
+    "rule": "百分数转为最简分数，用斜杠",
+    "gold": "1/8",
+    "input": "填表备注：预留比例为12.5%。",
+    "scoring": "exact",
+    "id": "q0549",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "填表备注：预留比例为12.5%。"
+  },
+  {
+    "rule": "按故障数占总件数求百分数，保留%",
+    "gold": "2.5%",
+    "input": "全检发声音筒200只，其中5只需返修。",
+    "scoring": "exact",
+    "id": "q0550",
+    "task_type": "normalization",
+    "source_family": "比例",
+    "source_text": "全检发声音筒200只，其中5只需返修。"
+  },
+  {
+    "rule": "将中文整数写成阿拉伯数字，只写结果",
+    "gold": "46009",
+    "input": "票盘封签编号为四万六千零九。",
+    "scoring": "exact",
+    "id": "q0551",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "票盘封签编号为四万六千零九。"
+  },
+  {
+    "rule": "把文字中的计数转为阿拉伯整数",
+    "gold": "702",
+    "input": "备查牌写行书“七百零二”。",
+    "scoring": "exact",
+    "id": "q0552",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "备查牌写行书“七百零二”。"
+  },
+  {
+    "rule": "用纯数字表示中文单据的金额",
+    "gold": "230060",
+    "input": "老家具收条上金额贰拾叁万零陆拾元整。",
+    "scoring": "exact",
+    "id": "q0553",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "老家具收条上金额贰拾叁万零陆拾元整。"
+  },
+  {
+    "rule": "将中文序号写成纯数字，省略“第”",
+    "gold": "86",
+    "input": "挂件模型放在第八十六位。",
+    "scoring": "exact",
+    "id": "q0554",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "挂件模型放在第八十六位。"
+  },
+  {
+    "rule": "中文整数改写为阿拉伯整数",
+    "gold": "30008",
+    "input": "运营说明的出场号为三万零八。",
+    "scoring": "exact",
+    "id": "q0555",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "运营说明的出场号为三万零八。"
+  },
+  {
+    "rule": "将带“点”的中文数转为小数",
+    "gold": "3.05",
+    "input": "粗犁头用线标为三点零五单位。",
+    "scoring": "exact",
+    "id": "q0556",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "粗犁头用线标为三点零五单位。"
+  },
+  {
+    "rule": "写出带正负号中的负数，以减号开头",
+    "gold": "-17",
+    "input": "徙台点位注记为负十七。",
+    "scoring": "exact",
+    "id": "q0557",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "徙台点位注记为负十七。"
+  },
+  {
+    "rule": "把“一千零六十”所表示的计数写成数字",
+    "gold": "1060",
+    "input": "摩擦试验的档案标题含“一千零六十次转动”。",
+    "scoring": "exact",
+    "id": "q0558",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "摩擦试验的档案标题含“一千零六十次转动”。"
+  },
+  {
+    "rule": "把整数写为简体中文数字，不带量词",
+    "gold": "八千零八",
+    "input": "粉笔箱条目的标记数字是8008。",
+    "scoring": "exact",
+    "id": "q0559",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "粉笔箱条目的标记数字是8008。"
+  },
+  {
+    "rule": "拼写为中文数字，逐位读取且保留开头的零",
+    "gold": "零五六二",
+    "input": "邮件主题上的验证尾串为0562。",
+    "scoring": "exact",
+    "id": "q0560",
+    "task_type": "normalization",
+    "source_family": "中式数字",
+    "source_text": "邮件主题上的验证尾串为0562。"
+  },
+  {
+    "rule": "将数值从小到大排列，以中文顿号连接",
+    "gold": "4、9、12",
+    "input": "机关演算寸标写着12、4、9，各出现一次。",
+    "scoring": "exact",
+    "id": "q0561",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "机关演算寸标写着12、4、9，各出现一次。"
+  },
+  {
+    "rule": "按数值从大到小排，用英文逗号分隔",
+    "gold": "18,11,7",
+    "input": "展柜需定位在11号、18号、7号台砖。",
+    "scoring": "exact",
+    "id": "q0562",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "展柜需定位在11号、18号、7号台砖。"
+  },
+  {
+    "rule": "只输出所列温度中最小的数字",
+    "gold": "-4",
+    "input": "野外温度测点分别写3、-4、1度。",
+    "scoring": "exact",
+    "id": "q0563",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "野外温度测点分别写3、-4、1度。"
+  },
+  {
+    "rule": "按指定字母顺序 A、B、C，输出编号不含空格，每项用逗号隔开",
+    "gold": "A11,B06,C20",
+    "input": "寄送条上乱记 B06 然后 C20，最后才录 A11。",
+    "scoring": "exact",
+    "id": "q0564",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "寄送条上乱记 B06 然后 C20，最后才录 A11。"
+  },
+  {
+    "rule": "按出现顺序去重，用顿号分隔",
+    "gold": "诗札、节牌、画幕",
+    "input": "转场表依次记诗札、节牌、诗札、画幕、节牌。",
+    "scoring": "exact",
+    "id": "q0565",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "转场表依次记诗札、节牌、诗札、画幕、节牌。"
+  },
+  {
+    "rule": "将所列工位按编号递增排列，用箭头“→”连接完整工位名",
+    "gold": "台2→台5→台8",
+    "input": "三人分别站到台8、台2、台5。",
+    "scoring": "exact",
+    "id": "q0566",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "三人分别站到台8、台2、台5。"
+  },
+  {
+    "rule": "仅输出观察值的中位数数字",
+    "gold": "7",
+    "input": "对拍延迟的五个测点为11、2、7、9、4。",
+    "scoring": "exact",
+    "id": "q0567",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "对拍延迟的五个测点为11、2、7、9、4。"
+  },
+  {
+    "rule": "把晚于12:00的时刻按从早到晚排列，用逗号连接",
+    "gold": "12:17,19:05",
+    "input": "便条依次写19:05、09:10、12:17。",
+    "scoring": "exact",
+    "id": "q0568",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "便条依次写19:05、09:10、12:17。"
+  },
+  {
+    "rule": "按标签中声调号的数字从低到高排序，项以顿号间隔",
+    "gold": "声1、声3、声4",
+    "input": "戏词课须排列声4、声1、声3。",
+    "scoring": "exact",
+    "id": "q0569",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "戏词课须排列声4、声1、声3。"
+  },
+  {
+    "rule": "将点位编号倒序写出，用空格分开",
+    "gold": "X25 X14 X03",
+    "input": "点位原顺序为 X03、X14、X25。",
+    "scoring": "exact",
+    "id": "q0570",
+    "task_type": "normalization",
+    "source_family": "排序",
+    "source_text": "点位原顺序为 X03、X14、X25。"
+  },
+  {
+    "rule": "仅输出括号内的文字",
+    "gold": "悬河",
+    "input": "旧听写卡正文为读本（悬河），背面另有涂改。",
+    "scoring": "exact",
+    "id": "q0571",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "旧听写卡正文为读本（悬河），背面另有涂改。"
+  },
+  {
+    "rule": "把中文方括号内的简称拿出，省略括号",
+    "gold": "电池湾",
+    "input": "文件名示意为文书【电池湾】后勤组。",
+    "scoring": "exact",
+    "id": "q0572",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "文件名示意为文书【电池湾】后勤组。"
+  },
+  {
+    "rule": "删掉所有数字，保留其余字符",
+    "gold": "白界砖",
+    "input": "烧成标样为白6界2砖。",
+    "scoring": "exact",
+    "id": "q0573",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "烧成标样为白6界2砖。"
+  },
+  {
+    "rule": "保留字符串的前三个汉字",
+    "gold": "曲檐灯",
+    "input": "制图便签写曲檐灯回廊，题要求缩写。",
+    "scoring": "exact",
+    "id": "q0574",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "制图便签写曲檐灯回廊，题要求缩写。"
+  },
+  {
+    "rule": "保留最后两个汉字",
+    "gold": "木排",
+    "input": "打过孔的壳片标签为晨江木排。",
+    "scoring": "exact",
+    "id": "q0575",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "打过孔的壳片标签为晨江木排。"
+  },
+  {
+    "rule": "仅取分号前的文本，不带分号",
+    "gold": "靠壁窗",
+    "input": "线路配置字段为靠壁窗；短桥外。",
+    "scoring": "exact",
+    "id": "q0576",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "线路配置字段为靠壁窗；短桥外。"
+  },
+  {
+    "rule": "把句中的顿号统一改成半角逗号，其余不变",
+    "gold": "侧凳,长架,瓦箱",
+    "input": "租借栏目给出侧凳、长架、瓦箱。",
+    "scoring": "exact",
+    "id": "q0577",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "租借栏目给出侧凳、长架、瓦箱。"
+  },
+  {
+    "rule": "将给出的三个字完全倒序拼成一串",
+    "gold": "印艮白",
+    "input": "工房铅字取样写白艮印。",
+    "scoring": "exact",
+    "id": "q0578",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "工房铅字取样写白艮印。"
+  },
+  {
+    "rule": "输出输入中的重复汉字各一次，按首次出现次序",
+    "gold": "藤梯",
+    "input": "纹样试刻内容为藤花梯藤叶梯绳。",
+    "scoring": "exact",
+    "id": "q0579",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "纹样试刻内容为藤花梯藤叶梯绳。"
+  },
+  {
+    "rule": "只提取字符串内所有小写英文字母，顺序不改",
+    "gold": "btx",
+    "input": "切图稿落尾为 Qb7tT2x。",
+    "scoring": "exact",
+    "id": "q0580",
+    "task_type": "normalization",
+    "source_family": "文本筛选",
+    "source_text": "切图稿落尾为 Qb7tT2x。"
+  },
+  {
+    "rule": "按 F=1.8×C+32 换成华氏度，输出整数",
+    "gold": "59",
+    "input": "公共音箱柜内温度为15摄氏度。",
+    "scoring": "exact",
+    "id": "q0581",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "公共音箱柜内温度为15摄氏度。"
+  },
+  {
+    "rule": "按 C=(F−32)/1.8 转摄氏度，输出整数",
+    "gold": "30",
+    "input": "晒鞋板的外表温度写作86华氏度。",
+    "scoring": "exact",
+    "id": "q0582",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "晒鞋板的外表温度写作86华氏度。"
+  },
+  {
+    "rule": "按 K=C+273.15 转为开尔文，输出两位小数",
+    "gold": "281.15",
+    "input": "记录室设定环境为8摄氏度。",
+    "scoring": "exact",
+    "id": "q0583",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "记录室设定环境为8摄氏度。"
+  },
+  {
+    "rule": "按指定标尺每格为0.5℃，给出格数换算后的摄氏读数，只写数字",
+    "gold": "6.5",
+    "input": "风板热力计的刻度停在第13格，零格为0℃。",
+    "scoring": "exact",
+    "id": "q0584",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "风板热力计的刻度停在第13格，零格为0℃。"
+  },
+  {
+    "rule": "将给出的两个摄氏读数求差，较大减较小，仅数字",
+    "gold": "27",
+    "input": "隔温罩内清晨为4℃，中午为31℃。",
+    "scoring": "exact",
+    "id": "q0585",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "隔温罩内清晨为4℃，中午为31℃。"
+  },
+  {
+    "rule": "按 C=F−10 的自定义演示刻度，写出 C 数值",
+    "gold": "47",
+    "input": "喷水幕测试牌指定演示刻度 F 等于57。",
+    "scoring": "exact",
+    "id": "q0586",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "喷水幕测试牌指定演示刻度 F 等于57。"
+  },
+  {
+    "rule": "按 F=1.8×C+32 转为华氏，保留一位小数",
+    "gold": "45.5",
+    "input": "架空廊实测7.5摄氏度，需用华氏显示。",
+    "scoring": "exact",
+    "id": "q0587",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "架空廊实测7.5摄氏度，需用华氏显示。"
+  },
+  {
+    "rule": "按 C=K−273.15 换为摄氏，保留一位小数",
+    "gold": "21.5",
+    "input": "蓝玻隔间校表输入294.65开尔文。",
+    "scoring": "exact",
+    "id": "q0588",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "蓝玻隔间校表输入294.65开尔文。"
+  },
+  {
+    "rule": "按参考值加上修正值，输出摄氏数值，保留两位小数",
+    "gold": "17.35",
+    "input": "板上温度标称16.70℃，复核校正值+0.65℃。",
+    "scoring": "exact",
+    "id": "q0589",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "板上温度标称16.70℃，复核校正值+0.65℃。"
+  },
+  {
+    "rule": "从描述取出最高温，按华氏原表述只写数字",
+    "gold": "77",
+    "input": "两台暖片晨记66华氏度，另一个时段登记77华氏度。",
+    "scoring": "exact",
+    "id": "q0590",
+    "task_type": "normalization",
+    "source_family": "温标约定",
+    "source_text": "两台暖片晨记66华氏度，另一个时段登记77华氏度。"
+  },
+  {
+    "rule": "将总分钟数改写“X小时Y分钟”，保留两部分",
+    "gold": "2小时13分钟",
+    "input": "找回脚轮到试推通过合计133分钟。",
+    "scoring": "exact",
+    "id": "q0591",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "找回脚轮到试推通过合计133分钟。"
+  },
+  {
+    "rule": "转为分钟，只写数字",
+    "gold": "143",
+    "input": "旱地观光车两小时二十三分钟到达马场终点。",
+    "scoring": "exact",
+    "id": "q0592",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "旱地观光车两小时二十三分钟到达马场终点。"
+  },
+  {
+    "rule": "换为秒，仅数字",
+    "gold": "98",
+    "input": "木架穿槽测时为一分三十八秒。",
+    "scoring": "exact",
+    "id": "q0593",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "木架穿槽测时为一分三十八秒。"
+  },
+  {
+    "rule": "将三段给出的秒数相加，只写整数",
+    "gold": "212",
+    "input": "扫帘动作首段50秒，中段73秒，收尾89秒。",
+    "scoring": "exact",
+    "id": "q0594",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "扫帘动作首段50秒，中段73秒，收尾89秒。"
+  },
+  {
+    "rule": "用分钟计算“结束−开始”，同一天，只写数字",
+    "gold": "95",
+    "input": "小型棚子的风绳检查从08:35持续到10:10。",
+    "scoring": "exact",
+    "id": "q0595",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "小型棚子的风绳检查从08:35持续到10:10。"
+  },
+  {
+    "rule": "按1天=24小时换为小时，只写数字",
+    "gold": "54",
+    "input": "印布待晾两天又六小时送后台。",
+    "scoring": "exact",
+    "id": "q0596",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "印布待晾两天又六小时送后台。"
+  },
+  {
+    "rule": "将展示用计时的小时值转为分钟，仅数字",
+    "gold": "27",
+    "input": "另一支笔拉长条的时间表为0.45小时。",
+    "scoring": "exact",
+    "id": "q0597",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "另一支笔拉长条的时间表为0.45小时。"
+  },
+  {
+    "rule": "按1分钟=60秒，正数向下取整，输出整数分钟",
+    "gold": "4",
+    "input": "总搭片耗时299秒，标注栏只填整分钟。",
+    "scoring": "exact",
+    "id": "q0598",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "总搭片耗时299秒，标注栏只填整分钟。"
+  },
+  {
+    "rule": "以“X分X秒”表示恢复时间",
+    "gold": "3分7秒",
+    "input": "蜡纸小筒卡线后187秒恢复。",
+    "scoring": "exact",
+    "id": "q0599",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "蜡纸小筒卡线后187秒恢复。"
+  },
+  {
+    "rule": "跨午夜以分钟计时间差，只写数字",
+    "gold": "37",
+    "input": "整理留言从23:46延至次日00:23。",
+    "scoring": "exact",
+    "id": "q0600",
+    "task_type": "normalization",
+    "source_family": "时长",
+    "source_text": "整理留言从23:46延至次日00:23。"
+  },
+  {
+    "rule": "输出按四舍五入保留两位小数的数值",
+    "gold": "13.24",
+    "input": "窗膜每小片结算价为13.235元。",
+    "scoring": "exact",
+    "id": "q0601",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "窗膜每小片结算价为13.235元。"
+  },
+  {
+    "rule": "输出每枚铜夹的均价，保留两位小数",
+    "gold": "6.25",
+    "input": "两包各四枚铜夹共花50元，按单枚结账。",
+    "scoring": "exact",
+    "id": "q0602",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "两包各四枚铜夹共花50元，按单枚结账。"
+  },
+  {
+    "rule": "相加后保留一位小数，输出数字",
+    "gold": "19.4",
+    "input": "当天买磨轮10.65元，另收缠布8.74元。",
+    "scoring": "exact",
+    "id": "q0603",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "当天买磨轮10.65元，另收缠布8.74元。"
+  },
+  {
+    "rule": "将价签元数转换为整数分",
+    "gold": "1480",
+    "input": "挂帘盒日租金为14.8元。",
+    "scoring": "exact",
+    "id": "q0604",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "挂帘盒日租金为14.8元。"
+  },
+  {
+    "rule": "按原价加固定手续费，保留两位小数",
+    "gold": "33.05",
+    "input": "新刻牌需付32.75元，另收0.30元封条费。",
+    "scoring": "exact",
+    "id": "q0605",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "新刻牌需付32.75元，另收0.30元封条费。"
+  },
+  {
+    "rule": "按原价减下列抵扣额，输出两位小数的元数",
+    "gold": "75.60",
+    "input": "布塔盒原价88.00元，使用12.40元抵扣券。",
+    "scoring": "exact",
+    "id": "q0606",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "布塔盒原价88.00元，使用12.40元抵扣券。"
+  },
+  {
+    "rule": "把数字向上取整，只写整数",
+    "gold": "18",
+    "input": "取形灯缴费费用估计为17.02元，收款栏需填整数预算。",
+    "scoring": "exact",
+    "id": "q0607",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "取形灯缴费费用估计为17.02元，收款栏需填整数预算。"
+  },
+  {
+    "rule": "按折扣比例求省下的金额，输出整数",
+    "gold": "15",
+    "input": "小木桌名签原价75元，等候折扣八折。",
+    "scoring": "exact",
+    "id": "q0608",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "小木桌名签原价75元，等候折扣八折。"
+  },
+  {
+    "rule": "将元金额改写为人民币“X元Y角”，忽略末尾0分",
+    "gold": "6元8角",
+    "input": "挡风夹一件记价6.80元。",
+    "scoring": "exact",
+    "id": "q0609",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "挡风夹一件记价6.80元。"
+  },
+  {
+    "rule": "用总额除以人数，每人按两位小数给出",
+    "gold": "21.75",
+    "input": "四名参与者支付工棚净费87元，平摊。",
+    "scoring": "exact",
+    "id": "q0610",
+    "task_type": "normalization",
+    "source_family": "金额与舍入",
+    "source_text": "四名参与者支付工棚净费87元，平摊。"
+  },
+  {
+    "rule": "将平面点关于纵轴对称，输出“(x,y)”",
+    "gold": "(-3,8)",
+    "input": "木桥模型的起点绘于(3,8)。",
+    "scoring": "exact",
+    "id": "q0611",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "木桥模型的起点绘于(3,8)。"
+  },
+  {
+    "rule": "按先向右5、再向下2移动，右为x正上为y正，输出“(x,y)”",
+    "gold": "(3,1)",
+    "input": "插土地签的起始点为(-2,3)。",
+    "scoring": "exact",
+    "id": "q0612",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "插土地签的起始点为(-2,3)。"
+  },
+  {
+    "rule": "把横坐标与纵坐标互换，输出“(x,y)”",
+    "gold": "(6,1)",
+    "input": "原放电支架点记为(1,6)。",
+    "scoring": "exact",
+    "id": "q0613",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "原放电支架点记为(1,6)。"
+  },
+  {
+    "rule": "将方位沿北、东、南、西顺时针转一格，只写一个字",
+    "gold": "南",
+    "input": "卷带出口最初面东。",
+    "scoring": "exact",
+    "id": "q0614",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "卷带出口最初面东。"
+  },
+  {
+    "rule": "将方位在北、东、南、西上逆时针转一格，输出方位",
+    "gold": "西",
+    "input": "取样扇门面北。",
+    "scoring": "exact",
+    "id": "q0615",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "取样扇门面北。"
+  },
+  {
+    "rule": "输出目标位置相对于当前位置的方向，使用“上”“下”之一",
+    "gold": "下",
+    "input": "入料台坐标的高度为9，预置槽高为6，水平位置相同。",
+    "scoring": "exact",
+    "id": "q0616",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "入料台坐标的高度为9，预置槽高为6，水平位置相同。"
+  },
+  {
+    "rule": "将点向左移动3，横向减少3，输出“(x,y)”",
+    "gold": "(-6,-9)",
+    "input": "图钉在(-3,-9)。",
+    "scoring": "exact",
+    "id": "q0617",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "图钉在(-3,-9)。"
+  },
+  {
+    "rule": "输出两个给定平面点的横坐标差，按“后减前”",
+    "gold": "4",
+    "input": "移动轨迹前点是(8,7)，后点是(12,-3)。",
+    "scoring": "exact",
+    "id": "q0618",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "移动轨迹前点是(8,7)，后点是(12,-3)。"
+  },
+  {
+    "rule": "按东南西北顺时针旋转180度后输出字",
+    "gold": "北",
+    "input": "旧油画光门原来朝南。",
+    "scoring": "exact",
+    "id": "q0619",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "旧油画光门原来朝南。"
+  },
+  {
+    "rule": "按东入口起沿走廊向西的方位只输出汉字",
+    "gold": "西",
+    "input": "待推的小蓝车从东入口朝另一头直行。",
+    "scoring": "exact",
+    "id": "q0620",
+    "task_type": "normalization",
+    "source_family": "坐标与方位",
+    "source_text": "待推的小蓝车从东入口朝另一头直行。"
+  },
+  {
+    "rule": "把“关”替换成“0”，把“开”替换成“1”，顺序不变",
+    "gold": "10110",
+    "input": "记录窗五次分别开关开开关。",
+    "scoring": "exact",
+    "id": "q0621",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "记录窗五次分别开关开开关。"
+  },
+  {
+    "rule": "把值“是/否”映射成“Y/N”，一项只输出一个字",
+    "gold": "N",
+    "input": "询问页中“能否上二楼”的值为“否”。",
+    "scoring": "exact",
+    "id": "q0622",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "询问页中“能否上二楼”的值为“否”。"
+  },
+  {
+    "rule": "将箭头描述改成英文字母，左=L、右=R",
+    "gold": "LRR",
+    "input": "依次走左、右、右才能到布箱。",
+    "scoring": "exact",
+    "id": "q0623",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "依次走左、右、右才能到布箱。"
+  },
+  {
+    "rule": "按点灯的时间顺序写出颜色首字，只合并相邻的同色项",
+    "gold": "绿红绿",
+    "input": "信号板先连亮两次绿，再红，最后绿。",
+    "scoring": "exact",
+    "id": "q0624",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "信号板先连亮两次绿，再红，最后绿。"
+  },
+  {
+    "rule": "把“缺”写为NA，将多个状态用英文逗号连接，已有数字保持",
+    "gold": "NA,5,NA",
+    "input": "三格巡检状态依次是缺、5、缺。",
+    "scoring": "exact",
+    "id": "q0625",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "三格巡检状态依次是缺、5、缺。"
+  },
+  {
+    "rule": "以小写表示指定三字母缩写",
+    "gold": "nfc",
+    "input": "借阅台新装识别模组标为NFC。",
+    "scoring": "exact",
+    "id": "q0626",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "借阅台新装识别模组标为NFC。"
+  },
+  {
+    "rule": "转写为半角的英文字母与数字，大小写原样",
+    "gold": "Q8x3",
+    "input": "标签印刷内容是Ｑ８ｘ３。",
+    "scoring": "exact",
+    "id": "q0627",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "标签印刷内容是Ｑ８ｘ３。"
+  },
+  {
+    "rule": "把三项颜色按字典白=W、黑=B、灰=G转成相连代码",
+    "gold": "BGW",
+    "input": "灯排从左到右为黑、灰、白。",
+    "scoring": "exact",
+    "id": "q0628",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "灯排从左到右为黑、灰、白。"
+  },
+  {
+    "rule": "把输入文字中的简体“干”在这里按干燥义替换成“乾”，其余字保持",
+    "gold": "乾布挂直",
+    "input": "整理烘棚备注写干布挂直。",
+    "scoring": "exact",
+    "id": "q0629",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "整理烘棚备注写干布挂直。"
+  },
+  {
+    "rule": "只保留时间字符中的数字，保持顺序",
+    "gold": "2059",
+    "input": "登高牌计时时间写20:59。",
+    "scoring": "exact",
+    "id": "q0630",
+    "task_type": "normalization",
+    "source_family": "替换与标准可读性",
+    "source_text": "登高牌计时时间写20:59。"
+  },
+  {
+    "rule": "按矩形长×宽求面积，仅数字",
+    "gold": "126",
+    "input": "涂字板长14厘米，宽9厘米，求面积。",
+    "scoring": "exact",
+    "id": "q0631",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "涂字板长14厘米，宽9厘米，求面积。"
+  },
+  {
+    "rule": "按长方形周长2×(长+宽)计算，仅数字",
+    "gold": "50",
+    "input": "方凳靠垫长15厘米宽10厘米。",
+    "scoring": "exact",
+    "id": "q0632",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "方凳靠垫长15厘米宽10厘米。"
+  },
+  {
+    "rule": "周长给出时按正方形边长=周长÷4输出数字",
+    "gold": "8",
+    "input": "黑边漆框是正方形，周长32厘米。",
+    "scoring": "exact",
+    "id": "q0633",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "黑边漆框是正方形，周长32厘米。"
+  },
+  {
+    "rule": "两数平均后保留一位小数",
+    "gold": "8.5",
+    "input": "铅笔盒测得计时9.2秒、7.8秒。",
+    "scoring": "exact",
+    "id": "q0634",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "铅笔盒测得计时9.2秒、7.8秒。"
+  },
+  {
+    "rule": "按体积=长×宽×高计算，只写整数",
+    "gold": "240",
+    "input": "模型暗槽长12厘米、宽5厘米、高4厘米。",
+    "scoring": "exact",
+    "id": "q0635",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "模型暗槽长12厘米、宽5厘米、高4厘米。"
+  },
+  {
+    "rule": "从三个选项中输出差距最大的那对的差值，仅数字",
+    "gold": "43",
+    "input": "长柄抄纸板三次举升刻度为17、48、60。",
+    "scoring": "exact",
+    "id": "q0636",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "长柄抄纸板三次举升刻度为17、48、60。"
+  },
+  {
+    "rule": "按两段路程相加除以总分钟数求平均字面速度，仅数字",
+    "gold": "30",
+    "input": "短路走120米用4分钟，长路180米用6分钟。",
+    "scoring": "exact",
+    "id": "q0637",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "短路走120米用4分钟，长路180米用6分钟。"
+  },
+  {
+    "rule": "求奇数的个数，只输出一个整数",
+    "gold": "3",
+    "input": "零件盒依次有2、3、4、7、9五个刻号。",
+    "scoring": "exact",
+    "id": "q0638",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "零件盒依次有2、3、4、7、9五个刻号。"
+  },
+  {
+    "rule": "按合格总数减抽检坏数，仅数字",
+    "gold": "112",
+    "input": "首检合格118枚，复检中重新定位6枚坏件。",
+    "scoring": "exact",
+    "id": "q0639",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "首检合格118枚，复检中重新定位6枚坏件。"
+  },
+  {
+    "rule": "按容量除以单次耗量取整（不足一整次不计），输出整数",
+    "gold": "5",
+    "input": "油墨有68毫升，每回涂带消耗12毫升。",
+    "scoring": "exact",
+    "id": "q0640",
+    "task_type": "normalization",
+    "source_family": "简单公式与比较",
+    "source_text": "油墨有68毫升，每回涂带消耗12毫升。"
+  }
+]

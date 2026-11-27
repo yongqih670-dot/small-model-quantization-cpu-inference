@@ -1,0 +1,170 @@
+{
+  "batch": 15,
+  "model": "FP16",
+  "id": "q0568",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：把晚于12:00的时刻按从早到晚排列，用逗号连接\n要求：只输出转换结果，不要任何说明。\n\n输入：便条依次写19:05、09:10、12:17。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：把晚于12:00的时刻按从早到晚排列，用逗号连接\n要求：只输出转换结果，不要任何说明。\n\n输入：便条依次写19:05、09:10、12:17。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      99360,
+      99438,
+      34204,
+      16,
+      17,
+      25,
+      15,
+      15,
+      9370,
+      102254,
+      59879,
+      45181,
+      99391,
+      26939,
+      99438,
+      108467,
+      3837,
+      11622,
+      107463,
+      17992,
+      64064,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      99364,
+      38989,
+      110298,
+      61443,
+      16,
+      24,
+      25,
+      15,
+      20,
+      5373,
+      15,
+      24,
+      25,
+      16,
+      15,
+      5373,
+      16,
+      17,
+      25,
+      16,
+      22,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:18:58.254149+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "19:05,09:10,12:17"
+          }
+        }
+      ],
+      "created": 1795796338,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 91,
+        "total_tokens": 109,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-3JqpBfNsPug9jUfNSiLhz0qe5n9YA4ro",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 91,
+        "prompt_ms": 95.306,
+        "prompt_per_token_ms": 1.0473186813186812,
+        "prompt_per_second": 954.8192139004889,
+        "predicted_n": 18,
+        "predicted_ms": 362.3,
+        "predicted_per_token_ms": 21.311764705882354,
+        "predicted_per_second": 46.92243996687827
+      }
+    },
+    "client_e2e_s": 0.4763547999318689,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

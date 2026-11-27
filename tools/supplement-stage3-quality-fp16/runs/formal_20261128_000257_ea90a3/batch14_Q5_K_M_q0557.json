@@ -1,0 +1,150 @@
+{
+  "batch": 14,
+  "model": "Q5_K_M",
+  "id": "q0557",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：写出带正负号中的负数，以减号开头\n要求：只输出转换结果，不要任何说明。\n\n输入：徙台点位注记为负十七。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：写出带正负号中的负数，以减号开头\n要求：只输出转换结果，不要任何说明。\n\n输入：徙台点位注记为负十七。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      112672,
+      99278,
+      36556,
+      99393,
+      17992,
+      101047,
+      99393,
+      8863,
+      3837,
+      23031,
+      99536,
+      17992,
+      111749,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      119414,
+      53938,
+      27442,
+      24156,
+      25074,
+      40814,
+      17714,
+      99393,
+      103006,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:18:36.197207+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "-17"
+          }
+        }
+      ],
+      "created": 1795796316,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 71,
+        "total_tokens": 75,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-wsSRzgwGTE0L5jP5oaj8CiThnCCasUC3",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 71,
+        "prompt_ms": 186.418,
+        "prompt_per_token_ms": 2.625605633802817,
+        "prompt_per_second": 380.86450879206944,
+        "predicted_n": 4,
+        "predicted_ms": 31.371,
+        "predicted_per_token_ms": 10.456999999999999,
+        "predicted_per_second": 95.6297217175098
+      }
+    },
+    "client_e2e_s": 0.2231368999928236,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": true,
+    "content_correct": true,
+    "correct": true
+  }
+}

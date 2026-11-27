@@ -1,0 +1,159 @@
+{
+  "batch": 16,
+  "model": "Q8_0",
+  "id": "q0583",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：按 K=C+273.15 转为开尔文，输出两位小数\n要求：只输出转换结果，不要任何说明。\n\n输入：记录室设定环境为8摄氏度。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：按 K=C+273.15 转为开尔文，输出两位小数\n要求：只输出转换结果，不要任何说明。\n\n输入：记录室设定环境为8摄氏度。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      59879,
+      730,
+      40917,
+      10,
+      17,
+      22,
+      18,
+      13,
+      16,
+      20,
+      8908,
+      121,
+      105,
+      17714,
+      29767,
+      99079,
+      16744,
+      3837,
+      66017,
+      105352,
+      30709,
+      8863,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      65577,
+      99478,
+      105924,
+      99719,
+      17714,
+      23,
+      100099,
+      104057,
+      26381,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:20:49.555120+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "293.15"
+          }
+        }
+      ],
+      "created": 1795796449,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 80,
+        "total_tokens": 87,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-DzTeJEwjUCMu09hHLDnzQZk2r3LDohXa",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 80,
+        "prompt_ms": 125.687,
+        "prompt_per_token_ms": 1.5710875,
+        "prompt_per_second": 636.5017861831375,
+        "predicted_n": 7,
+        "predicted_ms": 71.047,
+        "predicted_per_token_ms": 11.841166666666666,
+        "predicted_per_second": 84.45113797908428
+      }
+    },
+    "client_e2e_s": 0.2013244000263512,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

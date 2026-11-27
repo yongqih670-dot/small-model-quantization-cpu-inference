@@ -1,0 +1,167 @@
+{
+  "batch": 2,
+  "model": "FP16",
+  "id": "q0637",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：按两段路程相加除以总分钟数求平均字面速度，仅数字\n要求：只输出转换结果，不要任何说明。\n\n输入：短路走120米用4分钟，长路180米用6分钟。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：按两段路程相加除以总分钟数求平均字面速度，仅数字\n要求：只输出转换结果，不要任何说明。\n\n输入：短路走120米用4分钟，长路180米用6分钟。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      59879,
+      77540,
+      37474,
+      115739,
+      48921,
+      20929,
+      20755,
+      23031,
+      59743,
+      83031,
+      8863,
+      30918,
+      101200,
+      18600,
+      27091,
+      101149,
+      3837,
+      99373,
+      82587,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      99534,
+      45995,
+      99314,
+      16,
+      17,
+      15,
+      72261,
+      11622,
+      19,
+      83031,
+      3837,
+      45861,
+      45995,
+      16,
+      23,
+      15,
+      72261,
+      11622,
+      21,
+      83031,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:04:56.443865+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "100.0"
+          }
+        }
+      ],
+      "created": 1795795496,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 88,
+        "total_tokens": 94,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-u7A8Zd19UbqK7ZPyD4l4OeTQZUlC4TJm",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 88,
+        "prompt_ms": 102.184,
+        "prompt_per_token_ms": 1.161181818181818,
+        "prompt_per_second": 861.191575980584,
+        "predicted_n": 6,
+        "predicted_ms": 96.954,
+        "predicted_per_token_ms": 19.3908,
+        "predicted_per_second": 51.57084803102503
+      }
+    },
+    "client_e2e_s": 0.21961849997751415,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

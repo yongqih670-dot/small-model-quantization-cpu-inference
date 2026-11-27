@@ -4,6 +4,13 @@
 
 **Stage 1–10 使用同一台 Ryzen 9 9955HX 电脑。** Stage 7–10 于 2026 年 11 月 27 日在该机复测，使用 16 核 32 线程、31.18 GiB 内存、Windows 11 Build 26100 和 llama.cpp b11347 官方 CPU 后端。各阶段报告链接到本次正式运行与原始记录。
 
+### 同机补测
+
+- **Stage 10 G 线程确认。** 60 轮、720 条计时请求。八个单侧上限均低于 0，支持在四种实验负载和三种候选配置下以 16 个生成线程、16 个批处理线程作为默认配置。[冻结方案、原始记录与复算](tools/supplement-stage10-g-1616/REPORT.md)
+- **Stage 3 量化质量。** 640 道新题、2,560 条首试。Q4 与官方 FP16 的联合正确率分别为 22.66% 和 22.19%，配对差的单侧 95% 下限为 −0.96 个百分点，通过预设的 −5 个百分点非劣界。四模型在这套严格评分下的 JSON 抽取联合正确均为 0/160。[冻结题库、原始记录与复算](tools/supplement-stage3-quality-fp16/REPORT.md)
+
+### 各阶段报告
+
 [Stage 10 实验报告](stage10_validation/README.md) · [事前方案](stage10_validation/PROTOCOL.md) · [统计表、逐轮数据与图表](stage10_validation/results/)
 
 [Stage 9 实验报告与复现方法](stage9_deep/README.md) · [实验方案](stage9_deep/PROTOCOL.md) · [462 条正式请求的统计与图表](stage9_deep/results/)

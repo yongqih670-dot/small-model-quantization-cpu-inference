@@ -1,0 +1,155 @@
+{
+  "batch": 11,
+  "model": "FP16",
+  "id": "q0601",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：输出按四舍五入保留两位小数的数值\n要求：只输出转换结果，不要任何说明。\n\n输入：窗膜每小片结算价为13.235元。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：输出按四舍五入保留两位小数的数值\n要求：只输出转换结果，不要任何说明。\n\n输入：窗膜每小片结算价为13.235元。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      66017,
+      59879,
+      63703,
+      100496,
+      75108,
+      17254,
+      104465,
+      105352,
+      30709,
+      8863,
+      9370,
+      111944,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      100237,
+      101232,
+      73157,
+      30709,
+      34718,
+      106331,
+      50292,
+      17714,
+      16,
+      18,
+      13,
+      17,
+      18,
+      20,
+      23305,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:14:55.778634+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "13.24"
+          }
+        }
+      ],
+      "created": 1795796096,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 76,
+        "total_tokens": 82,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-3kXNUKtgAWKWoQy4W1FtRVf7VXft6iLn",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 76,
+        "prompt_ms": 88.109,
+        "prompt_per_token_ms": 1.159328947368421,
+        "prompt_per_second": 862.5679556004495,
+        "predicted_n": 6,
+        "predicted_ms": 110.34,
+        "predicted_per_token_ms": 22.068,
+        "predicted_per_second": 45.31448250860975
+      }
+    },
+    "client_e2e_s": 0.22799429995939136,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": true,
+    "content_correct": true,
+    "correct": true
+  }
+}

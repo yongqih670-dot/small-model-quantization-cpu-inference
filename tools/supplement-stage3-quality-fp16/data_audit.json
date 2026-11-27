@@ -1,0 +1,151 @@
+{
+  "formal": 640,
+  "pilot": 4,
+  "strata": {
+    "single_field_extraction": 160,
+    "json_extraction": 160,
+    "classification": 160,
+    "normalization": 160
+  },
+  "classification": {
+    "预约": {
+      "新预约/2": 5,
+      "更改预约/1": 5,
+      "新预约/1": 5,
+      "更改预约/2": 5
+    },
+    "失物": {
+      "寻物求助/2": 5,
+      "寻主招领/1": 5,
+      "寻物求助/1": 5,
+      "寻主招领/2": 5
+    },
+    "办理": {
+      "必须到场/1": 5,
+      "仅线上办/1": 5,
+      "仅线上办/2": 5,
+      "必须到场/2": 5
+    },
+    "处置": {
+      "退钱/1": 5,
+      "只换货/2": 5,
+      "只换货/1": 5,
+      "退钱/2": 5
+    },
+    "助务": {
+      "请求协助/2": 5,
+      "告知进度/1": 5,
+      "告知进度/2": 5,
+      "请求协助/1": 5
+    },
+    "排程": {
+      "活动取消/1": 5,
+      "活动照常/2": 5,
+      "活动取消/2": 5,
+      "活动照常/1": 5
+    },
+    "体验": {
+      "正面体验/1": 5,
+      "负面体验/2": 5,
+      "正面体验/2": 5,
+      "负面体验/1": 5
+    },
+    "回收": {
+      "可回收/2": 5,
+      "其他垃圾/1": 5,
+      "可回收/1": 5,
+      "其他垃圾/2": 5
+    }
+  },
+  "source_families": {
+    "single_field_extraction": {
+      "告示": 10,
+      "工单": 10,
+      "对话": 10,
+      "队列日志": 10,
+      "表格摘录": 10,
+      "行程": 10,
+      "说明书": 10,
+      "便签": 10,
+      "仪表读数": 10,
+      "问询回复": 10,
+      "交接": 10,
+      "销售明细": 10,
+      "活动手册": 10,
+      "巡检记录": 10,
+      "播报稿": 10,
+      "文化档案": 10
+    },
+    "json_extraction": {
+      "登记条": 10,
+      "通告": 10,
+      "修理": 10,
+      "单据": 10,
+      "转述": 10,
+      "档案": 10,
+      "工程": 10,
+      "农业": 10,
+      "餐饮": 10,
+      "剧场": 10,
+      "水陆交通": 10,
+      "音像": 10,
+      "社区活动": 10,
+      "科研手记": 10,
+      "预约确认": 10,
+      "环境观察": 10
+    },
+    "classification": {
+      "预约": 20,
+      "失物": 20,
+      "办理": 20,
+      "处置": 20,
+      "助务": 20,
+      "排程": 20,
+      "体验": 20,
+      "回收": 20
+    },
+    "normalization": {
+      "时间格式": 10,
+      "日期": 10,
+      "尺度换算": 10,
+      "容量重量": 10,
+      "编码": 10,
+      "整数运算": 10,
+      "比例": 10,
+      "中式数字": 10,
+      "排序": 10,
+      "文本筛选": 10,
+      "温标约定": 10,
+      "时长": 10,
+      "金额与舍入": 10,
+      "坐标与方位": 10,
+      "替换与标准可读性": 10,
+      "简单公式与比较": 10
+    }
+  },
+  "previous_banks": [
+    "datasets/dev/dev_tasks.json",
+    "datasets/stage6/stage6_cls_variants.json",
+    "datasets/stage6/stage6_dev_variants.json",
+    "datasets/stage6/stage6_json_variants.json",
+    "datasets/test/test_tasks.json",
+    "stage10_validation/holdout.json",
+    "stage10_validation/texts.json",
+    "stage7_local/smoke_request.json",
+    "stage8_extensions/inputs.json",
+    "stage9_deep/new_items.json"
+  ],
+  "compared_previous_strings": 425,
+  "text_screen": "NFKC/casefold; replace numbers; remove punctuation; character trigram Jaccard >=0.50 rejected",
+  "maximum_previous_similarity": [
+    0.13513513513513514,
+    "q0461",
+    "stage9_deep/new_items.json"
+  ],
+  "maximum_internal_similarity": [
+    0.3333333333333333,
+    "q0632",
+    "q0631"
+  ],
+  "check": "Direct gold/format validation against the original frozen scorer and fixed source strings"
+}

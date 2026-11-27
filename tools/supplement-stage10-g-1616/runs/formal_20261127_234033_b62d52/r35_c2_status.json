@@ -1,0 +1,11 @@
+{
+  "group": "r35_c2",
+  "block": 6,
+  "round": 35,
+  "config": [
+    8,
+    16
+  ],
+  "ok": true,
+  "reached_ready": true
+}

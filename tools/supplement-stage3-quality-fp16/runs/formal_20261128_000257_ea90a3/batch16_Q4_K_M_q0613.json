@@ -1,0 +1,154 @@
+{
+  "batch": 16,
+  "model": "Q4_K_M",
+  "id": "q0613",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：把横坐标与纵坐标互换，输出“(x,y)”\n要求：只输出转换结果，不要任何说明。\n\n输入：原放电支架点记为(1,6)。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：把横坐标与纵坐标互换，输出“(x,y)”\n要求：只输出转换结果，不要任何说明。\n\n输入：原放电支架点记为(1,6)。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      99360,
+      101209,
+      109231,
+      57218,
+      100306,
+      109231,
+      99524,
+      71134,
+      3837,
+      66017,
+      70170,
+      87,
+      7358,
+      8,
+      88774,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      52129,
+      53222,
+      38212,
+      114106,
+      27442,
+      40814,
+      17714,
+      7,
+      16,
+      11,
+      21,
+      8,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:20:01.599687+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "(6,1)"
+          }
+        }
+      ],
+      "created": 1795796401,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 75,
+        "total_tokens": 81,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-37yq6Vdewr2gIaiy4JzeVUQBblrCQ4qb",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 75,
+        "prompt_ms": 140.038,
+        "prompt_per_token_ms": 1.8671733333333336,
+        "prompt_per_second": 535.5689170082405,
+        "predicted_n": 6,
+        "predicted_ms": 51.544,
+        "predicted_per_token_ms": 10.3088,
+        "predicted_per_second": 97.00450100884682
+      }
+    },
+    "client_e2e_s": 0.19656640011817217,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": true,
+    "content_correct": true,
+    "correct": true
+  }
+}

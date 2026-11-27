@@ -1,0 +1,158 @@
+{
+  "batch": 8,
+  "model": "FP16",
+  "id": "q0602",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：输出每枚铜夹的均价，保留两位小数\n要求：只输出转换结果，不要任何说明。\n\n输入：两包各四枚铜夹共花50元，按单枚结账。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：输出每枚铜夹的均价，保留两位小数\n要求：只输出转换结果，不要任何说明。\n\n输入：两包各四枚铜夹共花50元，按单枚结账。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      66017,
+      73157,
+      102991,
+      102138,
+      104792,
+      9370,
+      109515,
+      3837,
+      104465,
+      105352,
+      30709,
+      8863,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      77540,
+      67279,
+      99200,
+      63703,
+      102991,
+      102138,
+      104792,
+      54899,
+      99232,
+      20,
+      15,
+      23305,
+      3837,
+      59879,
+      23990,
+      102991,
+      36885,
+      80101,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:11:30.624728+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "0.50"
+          }
+        }
+      ],
+      "created": 1795795890,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 79,
+        "total_tokens": 84,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-GStmEGyzOckog9lbmB2mB8I3kk4jXwFP",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 79,
+        "prompt_ms": 92.277,
+        "prompt_per_token_ms": 1.1680632911392406,
+        "prompt_per_second": 856.1179925658614,
+        "predicted_n": 5,
+        "predicted_ms": 80.707,
+        "predicted_per_token_ms": 20.17675,
+        "predicted_per_second": 49.56199586157335
+      }
+    },
+    "client_e2e_s": 0.17808450013399124,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

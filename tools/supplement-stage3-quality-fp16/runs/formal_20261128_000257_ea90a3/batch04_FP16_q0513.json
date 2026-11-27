@@ -1,0 +1,148 @@
+{
+  "batch": 4,
+  "model": "FP16",
+  "id": "q0513",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：将千克换为克，只输出整数\n要求：只输出转换结果，不要任何说明。\n\n输入：棉线筐称得2.04千克。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：将千克换为克，只输出整数\n要求：只输出转换结果，不要任何说明。\n\n输入：棉线筐称得2.04千克。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      44063,
+      118656,
+      71134,
+      17714,
+      99316,
+      3837,
+      91680,
+      66017,
+      63431,
+      8863,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      102430,
+      43268,
+      119120,
+      24641,
+      49828,
+      17,
+      13,
+      15,
+      19,
+      118656,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:06:18.839914+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "2040"
+          }
+        }
+      ],
+      "created": 1795795579,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-fp16.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 69,
+        "total_tokens": 74,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-OcBLnOMJ2QG3ADPrjx0LTipUjmIu29qn",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 69,
+        "prompt_ms": 82.078,
+        "prompt_per_token_ms": 1.189536231884058,
+        "prompt_per_second": 840.6637588635201,
+        "predicted_n": 5,
+        "predicted_ms": 79.016,
+        "predicted_per_token_ms": 19.754,
+        "predicted_per_second": 50.622658702035025
+      }
+    },
+    "client_e2e_s": 0.1659466999117285,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": true,
+    "content_correct": true,
+    "correct": true
+  }
+}

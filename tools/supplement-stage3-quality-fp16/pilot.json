@@ -1,0 +1,51 @@
+[
+  {
+    "field": "寄存袋上的墨色",
+    "gold": "珊瑚橙",
+    "input": "豆板展歇场时只挂一只寄存袋，签条使用珊瑚橙墨色。",
+    "id": "pilot1",
+    "task_type": "single_field_extraction",
+    "scoring": "exact",
+    "source_text": "豆板展歇场时只挂一只寄存袋，签条使用珊瑚橙墨色。",
+    "source_family": "独立开发试跑"
+  },
+  {
+    "fields": [
+      "旗子藏处",
+      "领走人姓名"
+    ],
+    "gold": {
+      "旗子藏处": "小圆门背后",
+      "领走人姓名": null
+    },
+    "input": "演出前把粉旗藏于小圆门背后，谁来领只临时听铃通知。",
+    "id": "pilot2",
+    "task_type": "json_extraction",
+    "scoring": "json",
+    "source_text": "演出前把粉旗藏于小圆门背后，谁来领只临时听铃通知。",
+    "source_family": "独立开发试跑"
+  },
+  {
+    "labels": [
+      "已完成",
+      "尚未启动"
+    ],
+    "gold": "尚未启动",
+    "input": "若研磨已经完成则标已完成，若还没开始则标尚未启动。包裹里那块加厚浮石本周一次也没开始研磨。",
+    "id": "pilot3",
+    "task_type": "classification",
+    "scoring": "label",
+    "source_text": "若研磨已经完成则标已完成，若还没开始则标尚未启动。包裹里那块加厚浮石本周一次也没开始研磨。",
+    "source_family": "独立开发试跑"
+  },
+  {
+    "rule": "把给出的秒数写成 MM:SS，补齐两位",
+    "gold": "03:31",
+    "input": "工坊特制扣片的回弹调试经过211秒。",
+    "id": "pilot4",
+    "task_type": "normalization",
+    "scoring": "exact",
+    "source_text": "工坊特制扣片的回弹调试经过211秒。",
+    "source_family": "独立开发试跑"
+  }
+]

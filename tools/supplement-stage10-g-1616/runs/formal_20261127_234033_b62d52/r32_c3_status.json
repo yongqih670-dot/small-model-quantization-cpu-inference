@@ -1,0 +1,11 @@
+{
+  "group": "r32_c3",
+  "block": 6,
+  "round": 32,
+  "config": [
+    16,
+    16
+  ],
+  "ok": true,
+  "reached_ready": true
+}

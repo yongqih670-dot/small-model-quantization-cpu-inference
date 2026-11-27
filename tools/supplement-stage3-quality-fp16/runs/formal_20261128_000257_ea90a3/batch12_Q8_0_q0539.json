@@ -1,0 +1,162 @@
+{
+  "batch": 12,
+  "model": "Q8_0",
+  "id": "q0539",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：用原值减去给出的两项报损，输出整数\n要求：只输出转换结果，不要任何说明。\n\n输入：薄砖原发96片，起吊裂9片，装车又毁5片。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：用原值减去给出的两项报损，输出整数\n要求：只输出转换结果，不要任何说明。\n\n输入：薄砖原发96片，起吊裂9片，装车又毁5片。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      11622,
+      52129,
+      25511,
+      99536,
+      85336,
+      107485,
+      9370,
+      112794,
+      42278,
+      99644,
+      3837,
+      66017,
+      63431,
+      8863,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      101264,
+      102367,
+      52129,
+      28291,
+      24,
+      21,
+      34718,
+      3837,
+      71618,
+      102370,
+      100542,
+      24,
+      34718,
+      3837,
+      98641,
+      39953,
+      99518,
+      100882,
+      20,
+      34718,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:15:24.515009+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "-8"
+          }
+        }
+      ],
+      "created": 1795796124,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q8_0.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 3,
+        "prompt_tokens": 83,
+        "total_tokens": 86,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-1z2TKO2mFQK5IHeentjcykGthpXmnWlj",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 133.523,
+        "prompt_per_token_ms": 1.608710843373494,
+        "prompt_per_second": 621.6157515933585,
+        "predicted_n": 3,
+        "predicted_ms": 25.988,
+        "predicted_per_token_ms": 12.994,
+        "predicted_per_second": 76.95859627520394
+      }
+    },
+    "client_e2e_s": 0.188869200181216,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}

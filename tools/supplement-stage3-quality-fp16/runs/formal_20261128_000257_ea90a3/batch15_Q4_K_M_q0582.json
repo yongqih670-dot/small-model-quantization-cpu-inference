@@ -1,0 +1,161 @@
+{
+  "batch": 15,
+  "model": "Q4_K_M",
+  "id": "q0582",
+  "status": "ok",
+  "attempted": true,
+  "payload": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+      },
+      {
+        "role": "user",
+        "content": "按规则转换：按 C=(F−32)/1.8 转摄氏度，输出整数\n要求：只输出转换结果，不要任何说明。\n\n输入：晒鞋板的外表温度写作86华氏度。"
+      }
+    ],
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "cache_prompt": false,
+    "stream": false
+  },
+  "input_proof": {
+    "rendered": "<|im_start|>system\n你是严格的评测作答器。只按题目要求输出答案，不要解释。<|im_end|>\n<|im_start|>user\n按规则转换：按 C=(F−32)/1.8 转摄氏度，输出整数\n要求：只输出转换结果，不要任何说明。\n\n输入：晒鞋板的外表温度写作86华氏度。<|im_end|>\n<|im_start|>assistant\n",
+    "tokens": [
+      151644,
+      8948,
+      198,
+      105043,
+      108623,
+      115163,
+      19403,
+      99590,
+      31548,
+      1773,
+      91680,
+      59879,
+      106367,
+      101882,
+      66017,
+      102349,
+      3837,
+      100148,
+      104136,
+      1773,
+      151645,
+      198,
+      151644,
+      872,
+      198,
+      59879,
+      104190,
+      105359,
+      5122,
+      59879,
+      356,
+      4539,
+      37,
+      33263,
+      18,
+      17,
+      5620,
+      16,
+      13,
+      23,
+      8908,
+      121,
+      105,
+      100099,
+      104057,
+      26381,
+      3837,
+      66017,
+      63431,
+      8863,
+      198,
+      101882,
+      5122,
+      91680,
+      66017,
+      105359,
+      59151,
+      3837,
+      100148,
+      99885,
+      66394,
+      3407,
+      31196,
+      5122,
+      102488,
+      102097,
+      87531,
+      9370,
+      108789,
+      104273,
+      105293,
+      23,
+      21,
+      85361,
+      104057,
+      26381,
+      1773,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ]
+  },
+  "started": "2026-11-28T00:19:43.771783+08:00",
+  "response": {
+    "ok": true,
+    "http_status": 200,
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "30.0"
+          }
+        }
+      ],
+      "created": 1795796383,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\models\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 5,
+        "prompt_tokens": 82,
+        "total_tokens": 87,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-LCwyMdO5NBE5aAy69X71hs81YGH8dff4",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 82,
+        "prompt_ms": 129.775,
+        "prompt_per_token_ms": 1.5826219512195123,
+        "prompt_per_second": 631.8628395299556,
+        "predicted_n": 5,
+        "predicted_ms": 42.25,
+        "predicted_per_token_ms": 10.5625,
+        "predicted_per_second": 94.67455621301775
+      }
+    },
+    "client_e2e_s": 0.19197200005874038,
+    "error": null,
+    "error_type": null
+  },
+  "score": {
+    "format_correct": false,
+    "content_correct": false,
+    "correct": false
+  }
+}
