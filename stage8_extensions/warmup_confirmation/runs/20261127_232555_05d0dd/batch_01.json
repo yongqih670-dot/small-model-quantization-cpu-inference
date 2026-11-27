@@ -1,0 +1,11 @@
+{
+  "batch": 1,
+  "attempted": 20,
+  "capture_ok": 20,
+  "finished": "2026-11-27T23:26:27.098996+08:00",
+  "power_scheme": "381b4222-f694-41f0-9685-ff5bb260df2e",
+  "power": {
+    "plugged_in": true,
+    "percent": 99
+  }
+}

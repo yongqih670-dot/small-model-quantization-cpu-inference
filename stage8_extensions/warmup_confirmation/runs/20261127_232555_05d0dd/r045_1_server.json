@@ -1,0 +1,48 @@
+{
+  "model": "Q4_K_M",
+  "flags": [
+    "-ngl",
+    "0",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-c",
+    "1024",
+    "-np",
+    "1",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "--cache-reuse",
+    "0",
+    "--log-timestamps",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "9294"
+  ],
+  "model_file": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "warmup": true,
+  "power_before": {
+    "plugged_in": true,
+    "percent": 99
+  },
+  "available_mib": 11437.87890625,
+  "start_ns": 1058283943801800,
+  "pid": 104156,
+  "ready_ns": 1058284649723700,
+  "power_after": {
+    "plugged_in": true,
+    "percent": 99
+  }
+}

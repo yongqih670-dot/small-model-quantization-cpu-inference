@@ -1,0 +1,23 @@
+0.00.036.358 I srv  llama_server: initializing ...
+0.00.036.368 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.036.657 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.054.827 I srv    load_model: loading model 'F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\stage7_local\assets\qwen2.5-0.5b-instruct-q4_k_m.gguf'
+0.00.478.968 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.564.345 I cmn          init: llama threadpool init, n_threads = 4
+0.00.636.376 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 1024, kv_unified = 'false'
+0.00.642.068 I srv  llama_server: model loaded
+0.00.642.078 I srv  llama_server: listening on http://127.0.0.1:8444
+0.00.675.980 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.00.676.084 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.01.040.561 I slot print_timing: id  0 | task 0 | prompt eval time =     342.09 ms /   215 tokens (    1.59 ms per token,   628.49 tokens per second)
+0.01.040.567 I slot print_timing: id  0 | task 0 |        eval time =      22.32 ms /     3 tokens (   11.16 ms per token,    89.60 tokens per second)
+0.01.040.568 I slot print_timing: id  0 | task 0 |       total time =     364.41 ms /   218 tokens
+0.01.040.569 I slot print_timing: id  0 | task 0 |    graphs reused =          1
+0.01.040.598 I slot      release: id  0 | task 0 | stop processing: n_tokens = 217, truncated = 0
+0.01.065.195 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.155 (> 0.100 thold), f_keep = 0.147
+0.01.066.094 I slot launch_slot_: id  0 | task 4 | processing task, is_child = 0
+0.01.420.393 I slot print_timing: id  0 | task 4 | prompt eval time =     332.12 ms /   207 tokens (    1.60 ms per token,   623.26 tokens per second)
+0.01.420.399 I slot print_timing: id  0 | task 4 |        eval time =      22.14 ms /     3 tokens (   11.07 ms per token,    90.33 tokens per second)
+0.01.420.400 I slot print_timing: id  0 | task 4 |       total time =     354.26 ms /   210 tokens
+0.01.420.401 I slot print_timing: id  0 | task 4 |    graphs reused =          2
+0.01.420.427 I slot      release: id  0 | task 4 | stop processing: n_tokens = 209, truncated = 0

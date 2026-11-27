@@ -8,7 +8,7 @@
 
 [Stage 9 实验报告与复现方法](stage9_deep/README.md) · [实验方案](stage9_deep/PROTOCOL.md) · [462 条正式请求的统计与图表](stage9_deep/results/)
 
-[Stage 8 实验报告与复现方法](stage8_extensions/README.md) · [测试方案](stage8_extensions/PROTOCOL.md) · [三项结果汇总](stage8_extensions/results/summary.json)
+[Stage 8 实验报告与复现方法](stage8_extensions/README.md) · [首答延迟 100 轮补测](stage8_extensions/warmup_confirmation/README.md) · [测试方案](stage8_extensions/PROTOCOL.md) · [原三项结果汇总](stage8_extensions/results/summary.json)
 
 [Stage 7 实验报告与复现方法](stage7_local/README.md) · [18 次正式启动的原始测量表](stage7_local/runs/20261127_225012_formal_d8a1d1/measurements.csv) · [Stage 6 错误诊断修订报告](docs/STAGE6_ANALYSIS_REVISION.md)
 

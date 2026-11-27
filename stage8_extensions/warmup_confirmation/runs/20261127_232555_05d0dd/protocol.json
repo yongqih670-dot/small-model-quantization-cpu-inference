@@ -1,0 +1,28 @@
+{
+  "started": "2026-11-27T23:25:55.596703+08:00",
+  "machine": {
+    "os": "Windows-11-10.0.26100-SP0",
+    "python": "3.12.7",
+    "cpu": "AMD Ryzen 9 9955HX 16-Core Processor           ",
+    "physical_cores": 16,
+    "logical_cores": 32,
+    "ram_gib": 31.183826446533203,
+    "plugged_in": true
+  },
+  "power_scheme": "381b4222-f694-41f0-9685-ff5bb260df2e",
+  "backend_sha256": "f1f7198a7c1cdf13bec7c2cf960947e0bec87401837a057134186132d870aa04",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "preregistration": "8ca30b0fdfe57eee29eeafef4f905d0aadeb8aa9",
+  "expected_attempts": 200,
+  "hashes": {
+    "stage8_extensions/warmup_confirmation/plan.json": "cf267725f1eb7a9e9743dce7378e6546abd1647d0ded9112af3dd2a3dde6beef",
+    "stage8_extensions/warmup_confirmation/run.py": "590ffd208b49eabf37bcbecd16eb355ab409ace1eef4d0e9bed70263573888ee",
+    "stage8_extensions/warmup_confirmation/analyze.py": "dc943a86da36cc9ca862c875cc673ac04c38099e9d91af8909c2c4790822a83b",
+    "stage8_extensions/experiment_A.py": "90b8c17a3b3956a22f401ad9a14bf16078c75b465b4961f1a85fff26ff0f669f",
+    "stage8_extensions/common.py": "5c6de3e42b605c2dbe746674b42d8be7dcd7db5685751338b2262a64a58aa763",
+    "stage8_extensions/inputs.json": "afe6964c626dd74af9302a0252e0d1f7032e12847d32a646888e20666fdd61f6",
+    "stage8_extensions/PROTOCOL.md": "e3f90873d1ce5a560e6b74673ea83d7b0dbc2c54ea82827b040a1cba4890b11d",
+    "stage7_local/run_experiment.py": "8b80cadeb2f134ca920f9e5650755dfc7ab6bdf890185471e93692b7fec029b3",
+    "stage7_local/model_manifest.json": "839a9aed0ea8c372292fa0ef2c6700af1d70c7e53e32713e9095364cf48b1662"
+  }
+}

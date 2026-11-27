@@ -1,0 +1,229 @@
+{
+  "batch": 7,
+  "round": 68,
+  "position": 2,
+  "warmup": true,
+  "ok": true,
+  "first": {
+    "payload": {
+      "temperature": 0,
+      "top_p": 1,
+      "seed": 42,
+      "cache_prompt": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "从下面的输入中提取：讲解员姓名。\n要求：只输出答案本身，不要加说明文字。\n关于单位与标点：1) 数量/金额/比例等数值类字段只输出数字本身（不加元、人、%、个等单位），字段名已标明单位时以字段名为准；2) 日期和时间按输入原文表述输出（如：10月18日、9:30）；3) 不要增加答案之外的标点或文字，但答案内部必要的字符必须保留（如电话号码中的连字符、小数点）；4) 如果输入中没有该信息，只输出：未提供。\n\n输入：\n通知：为迎接校庆，校史馆将于10月对新生免费开放，开放日当天讲解员为历史系研究生周雨桐，参观需提前在公众号预约。"
+        }
+      ],
+      "max_tokens": 96,
+      "stream": true
+    },
+    "start_ns": 1058357453787100,
+    "first_ns": 1058357785063200,
+    "done_ns": 1058357806828400,
+    "events": [
+      {
+        "ns": 1058357785006100,
+        "chunk": {
+          "choices": [
+            {
+              "finish_reason": null,
+              "index": 0,
+              "delta": {
+                "role": "assistant",
+                "content": null
+              }
+            }
+          ],
+          "created": 1795793370,
+          "id": "chatcmpl-GLjRXJsqn9WdwXN8qNE5ItowBFTkNTYa",
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion.chunk"
+        }
+      },
+      {
+        "ns": 1058357785063200,
+        "chunk": {
+          "choices": [
+            {
+              "finish_reason": null,
+              "index": 0,
+              "delta": {
+                "content": "未"
+              }
+            }
+          ],
+          "created": 1795793370,
+          "id": "chatcmpl-GLjRXJsqn9WdwXN8qNE5ItowBFTkNTYa",
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion.chunk"
+        }
+      },
+      {
+        "ns": 1058357796620700,
+        "chunk": {
+          "choices": [
+            {
+              "finish_reason": null,
+              "index": 0,
+              "delta": {
+                "content": "提供"
+              }
+            }
+          ],
+          "created": 1795793370,
+          "id": "chatcmpl-GLjRXJsqn9WdwXN8qNE5ItowBFTkNTYa",
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion.chunk"
+        }
+      },
+      {
+        "ns": 1058357806751800,
+        "chunk": {
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "delta": {}
+            }
+          ],
+          "created": 1795793370,
+          "id": "chatcmpl-GLjRXJsqn9WdwXN8qNE5ItowBFTkNTYa",
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion.chunk",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 215,
+            "prompt_ms": 312.234,
+            "prompt_per_token_ms": 1.4522511627906975,
+            "prompt_per_second": 688.5861245091822,
+            "predicted_n": 3,
+            "predicted_ms": 21.722,
+            "predicted_per_token_ms": 10.861,
+            "predicted_per_second": 92.07255317189946
+          }
+        }
+      }
+    ]
+  },
+  "second": {
+    "payload": {
+      "temperature": 0,
+      "top_p": 1,
+      "seed": 42,
+      "cache_prompt": false,
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是严格的评测作答器。只按题目要求输出答案，不要解释。"
+        },
+        {
+          "role": "user",
+          "content": "从下面的输入中提取：失主的联系方式。\n要求：只输出答案本身，不要加说明文字。\n关于单位与标点：1) 数量/金额/比例等数值类字段只输出数字本身（不加元、人、%、个等单位），字段名已标明单位时以字段名为准；2) 日期和时间按输入原文表述输出（如：10月18日、9:30）；3) 不要增加答案之外的标点或文字，但答案内部必要的字符必须保留（如电话号码中的连字符、小数点）；4) 如果输入中没有该信息，只输出：未提供。\n\n输入：\n失物招领：在图书馆三楼自习区捡到黑色保温杯一个，请失主携带有效证件到一层服务台认领。"
+        }
+      ],
+      "max_tokens": 96,
+      "stream": true
+    },
+    "start_ns": 1058357807016300,
+    "first_ns": 1058358145117800,
+    "done_ns": 1058358168405500,
+    "events": [
+      {
+        "ns": 1058358145052600,
+        "chunk": {
+          "choices": [
+            {
+              "finish_reason": null,
+              "index": 0,
+              "delta": {
+                "role": "assistant",
+                "content": null
+              }
+            }
+          ],
+          "created": 1795793370,
+          "id": "chatcmpl-00maombN43o5fLFpm3sTfdW8k2rmlg0h",
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion.chunk"
+        }
+      },
+      {
+        "ns": 1058358145117800,
+        "chunk": {
+          "choices": [
+            {
+              "finish_reason": null,
+              "index": 0,
+              "delta": {
+                "content": "未"
+              }
+            }
+          ],
+          "created": 1795793370,
+          "id": "chatcmpl-00maombN43o5fLFpm3sTfdW8k2rmlg0h",
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion.chunk"
+        }
+      },
+      {
+        "ns": 1058358156848700,
+        "chunk": {
+          "choices": [
+            {
+              "finish_reason": null,
+              "index": 0,
+              "delta": {
+                "content": "提供"
+              }
+            }
+          ],
+          "created": 1795793370,
+          "id": "chatcmpl-00maombN43o5fLFpm3sTfdW8k2rmlg0h",
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion.chunk"
+        }
+      },
+      {
+        "ns": 1058358168306100,
+        "chunk": {
+          "choices": [
+            {
+              "finish_reason": "stop",
+              "index": 0,
+              "delta": {}
+            }
+          ],
+          "created": 1795793370,
+          "id": "chatcmpl-00maombN43o5fLFpm3sTfdW8k2rmlg0h",
+          "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "system_fingerprint": "b11347-5fc4f3c8c",
+          "object": "chat.completion.chunk",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 207,
+            "prompt_ms": 315.436,
+            "prompt_per_token_ms": 1.5238454106280193,
+            "prompt_per_second": 656.2345452009282,
+            "predicted_n": 3,
+            "predicted_ms": 23.268,
+            "predicted_per_token_ms": 11.634,
+            "predicted_per_second": 85.95495960116898
+          }
+        }
+      }
+    ]
+  }
+}
