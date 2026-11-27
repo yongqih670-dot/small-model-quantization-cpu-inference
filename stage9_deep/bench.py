@@ -18,7 +18,8 @@ sys.path.insert(0, str(S8))
 import common as base
 from common import GEN, MODELS, attempt, clock, digest, previous, save, send
 
-TOKEN_FILE = S8 / "runs/B_formal_210313_349d9f/token_ids.json"
+stage8_summary = json.loads((S8 / "results/summary.json").read_text(encoding="utf-8"))
+TOKEN_FILE = S8 / "runs" / stage8_summary["runs"]["B"]["formal"] / "token_ids.json"
 IDS = json.loads(TOKEN_FILE.read_text(encoding="utf-8"))
 SIZES = [16,32,48,64,96]
 THREADS = [4,8,16]

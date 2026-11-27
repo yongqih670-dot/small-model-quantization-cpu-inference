@@ -2,7 +2,7 @@
 
 《计算机技术与应用》大模型期末大作业课题14：研究同一个约 0.5B 参数规模的小语言模型（Qwen2.5-0.5B-Instruct）在不同 GGUF 量化版本与 CPU 运行参数下的**文件大小、内存占用、提示处理速度、逐 Token 生成速度、端到端延迟与简单任务质量**。
 
-**当前阶段：Stage 10 已完成，验证默认线程配置、双顺序分类复核和延迟反转来源。**
+**Stage 1–10 使用同一台 Ryzen 9 9955HX 电脑。** Stage 7–10 于 2026 年 11 月 27 日在该机复测，使用 16 核 32 线程、31.18 GiB 内存、Windows 11 Build 26100 和 llama.cpp b11347 官方 CPU 后端。各阶段报告链接到本次正式运行与原始记录。
 
 [Stage 10 实验报告](stage10_validation/README.md) · [事前方案](stage10_validation/PROTOCOL.md) · [统计表、逐轮数据与图表](stage10_validation/results/)
 
@@ -10,8 +10,7 @@
 
 [Stage 8 实验报告与复现方法](stage8_extensions/README.md) · [测试方案](stage8_extensions/PROTOCOL.md) · [三项结果汇总](stage8_extensions/results/summary.json)
 
-[Stage 7 实验报告与复现方法](stage7_local/README.md) · [18 次正式启动的原始测量表](stage7_local/runs/20261106_191932_formal_4a2840/measurements.csv) · [Stage 6 错误诊断修订报告](docs/STAGE6_ANALYSIS_REVISION.md)
-Stage 7 在 Ryzen AI 9 H 365 上比较 Q4、Q5、Q8，文件预读后各启动 6 次。各阶段的机器、负载与测量边界见对应报告。
+[Stage 7 实验报告与复现方法](stage7_local/README.md) · [18 次正式启动的原始测量表](stage7_local/runs/20261127_225012_formal_d8a1d1/measurements.csv) · [Stage 6 错误诊断修订报告](docs/STAGE6_ANALYSIS_REVISION.md)
 
 - 指标定义与测量边界：[docs/EXPERIMENT_PROTOCOL.md](docs/EXPERIMENT_PROTOCOL.md)
 - Stage 1 问题与修正对照：[docs/stage2_corrections.md](docs/stage2_corrections.md)

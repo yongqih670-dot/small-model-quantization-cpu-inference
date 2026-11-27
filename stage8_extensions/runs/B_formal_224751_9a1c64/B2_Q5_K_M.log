@@ -1,0 +1,37 @@
+0.00.034.508 I srv  llama_server: initializing ...
+0.00.034.522 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.034.854 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.038.857 I srv    load_model: loading model 'F:\LLM Course\Experimental Study on Quantization of Small Models and CPU Inference Performance\tools\stage7-10-local-replication-20261127\stage7_local\assets\qwen2.5-0.5b-instruct-q5_k_m.gguf'
+0.00.479.418 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.549.948 I cmn          init: llama threadpool init, n_threads = 4
+0.00.682.125 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 1024, kv_unified = 'false'
+0.00.687.212 I srv  llama_server: model loaded
+0.00.687.219 I srv  llama_server: listening on http://127.0.0.1:5260
+0.00.717.874 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.00.717.907 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.00.829.644 I slot print_timing: id  0 | task 0 | prompt eval time =      21.52 ms /     4 tokens (    5.38 ms per token,   185.87 tokens per second)
+0.00.829.660 I slot print_timing: id  0 | task 0 |        eval time =      90.17 ms /     8 tokens (   12.88 ms per token,    77.63 tokens per second)
+0.00.829.662 I slot print_timing: id  0 | task 0 |       total time =     111.69 ms /    12 tokens
+0.00.829.663 I slot print_timing: id  0 | task 0 |    graphs reused =          7
+0.00.829.696 I slot      release: id  0 | task 0 | stop processing: n_tokens = 11, truncated = 0
+0.00.834.549 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 796650
+0.00.835.038 I slot launch_slot_: id  0 | task 9 | processing task, is_child = 0
+0.03.298.464 I slot print_timing: id  0 | task 9 | prompt eval time =    2063.22 ms /   768 tokens (    2.69 ms per token,   372.23 tokens per second)
+0.03.298.470 I slot print_timing: id  0 | task 9 |        eval time =     400.18 ms /    32 tokens (   12.91 ms per token,    77.47 tokens per second)
+0.03.298.471 I slot print_timing: id  0 | task 9 |       total time =    2463.40 ms /   800 tokens
+0.03.298.472 I slot print_timing: id  0 | task 9 |    graphs reused =         37
+0.03.298.500 I slot      release: id  0 | task 9 | stop processing: n_tokens = 799, truncated = 0
+0.03.303.680 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 0.080
+0.03.305.975 I slot launch_slot_: id  0 | task 42 | processing task, is_child = 0
+0.03.855.887 I slot print_timing: id  0 | task 42 | prompt eval time =     176.29 ms /    64 tokens (    2.75 ms per token,   363.03 tokens per second)
+0.03.855.893 I slot print_timing: id  0 | task 42 |        eval time =     373.59 ms /    32 tokens (   12.05 ms per token,    82.98 tokens per second)
+0.03.855.894 I slot print_timing: id  0 | task 42 |       total time =     549.89 ms /    96 tokens
+0.03.855.895 I slot print_timing: id  0 | task 42 |    graphs reused =         67
+0.03.855.918 I slot      release: id  0 | task 42 | stop processing: n_tokens = 95, truncated = 0
+0.03.873.317 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.371 (> 0.100 thold), f_keep = 1.000
+0.03.873.483 I slot launch_slot_: id  0 | task 75 | processing task, is_child = 0
+0.04.900.646 I slot print_timing: id  0 | task 75 | prompt eval time =     649.37 ms /   256 tokens (    2.54 ms per token,   394.23 tokens per second)
+0.04.900.653 I slot print_timing: id  0 | task 75 |        eval time =     377.76 ms /    32 tokens (   12.19 ms per token,    82.06 tokens per second)
+0.04.900.655 I slot print_timing: id  0 | task 75 |       total time =    1027.13 ms /   288 tokens
+0.04.900.655 I slot print_timing: id  0 | task 75 |    graphs reused =         97
+0.04.900.692 I slot      release: id  0 | task 75 | stop processing: n_tokens = 287, truncated = 0

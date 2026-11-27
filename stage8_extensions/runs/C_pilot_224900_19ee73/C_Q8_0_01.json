@@ -1,0 +1,53 @@
+{
+  "model": "Q8_0",
+  "sequence": 1,
+  "item": "dev-007",
+  "rotation": 1,
+  "labels": [
+    "不停课",
+    "停课"
+  ],
+  "gold": "不停课",
+  "ok": true,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "不停课"
+        }
+      }
+    ],
+    "created": 1795790944,
+    "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\stage7-10-local-replication-20261127\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q8_0.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3,
+      "prompt_tokens": 108,
+      "total_tokens": 111,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-JbENe6qyEWRGBJqkK2f05vox1EqARvU4",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 108,
+      "prompt_ms": 179.492,
+      "prompt_per_token_ms": 1.6619629629629629,
+      "prompt_per_second": 601.6981258217637,
+      "predicted_n": 3,
+      "predicted_ms": 28.901,
+      "predicted_per_token_ms": 14.4505,
+      "predicted_per_second": 69.2017577246462
+    }
+  },
+  "answer": "不停课",
+  "truncated": false,
+  "valid": true,
+  "correct": true,
+  "selected_position": 0
+}

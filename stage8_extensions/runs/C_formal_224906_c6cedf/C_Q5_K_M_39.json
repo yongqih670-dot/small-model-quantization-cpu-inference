@@ -1,0 +1,53 @@
+{
+  "model": "Q5_K_M",
+  "sequence": 39,
+  "item": "new-03",
+  "rotation": 1,
+  "labels": [
+    "正常信息",
+    "垃圾信息"
+  ],
+  "gold": "正常信息",
+  "ok": true,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "正常信息"
+        }
+      }
+    ],
+    "created": 1795790969,
+    "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\stage7-10-local-replication-20261127\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3,
+      "prompt_tokens": 103,
+      "total_tokens": 106,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-5YgOuxUEbbkEFojMSWv0opzLM6iziZXF",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 103,
+      "prompt_ms": 276.84,
+      "prompt_per_token_ms": 2.6877669902912618,
+      "prompt_per_second": 372.0560612628233,
+      "predicted_n": 3,
+      "predicted_ms": 23.336,
+      "predicted_per_token_ms": 11.668,
+      "predicted_per_second": 85.70449091532397
+    }
+  },
+  "answer": "正常信息",
+  "truncated": false,
+  "valid": true,
+  "correct": true,
+  "selected_position": 0
+}

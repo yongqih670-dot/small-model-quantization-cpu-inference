@@ -1,0 +1,90 @@
+[
+  {
+    "item": "4-5",
+    "model": "Q8_0",
+    "c": 1,
+    "ok": true,
+    "start_ns": 1056725007499000,
+    "end_ns": 1056725211164400,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "正面"
+          }
+        }
+      ],
+      "created": 1795791737,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\stage7-10-local-replication-20261127\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q8_0.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 109,
+        "total_tokens": 111,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-BoQiYvtNwZzYpwCPYPyVKL1FyUFkry08",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 109,
+        "prompt_ms": 183.92,
+        "prompt_per_token_ms": 1.6873394495412843,
+        "prompt_per_second": 592.648977816442,
+        "predicted_n": 2,
+        "predicted_ms": 14.345,
+        "predicted_per_token_ms": 14.345,
+        "predicted_per_second": 69.71070059254095
+      }
+    }
+  },
+  {
+    "item": "4-5",
+    "model": "Q8_0",
+    "c": 0,
+    "ok": true,
+    "start_ns": 1056725211173500,
+    "end_ns": 1056725415893200,
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "正面"
+          }
+        }
+      ],
+      "created": 1795791737,
+      "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\stage7-10-local-replication-20261127\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q8_0.gguf",
+      "system_fingerprint": "b11347-5fc4f3c8c",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 109,
+        "total_tokens": 111,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-cBGA3TXDdZjuxvf6BTujEWYLgIqA6HVM",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 109,
+        "prompt_ms": 176.397,
+        "prompt_per_token_ms": 1.6183211009174312,
+        "prompt_per_second": 617.9243411169124,
+        "predicted_n": 2,
+        "predicted_ms": 13.145,
+        "predicted_per_token_ms": 13.145,
+        "predicted_per_second": 76.07455306200076
+      }
+    }
+  }
+]

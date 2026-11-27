@@ -2,7 +2,7 @@
 import random
 import sys
 from collections import defaultdict
-from engine import GEN,HERE,S9,MODELS,OLD_E,attempt,base,clock,complete,prepare,read,save,send,server
+from engine import GEN,HERE,S9,MODELS,STAGE9_E,attempt,base,clock,complete,prepare,read,save,send,server
 
 DATA=HERE/"holdout.json"
 RULES=S9/"new_items.json"
@@ -33,13 +33,13 @@ def rates(rows):
                 missed_over_all=missed/n,baseline_accuracy=1-err/n)
 
 def history():
-    meta=read(OLD_E/"completion.json")
+    meta=read(STAGE9_E/"completion.json")
     assert meta["passed"] and meta["attempts"]==240
-    jobs=read(OLD_E/"schedule.json")
+    jobs=read(STAGE9_E/"schedule.json")
     pairs=defaultdict(dict)
     for k in MODELS:
         for i,j in enumerate(jobs,1):
-            v=read(OLD_E/f"{k}_{i:03}.json");assert v["ok"] and v["item"]==j["item"] and v["candidate"]==j["candidate"] and v["rule"]==j["rule"]
+            v=read(STAGE9_E/f"{k}_{i:03}.json");assert v["ok"] and v["item"]==j["item"] and v["candidate"]==j["candidate"] and v["rule"]==j["rule"]
             answer,valid=scored(v["response"],j["labels"])
             pairs[k,j["item"],j["rule"]][j["candidate"]]=dict(answer=answer,valid=valid,gold=j["gold"])
     rows=trials(pairs)
@@ -69,7 +69,7 @@ def main():
     if not history()[2]:
         raise SystemExit("Predeclared historical gate did not pass")
     pilot=base.is_pilot();jobs=schedule(pilot)
-    out,meta=prepare("H",MODELS,jobs,[DATA,RULES,OLD_E/"completion.json"])
+    out,meta=prepare("H",MODELS,jobs,[DATA,RULES,STAGE9_E/"completion.json"])
     rows=[]
     for k in MODELS:
         with server(out,k,k,4,4) as port:

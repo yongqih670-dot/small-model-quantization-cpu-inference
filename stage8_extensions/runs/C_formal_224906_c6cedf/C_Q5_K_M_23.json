@@ -1,0 +1,53 @@
+{
+  "model": "Q5_K_M",
+  "sequence": 23,
+  "item": "new-05",
+  "rotation": 1,
+  "labels": [
+    "校外",
+    "校内"
+  ],
+  "gold": "校内",
+  "ok": true,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "校外"
+        }
+      }
+    ],
+    "created": 1795790964,
+    "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\stage7-10-local-replication-20261127\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2,
+      "prompt_tokens": 106,
+      "total_tokens": 108,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-HigThB5MA9xpLZnfdZ7vjkHpo1tfRjfs",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 106,
+      "prompt_ms": 281.5,
+      "prompt_per_token_ms": 2.6556603773584904,
+      "prompt_per_second": 376.5541740674956,
+      "predicted_n": 2,
+      "predicted_ms": 11.161,
+      "predicted_per_token_ms": 11.161,
+      "predicted_per_second": 89.59770629871876
+    }
+  },
+  "answer": "校外",
+  "truncated": false,
+  "valid": true,
+  "correct": false,
+  "selected_position": 0
+}

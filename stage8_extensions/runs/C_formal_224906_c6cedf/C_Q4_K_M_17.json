@@ -1,0 +1,53 @@
+{
+  "model": "Q4_K_M",
+  "sequence": 17,
+  "item": "new-09",
+  "rotation": 0,
+  "labels": [
+    "紧急",
+    "非紧急"
+  ],
+  "gold": "紧急",
+  "ok": true,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "紧急"
+        }
+      }
+    ],
+    "created": 1795790951,
+    "model": "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\stage7-10-local-replication-20261127\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "system_fingerprint": "b11347-5fc4f3c8c",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 2,
+      "prompt_tokens": 107,
+      "total_tokens": 109,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-AxUiIpYJsgKJFjLkdy2ehGyaIRAGsZO3",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 107,
+      "prompt_ms": 177.615,
+      "prompt_per_token_ms": 1.6599532710280374,
+      "prompt_per_second": 602.4265968527433,
+      "predicted_n": 2,
+      "predicted_ms": 11.854,
+      "predicted_per_token_ms": 11.854,
+      "predicted_per_second": 84.35970980259829
+    }
+  },
+  "answer": "紧急",
+  "truncated": false,
+  "valid": true,
+  "correct": true,
+  "selected_position": 0
+}

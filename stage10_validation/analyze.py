@@ -5,7 +5,7 @@ import itertools
 import statistics as st
 from collections import Counter,defaultdict
 import G,H,I
-from engine import HERE,ROOT,S9,OLD_D,MODELS,digest,read,save
+from engine import HERE,ROOT,S9,STAGE9_D,STAGE9_E,MODELS,digest,read,save
 
 def table(path,rows,fields=None):
     with path.open("w",encoding="utf-8",newline="") as f:
@@ -17,6 +17,10 @@ def metadata(p,exp,n):
     pilot=read(p.parent/m["pilot"]/"completion.json")
     assert pilot["passed"] and pilot["exp"]==exp and pilot["phase"]=="pilot" and pilot["hashes"]==m["hashes"]
     assert all(digest(ROOT/k)==h for k,h in m["hashes"].items())
+    if exp in ("H", "I"):
+        source = STAGE9_E if exp == "H" else STAGE9_D
+        binding = (source / "completion.json").relative_to(ROOT).as_posix()
+        assert binding in m["hashes"]
     sessions=[read(f) for f in p.glob("*_server.json")]
     power=Counter(str(v["plugged_in"]) if v else "unknown" for s in sessions for v in (s["power_before"],s["power_after"]))
     return dict(formal=p.name,pilot=m["pilot"],count=n,servers=len(sessions),power=dict(power),machine=m["machine"])
@@ -109,9 +113,9 @@ def classify(p,dest):
 
 def historical_d():
     import D
-    m=read(OLD_D/"completion.json")
+    m=read(STAGE9_D/"completion.json")
     assert m["passed"] and m["attempts"]==60
-    return performance(OLD_D,D.schedule(False),True)
+    return performance(STAGE9_D,D.schedule(False),True)
 
 PARTS=["prompt","generation","other"]
 def decomposition(rows):

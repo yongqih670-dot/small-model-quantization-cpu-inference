@@ -13,8 +13,9 @@ sys.path.insert(0,str(S9))
 import bench
 from bench import GEN, MODELS, attempt, base, clock, complete, digest, previous, read, rotate, save, send, server
 
-OLD_E=S9/"runs/E_formal_20261106_212113_018921"
-OLD_D=S9/"runs/D_formal_20261106_211741_cf5902"
+stage9_provenance = read(S9 / "results/summary.json")["provenance"]
+STAGE9_D = S9 / "runs" / stage9_provenance["D"]["formal"]
+STAGE9_E = S9 / "runs" / stage9_provenance["E"]["formal"]
 
 def prepare(exp,models,schedule,extra=()):
     pilot=base.is_pilot()
@@ -52,7 +53,7 @@ def prepare(exp,models,schedule,extra=()):
     return out,meta
 
 def perf(exp,groups,models,texts=None):
-    extra=[HERE/"texts.json"] if texts else []
+    extra = [HERE / "texts.json", STAGE9_D / "completion.json"] if texts else []
     out,meta=prepare(exp,models,groups,extra)
     frozen=None
     if texts and meta["pilot"]:

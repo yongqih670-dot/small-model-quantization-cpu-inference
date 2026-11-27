@@ -1,0 +1,74 @@
+{
+  "round": 6,
+  "position": 1,
+  "model": "Q5_K_M",
+  "timed": true,
+  "ok": true,
+  "load_ms": 322.2255,
+  "init_ms": 752.722,
+  "ready_ms": 832.7795001678169,
+  "argv": [
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\stage7-10-local-replication-20261127\\stage7_local\\timed_backend\\llama-server.exe",
+    "-m",
+    "F:\\LLM Course\\Experimental Study on Quantization of Small Models and CPU Inference Performance\\tools\\stage7-10-local-replication-20261127\\stage7_local\\assets\\qwen2.5-0.5b-instruct-q5_k_m.gguf",
+    "-ngl",
+    "0",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-c",
+    "1024",
+    "-np",
+    "1",
+    "-b",
+    "2048",
+    "-ub",
+    "512",
+    "-ctk",
+    "f16",
+    "-ctv",
+    "f16",
+    "-fa",
+    "off",
+    "-lm",
+    "mmap",
+    "--cache-reuse",
+    "0",
+    "--log-timestamps",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "2292"
+  ],
+  "log": "r6_1_Q5_K_M_timed.log",
+  "at": "2026-11-27T22:50:31.100438+08:00",
+  "free_memory_mib": 11461.98828125,
+  "power_before": {
+    "plugged_in": true,
+    "percent": 99
+  },
+  "pid": 107124,
+  "loader_calls": [
+    {
+      "ticks": 2998835,
+      "hz": 10000000,
+      "ok": 1,
+      "no_alloc": 1,
+      "vocab_only": 0
+    },
+    {
+      "ticks": 3222255,
+      "hz": 10000000,
+      "ok": 1,
+      "no_alloc": 0,
+      "vocab_only": 0
+    }
+  ],
+  "load_ticks": 3222255,
+  "qpc_frequency": 10000000,
+  "power_after": {
+    "plugged_in": true,
+    "percent": 99
+  }
+}

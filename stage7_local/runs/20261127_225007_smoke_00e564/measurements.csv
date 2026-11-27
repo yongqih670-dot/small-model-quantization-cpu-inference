@@ -1,0 +1,3 @@
+﻿round,position,model,timed,ok,load_ms,init_ms,ready_ms,log,error
+0,1,Q4_K_M,False,True,,819.1600000000001,899.2802000138909,r0_1_Q4_K_M_stock.log,
+0,2,Q4_K_M,True,True,359.2975,787.376,981.9214998278767,r0_2_Q4_K_M_timed.log,
